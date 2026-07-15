@@ -10,7 +10,7 @@ interface OrganizationRankingsProps {
 
 export default function OrganizationRankings({ rankedContributors = [] }: OrganizationRankingsProps) {
   const podiumNodes = rankedContributors.slice(0, 3);
-  console.log("🚀 ~ OrganizationRankings ~ podiumNodes:", podiumNodes)
+  // console.log("🚀 ~ OrganizationRankings ~ podiumNodes:", podiumNodes)
   const secondaryNodes = rankedContributors.slice(3);
 
   // Maps your semantic design tokens directly to the leadership tiers

@@ -6,7 +6,7 @@ import {HeroMetrics, ProfileCard} from "./hero/index"
 export default async function Hero() {
   // Fetch data on the server
   const stats = await getGithubStats();
-  console.log(stats)
+  // console.log(stats)
 
   return (
     <section className="mt-[70px] min-h-[88vh] flex flex-col justify-center px-6 md:px-[8%] py-16 lg:py-12 relative overflow-hidden">

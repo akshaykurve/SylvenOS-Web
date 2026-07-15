@@ -18,7 +18,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
   const { slug } = await params;
   const projects = await getAllProjects("sylvenos");
   const project = projects.find((p) => p.slug === slug);
-  console.log("🚀 ~ ProjectDetailsPage ~ project:", project)
+  // console.log("🚀 ~ ProjectDetailsPage ~ project:", project)
 
   if (!project) {
     notFound();
