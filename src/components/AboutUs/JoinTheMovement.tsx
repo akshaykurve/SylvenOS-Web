@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function JoinTheMovement() {
   // Kinetic presentation animations for high-impact closing state
@@ -109,7 +110,7 @@ export default function JoinTheMovement() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)]"
             >
-              Become a Contributor
+              <Link href="https://github.com/sylvenos" target="_blank">Become a Contributor</Link>
             </motion.button>
           </motion.div>
 

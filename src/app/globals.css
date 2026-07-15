@@ -11,7 +11,8 @@
     --muted: #d6e4ef;
     --glass: rgba(255, 255, 255, 0.05);
     --logo: #489c60;
-
+    --network-opacity: .2;
+    
     /* Semantic Colors */
     --success: #34d399;
     --warning: #fbbf24;
@@ -81,6 +82,7 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.35s ease;
     --transition-slow: 0.5s ease;
+    
   }
 
   body.light {
@@ -93,6 +95,7 @@
     --muted: #45617e;
     --glass: rgba(255, 255, 255, 0.9);
     --logo: #489c60;
+    --network-opacity: .5;
 
     /* Semantic */
     --success: #059669;

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+
 export default function HeroSection() {
   // Animation settings for structural impact on landing
   const textContainerVariants = {
@@ -110,7 +111,13 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)]"
             >
-              <Link href="https://github.com/SylvenOS/" target="_blank">Become a Contributor</Link>
+              <Link
+                  href="https://github.com/SylvenOS/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                Become a Contributor
+              </Link>
             </motion.button>
           </motion.div>
 
@@ -132,7 +139,11 @@ export default function HeroSection() {
           className="lg:col-span-6 relative w-full h-[450px] md:h-[550px] rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md overflow-hidden shadow-[var(--shadow-lg)] group"
         >
           {/* Constellation Structural Vector Paths Grid */}
-          <svg className="absolute inset-0 w-full h-full opacity-20 text-[var(--border)] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            className="absolute inset-0 w-full h-full text-[var(--border)] pointer-events-none"
+            style={{ opacity: "var(--network-opacity)" }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <line x1="20%" y1="15%" x2="48%" y2="35%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
             <line x1="20%" y1="15%" x2="10%" y2="42%" stroke="currentColor" strokeWidth="1" />
             <line x1="65%" y1="10%" x2="48%" y2="35%" stroke="currentColor" strokeWidth="1" />
@@ -164,7 +175,7 @@ export default function HeroSection() {
               {/* Central Core Identity Sphere Element */}
               <div 
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[var(--bg)] border-2 flex items-center justify-center font-mono text-xs font-bold tracking-tighter transition-all shadow-[var(--shadow-sm)] select-none group-hover/node:border-[var(--text)]"
-                style={{ borderColor: node.color, color: node.title === "System" ? "var(--heading)" : "var(--text)" }}
+                style={{ borderColor: node.color, color: "var(--text)",}}
               >
                 {node.initial}
               </div>

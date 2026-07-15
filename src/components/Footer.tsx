@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowUpRight, Mail, Globe, Heart } from "lucide-react";
-import { FaGithub, FaDiscord, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -48,17 +48,17 @@ export default function Footer() {
             {[
               {
                 icon: <FaGithub size={18} />,
-                href: "https://github.com",
+                href: "https://github.com/sylvenos",
                 label: "GitHub",
               },
               {
-                icon: <FaDiscord size={18} />,
-                href: "https://discord.com",
-                label: "Discord",
+                icon: <FaLinkedin size={18} />,
+                href: "https://linkedin.com/company/sylvenos",
+                label: "LinkedIn",
               },
               {
                 icon: <FaXTwitter size={18} />,
-                href: "https://x.com",
+                href: "https://x.com/sylvenos_",
                 label: "Twitter",
               },
               {
