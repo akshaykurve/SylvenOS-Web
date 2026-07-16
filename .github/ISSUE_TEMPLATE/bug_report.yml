@@ -5,6 +5,7 @@ title: "[BUG]: "
 labels:
   - "🐛 bug"
 
+
 body:
   - type: markdown
     attributes:
