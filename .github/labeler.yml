@@ -1,0 +1,57 @@
+frontend:
+  - "src/components/**"
+  - "src/app/**"
+
+documentation:
+  - "**/*.md"
+
+community:
+  - ".github/**"
+  - "CONTRIBUTING.md"
+
+assets:
+  - "public/**"
+
+configuration:
+  - "package.json"
+  - "package-lock.json"
+  - "tsconfig.json"
+  - "next.config.*"
+
+dependencies:
+  - "package.json"
+  - "package-lock.json"
+
+
+
+
+
+good-first-issue:
+  - "examples/**"
+
+documentation:
+  - "**/*.md"
+
+community:
+  - ".github/ISSUE_TEMPLATE/**"
+  - ".github/PULL_REQUEST_TEMPLATE.md"
+  - "CODE_OF_CONDUCT.md"
+  - "CONTRIBUTING.md"
+
+
+
+
+
+
+
+
+#   "❗️ migrations":
+# - changed-files:
+#   - any-glob-to-any-file:
+#     - packages/prisma/migrations/**/migration.sql
+
+# "❗️ .env changes":
+# - changed-files:
+#   - any-glob-to-any-file:
+#     - .env.example
+#     - .env.appStore.example
