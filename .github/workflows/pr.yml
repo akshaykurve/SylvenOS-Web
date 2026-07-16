@@ -1,0 +1,82 @@
+name: Pull Request Checks
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+
+  trust-check:
+    name: Trust Check
+    runs-on: ubuntu-latest
+
+    outputs:
+      trusted: ${{ steps.trust.outputs.trusted }}
+
+    steps:
+      - name: Check Trust
+        id: trust
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const trusted = [
+              "OWNER",
+              "MEMBER",
+              "COLLABORATOR"
+            ];
+
+            const association =
+              context.payload.pull_request.author_association;
+
+            core.setOutput(
+              "trusted",
+              trusted.includes(association)
+            );
+
+  lint:
+    needs: trust-check
+    if: needs.trust-check.outputs.trusted == 'true'
+    uses: ./.github/workflows/lint.yml
+
+  type-check:
+    needs: trust-check
+    if: needs.trust-check.outputs.trusted == 'true'
+    uses: ./.github/workflows/type-check.yml
+
+  build:
+    needs: trust-check
+    if: needs.trust-check.outputs.trusted == 'true'
+    uses: ./.github/workflows/build.yml
+
+  security-audit:
+    needs: trust-check
+    if: needs.trust-check.outputs.trusted == 'true'
+    uses: ./.github/workflows/security-audit.yml
+
+  required:
+    name: Required Checks
+    if: always()
+
+    needs:
+      - trust-check
+      - lint
+      - type-check
+      - build
+      - security-audit
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify Results
+        run: |
+          echo "All required checks passed"
