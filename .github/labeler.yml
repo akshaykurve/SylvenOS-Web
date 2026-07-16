@@ -1,57 +1,53 @@
-frontend:
-  - "src/components/**"
-  - "src/app/**"
-
-documentation:
-  - "**/*.md"
-
-community:
-  - ".github/**"
-  - "CONTRIBUTING.md"
-
-assets:
+# Frontend changes
+🎨 frontend:
+  - "src/**"
   - "public/**"
 
-configuration:
+# Documentation
+📚 documentation:
+  - "**/*.md"
+  - "README.md"
+  - "docs/**"
+
+# Backend / Configuration
+⚙️ backend:
   - "package.json"
   - "package-lock.json"
   - "tsconfig.json"
   - "next.config.*"
+  - "server/**"
+  - "api/**"
+  - "backend/**"
 
-dependencies:
-  - "package.json"
-  - "package-lock.json"
+# Security-related files
+🔒 security:
+  - "SECURITY.md"
+  - ".github/workflows/security*"
+  - "**/*auth*"
+  - "**/*jwt*"
 
+# Testing
+🧪 testing:
+  - "tests/**"
+  - "__tests__/**"
+  - "**/*.test.*"
+  - "**/*.spec.*"
 
-
-
-
-good-first-issue:
-  - "examples/**"
-
-documentation:
-  - "**/*.md"
-
-community:
-  - ".github/ISSUE_TEMPLATE/**"
-  - ".github/PULL_REQUEST_TEMPLATE.md"
+# Community / Governance files
+🚨 needs approval:
+  - ".github/**"
   - "CODE_OF_CONDUCT.md"
   - "CONTRIBUTING.md"
+  - ".github/PULL_REQUEST_TEMPLATE.md"
 
+# Good first issue examples
+good first issue:
+  - "examples/**"
 
+# Feature work
+✨ feature:
+  - "features/**"
 
-
-
-
-
-
-#   "❗️ migrations":
-# - changed-files:
-#   - any-glob-to-any-file:
-#     - packages/prisma/migrations/**/migration.sql
-
-# "❗️ .env changes":
-# - changed-files:
-#   - any-glob-to-any-file:
-#     - .env.example
-#     - .env.appStore.example
+# Bug fixes
+🐛 bug:
+  - "fixes/**"

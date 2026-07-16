@@ -1,18 +1,60 @@
 {
-  "overview": "FocusHub is a productivity terminal engineered to orchestrate real-time system telemetry and contextual focus metrics directly from your workflow.",
+  "name": "SylvenOS",
+  "type": "Open Source Developer Ecosystem",
+
+  "overview": "SylvenOS is an open-source developer ecosystem focused on learning, building, and sharing real-world software projects through community-driven collaboration.",
+
+  "mission": [
+    "Learn through hands-on development",
+    "Build impactful open-source projects",
+    "Educate developers through shared knowledge and mentorship"
+  ],
+
   "goals": [
-    "Optimize local telemetry parsing down to sub-10ms overhead",
-    "Develop native cross-platform system trackers",
-    "Achieve deep integration with standard developer terminals"
+    "Create a welcoming environment for contributors of all skill levels",
+    "Develop high-quality open-source tools, applications, and learning resources",
+    "Promote collaboration across diverse technologies and platforms",
+    "Help developers gain practical experience through real-world contributions"
   ],
+
   "features": [
-    "Dynamic background daemon tracker with zero CPU footprint",
-    "Cryptographically secure, localized SQLite database storing user patterns offline",
-    "Beautiful built-in Tailwind UI terminal visualizer"
+    "Community-driven open-source projects",
+    "Beginner-friendly contribution opportunities",
+    "Cross-platform software development",
+    "Technical learning resources and educational content",
+    "Collaborative developer ecosystem"
   ],
+
   "architecture": [
-    { "layer": "Frontend / GUI", "description": "Next.js client layer with hyper-optimized state pipelines." },
-    { "layer": "System Daemon", "description": "Rust-compiled background observer interfacing with kernel telemetry." }
+    {
+      "layer": "Community",
+      "description": "Contributors, maintainers, mentors, and learners collaborating across projects."
+    },
+    {
+      "layer": "Projects",
+      "description": "Open-source repositories covering web development, developer tools, automation, and educational resources."
+    },
+    {
+      "layer": "Knowledge Sharing",
+      "description": "Documentation, tutorials, guides, and community-driven learning materials."
+    }
   ],
-  "contributionGuide": "Want to contribute? Check out our issue board for tags labeled 'good first issue'. Make sure your Rust tests pass locally (`cargo test`) before opening a PR."
+
+  "contributionGuide": "We welcome contributors of all experience levels. Start with issues labeled 'good first issue', follow repository guidelines, write clear commit messages, and ensure tests and documentation are updated before opening a pull request.",
+
+  "values": [
+    "Open Source",
+    "Collaboration",
+    "Learning",
+    "Transparency",
+    "Community First"
+  ],
+
+  "repositoryStandards": {
+    "commitConvention": "Conventional Commits",
+    "pullRequestRequired": true,
+    "codeReviewRequired": true,
+    "testsRequired": true,
+    "documentationRequired": true
+  }
 }
