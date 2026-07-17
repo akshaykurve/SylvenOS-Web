@@ -45,27 +45,54 @@ jobs:
               trusted.includes(association)
             );
 
+  notify-untrusted:
+    name: Notify Untrusted Contributor
+    needs: trust-check
+    if: github.event.action == 'opened' && needs.trust-check.outputs.trusted != 'true'
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "👋 Thank you for contributing to SylvenOS! This PR requires maintainer review before CI checks can be executed."
+              });
+
   lint:
+    name: Lint
     needs: trust-check
     if: needs.trust-check.outputs.trusted == 'true'
     uses: ./.github/workflows/lint.yml
 
   type-check:
+    name: Type Check
     needs: trust-check
     if: needs.trust-check.outputs.trusted == 'true'
     uses: ./.github/workflows/type-check.yml
 
   build:
+    name: Build
     needs: trust-check
     if: needs.trust-check.outputs.trusted == 'true'
     uses: ./.github/workflows/build.yml
 
   security-audit:
+    name: Security Audit
     needs: trust-check
     if: needs.trust-check.outputs.trusted == 'true'
     uses: ./.github/workflows/security-audit.yml
 
   unit-tests:
+    name: Unit Tests
     needs: trust-check
     if: needs.trust-check.outputs.trusted == 'true'
     uses: ./.github/workflows/unit-tests.yml
@@ -84,36 +111,24 @@ jobs:
       - unit-tests
 
     steps:
-      - name: Verify all required checks passed
+      - name: Verify checks
         run: |
           if [[ "${{ needs.trust-check.outputs.trusted }}" != "true" ]]; then
             echo "Untrusted PR - checks intentionally skipped"
             exit 0
           fi
 
-          [[ "${{ needs.lint.result }}" == "success" ]] || {
-            echo "Lint check failed"
-            exit 1
-          }
-
-          [[ "${{ needs.type-check.result }}" == "success" ]] || {
-            echo "Type check failed"
-            exit 1
-          }
-
-          [[ "${{ needs.build.result }}" == "success" ]] || {
-            echo "Build failed"
-            exit 1
-          }
-
-          [[ "${{ needs.security-audit.result }}" == "success" ]] || {
-            echo "Security audit failed"
-            exit 1
-          }
-
-          [[ "${{ needs.unit-tests.result }}" == "success" ]] || {
-            echo "Unit tests failed"
-            exit 1
-          }
+          for check in \
+            "${{ needs.lint.result }}" \
+            "${{ needs.type-check.result }}" \
+            "${{ needs.build.result }}" \
+            "${{ needs.security-audit.result }}" \
+            "${{ needs.unit-tests.result }}"
+          do
+            [[ "$check" == "success" ]] || {
+              echo "A required check failed"
+              exit 1
+            }
+          done
 
           echo "All required checks passed"
