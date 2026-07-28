@@ -1,9 +1,4 @@
 
----
-
-# `SECURITY.md`
-
-```md
 # Security Policy
 
 ## Reporting a Vulnerability
