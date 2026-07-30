@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function CoreValues() {
   // Cascading grid container animation configuration
@@ -13,18 +13,18 @@ export default function CoreValues() {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 15,
-      },
+  const cardVariants: Variants = { 
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { 
+      type: "spring", 
+      stiffness: 100, 
+      damping: 10 
     },
-  };
+  },
+};
 
   // Data mapping for six values including semantic coloring and unique inline vector geometries
   const values = [

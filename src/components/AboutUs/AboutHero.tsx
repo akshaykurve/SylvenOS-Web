@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion ,Variants } from "motion/react";
 
 export default function HeroSection() {
   // Cascading entry animation variants for text components
@@ -11,7 +11,7 @@ export default function HeroSection() {
       y: 0,
       transition: {
         delay: i * 0.12,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 70,
         damping: 14,
       },
@@ -19,19 +19,19 @@ export default function HeroSection() {
   };
 
   // Floating animations for background or ecosystem nodes
-  const floatAnimation = (delay = 0, duration = 6) => ({
-    animate: {
-      y: [0, -12, 0],
-      rotate: [0, 3, -3, 0],
-      transition: {
-        duration: duration,
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-        ease: "easeInOut",
-        delay: delay,
-      },
+  const floatAnimation = (delay: number, yOffset: number): Variants => ({
+  animate: {
+    y: [0, yOffset, 0],
+    rotate: [0, 2, -2, 0],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse", 
+      ease: "easeInOut", 
+      delay: delay,
     },
-  });
+  },
+});
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-[100px]  text-[var(--text)] flex items-center">

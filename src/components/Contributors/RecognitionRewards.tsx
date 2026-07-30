@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 interface RewardCard {
   title: string;
@@ -11,14 +11,14 @@ interface RewardCard {
 }
 
 export default function RecognitionRewards() {
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.05 },
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

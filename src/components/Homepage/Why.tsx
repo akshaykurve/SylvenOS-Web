@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 
 export default function WhySylvenOS() {
   // Stagger sequence for grid arrival
@@ -13,7 +13,7 @@ export default function WhySylvenOS() {
   };
 
   // Smooth item scale-in animation
-  const itemVariants = {
+  const itemVariants:Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

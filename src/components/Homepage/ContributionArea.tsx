@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function ContributionAreas() {
   const areas = [
@@ -120,7 +120,7 @@ export default function ContributionAreas() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -128,7 +128,7 @@ export default function ContributionAreas() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, scale: 0.96, y: 15 },
     visible: {
       opacity: 1,

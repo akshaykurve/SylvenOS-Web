@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 // Absolute structural typing mapping exactly to your API payload configuration
 interface GitHubOrgData {
-  login: string;
   id: number;
+  login: string;
   public_repos: number;
   followers: number;
   [key: string]: any;
@@ -39,14 +39,14 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
   const membersList = stats?.membersData ?? [];
 
   // Sequential stagger configurations
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.06 },
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

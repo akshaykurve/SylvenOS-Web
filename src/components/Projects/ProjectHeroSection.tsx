@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function HeroSection() {
   // Stagger configurations for standard typography entry
-  const textContainerVariants = {
+  const textContainerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -12,7 +12,7 @@ export default function HeroSection() {
     },
   };
 
-  const textItemVariants = {
+  const textItemVariants:Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,

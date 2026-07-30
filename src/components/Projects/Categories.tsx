@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function ProjectCategories() {
   // Stagger configurations for standard layout reveal
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -13,7 +13,7 @@ export default function ProjectCategories() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

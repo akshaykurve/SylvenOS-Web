@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function CommunityValues() {
   const values = [
@@ -64,7 +64,7 @@ export default function CommunityValues() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -72,7 +72,7 @@ export default function CommunityValues() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,

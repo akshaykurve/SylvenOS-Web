@@ -1,7 +1,7 @@
 "use client";
 
 import { GitHubContributor } from "@/lib/type";
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function TopContributors({ contributors = [], limit = 3 }: { contributors: GitHubContributor[]; limit?: number }) {
   // 1. Sort dynamically by contribution count descending & slice to isolate top nodes
@@ -9,12 +9,12 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
     .sort((a, b) => (b.contributions || 0) - (a.contributions || 0))
     .slice(0, limit);
 
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.08 } },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

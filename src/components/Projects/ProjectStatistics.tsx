@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 interface ProjectStatisticsProps {
   projectCount: number;
@@ -15,7 +15,7 @@ export default function ProjectStatistics({
 }: ProjectStatisticsProps) {
   
   // Cascading block animation settings
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -24,7 +24,7 @@ export default function ProjectStatistics({
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

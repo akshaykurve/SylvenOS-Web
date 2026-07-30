@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { ArrowRight, Users } from "lucide-react";
 import Link from "next/link";
 import { ProfileCard } from "./index";

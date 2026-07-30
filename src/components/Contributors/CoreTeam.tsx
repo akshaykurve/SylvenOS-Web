@@ -1,7 +1,7 @@
 // components/DynamicCoreTeam.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 // Extend the contract to accommodate the real display name
 export interface EnrichedGitHubMember {
@@ -14,19 +14,19 @@ export interface EnrichedGitHubMember {
 
 interface DynamicCoreTeamProps {
   members: EnrichedGitHubMember[];
-  orgDescription: string | null;
+  orgDescription: any;
 }
 
 export default function DynamicCoreTeam({
   members = [],
   orgDescription,
 }: DynamicCoreTeamProps) {
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.04 } },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,

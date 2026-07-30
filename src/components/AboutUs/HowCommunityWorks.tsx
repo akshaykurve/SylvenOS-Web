@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function HowCommunityWorks() {
   // Cascading animation settings for the timeline progression
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -13,7 +13,7 @@ export default function HowCommunityWorks() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -26,7 +26,7 @@ export default function HowCommunityWorks() {
     },
   };
 
-  const dynamicLineVariants = {
+  const dynamicLineVariants:Variants = {
     hidden: { scaleY: 0 },
     visible: {
       scaleY: 1,

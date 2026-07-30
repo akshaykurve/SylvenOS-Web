@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 import { TECH_TAXONOMY } from "@/config/taxonomy"; // Import your local map
 
 export interface Project {

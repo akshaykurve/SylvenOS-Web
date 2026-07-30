@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function EcosystemRoadmap() {
   const phases = [
@@ -34,7 +34,7 @@ export default function EcosystemRoadmap() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -42,7 +42,7 @@ export default function EcosystemRoadmap() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 35 },
     visible: {
       opacity: 1,

@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function WhoWeAre() {
   // Graceful fade-in-up variants for staggered text and blocks
-  const elementVariants = {
+  const elementVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i = 0) => ({
       opacity: 1,

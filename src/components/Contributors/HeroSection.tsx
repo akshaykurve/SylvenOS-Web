@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
 
 export default function HeroSection() {
   // Animation settings for structural impact on landing
-  const textContainerVariants = {
+  const textContainerVariants:Variants = {
     hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
@@ -20,12 +20,12 @@ export default function HeroSection() {
     },
   };
 
-  const textItemVariants = {
+  const textItemVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 60, damping: 14 } },
   };
 
-  const networkContainerVariants = {
+  const networkContainerVariants:Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -34,7 +34,7 @@ export default function HeroSection() {
     },
   };
 
-  const nodeVariants = {
+  const nodeVariants:Variants = {
     hidden: { opacity: 0, scale: 0 },
     visible: { 
       opacity: 1, 

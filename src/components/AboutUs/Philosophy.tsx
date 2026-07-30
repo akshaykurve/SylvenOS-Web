@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function SylvenPhilosophy() {
   // Line drawing and item sequential cascade configurations
-  const pipelineVariants = {
+  const pipelineVariants:Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -13,7 +13,7 @@ export default function SylvenPhilosophy() {
     },
   };
 
-  const stepVariants = {
+  const stepVariants:Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -26,7 +26,7 @@ export default function SylvenPhilosophy() {
     },
   };
 
-  const trackVariants = {
+  const trackVariants:Variants = {
     hidden: { scaleY: 0 },
     visible: {
       scaleY: 1,

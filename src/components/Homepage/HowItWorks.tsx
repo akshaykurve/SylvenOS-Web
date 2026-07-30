@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 export default function HowItWorks() {
   const steps = [
@@ -50,7 +50,7 @@ export default function HowItWorks() {
   ];
 
   // Motion Variants
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -58,7 +58,7 @@ export default function HowItWorks() {
     },
   };
 
-  const stepVariants = {
+  const stepVariants:Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -124,7 +124,7 @@ export default function HowItWorks() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="w-9 h-9 md:w-16 md:h-16 rounded-[var(--radius-sm)] bg-[var(--bg)] border-2 border-[var(--card-border)] flex items-center justify-center transition-colors duration-[var(--transition-normal)]"
-                  style={{ '--tw-border-opacity': '1' }}
+                  style={{ '--tw-border-opacity': '1' } as React.CSSProperties}
                 >
                   <span 
                     className="font-mono text-xs md:text-lg font-bold" 

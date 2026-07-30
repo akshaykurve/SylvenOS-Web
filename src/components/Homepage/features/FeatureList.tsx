@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 
 export default function FeaturesList() {
   // Staggered sequence for card entrance
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,7 +15,7 @@ export default function FeaturesList() {
   };
 
   // Card physics for sliding up when scrolled into view
-  const cardVariants = {
+  const cardVariants:Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -29,7 +29,7 @@ export default function FeaturesList() {
   };
 
   // Icon micro-interaction on card hover
-  const iconVariants = {
+  const iconVariants:Variants = {
     rest: { scale: 1, rotate: 0 },
     hover: {
       scale: 1.12,

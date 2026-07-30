@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
 export default function JoinTheMovement() {
   // Kinetic presentation animations for high-impact closing state
-  const containerVariants = {
+  const containerVariants:Variants = {
     hidden: { opacity: 0, scale: 0.98 },
     visible: {
       opacity: 1,
@@ -19,7 +19,7 @@ export default function JoinTheMovement() {
     },
   };
 
-  const elementVariants = {
+  const elementVariants:Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

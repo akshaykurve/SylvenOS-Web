@@ -15,10 +15,12 @@ export async function getGithubStats() {
       contributors: 13,
       repos: 6,
       orgData: {
+        id:1,
         login: orgName,
         public_repos: 6,
         followers: 16,
         location: "India",
+        description:"nexus point of tech community"
       },
       membersData: [
         {
@@ -91,7 +93,7 @@ export async function getGithubStats() {
     return { 
       contributors: 0, 
       membersData: [], 
-      orgData: { login: orgName, public_repos: 0, followers: 0, location: "Global" }, 
+      orgData: {id:1, login: orgName, public_repos: 0, followers: 0, location: "Global" }, 
       repos: 0 
     };
   }

@@ -2,7 +2,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { useCountUp } from "@/hooks/UseCountUp";
 
 
