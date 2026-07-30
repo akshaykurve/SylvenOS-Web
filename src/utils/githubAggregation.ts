@@ -5,13 +5,20 @@ import {
   RepoContribution,
 } from "@/lib/type";
 import { Octokit } from "@octokit/rest";
+import { unstable_cache } from "next/cache";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-export async function getOrganizationRankings(
-  orgName: string,
+// ==========================================
+// RAW UNCACHED INTERNAL FETCH
+// ==========================================
+
+async function getOrganizationRankingsRaw(
+  orgName: string
 ): Promise<AggregatedContributor[]> {
   try {
+
+    
     // 1. Fetch all public repositories belonging to the organization
     const { data: repos } = await octokit.repos.listForOrg({
       org: orgName,
@@ -45,23 +52,21 @@ export async function getOrganizationRankings(
 
             if (!contributionMap[contributor.login]) {
               contributionMap[contributor.login] = {
-                id: contributor.id ?? 0, // 👈 Fallback for number
-                avatar_url: contributor.avatar_url ?? "", // 👈 Fallback for string
-                html_url: contributor.html_url ?? "", // 👈 Fallback for string
+                id: contributor.id ?? 0,
+                avatar_url: contributor.avatar_url ?? "",
+                html_url: contributor.html_url ?? "",
                 total: 0,
                 repos: {},
               };
             }
 
-            contributionMap[contributor.login].total +=
-              contributor.contributions;
-            contributionMap[contributor.login].repos[repo.name] =
-              contributor.contributions;
+            contributionMap[contributor.login].total += contributor.contributions;
+            contributionMap[contributor.login].repos[repo.name] = contributor.contributions;
           }
         } catch (e) {
           console.warn(`Skipping empty repo: ${repo.name}`);
         }
-      }),
+      })
     );
 
     // 3. Transform profiles and search historical commit registries
@@ -80,24 +85,18 @@ export async function getOrganizationRankings(
 
           recentActivity = searchResults.items.map((item: any) => ({
             id: item.sha,
-            repoName: item.repository.name, // Extracted directly from the commit metadata object
+            repoName: item.repository.name,
             type: "Commit",
-            title: item.commit.message.split("\n")[0], // Capture the main commit title summary line
-            timestamp: new Date(item.commit.author.date).toLocaleDateString(
-              "en-US",
-              {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              },
-            ),
+            title: item.commit.message.split("\n")[0],
+            timestamp: new Date(item.commit.author.date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            }),
             url: item.html_url,
           }));
         } catch (err) {
-          console.error(
-            `Failed searching commit histories for node: ${login}`,
-            err,
-          );
+          console.error(`Failed searching commit histories for node: ${login}`, err);
         }
 
         const repoBreakdown: RepoContribution[] = Object.entries(details.repos)
@@ -114,7 +113,7 @@ export async function getOrganizationRankings(
           repoBreakdown,
           recentActivity,
         };
-      }),
+      })
     );
 
     return contributorProfiles
@@ -123,8 +122,25 @@ export async function getOrganizationRankings(
   } catch (error) {
     console.error(
       "Critical failure during organization data compilation pipeline:",
-      error,
+      error
     );
     return [];
   }
+}
+
+// ==========================================
+// EXPORTED CACHED WRAPPER (`unstable_cache`)
+// ==========================================
+
+export async function getOrganizationRankings(
+  orgName: string
+): Promise<AggregatedContributor[]> {
+  return unstable_cache(
+    async () => getOrganizationRankingsRaw(orgName),
+    ["org-rankings-v1", orgName],
+    {
+      revalidate: 3600, // Revalidates every 1 hour (3600 seconds)
+      tags: ["github-telemetry", "org-rankings", `org-${orgName}`],
+    }
+  )();
 }

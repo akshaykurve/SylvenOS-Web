@@ -14,9 +14,7 @@ export const revalidate = 3600;
 
 const Contribute = async() => {
     const stats = await getGithubStats();
-    // console.log("🚀 ~ Contribute ~ stats:", stats)
    const dynamicRankings = await getOrganizationRankings("SylvenOS");
-    // console.log(stats)
   return (
     <main>
         <HeroSection/>
