@@ -1,3 +1,14 @@
+name = "sylvenosweb"
+compatibility_date = "2026-07-30"
+compatibility_flags = ["nodejs_compat"]
+main = ".open-next/worker.js"
+
+# Tells Cloudflare where your public assets (like images/CSS) live
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Fixes your previous WORKER_SELF_REFERENCE error!
 [[services]]
 binding = "WORKER_SELF_REFERENCE"
 service = "sylvenosweb"
