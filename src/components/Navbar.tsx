@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   const [isLight, setIsLight] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
@@ -21,10 +23,43 @@ export default function Navbar() {
     return false;
   });
 
+  // Handle theme body class
   useEffect(() => {
     const root = document.body;
     root.classList.toggle("light", isLight);
   }, [isLight]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Handle click outside and Escape key
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+      document.addEventListener("keydown", handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
+    }
+  }, [isMenuOpen]);
 
   const toggleTheme = () => {
     const nextState = !isLight;
@@ -40,94 +75,119 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 h-18 w-full  flex justify-center top-1 z-50 px-16">
-      <div className="w-full rounded-[36px] h-full  backdrop-blur-lg bg-[#050f1f]/75 text-white z-50 flex items-center justify-between px-2 md:px-[2%] ">
+    <nav ref={navRef} className="fixed left-0 right-0 h-[72px] w-full flex justify-center top-2 md:top-4 z-50 px-4 md:px-16">
+      <div className="w-full rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[#050f1f]/80 text-white z-50 flex items-center justify-between px-4 md:px-6 border border-white/5 shadow-lg">
         
-      
-      {/* Logo Section */}
-      <Link
-        href="/"
-        className="flex items-center gap-2.5 text-xl md:text-2xl font-extrabold tracking-wide cursor-pointer no-underline text-white"
-      >
-        <div className="relative w-10 h-10">
-          <Image
-            src="/IMG_20260628_143818.png"
-            alt="Sylven OS Logo"
-            fill
-            sizes="40px"
-            className="object-contain"
-            priority
-            unoptimized
-          />
-        </div>
-        <span>Sylven OS</span>
-      </Link>
+        {/* Logo Section */}
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-lg md:text-xl font-extrabold tracking-wide cursor-pointer no-underline text-white z-50"
+        >
+          <div className="relative w-8 h-8 md:w-10 md:h-10">
+            <Image
+              src="/IMG_20260628_143818.png"
+              alt="Sylven OS Logo"
+              fill
+              sizes="(max-width: 768px) 32px, 40px"
+              className="object-contain"
+              priority
+              unoptimized
+            />
+          </div>
+          <span>Sylven OS</span>
+        </Link>
 
-      {/* Navigation Links */}
-      <ul className="flex items-center gap-[35px] text-sm md:text-base list-none m-0 p-0 h-full">
-        {navLinks.map((link, i) => {
-          // Accurate trailing edge active route matches
-          const isActive = pathname === link.href;
+        {/* Desktop Navigation Links */}
+        <ul className="hidden md:flex items-center gap-[35px] text-sm md:text-base list-none m-0 p-0 h-full">
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href;
 
-          return (
-            <li key={i} className="relative flex items-center h-full">
-              <Link
-                href={link.href}
-                className={`px-4 py-2 rounded-full transition-all duration-300 font-medium
-${
-  isActive
-    ? "bg-white text-[#0a1a33]"
-    : "text-slate-300 hover:text-white hover:bg-white/25"
-}`}
-              >
-                {link.text}
+            return (
+              <li key={i} className="relative flex items-center h-full">
+                <Link
+                  href={link.href}
+                  className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+                    isActive
+                      ? "bg-white text-[#0a1a33]"
+                      : "text-slate-300 hover:text-white hover:bg-white/25"
+                  }`}
+                >
+                  {link.text}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
-                {/* {isActive && (
-                  <motion.div
-                    layoutId="activeNavBorder"
-                    className="absolute bottom-[5px] left-0 right-0 h-1 rounded-full bg-[#7EC8FF] shadow-[0_0_12px_rgba(126,200,255,0.6)]"
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}
-                  />
-                )} */}
-              </Link>
-            </li>
-          );
-        })}
-
-        {/* Toggle Controller Layout */}
-        <li className="ml-2">
+        {/* Right Actions (Theme Toggle + Mobile Menu Toggle) */}
+        <div className="flex items-center gap-3 md:gap-0 z-50">
+          {/* Theme Toggle Controller */}
           <button
             onClick={toggleTheme}
             aria-label="Toggle visual layout mode"
-            className="w-[60px] h-[32px] bg-slate-950 border border-white rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1"
+            className="w-[56px] h-[30px] md:w-[60px] md:h-[32px] bg-slate-950 border border-white/20 hover:border-white/40 transition-colors rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1 md:ml-6"
           >
-            <span className="text-[10px] pl-1 ">🌙</span>
-            <span className="text-[10px] pr-1 ">☀️</span>
+            <span className="text-[10px] pl-1">🌙</span>
+            <span className="text-[10px] pr-1">☀️</span>
 
-            {/* Framer Motion Layout Key for Fluid State Shifts */}
             <motion.div
-              className="absolute w-6 h-6 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-md"
+              className="absolute w-[22px] h-[22px] md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-md"
               layout
               animate={{
-                left: isLight ? "32px" : "4px",
+                left: isLight ? "calc(100% - 26px)" : "4px",
               }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             >
               {isLight ? (
-                <Moon size={13} className="text-slate-950 fill-slate-950" />
+                <Moon size={12} className="text-slate-950 fill-slate-950" />
               ) : (
-                <Sun size={13} className="text-amber-500 fill-amber-500" />
+                <Sun size={12} className="text-amber-500 fill-amber-500" />
               )}
             </motion.div>
           </button>
-        </li>
-      </ul>
-    
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Navigation Dropdown */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -15, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute top-[85px] left-4 right-4 rounded-[24px] backdrop-blur-xl bg-[#050f1f]/95 border border-white/10 p-4 flex flex-col gap-2 shadow-2xl md:hidden z-40"
+          >
+            {navLinks.map((link, i) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  className={`px-5 py-3.5 rounded-xl transition-all duration-300 font-medium flex items-center ${
+                    isActive
+                      ? "bg-white text-[#0a1a33]"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.text}
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

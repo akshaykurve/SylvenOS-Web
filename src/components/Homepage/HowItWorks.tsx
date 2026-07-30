@@ -68,7 +68,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="relative ">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Visual Accent Ambient Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_50%_50%_at_0%_50%,#000_20%,transparent_100%)] opacity-[0.1] pointer-events-none" />
 
