@@ -17,7 +17,9 @@ export default async function Page() {
   // Fetch live stats during build time / on revalidation intervals
   const stats = await getEcosystemStats("sylvenos");
   const featuredProjects = await getFeaturedProjects("sylvenos")
+  
   const allProjects = await getAllProjects("sylvenos")
+  
   return (
     <main>
       <HeroSection />

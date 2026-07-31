@@ -153,3 +153,57 @@ export interface AggregatedContributor {
   recentActivity: ContributionActivity[]; // The semantic "what" array
   name?: string;
 }
+
+
+//project data 
+export interface ArchitectureLayer {
+  layer: string;
+  description: string;
+}
+
+export interface CurrentProgress {
+  percentage: number;
+  phase: string;
+}
+
+export interface ProjectData {
+  name: string;
+  slug: string;
+  description: string;
+  avatarUrl: string;
+  status: string; // e.g., 'Active' | 'Archived' | 'In Progress'
+  difficulty: string; // e.g., 'Beginner' | 'Intermediate' | 'Advanced'
+  techStack: string[];
+  language: string;
+  stars: number;
+  contributorsCount: number;
+  openIssuesCount: number;
+  license: string;
+  createdAt: string; // ISO 8601 date string
+  updatedAt: string; // ISO 8601 date string
+  repoUrl: string;
+  docsUrl: string;
+  overview: string;
+  goals: string[];
+  features: string[];
+  architecture: ArchitectureLayer[];
+  contributionGuide: string;
+  currentProgress: CurrentProgress;
+}
+
+// Since your console log outputs an array of these objects:
+export type ProjectDataList = ProjectData[];
+
+
+export interface featuredProjects {
+ name: string;
+ description: string;
+ avatarUrl: string;
+ status: string;
+ difficulty: string;
+ techStack: string[];
+ lastUpdated: string;
+ openIssues: number;
+ repoUrl: string;
+ docsUrl: string;
+}

@@ -3,16 +3,13 @@
 import { useMemo, useState } from "react";
 import { motion, Variants } from "motion/react";
 import { TECH_TAXONOMY } from "@/config/taxonomy"; // Import your local map
+import { ProjectData } from "@/lib/type";
 
-export interface Project {
-  name: string;
-  slug: string;
-  techStack: string[];
-  status: "Active" | "Planning" | "Completed" | "Archived";
-}
+
+
 
 interface DynamicTechStackProps {
-  projects: Project[];
+  projects: ProjectData[];
 }
 
 export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
@@ -47,6 +44,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
         }
       });
     });
+    // console.log("🚀 ~ DynamicTechStack ~ projects:", projects)
 
     // Sort items by active usage frequency
     Object.keys(categories).forEach((cat) => {

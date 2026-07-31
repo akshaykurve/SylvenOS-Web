@@ -75,8 +75,9 @@ export default function Navbar() {
   ];
 
   return (
-    <nav ref={navRef} className="fixed left-0 right-0 h-[72px] w-full flex justify-center top-2 md:top-4 z-50 px-4 md:px-16">
-      <div className="w-full rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[#050f1f]/80 text-white z-50 flex items-center justify-between px-4 md:px-6 border border-white/5 shadow-lg">
+    
+    <nav ref={navRef} className="fixed left-0 right-0 h-[72px]  flex justify-center top-2 md:top-4 z-50 px-4 md:px-16">
+      <div className="mx-auto w-full max-w-7xl rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[#050f1f]/80 border border-white/5 shadow-lg flex items-center justify-between px-4 md:px-6">
         
         {/* Logo Section */}
         <Link

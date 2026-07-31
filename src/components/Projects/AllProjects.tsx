@@ -3,10 +3,11 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { ProjectRepositoryData } from "@/lib/github";
+import { ProjectData } from "@/lib/type";
+
 
 interface ProjectExplorerProps {
-  projects: ProjectRepositoryData[];
+  projects: ProjectData[];
 }
 
 export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps) {

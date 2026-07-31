@@ -1,10 +1,11 @@
 "use client";
 
+import { featuredProjects, ProjectData } from "@/lib/type";
 import { motion, Variants } from "motion/react";
-import { FeaturedProjectData } from "@/lib/github";
+
 
 interface FeaturedProjectsProps {
-  projects: FeaturedProjectData[];
+  projects: featuredProjects[];
 }
 
 export default function FeaturedProjects({
