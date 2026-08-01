@@ -25,12 +25,12 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
   }
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] text-[var(--text)] py-20 px-6 md:px-[15%]">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-[var(--bg)] text-[var(--text)] py-24 px-6 md:px-[15%]">
+      <div className="max-w-4xl  mx-auto">
         
         {/* Navigation Breadcrumb */}
         <div className="mb-8 font-mono text-xs">
-          <Link href="/registry" className="text-[var(--disabled)] hover:text-[var(--primary)] transition-colors">
+          <Link href="/projects#projects" className="text-[var(--disabled)] hover:text-[var(--primary)] transition-colors">
             ← BACK TO REGISTRY
           </Link>
         </div>

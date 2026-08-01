@@ -10,39 +10,23 @@ export interface CustomMetadata {
 
 export const localProjectRegistry: Record<string, CustomMetadata> = {
   "sylvenos-web": {
-    overview: "FocusHub is our flagship performance-monitoring and productivity terminal. It orchestrates real-time process monitoring, system telemetry, and contextual focus metrics directly from your developer workflow.",
+    overview: "SylvenOS-Web is the central interactive web platform and portal for the Sylven OS ecosystem. It delivers real-time project metrics, contributor insights, documentation, and system telemetry through a hyper-responsive Next.js interface.",
     goals: [
-      "Optimize local telemetry parsing down to sub-10ms overhead",
-      "Develop native cross-platform system trackers for Linux, macOS, and Windows",
-      "Achieve deep integration with standard developer terminals and IDE extensions"
+      "Provide an ultra-fast, server-rendered entry point for the Sylven OS developer ecosystem",
+      "Deliver dynamic metric tracking for ecosystem projects and real-time performance visualizers",
+      "Maintain strict sub-100ms client-side page transitions with zero hydration mismatches"
     ],
     features: [
-      "Dynamic background daemon tracker with zero CPU footprint when idling",
-      "Cryptographically secure, localized SQLite database storing user patterns offline",
-      "Beautiful built-in Tailwind UI terminal visualizer"
+      "Adaptive dark/light theme engine with SSR-safe state hydration",
+      "Interactive return & financial/metric display components with period labels",
+      "Motion-driven responsive navigation bar with intuitive mobile drawer state"
     ],
     architecture: [
-      { layer: "Frontend / GUI", description: "Next.js client layer with hyper-optimized Framer Motion state pipelines." },
-      { layer: "System Daemon", description: "Rust-compiled background observer interfacing directly with kernel telemetry." },
-      { layer: "Local Database", description: "Encrypted SQLite cluster using secure handshake validation protocols." }
+      { layer: "Frontend / Framework", description: "Next.js App Router architecture leveraging React Server Components." },
+      { layer: "UI & Styling", description: "Tailwind CSS with design tokens coupled with Framer Motion layout pipelines." },
+      { layer: "Type Safety & State", description: "Strict TypeScript definitions with client-side local storage persistence." }
     ],
-    contributionGuide: "Want to contribute to FocusHub? Check out our issue board for tags labeled 'good first issue'. Make sure your Rust tests pass locally (`cargo test`) before opening a Pull Request."
-  },
-  
-  "mesh-router": {
-    overview: "A lightweight, resilient network routing module built to coordinate high-frequency P2P state handshakes across our decentralized node ecosystem.",
-    goals: [
-      "Reduce state broadcast latency by 35% over poor connections",
-      "Establish automated route-healing algorithms when active nodes drop offline"
-    ],
-    features: [
-      "End-to-end encrypted packet wrappers using AES-256-GCM architecture",
-      "Up-to-date automatic peer routing tables refreshed dynamically over WebSockets"
-    ],
-    architecture: [
-      { layer: "Protocol Layer", description: "Custom TCP/UDP handshake bindings configured in pure Go." },
-      { layer: "Cache Manager", description: "In-memory Redis cache ring optimizing routing tables." }
-    ]
+    contributionGuide: "Want to contribute to Sylven OS Web? Check out our GitHub issue board for tags labeled 'good first issue'. Ensure all lint checks and build tasks pass (`npm run build`) before submitting a Pull Request."
   }
   
   // Add more projects here matching their exact GitHub repository names (lowercase)
