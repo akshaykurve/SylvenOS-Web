@@ -29,7 +29,7 @@ export default function JoinTheMovement() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)] flex items-center justify-center">
+    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)] overflow-hidden flex items-center justify-center">
       {/* Structural Network Grid Lines Mapping to the Center */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
       
@@ -97,7 +97,7 @@ export default function JoinTheMovement() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] text-sm font-bold tracking-wide text-[var(--text)] transition-colors duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-sm)] backdrop-blur-md"
             >
-              Explore Projects
+             <Link href="/projects#projects"> Explore Projects</Link>
             </motion.button>
 
             {/* Primary High-Octane Action Option: Become a Contributor */}

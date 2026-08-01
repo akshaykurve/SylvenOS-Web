@@ -40,10 +40,10 @@ export function HeroClient({ stats }: { stats: any }) {
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start w-full">
-          <Link href="#" className="flex items-center justify-center gap-2 px-8 py-[15px] rounded-xl font-semibold transition-transform duration-300 bg-[var(--primary)] text-white hover:scale-[1.02]">
+          <Link href="/projects" className="flex items-center justify-center gap-2 px-8 py-[15px] rounded-xl font-semibold transition-transform duration-300 bg-[var(--primary)] text-white hover:scale-[1.02]">
             Explore Projects <ArrowRight size={18} />
           </Link>
-          <Link href="#" className="flex items-center justify-center gap-2 px-8 py-[15px] rounded-xl font-semibold transition-all duration-300 border border-[var(--border)] hover:bg-[var(--glass)]">
+          <Link href="/contributors" className="flex items-center justify-center gap-2 px-8 py-[15px] rounded-xl font-semibold transition-all duration-300 border border-[var(--border)] hover:bg-[var(--glass)]">
             <Users size={18} /> Become a Contributor
           </Link>
         </motion.div>

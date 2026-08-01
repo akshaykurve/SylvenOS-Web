@@ -180,7 +180,7 @@ export default function ContributionGuide() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px]  text-[var(--text)] ">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Premium Minimal Canvas Sub-Grid Gridlines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
 

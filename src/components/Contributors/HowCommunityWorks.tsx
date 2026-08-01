@@ -86,7 +86,7 @@ export default function HowCommunityWorks() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px] text-[var(--text)]">
+    <section id="guide" className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Ambient Background Flow Element */}
       <div 
         className="absolute bottom-0 right-10 w-[700px] h-[450px] rounded-full filter blur-[150px] opacity-[0.1] pointer-events-none"

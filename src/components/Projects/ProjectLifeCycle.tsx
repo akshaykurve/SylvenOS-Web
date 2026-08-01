@@ -132,7 +132,7 @@ export default function ProjectLifecycle() {
   const currentStage = LIFECYCLE_STAGES[activeStageIndex];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px] text-[var(--text)] border-t-1 border-(--border)">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Visual Engineering Grid Mesh Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 

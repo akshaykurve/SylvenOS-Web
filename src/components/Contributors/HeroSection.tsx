@@ -57,7 +57,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-[100px]  text-[var(--text)] flex items-center">
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-[100px] overflow-hidden text-[var(--text)] flex items-center">
       {/* Background Microstructural System Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
       

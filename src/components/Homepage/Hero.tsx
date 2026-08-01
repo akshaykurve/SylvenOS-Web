@@ -34,13 +34,13 @@ export default async function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start w-full">
             <Link
-              href="#"
+              href="/projects"
               className="px-8 py-[15px] rounded-xl font-semibold transition-transform duration-300 bg-[var(--primary)] text-white no-underline hover:-translate-y-[3px] text-center"
             >
               Explore Projects
             </Link>
             <Link
-              href="#"
+              href="/contributors"
               className="px-8 py-[15px] rounded-xl font-semibold transition-all duration-300 border border-[var(--border)] text-[var(--text)] no-underline hover:bg-[var(--glass)] text-center"
             >
               Become a Contributor

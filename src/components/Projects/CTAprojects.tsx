@@ -5,7 +5,7 @@ import { motion, Variants } from "motion/react";
 
 export default function StartContributingCTA() {
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px]  text-[var(--text)]  border-t border-[var(--card-border)]">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Subtle background decorative grid layout */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.008)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.008)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       

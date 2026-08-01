@@ -66,7 +66,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
   }, [projects, searchQuery, selectedStatus, selectedTech, selectedDifficulty, sortBy]);
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px] text-[var(--text)] ">
+    <section id="projects" className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Segment */}

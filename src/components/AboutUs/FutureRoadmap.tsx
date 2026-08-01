@@ -72,7 +72,7 @@ export default function FutureRoadmap() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] overflow-hidden py-[140px] text-[var(--text)]">
       {/* Background Horizon Vector Accents */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:16rem] opacity-[0.02] pointer-events-none" />
       

@@ -62,7 +62,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
   }, [aggregatedStats]);
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px]  text-[var(--text)] ">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">

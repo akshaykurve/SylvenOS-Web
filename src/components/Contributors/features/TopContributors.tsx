@@ -26,7 +26,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
   if (topNodes.length === 0) return null;
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px]  text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Wireframe Backing */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:14rem] opacity-[0.015] pointer-events-none" />
 

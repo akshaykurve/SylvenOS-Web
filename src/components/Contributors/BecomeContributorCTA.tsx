@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
+import Link from "next/link";
 
 export default function BecomeContributorCTA() {
   const elementVariants:Variants = {
@@ -18,7 +19,7 @@ export default function BecomeContributorCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Geometry Mesh Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:12rem_12rem] opacity-[0.015] pointer-events-none" />
       
@@ -85,34 +86,34 @@ export default function BecomeContributorCTA() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto"
           >
             {/* Action 1: Primary Target */}
-            <motion.a
-              href="#projects"
+            <motion.div
+              // href="#projects"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-black tracking-wider uppercase text-[var(--bg)] bg-[var(--heading)] hover:bg-[var(--text)] transition-all text-center shadow-[var(--shadow-md)] select-none"
             >
-              Explore Projects
-            </motion.a>
+              <Link href="/projects#projects">Explore Projects</Link>
+            </motion.div>
 
             {/* Action 2: Secondary Structural Path */}
-            <motion.a
-              href="#guide"
+            <motion.div
+              // href="#guide"
               whileHover={{ scale: 1.02, y: -2, borderColor: "var(--border)" }}
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--primary)] transition-all text-center select-none"
             >
-              Contribution Guide
-            </motion.a>
+              <Link href="#guide">Contribution Guide</Link>
+            </motion.div>
 
             {/* Action 3: Community Sub-Channel Link */}
-            <motion.a
-              href="#community"
+            <motion.div
+              // href="#community"
               whileHover={{ scale: 1.02, y: -2, backgroundColor: "var(--glass)" }}
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] transition-all text-center select-none"
             >
-              Join Community →
-            </motion.a>
+              <Link href="https://github.com/sylvenos" target="_blank">Join Community →</Link>
+            </motion.div>
           </motion.div>
 
         </div>

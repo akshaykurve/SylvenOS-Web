@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
+import Link from "next/link";
 
 export default function HeroSection() {
   // Stagger configurations for standard typography entry
@@ -53,7 +54,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px] md:py-[160px] text-[var(--text)] flex items-center min-h-[90vh]">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Micro-Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
       
@@ -101,18 +102,19 @@ export default function HeroSection() {
               variants={textItemVariants}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             >
-              <button 
-                type="button"
-                className="px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] hover:bg-[var(--hover-bg)] text-white font-bold text-sm tracking-wide shadow-[var(--shadow-md)] hover:shadow-[var(--glow-primary)] border border-transparent hover:border-[var(--primary)] transition-all duration-[var(--transition-fast)] text-center"
-              >
-                Browse Projects
-              </button>
-              <button 
-                type="button"
-                className="px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--glass)] hover:bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--border)] text-[var(--heading)] font-bold text-sm tracking-wide transition-all duration-[var(--transition-fast)] text-center"
-              >
-                Start Contributing
-              </button>
+             <Link 
+    href="#projects"
+    className="inline-block px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] hover:bg-[var(--hover-bg)] text-white font-bold text-sm tracking-wide shadow-[var(--shadow-md)] hover:shadow-[var(--glow-primary)] border border-transparent hover:border-[var(--primary)] transition-all duration-[var(--transition-fast)] text-center"
+  >
+    Browse Projects
+  </Link>
+
+  <Link 
+    href="/contributors"
+    className="inline-block px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--glass)] hover:bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--border)] text-[var(--heading)] font-bold text-sm tracking-wide transition-all duration-[var(--transition-fast)] text-center"
+  >
+    Start Contributing
+  </Link>
             </motion.div>
           </motion.div>
 

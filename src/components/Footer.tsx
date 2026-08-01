@@ -63,7 +63,7 @@ export default function Footer() {
               },
               {
                 icon: <Mail size={18} />,
-                href: "mailto:hello@sylvenos.org",
+                href: "mailto:contact@sylvenos.com",
                 label: "Email",
               },
             ].map((social, index) => (

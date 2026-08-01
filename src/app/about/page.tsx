@@ -1,7 +1,7 @@
 import HeroSection from '@/components/AboutUs/AboutHero'
 import CoreValues from '@/components/AboutUs/CoreValues'
 import FutureRoadmap from '@/components/AboutUs/FutureRoadmap'
-import HowCommunityWorks from '@/components/AboutUs/HowCommunityWorks'
+import HowCommunityWorks from '@/components/Contributors/HowCommunityWorks'
 import JoinTheMovement from '@/components/AboutUs/JoinTheMovement'
 import OurMission from '@/components/AboutUs/OurMission'
 import SylvenPhilosophy from '@/components/AboutUs/Philosophy'
@@ -22,7 +22,7 @@ const page = () => {
         <OurVision/>
         <CoreValues/>
         <SylvenPhilosophy/>
-        <HowCommunityWorks/>
+        {/* <HowCommunityWorks/> */}
         <WhatWeBuild/>
         <WhoCanJoin/>
         <FutureRoadmap/>

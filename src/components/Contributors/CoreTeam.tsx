@@ -36,7 +36,7 @@ export default function DynamicCoreTeam({
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px] border-t border-[var(--card-border)]  transition-colors duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[8%] py-[100px] border-t border-[var(--card-border)] overflow-hidden transition-colors duration-[var(--transition-normal)]">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Module Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">

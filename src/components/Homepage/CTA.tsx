@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "motion/react";
+import Link from "next/link";
 
 export default function FinalCTA() {
   // Cascading entry animation variants
@@ -88,7 +89,7 @@ export default function FinalCTA() {
             whileTap={{ scale: 0.98 }}
             className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-md)] transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2"
           >
-            <span>Become a Contributor</span>
+            <Link href="/contributors">Become a Contributor</Link>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
@@ -102,7 +103,7 @@ export default function FinalCTA() {
             whileTap={{ scale: 0.98 }}
             className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-white font-semibold transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2"
           >
-            <span>Explore Projects</span>
+            <Link href="/projects">Explore Projects</Link>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />

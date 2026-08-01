@@ -4,7 +4,6 @@ import ContributionGuide from "@/components/Projects/ContributionGuide";
 import StartContributingCTA from "@/components/Projects/CTAprojects";
 import DynamicTechStack from "@/components/Projects/DynamicTech";
 import FAQSection from "@/components/Projects/Faqs";
-import FeaturedProjects from "@/components/Projects/FeaturedProjects";
 import HeroSection from "@/components/Projects/ProjectHeroSection";
 import ProjectLifecycle from "@/components/Projects/ProjectLifeCycle";
 import ProjectStatistics from "@/components/Projects/ProjectStatistics";
@@ -16,7 +15,6 @@ export const revalidate = 1800;
 export default async function Page() {
   // Fetch live stats during build time / on revalidation intervals
   const stats = await getEcosystemStats("sylvenos");
-  const featuredProjects = await getFeaturedProjects("sylvenos")
   
   const allProjects = await getAllProjects("sylvenos")
   
@@ -29,7 +27,6 @@ export default async function Page() {
         projectCount={stats.projects}
       />
       <ProjectCategories/>
-      <FeaturedProjects projects={featuredProjects}/>
       <ProjectExplorer projects={allProjects}/>
       <ProjectLifecycle/>
       <DynamicTechStack projects={allProjects}/>

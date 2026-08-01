@@ -5,29 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { useTheme } from "next-themes";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
-  const [isLight, setIsLight] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        return savedTheme === "light";
-      }
-      return window.matchMedia("(prefers-color-scheme: light)").matches;
+  const [mounted, setMounted] = useState(false);
+  const [isLight, setIsLight] = useState(false);
+
+  // Read theme on mount to prevent SSR hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setIsLight(savedTheme === "light");
+    } else {
+      setIsLight(window.matchMedia("(prefers-color-scheme: light)").matches);
     }
-    return false;
-  });
+  }, []);
 
   // Handle theme body class
   useEffect(() => {
+    if (!mounted) return;
     const root = document.body;
     root.classList.toggle("light", isLight);
-  }, [isLight]);
+  }, [isLight, mounted]);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -58,7 +61,7 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
       document.removeEventListener("keydown", handleEscKey);
-    }
+    };
   }, [isMenuOpen]);
 
   const toggleTheme = () => {
@@ -75,10 +78,11 @@ export default function Navbar() {
   ];
 
   return (
-    
-    <nav ref={navRef} className="fixed left-0 right-0 h-[72px]  flex justify-center top-2 md:top-4 z-50 px-4 md:px-16">
+    <nav
+      ref={navRef}
+      className="fixed left-0 right-0 h-[72px] flex justify-center top-2 md:top-4 z-50 px-4 md:px-16"
+    >
       <div className="mx-auto w-full max-w-7xl rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[#050f1f]/80 border border-white/5 shadow-lg flex items-center justify-between px-4 md:px-6">
-        
         {/* Logo Section */}
         <Link
           href="/"
@@ -128,22 +132,24 @@ export default function Navbar() {
             aria-label="Toggle visual layout mode"
             className="w-[56px] h-[30px] md:w-[60px] md:h-[32px] bg-slate-950 border border-white/20 hover:border-white/40 transition-colors rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1 md:ml-6"
           >
-            <span className="text-[10px] pl-1">🌙</span>
-            <span className="text-[10px] pr-1">☀️</span>
+            <span className="text-[10px] pl-1 select-none">🌙</span>
+            <span className="text-[10px] pr-1 select-none">☀️</span>
 
             <motion.div
-              className="absolute w-[22px] h-[22px] md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-md"
+              className="absolute w-[22px] h-[22px] md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center shadow-md"
               layout
               animate={{
-                left: isLight ? "calc(100% - 26px)" : "4px",
+                left: mounted && isLight ? "calc(100% - 26px)" : "4px",
               }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             >
-              {isLight ? (
-                <Moon size={12} className="text-slate-950 fill-slate-950" />
-              ) : (
-                <Sun size={12} className="text-amber-500 fill-amber-500" />
-              )}
+              {mounted ? (
+                isLight ? (
+                  <Sun size={12} className="text-amber-500 fill-amber-500" />
+                ) : (
+                  <Moon size={12} className="text-slate-950 fill-slate-950" />
+                )
+              ) : null}
             </motion.div>
           </button>
 

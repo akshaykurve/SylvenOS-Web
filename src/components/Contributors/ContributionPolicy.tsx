@@ -90,7 +90,7 @@ export default function ContributionPhilosophy() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px]  text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Precision Structural System Matrix Lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:8rem_8rem] opacity-[0.015] pointer-events-none" />
       

@@ -2,6 +2,7 @@
 
 import { featuredProjects, ProjectData } from "@/lib/type";
 import { motion, Variants } from "motion/react";
+import Link from "next/link";
 
 
 interface FeaturedProjectsProps {
@@ -26,7 +27,7 @@ export default function FeaturedProjects({
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[120px]  text-[var(--text)] ">
+    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Architectural Accents */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:5rem] opacity-[0.02] pointer-events-none" />
       <div
@@ -198,6 +199,20 @@ export default function FeaturedProjects({
             ))}
           </motion.div>
         )}
+      </div>
+      {/* Global Bottom Section CTA Action Button */}
+      <div className="relative mt-4 md:mt-8 text-center">
+        <motion.button
+          whileHover={{ scale: 1.02, backgroundColor: "var(--btn-primary-hover)" }}
+          whileTap={{ scale: 0.98 }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-colors duration-[var(--transition-fast)] text-[14px] md:text-base"
+        >
+          <Link href="/projects">View All Projects</Link>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </motion.button>
       </div>
     </section>
   );
