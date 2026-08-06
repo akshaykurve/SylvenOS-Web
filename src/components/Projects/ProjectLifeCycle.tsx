@@ -22,7 +22,7 @@ interface LifecycleStage {
 const LIFECYCLE_STAGES: LifecycleStage[] = [
   {
     id: "idea",
-    phase: "01 // IDEA",
+    phase: "01 IDEA",
     badgeText: "Idea",
     colorTheme: {
       text: "text-cyan-400",
@@ -37,7 +37,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "planning",
-    phase: "02 // PLANNING",
+    phase: "02 PLANNING",
     badgeText: "Planning",
     colorTheme: {
       text: "text-blue-400",
@@ -52,7 +52,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "development",
-    phase: "03 // DEVELOPMENT",
+    phase: "03 DEVELOPMENT",
     badgeText: "Development",
     colorTheme: {
       text: "text-amber-400",
@@ -67,7 +67,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "beta",
-    phase: "04 // BETA",
+    phase: "04 BETA",
     badgeText: "Beta",
     colorTheme: {
       text: "text-purple-400",
@@ -82,7 +82,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "stable",
-    phase: "05 // STABLE",
+    phase: "05 STABLE",
     badgeText: "Stable",
     colorTheme: {
       text: "text-green-400",
@@ -97,7 +97,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "maintenance",
-    phase: "06 // MAINTENANCE",
+    phase: "06 MAINTENANCE",
     badgeText: "Maintenance",
     colorTheme: {
       text: "text-zinc-400",
@@ -112,7 +112,7 @@ const LIFECYCLE_STAGES: LifecycleStage[] = [
   },
   {
     id: "archived",
-    phase: "07 // ARCHIVED",
+    phase: "07 ARCHIVED",
     badgeText: "Archived",
     colorTheme: {
       text: "text-red-400",
@@ -237,15 +237,15 @@ export default function ProjectLifecycle() {
                 
                 <div className="grid grid-cols-3 gap-6 border-t border-[var(--card-border)] pt-5 font-mono text-[10px]">
                   <div>
-                    <span className="text-[var(--disabled)] block mb-1">STABILITY LOGICS //</span>
+                    <span className="text-[var(--disabled)] block mb-1">STABILITY LOGICS</span>
                     <span className="text-[var(--heading)] font-bold">{currentStage.telemetry.split(" // ")[1]}</span>
                   </div>
                   <div>
-                    <span className="text-[var(--disabled)] block mb-1">CONTRIBUTION MATRICES //</span>
+                    <span className="text-[var(--disabled)] block mb-1">CONTRIBUTION MATRICES</span>
                     <span className="text-[var(--heading)] font-bold">{currentStage.impact.split(" // ")[1]}</span>
                   </div>
                   <div>
-                    <span className="text-[var(--disabled)] block mb-1">API SURFACE RUNTIME //</span>
+                    <span className="text-[var(--disabled)] block mb-1">API SURFACE RUNTIME</span>
                     <span className={`font-bold ${currentStage.colorTheme.text}`}>{currentStage.apiSurface}</span>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export default function ProjectLifecycle() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 border-t border-[var(--card-border)] pt-4 font-mono text-[9px]">
-                  <span className="text-[var(--disabled)]">METRICICS //</span>
+                  <span className="text-[var(--disabled)]">METRICS</span>
                   <span className={`text-right font-bold ${isCurrentlyActive ? stage.colorTheme.text : "text-[var(--muted)]"}`}>
                     {stage.telemetry.split(" // ")[1]}
                   </span>

@@ -43,14 +43,14 @@ export default function ProjectStatistics({
       value: projectCount,
       description: "Active high-level initiatives initialized.",
       color: "var(--primary)",
-      meta: "INIT // MAIN",
+      meta: "INITIALIZED",
     },
     {
       label: "Repositories",
       value: repoCount,
       description: "Public codebases tracked live via Octokit.",
       color: "var(--info)",
-      meta: "GIT // HEAD",
+      meta: "GIT • HEAD",
     },
     {
       label: "Contributors",
@@ -59,7 +59,7 @@ export default function ProjectStatistics({
         ? "Be the very first to leave a mark on our repositories." 
         : "Unique developers actively driving ecosystem code expansion.",
       color: "var(--logo)",
-      meta: "GENESIS // MESH_NODES",
+      meta: "GENESIS • MESH_NODES",
       highlight: contributorCount === 0, // Pulse callout if still empty
     },
   ];

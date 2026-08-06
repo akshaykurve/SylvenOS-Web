@@ -29,8 +29,10 @@ export function HeroClient({ stats }: { stats: any }) {
         </motion.div>
 
         <motion.h1 variants={item} className="text-5xl md:text-[5rem] font-extrabold leading-[1.1] mb-7">
-          Learn.<br /> Build.<br /> 
-          <span className="text-[var(--primary)]">Educate.</span>
+          Learn<br /> Build<br /> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--heading)] via-[var(--primary)] to-[var(--logo)]">
+          Educate
+          </span>
         </motion.h1>
 
         <motion.p variants={item} className="text-base md:text-[1.1rem] leading-[1.8] text-[var(--muted)] mb-10">

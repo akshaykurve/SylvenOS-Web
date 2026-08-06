@@ -22,31 +22,31 @@ export default function HeroSection() {
     },
   };
 
-  // Modern Repository Node Structure - Clean, balanced coordinates
+  // Repository graph nodes
   const repositories = [
     {
       id: "core",
-      name: "sys-core / kernel",
-      status: "main",
-      lang: "Rust",
+      name: "SylvenOS-Web/main",
+      status: "live",
+      lang: "TypeScript, Next.js",
       langColor: "bg-amber-500",
       position: "top-[15%] left-[10%]",
       delay: 0.1,
     },
     {
       id: "ui",
-      name: "sylven-ui / react",
-      status: "v2.1.0",
-      lang: "TypeScript",
+      name: "SylvenOS/G-Secure",
+      status: "PLANNED",
+      lang: "Kotlin",
       langColor: "bg-blue-500",
       position: "top-[42%] right-[8%]",
       delay: 0.3,
     },
     {
       id: "cli",
-      name: "sylven-cli / toolchain",
-      status: "main",
-      lang: "Go",
+      name: "SylvenOS/Themify",
+      status: "PLANNED",
+      lang: "PLANNED",
       langColor: "bg-cyan-400",
       position: "bottom-[18%] left-[15%]",
       delay: 0.5,
@@ -128,14 +128,6 @@ export default function HeroSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="w-full max-w-[540px] aspect-[4/3] rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-lg)] backdrop-blur-md relative overflow-hidden p-6 group"
             >
-              {/* Minimal Canvas Controls (Figma/Editor Style Layout) */}
-              <div className="absolute top-4 left-4 right-4 flex justify-between items-center opacity-40 font-mono text-[9px] tracking-wider pointer-events-none select-none">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)] animate-pulse" />
-                  <span>WORKSPACE // ACTIVE_MESH</span>
-                </div>
-                <span>GRID: 64px</span>
-              </div>
 
               {/* Crisp SVG Geometric Connection Paths Overlay */}
               <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
@@ -215,15 +207,9 @@ export default function HeroSection() {
                   </svg>
                   {/* Clean Operator Pill Name */}
                   <div className="bg-[var(--primary)] text-white text-[8px] font-mono font-bold px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap">
-                    alex_dev // merge
+                    open_source
                   </div>
                 </motion.div>
-              </div>
-
-              {/* Bottom Canvas Footer Diagnostic Stats */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center opacity-30 font-mono text-[8px] pointer-events-none select-none">
-                <span>ZOOM: 100%</span>
-                <span>MESH_ALPHA_V3</span>
               </div>
             </motion.div>
             

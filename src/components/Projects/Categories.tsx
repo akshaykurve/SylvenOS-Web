@@ -29,7 +29,7 @@ export default function ProjectCategories() {
   const categories = [
     {
       title: "Developer Tools",
-      tag: "SYS // TOOLS",
+      tag: "SYS TOOLS",
       description: "Core binaries and engineering toolchains designed to optimize system architectures.",
       color: "var(--info)",
       glow: "0 4px 24px rgba(56, 189, 248, 0.12)",
@@ -43,7 +43,7 @@ export default function ProjectCategories() {
     },
     {
       title: "Web Applications",
-      tag: "APP // INTERFACE",
+      tag: "WEB PLATFORM",
       description: "High-performance modern frontends built for speed, clean UX, and extreme scalability.",
       color: "var(--primary)",
       glow: "var(--glow-primary)",
@@ -58,7 +58,7 @@ export default function ProjectCategories() {
     },
     {
       title: "APIs & Services",
-      tag: "NET // ORCHESTRATION",
+      tag: "NET ORCHESTRATION",
       description: "Robust backends, data transmission layers, and highly microservices pipelines.",
       color: "var(--logo)",
       glow: "var(--glow-logo)",
@@ -71,7 +71,7 @@ export default function ProjectCategories() {
     },
     {
       title: "Educational Projects",
-      tag: "EDU // ECOSYSTEM",
+      tag: "EDU ECOSYSTEM",
       description: "Comprehensive guides, sandboxes, and foundational systems to scale real skills.",
       color: "var(--warning)",
       glow: "0 4px 24px rgba(251, 191, 36, 0.12)",
@@ -85,7 +85,7 @@ export default function ProjectCategories() {
     },
     {
       title: "Open Source Packages",
-      tag: "PKG // DISTRIBUTION",
+      tag: "PKG DISTRIBUTION",
       description: "Modular, highly reusable utility blocks built and shared across modern registries.",
       color: "var(--success)",
       glow: "0 4px 24px rgba(52, 211, 153, 0.12)",

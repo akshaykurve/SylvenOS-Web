@@ -91,7 +91,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                   : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
               }`}
             >
-              All Modules //
+              All Modules
             </button>
             {activeCategories.map((cat) => (
               <button
@@ -103,7 +103,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                     : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
                 }`}
               >
-                {cat.split(" ")[0]} //
+                {cat.split(" ")[0]}
               </button>
             ))}
           </div>
@@ -122,7 +122,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                 <div>
                   <div className="flex items-center justify-between border-b border-[var(--card-border)] pb-3 mb-4">
                     <span className="font-mono text-[10px] font-black tracking-widest text-[var(--heading)] uppercase">
-                      // {category}
+                      {category}
                     </span>
                     <span className="font-mono text-[9px] text-[var(--disabled)] uppercase bg-[var(--glass)] px-2 py-0.5 rounded border border-[var(--card-border)]">
                       {aggregatedStats.categories[category].length} Nodes
@@ -152,7 +152,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                 </div>
 
                 <div className="mt-6 pt-3 border-t border-[var(--card-border)] font-mono text-[9px] text-[var(--disabled)] flex justify-between items-center">
-                  <span>LAYER_STATUS //</span>
+                  <span>LAYER_STATUS</span>
                   <span className="text-green-400 uppercase font-bold tracking-wider">● SCHEMA_SYNCED</span>
                 </div>
               </motion.div>

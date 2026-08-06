@@ -157,7 +157,7 @@ export default function FeaturedProjects({
                   <div className="grid grid-cols-2 gap-4 border-t border-[var(--card-border)] pt-4 mb-6 font-mono text-[10px]">
                     <div>
                       <span className="text-[var(--disabled)] block">
-                        UPDATED //
+                        UPDATED
                       </span>
                       <span className="text-[var(--subtitle)] font-bold">
                         {project.lastUpdated}
@@ -165,7 +165,7 @@ export default function FeaturedProjects({
                     </div>
                     <div>
                       <span className="text-[var(--disabled)] block">
-                        OPEN_ISSUES //
+                        OPEN_ISSUES
                       </span>
                       <span
                         className={`font-bold ${project.openIssues > 0 ? "text-[var(--warning)]" : "text-[var(--success)]"}`}
