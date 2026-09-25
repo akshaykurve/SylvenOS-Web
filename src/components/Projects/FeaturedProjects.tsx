@@ -1,6 +1,6 @@
 "use client";
 
-import { featuredProjects, ProjectData } from "@/lib/type";
+import { featuredProjects } from "@/lib/type";
 import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
@@ -73,7 +73,7 @@ export default function FeaturedProjects({
         {/* Dynamic Fallback if Empty */}
         {projects.length === 0 ? (
           <div className="p-12 text-center rounded-[var(--radius-md)] border border-dashed border-[var(--border)] bg-[var(--glass)] font-mono text-xs text-[var(--muted)]">
-            No repositories found with the theme topic "featured". Tag your
+            No repositories found with the theme topic &quot;featured&quot;. Tag your
             GitHub repositories to display them here.
           </div>
         ) : (
@@ -97,14 +97,6 @@ export default function FeaturedProjects({
                 }}
                 className="p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
               >
-                {/* >
-            {projects.map((project, idx) => (
-              <motion.div
-                key={idx}
-                variants={cardVariants}
-                whileHover={{ y: -6, borderColor: "var(--primary)", boxShadow: "var(--shadow-md)" }}
-                className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
-              > */}
                 <div>
                   {/* Card Header (Logo & Core Meta Status) */}
                   <div className="flex items-start justify-between gap-4 mb-6">

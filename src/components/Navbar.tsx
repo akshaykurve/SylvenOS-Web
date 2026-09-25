@@ -13,6 +13,12 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [mounted, setMounted] = useState(false);
   const [isLight, setIsLight] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setIsMenuOpen(false);
+  }
 
   // Read theme on mount to prevent SSR hydration mismatch
   useEffect(() => {
@@ -31,11 +37,6 @@ export default function Navbar() {
     const root = document.body;
     root.classList.toggle("light", isLight);
   }, [isLight, mounted]);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
 
   // Handle click outside and Escape key
   useEffect(() => {

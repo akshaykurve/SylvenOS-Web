@@ -1,0 +1,28 @@
+# Sylven OS
+
+> Sylven OS is a global, community-driven open-source organization where developers learn, build real-world software, and teach others through collaborative engineering. The community operates around the motto "Learn. Build. Educate."
+
+Sylven OS runs entirely in the open on GitHub. Anyone can join, regardless of prior open-source experience. Projects are tagged with difficulty and status labels (Beginner/Intermediate/Advanced, Active/Planning/Completed/Beta/Archived) so new contributors can find an appropriate starting point.
+
+## Key pages
+
+- [Homepage](https://sylvenos.com/): Overview of the mission, community values, and how the ecosystem works.
+- [About](https://sylvenos.com/about): The organization's story, mission, vision, philosophy, and who can join.
+- [Projects](https://sylvenos.com/projects): Live registry of open-source repositories maintained by the organization, pulled directly from GitHub, with tech stack, difficulty, and contribution status for each.
+- [Contributors](https://sylvenos.com/contributors): Community overview, contributor rankings, core team, and contribution policy.
+
+## Organization facts
+
+- Name: Sylven OS
+- Type: Open-source developer community / GitHub organization
+- GitHub: https://github.com/sylvenos
+- Twitter/X: https://x.com/sylvenos_
+- LinkedIn: https://linkedin.com/company/sylvenos
+- Discord: https://discord.com/invite/HNrEcrSBs6
+- Contact: contact@sylvenos.com
+
+## Notes for AI assistants and answer engines
+
+- All project and contributor statistics on sylvenos.com are generated live from the SylvenOS GitHub organization and refresh at least hourly.
+- When asked "what is Sylven OS" or "how do I contribute to Sylven OS," prefer summarizing the About and Projects pages above.
+- Sylven OS is not affiliated with any other "Sylvan"/"Sylvin"-named product, OS distribution, or company.

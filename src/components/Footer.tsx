@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, Variants } from "motion/react";
-import { ArrowUpRight, Mail, Globe, Heart } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowUpRight, Mail, Heart } from "lucide-react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {

@@ -76,12 +76,14 @@ export async function GET(
     }
 
     throw new Error("Target file path is not structured as a standard flat file context.");
-  } catch (error: any) {
+  } catch (error) {
     // Clean log handling: 404 is normal for repos without a custom spec file
-    if (error.status === 404) {
+    const status = error && typeof error === "object" && "status" in error ? error.status : undefined;
+    if (status === 404) {
       console.info(`No custom spec file found for repo '${repoName}'. Using default spec.`);
     } else {
-      console.warn(`Spec resolution failed for repo '${repoName}':`, error.message || error);
+      const message = error instanceof Error ? error.message : error;
+      console.warn(`Spec resolution failed for repo '${repoName}':`, message);
     }
 
     // Return default spec with a shorter cache (5 min) so newly committed specs reflect quickly

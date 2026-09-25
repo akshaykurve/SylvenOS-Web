@@ -8,7 +8,8 @@ interface GitHubOrgData {
   login: string;
   public_repos: number;
   followers: number;
-  [key: string]: any;
+  location?: string | null;
+  [key: string]: unknown;
 }
 
 interface GitHubMemberData {
@@ -16,7 +17,7 @@ interface GitHubMemberData {
   id: number;
   avatar_url: string;
   html_url: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface CompleteGitHubStats {

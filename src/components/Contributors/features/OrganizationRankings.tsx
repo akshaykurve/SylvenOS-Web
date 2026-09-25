@@ -1,7 +1,7 @@
 // components/OrganizationRankings.tsx
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { motion } from "motion/react";
 import { AggregatedContributor } from "@/lib/type";
 
 interface OrganizationRankingsProps {

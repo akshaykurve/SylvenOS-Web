@@ -20,8 +20,27 @@ export default function FAQAccordion() {
     setOpenId(openId === id ? null : id);
   };
 
+  // FAQPage structured data: enables Google rich results and lets AI answer
+  // engines cite these Q&As directly without re-crawling the accordion markup.
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Structural Minimal Gridline Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
 

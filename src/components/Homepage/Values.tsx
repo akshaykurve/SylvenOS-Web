@@ -95,7 +95,7 @@ export default function CommunityValues() {
           Community Values
         </h2>
         <p className="text-base text-[var(--subtitle)] font-light mt-3 max-w-lg mx-auto">
-          These aren't rigid rules forced upon contributors—they are the architectural principles that guide how we collaborate.
+          These aren&apos;t rigid rules forced upon contributors—they are the architectural principles that guide how we collaborate.
         </p>
       </div>
 

@@ -73,7 +73,7 @@ export default function BecomeContributorCTA() {
             viewport={{ once: true }}
             className="text-base md:text-xl text-[var(--subtitle)] font-light leading-relaxed max-w-2xl mx-auto mb-12"
           >
-            Whether you're writing your first line of code or maintaining distributed large-scale systems, there's a definitive place for your perspective in Sylven OS.
+            Whether you&apos;re writing your first line of code or maintaining distributed large-scale systems, there&apos;s a definitive place for your perspective in Sylven OS.
           </motion.p>
 
           {/* Symmetrical High-Fidelity Call To Action Interface Array */}

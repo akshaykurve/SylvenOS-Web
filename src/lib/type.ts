@@ -120,7 +120,7 @@ export interface GitHubContributor {
   html_url: string;
   contributions: number; // Rendered straight from the live GitHub sync
   type: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface TopContributorsProps {

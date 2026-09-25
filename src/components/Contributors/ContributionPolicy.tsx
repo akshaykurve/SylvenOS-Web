@@ -130,7 +130,7 @@ export default function ContributionPhilosophy() {
             transition={{ delay: 0.16 }}
             className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed max-w-2xl mx-auto"
           >
-            Many people think contribution strictly equals coding lines. We diverge from that perspective entirely. Whether you write code, improve documentation, design interfaces, test features, report bugs, or help other contributors, you're helping Sylven OS grow.
+            Many people think contribution strictly equals coding lines. We diverge from that perspective entirely. Whether you write code, improve documentation, design interfaces, test features, report bugs, or help other contributors, you&apos;re helping Sylven OS grow.
           </motion.p>
         </div>
 

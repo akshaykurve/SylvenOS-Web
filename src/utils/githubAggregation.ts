@@ -63,7 +63,7 @@ async function getOrganizationRankingsRaw(
             contributionMap[contributor.login].total += contributor.contributions;
             contributionMap[contributor.login].repos[repo.name] = contributor.contributions;
           }
-        } catch (e) {
+        } catch {
           console.warn(`Skipping empty repo: ${repo.name}`);
         }
       })
@@ -83,7 +83,7 @@ async function getOrganizationRankingsRaw(
             per_page: 15,
           });
 
-          recentActivity = searchResults.items.map((item: any) => ({
+          recentActivity = searchResults.items.map((item) => ({
             id: item.sha,
             repoName: item.repository.name,
             type: "Commit",

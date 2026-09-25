@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, Variants } from "motion/react";
 
 export default function StartContributingCTA() {
   return (

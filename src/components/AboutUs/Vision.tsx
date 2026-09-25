@@ -114,7 +114,7 @@ export default function OurVision() {
               variants={itemVariants}
               className="text-xl md:text-3xl font-bold tracking-tight text-[var(--heading)] leading-tight mb-8"
             >
-              To become one of the world's most respected open-source communities focused on{" "}
+              To become one of the world&apos;s most respected open-source communities focused on{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--info)] to-[var(--primary)]">collaborative learning</span>,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--logo)]">practical engineering</span>, and{" "}
               <span className="text-[var(--logo)]">accessible education</span>.

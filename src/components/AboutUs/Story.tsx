@@ -72,7 +72,7 @@ export default function OurStory() {
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-[var(--subtitle)] font-normal leading-relaxed"
           >
-            Sylven OS was never created to become another GitHub organization or coding community. It was created to build an ecosystem where developers don't just consume knowledge—they create it, share it, and help others grow through real-world collaboration.
+            Sylven OS was never created to become another GitHub organization or coding community. It was created to build an ecosystem where developers don&apos;t just consume knowledge—they create it, share it, and help others grow through real-world collaboration.
           </motion.p>
         </div>
 
@@ -104,7 +104,7 @@ export default function OurStory() {
                 <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">Learn</h3>
               </div>
               <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
-                Every developer starts somewhere. Courses, tutorials, books, and documentation provide the foundation, but knowledge alone doesn't create experienced engineers. Learning is only the first step of the journey.
+                Every developer starts somewhere. Courses, tutorials, books, and documentation provide the foundation, but knowledge alone doesn&apos;t create experienced engineers. Learning is only the first step of the journey.
               </p>
             </motion.div>
           </div>
@@ -152,7 +152,7 @@ export default function OurStory() {
                 <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">Educate</h3>
               </div>
               <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
-                Every contributor has something valuable to share. By documenting solutions, mentoring others, writing technical content, and contributing back to open source, today's learners become tomorrow's teachers—creating a cycle that strengthens the entire ecosystem.
+                Every contributor has something valuable to share. By documenting solutions, mentoring others, writing technical content, and contributing back to open source, today&apos;s learners become tomorrow&apos;s teachers—creating a cycle that strengthens the entire ecosystem.
               </p>
             </motion.div>
           </div>

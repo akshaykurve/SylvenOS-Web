@@ -14,7 +14,7 @@ export interface EnrichedGitHubMember {
 
 interface DynamicCoreTeamProps {
   members: EnrichedGitHubMember[];
-  orgDescription: any;
+  orgDescription?: string | null;
 }
 
 export default function DynamicCoreTeam({

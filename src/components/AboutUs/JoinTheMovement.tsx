@@ -83,7 +83,7 @@ export default function JoinTheMovement() {
             variants={elementVariants}
             className="text-sm md:text-base text-[var(--subtitle)] font-light max-w-xl leading-relaxed mb-10"
           >
-            Join us in creating software, sharing knowledge, and helping developers grow. Let's construct the open infrastructure of tomorrow, one branch at a time.
+            Join us in creating software, sharing knowledge, and helping developers grow. Let&apos;s construct the open infrastructure of tomorrow, one branch at a time.
           </motion.p>
 
           {/* Highly Interactive CTA Actions Block */}

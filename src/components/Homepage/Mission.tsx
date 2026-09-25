@@ -143,7 +143,7 @@ export default function Pillars() {
               Vision
             </h3>
             <p className="text-base leading-relaxed text-[var(--subtitle)] font-light mb-8">
-              To become one of the world's most respected open-source communities focused on structural engineering education. We aim to reshape software mentorship, transforming decentralized code contributions into an accessible pipeline for global engineering talent.
+              To become one of the world&apos;s most respected open-source communities focused on structural engineering education. We aim to reshape software mentorship, transforming decentralized code contributions into an accessible pipeline for global engineering talent.
             </p>
 
             {/* Divider */}

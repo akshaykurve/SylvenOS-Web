@@ -1,12 +1,11 @@
-import OrganizationRankings from "./features/OrganizationRankings";
-import TopContributors from "./features/TopContributors";
+import { GitHubMemberData } from "@/lib/type";
 
-export default function MainContributors({ githubPayload }:any) {
+export default function MainContributors({ githubPayload }: { githubPayload: GitHubMemberData[] }) {
   return (
     <div>
-      {/* Passes down the live dataset; limit prop determines how many nodes to isolate */}
-      {/* <OrganizationRankings/> */}
-      {githubPayload}
+      {githubPayload.map((member) => (
+        <span key={member.id}>{member.login}</span>
+      ))}
     </div>
   );
 }

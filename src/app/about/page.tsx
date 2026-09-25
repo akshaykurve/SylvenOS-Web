@@ -1,7 +1,7 @@
+import type { Metadata } from 'next'
 import HeroSection from '@/components/AboutUs/AboutHero'
 import CoreValues from '@/components/AboutUs/CoreValues'
 import FutureRoadmap from '@/components/AboutUs/FutureRoadmap'
-import HowCommunityWorks from '@/components/Contributors/HowCommunityWorks'
 import JoinTheMovement from '@/components/AboutUs/JoinTheMovement'
 import OurMission from '@/components/AboutUs/OurMission'
 import SylvenPhilosophy from '@/components/AboutUs/Philosophy'
@@ -10,7 +10,19 @@ import OurVision from '@/components/AboutUs/Vision'
 import WhatWeBuild from '@/components/AboutUs/WhatWeBuild'
 import WhoWeAre from '@/components/AboutUs/Who'
 import WhoCanJoin from '@/components/AboutUs/WhoCanJoin'
-import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'About Sylven OS',
+  description:
+    'Learn the story, mission, vision, and philosophy behind Sylven OS — a community-driven open-source organization built on Learn, Build, Educate.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Sylven OS',
+    description:
+      'The story, mission, vision, and philosophy behind Sylven OS, and how to join the community.',
+    url: '/about',
+  },
+}
 
 const page = () => {
   return (
@@ -22,7 +34,6 @@ const page = () => {
         <OurVision/>
         <CoreValues/>
         <SylvenPhilosophy/>
-        {/* <HowCommunityWorks/> */}
         <WhatWeBuild/>
         <WhoCanJoin/>
         <FutureRoadmap/>

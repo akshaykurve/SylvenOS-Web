@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { getAllProjects } from "@/lib/github";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { absoluteUrl, SITE_NAME } from "@/lib/seo";
 
 interface ProjectDetailsPageProps {
   params: Promise<{ slug: string }>;
@@ -14,17 +16,81 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: ProjectDetailsPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const projects = await getAllProjects("sylvenos");
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return { title: "Project Not Found" };
+  }
+
+  const title = `${project.name} — ${SITE_NAME} Project`;
+  const description = project.description || project.overview;
+
+  return {
+    title,
+    description,
+    keywords: [project.name, ...project.techStack, "open source", "Sylven OS"],
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/projects/${project.slug}`,
+      images: [{ url: project.avatarUrl }],
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+      images: [project.avatarUrl],
+    },
+  };
+}
+
 export default async function ProjectDetailsPage({ params }: ProjectDetailsPageProps) {
   const { slug } = await params;
   const projects = await getAllProjects("sylvenos");
   const project = projects.find((p) => p.slug === slug);
-  // console.log("🚀 ~ ProjectDetailsPage ~ project:", project)
 
   if (!project) {
     notFound();
   }
 
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      name: project.name,
+      description: project.description || project.overview,
+      codeRepository: project.repoUrl,
+      programmingLanguage: project.language,
+      keywords: project.techStack.join(", "),
+      license: project.license,
+      dateCreated: project.createdAt,
+      dateModified: project.updatedAt,
+      isPartOf: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Projects", item: absoluteUrl("/projects") },
+        { "@type": "ListItem", position: 2, name: project.name, item: absoluteUrl(`/projects/${project.slug}`) },
+      ],
+    },
+  ];
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text)] py-24 px-6 md:px-[15%]">
       <div className="max-w-4xl  mx-auto">
         
@@ -133,5 +199,6 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
 
       </div>
     </main>
+    </>
   );
 }
