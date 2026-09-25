@@ -9,12 +9,19 @@ import EcosystemRoadmap from '@/components/Homepage/Roadmap';
 import FinalCTA from '@/components/Homepage/CTA';
 import { getFeaturedProjects } from '@/lib/github';
 import FeaturedProjects from '@/components/Projects/FeaturedProjects';
+import { speakableJsonLd } from '@/lib/seo';
 
 export default async function Home() {
     const featuredProjects = await getFeaturedProjects("sylvenos")
-  
+
+    const jsonLd = speakableJsonLd(['[data-speakable="about"]']);
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <Features />
       <MissionVision/>

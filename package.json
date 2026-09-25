@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-static-routes.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-static-routes.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit",
     "test": "vitest",
-     "cf:build": "opennextjs-cloudflare build"
+    "precf:build": "node scripts/generate-static-routes.mjs",
+    "cf:build": "opennextjs-cloudflare build"
   },
   "dependencies": {
     "@octokit/rest": "^22.0.1",

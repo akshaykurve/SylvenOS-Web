@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { breadcrumbJsonLd } from '@/lib/seo'
 import HeroSection from '@/components/AboutUs/AboutHero'
 import CoreValues from '@/components/AboutUs/CoreValues'
 import FutureRoadmap from '@/components/AboutUs/FutureRoadmap'
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
   title: 'About Sylven OS',
   description:
     'Learn the story, mission, vision, and philosophy behind Sylven OS — a community-driven open-source organization built on Learn, Build, Educate.',
+  keywords: [
+    'about Sylven OS',
+    'Sylven OS mission',
+    'Sylven OS vision',
+    'open source community story',
+    'open source organization philosophy',
+  ],
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Sylven OS',
@@ -25,8 +33,17 @@ export const metadata: Metadata = {
 }
 
 const page = () => {
+  const jsonLd = breadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+  ])
+
   return (
     <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <HeroSection/>
         <OurStory/>
         <WhoWeAre/>

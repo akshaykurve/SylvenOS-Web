@@ -11,7 +11,7 @@ export default function Features() {
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[var(--primary)]/10 blur-[150px] pointer-events-none rounded-full" />
 
       {/* Header Container */}
-      <div className="relative z-10 max-w-[900px] mx-auto text-center mb-[90px]">
+      <div data-speakable="about" className="relative z-10 max-w-[900px] mx-auto text-center mb-[90px]">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--text)] tracking-wide uppercase mb-5">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--logo)] animate-pulse" />
           The Ecosystem

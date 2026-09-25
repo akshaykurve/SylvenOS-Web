@@ -93,15 +93,16 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
             {[
-              { text: "Explore Projects", href: "#" },
-              { text: "Showcase", href: "#" },
-              { text: "Community Guidelines", href: "#" },
-              { text: "Discussions", href: "#" },
+              { text: "Explore Projects", href: "/projects" },
+              { text: "Showcase", href: "https://github.com/orgs/SylvenOS/repositories", external: true },
+              { text: "Community Guidelines", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CODE_OF_CONDUCT.md", external: true },
+              { text: "Discussions", href: "https://discord.com/invite/HNrEcrSBs6", external: true },
             ].map((link, i) => (
               <li key={i}>
-                {/* Next.js 16 style: No passHref, no nested <a> tags, absolute standard string vectors */}
                 <Link
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="no-underline text-[var(--muted)]"
                 >
                   <motion.span
@@ -124,14 +125,16 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
             {[
-              { text: "Documentation", href: "#" },
-              { text: "Contributing Guide", href: "#" },
-              { text: "Brand Assets", href: "#" },
-              { text: "Help & Support", href: "#" },
+              { text: "Documentation", href: "https://github.com/SylvenOS/SylvenOS-Web#readme", external: true },
+              { text: "Contributing Guide", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CONTRIBUTING.md", external: true },
+              { text: "Security Policy", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/SECURITY.md", external: true },
+              { text: "Help & Support", href: "https://discord.com/invite/HNrEcrSBs6", external: true },
             ].map((link, i) => (
               <li key={i}>
                 <Link
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="no-underline text-[var(--muted)]"
                 >
                   <motion.span
@@ -155,10 +158,10 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
             {[
-              { text: "About Us", href: "#" },
-              { text: "Our Contributors", href: "#" },
-              { text: "Code of Conduct", href: "#" },
-              { text: "Contact", href: "#" },
+              { text: "About Us", href: "/about" },
+              { text: "Our Contributors", href: "/contributors" },
+              { text: "Contact", href: "/contact" },
+              { text: "Code of Conduct", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CODE_OF_CONDUCT.md", external: true },
             ].map((link, i) => (
               <li key={i}>
                 <Link
@@ -192,19 +195,19 @@ export default function Footer() {
           </div>
           <div className="flex gap-6">
             <Link
-              href="#"
+              href="/privacy"
               className="hover:text-[var(--text)] transition-colors no-underline"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="hover:text-[var(--text)] transition-colors no-underline"
             >
               Terms of Service
             </Link>
             <Link
-              href="#"
+              href="/privacy#cookies"
               className="hover:text-[var(--text)] transition-colors no-underline"
             >
               Cookies

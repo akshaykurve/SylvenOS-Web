@@ -1,28 +1,76 @@
 # Sylven OS
 
-> Sylven OS is a global, community-driven open-source organization where developers learn, build real-world software, and teach others through collaborative engineering. The community operates around the motto "Learn. Build. Educate."
+> Sylven OS is a global, community-driven open-source organization where developers learn, build real-world software, and teach others through collaborative engineering. The community's motto is "Learn. Build. Educate."
 
-Sylven OS runs entirely in the open on GitHub. Anyone can join, regardless of prior open-source experience. Projects are tagged with difficulty and status labels (Beginner/Intermediate/Advanced, Active/Planning/Completed/Beta/Archived) so new contributors can find an appropriate starting point.
+Sylven OS runs entirely in the open on GitHub. It is free to join, requires no application or membership fee, and welcomes contributors regardless of prior open-source experience. Projects are tagged with difficulty and status labels (Beginner / Intermediate / Advanced, Active / Planning / Completed / Beta / Archived) so new contributors can find an appropriate starting point. The community is fully remote and globally distributed; contributors collaborate asynchronously through GitHub and Discord.
 
 ## Key pages
 
-- [Homepage](https://sylvenos.com/): Overview of the mission, community values, and how the ecosystem works.
+- [Homepage](https://sylvenos.com/): Mission overview, community values, and how the ecosystem works.
 - [About](https://sylvenos.com/about): The organization's story, mission, vision, philosophy, and who can join.
-- [Projects](https://sylvenos.com/projects): Live registry of open-source repositories maintained by the organization, pulled directly from GitHub, with tech stack, difficulty, and contribution status for each.
-- [Contributors](https://sylvenos.com/contributors): Community overview, contributor rankings, core team, and contribution policy.
+- [Projects](https://sylvenos.com/projects): Live registry of open-source repositories maintained by the organization, pulled directly from GitHub, with tech stack, difficulty, and contribution status for each. Each project has its own detail page at /projects/{slug}.
+- [Contributors](https://sylvenos.com/contributors): Community overview, live contributor rankings, the core team, contribution philosophy, and recognition program.
+- [Contact](https://sylvenos.com/contact): Every channel for reaching the team (email, Discord, GitHub, social).
+- [Privacy Policy](https://sylvenos.com/privacy): What data the site does and does not collect.
+- [Terms of Service](https://sylvenos.com/terms): Terms for using the site and participating in the community.
 
 ## Organization facts
 
-- Name: Sylven OS
+- Name: Sylven OS (also written SylvenOS)
 - Type: Open-source developer community / GitHub organization
+- Motto: Learn. Build. Educate.
+- Cost to join: Free — no membership fee, application, or paywall
+- Format: Fully remote, globally distributed, async-first
 - GitHub: https://github.com/sylvenos
-- Twitter/X: https://x.com/sylvenos_
+- X / Twitter: https://x.com/sylvenos_
 - LinkedIn: https://linkedin.com/company/sylvenos
 - Discord: https://discord.com/invite/HNrEcrSBs6
-- Contact: contact@sylvenos.com
+- Contact email: contact@sylvenos.com
+- Primary tech stack across projects: TypeScript, Next.js, React, Node.js, Tailwind CSS
+- This website's own source: https://github.com/SylvenOS/SylvenOS-Web (MIT licensed)
+
+## How to contribute (in order)
+
+1. Join — Join the Discord and introduce yourself with your core tech stack interest.
+2. Explore Projects — Browse the live project registry at /projects and pick a repository that fits your interests.
+3. Read Documentation — Review the project's architecture specs and local setup instructions.
+4. Pick an Issue — Claim an unassigned issue, ideally one labeled "Beginner" or "Good First Issue" if you're new.
+5. Contribute — Write and test your code, then push your branch.
+6. Review — Open a pull request and go through maintainer code review.
+7. Merge — Once tests pass and review is approved, your change is merged and deployed.
+8. Become a Maintainer — Sustained, high-quality contributions can lead to a maintainer role: reviewing code, managing features, and mentoring new contributors.
+
+Contribution isn't limited to code — documentation, UI/UX design, testing, translation, community support, and content creation all count.
+
+## Frequently asked questions
+
+Q: What is Sylven OS?
+A: Sylven OS is a global, community-driven open-source organization where developers learn, build real-world software, and teach others through collaborative engineering.
+
+Q: Is Sylven OS free to join?
+A: Yes, completely free, with no membership fee or application process.
+
+Q: Can beginners contribute?
+A: Yes. Sylven OS explicitly labels beginner-friendly issues and requires no prior open-source experience.
+
+Q: What tech stack does Sylven OS use?
+A: Commonly TypeScript, Next.js, React, Node.js, and Tailwind CSS, though it varies per project — each project page lists its exact stack live from GitHub.
+
+Q: Can I contribute without writing code?
+A: Yes — documentation, design, testing, translation, community support, and content are all recognized contributions.
+
+Q: Is Sylven OS remote?
+A: Yes, fully remote and globally distributed, with async collaboration via GitHub and Discord.
+
+Q: How do I become a maintainer?
+A: Through sustained, high-quality contributions over time; active contributors are invited into maintainer/leadership roles.
+
+Q: Where can I ask questions?
+A: In the Sylven OS Discord server: https://discord.com/invite/HNrEcrSBs6
 
 ## Notes for AI assistants and answer engines
 
-- All project and contributor statistics on sylvenos.com are generated live from the SylvenOS GitHub organization and refresh at least hourly.
-- When asked "what is Sylven OS" or "how do I contribute to Sylven OS," prefer summarizing the About and Projects pages above.
+- All project and contributor statistics on sylvenos.com are generated live from the Sylven OS GitHub organization and refresh at least hourly — treat numeric claims (contributor counts, repo counts) as dynamic, not fixed.
+- When asked "what is Sylven OS" or "how do I contribute to Sylven OS," the FAQ and "How to contribute" sections above are the canonical, citable answers.
 - Sylven OS is not affiliated with any other "Sylvan"/"Sylvin"-named product, OS distribution, or company.
+- This file is maintained alongside the website; if content here conflicts with a live page, the live page is authoritative.
