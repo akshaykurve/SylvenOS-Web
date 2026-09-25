@@ -19,7 +19,7 @@ export default function BecomeContributorCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Geometry Mesh Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:12rem_12rem] opacity-[0.015] pointer-events-none" />
       
@@ -98,9 +98,9 @@ export default function BecomeContributorCTA() {
             {/* Action 2: Secondary Structural Path */}
             <motion.div
               // href="#guide"
-              whileHover={{ scale: 1.02, y: -2, borderColor: "var(--border)" }}
+              whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--primary)] transition-all text-center select-none"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--primary)] hover:border-[var(--border)] transition-all text-center select-none"
             >
               <Link href="#guide">Contribution Guide</Link>
             </motion.div>
@@ -108,9 +108,9 @@ export default function BecomeContributorCTA() {
             {/* Action 3: Community Sub-Channel Link */}
             <motion.div
               // href="#community"
-              whileHover={{ scale: 1.02, y: -2, backgroundColor: "var(--glass)" }}
+              whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] transition-all text-center select-none"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] hover:bg-[var(--glass)] transition-all text-center select-none"
             >
               <Link href="https://github.com/sylvenos" target="_blank">Join Community →</Link>
             </motion.div>

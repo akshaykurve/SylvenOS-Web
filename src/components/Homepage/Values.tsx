@@ -82,7 +82,7 @@ export default function CommunityValues() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
       {/* Grid Pattern Mesh background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)] opacity-[0.08] pointer-events-none" />
 
@@ -111,12 +111,8 @@ export default function CommunityValues() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ 
-              y: -4, 
-              borderColor: "var(--info)",
-              boxShadow: "var(--shadow-md)"
-            }}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/20 border border-[var(--card-border)] backdrop-blur-md transition-all duration-[var(--transition-normal)] flex flex-col items-start"
+            whileHover={{ y: -4 }}
+            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/20 border border-[var(--card-border)] backdrop-blur-md transition-all duration-[var(--transition-normal)] flex flex-col items-start hover:border-[var(--info)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Minimalist Micro Icon Anchor */}
             <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--primary)] group-hover:text-[var(--info)] group-hover:border-[var(--info)] transition-colors duration-[var(--transition-fast)] mb-6">
@@ -124,7 +120,7 @@ export default function CommunityValues() {
             </div>
 
             {/* Value Title */}
-            <h3 className="text-xl font-bold tracking-tight text-[var(--heading)] mb-2.5 group-hover:text-white transition-colors duration-[var(--transition-fast)]">
+            <h3 className="text-xl font-bold tracking-tight text-[var(--heading)] mb-2.5 group-hover:text-[var(--info)] transition-colors duration-[var(--transition-fast)]">
               {value.title}
             </h3>
 

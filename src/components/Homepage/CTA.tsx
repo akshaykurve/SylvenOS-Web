@@ -20,7 +20,7 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
       {/* Background Tech Mesh */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-[0.05] pointer-events-none" />
 
@@ -85,9 +85,9 @@ export default function FinalCTA() {
         >
           {/* Primary Action Callout: Become a Contributor */}
           <motion.button
-            whileHover={{ scale: 1.02, backgroundColor: "var(--btn-primary-hover)" }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-md)] transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-md)] transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-primary-hover)]"
           >
             <Link href="/contributors">Become a Contributor</Link>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -99,9 +99,9 @@ export default function FinalCTA() {
 
           {/* Secondary Action: Explore Projects */}
           <motion.button
-            whileHover={{ scale: 1.02, backgroundColor: "var(--btn-secondary-hover)", borderColor: "var(--border)" }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-white font-semibold transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-[var(--heading)] font-semibold transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-secondary-hover)] hover:border-[var(--border)]"
           >
             <Link href="/projects">Explore Projects</Link>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

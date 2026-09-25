@@ -33,7 +33,7 @@ export default function Pillars() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] bg-(--secondary) ">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] bg-[var(--surface)]/10">
       {/* High-End Tech Grid Mask */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.12] pointer-events-none" />
 
@@ -57,8 +57,8 @@ export default function Pillars() {
         {/* Card 1: Mission */}
         <motion.div
           variants={cardVariants}
-          whileHover={{ y: -4, borderColor: "var(--primary)" }}
-          className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md"
+          whileHover={{ y: -4 }}
+          className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--primary)]"
         >
           <div>
             {/* Top Row: Icon & Label */}
@@ -121,8 +121,8 @@ export default function Pillars() {
         {/* Card 2: Vision */}
         <motion.div
           variants={cardVariants}
-          whileHover={{ y: -4, borderColor: "var(--info)" }}
-          className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md"
+          whileHover={{ y: -4 }}
+          className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--info)]"
         >
           <div>
             {/* Top Row: Icon & Label */}

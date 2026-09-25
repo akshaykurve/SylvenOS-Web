@@ -99,7 +99,7 @@ export default function WhySylvenOS() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Accent Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)] opacity-[0.08] pointer-events-none" />
 
@@ -125,12 +125,8 @@ export default function WhySylvenOS() {
           <motion.div
             key={index}
             variants={itemVariants}
-            whileHover={{ 
-              y: -4, 
-              borderColor: "var(--primary)",
-              boxShadow: "var(--shadow-md)"
-            }}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between h-[210px] overflow-hidden"
+            whileHover={{ y: -4 }}
+            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Top Row: Icon and Engineering Code Index */}
             <div className="flex items-center justify-between w-full mb-4">

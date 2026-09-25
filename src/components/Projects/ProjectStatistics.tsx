@@ -65,7 +65,7 @@ export default function ProjectStatistics({
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Matrix Intercept Blueprint */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:6rem] opacity-[0.02] pointer-events-none" />
       
@@ -121,8 +121,9 @@ export default function ProjectStatistics({
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -4, borderColor: metric.color }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-sm)] backdrop-blur-sm relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -4 }}
+              style={{ '--hover-border': metric.color } as React.CSSProperties}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-sm)] backdrop-blur-sm relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)]"
             >
               {/* Dynamic status line highlight on hover */}
               <div 

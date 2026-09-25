@@ -19,7 +19,7 @@ export default function WhoWeAre() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Decorative Tech Grid Highlight */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:10rem] opacity-[0.03] pointer-events-none" />
       
@@ -105,8 +105,9 @@ export default function WhoWeAre() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                whileHover={{ x: 6, borderColor: value.color }}
-                className="p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-sm)] backdrop-blur-sm transition-all duration-[var(--transition-fast)] flex gap-4 items-start"
+                whileHover={{ x: 6 }}
+                style={{ '--hover-border': value.color } as React.CSSProperties}
+                className="p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-sm)] backdrop-blur-sm transition-all duration-[var(--transition-fast)] flex gap-4 items-start hover:border-[var(--hover-border)]"
               >
                 <div 
                   className="w-2 h-2 rounded-full mt-2 shrink-0" 

@@ -51,9 +51,12 @@ Actions may include:
 
 ## Reporting Issues
 
-If you experience or witness unacceptable behavior, please contact the maintainers through GitHub Discussions or repository maintainers.
+If you experience or witness unacceptable behavior, please report it via:
 
-All reports will be reviewed confidentially.
+- Email: [contact@sylvenos.com](mailto:contact@sylvenos.com)
+- A direct message to a maintainer on [Discord](https://discord.com/invite/HNrEcrSBs6)
+
+All reports will be reviewed and investigated confidentially, and will result in a response appropriate to the circumstances.
 
 ---
 

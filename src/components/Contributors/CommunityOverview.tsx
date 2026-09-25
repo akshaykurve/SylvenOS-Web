@@ -103,7 +103,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Matrix Structural Geometry */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:14rem] opacity-[0.015] pointer-events-none" />
       
@@ -159,13 +159,9 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -4, 
-                borderColor: metric.color,
-                backgroundColor: "var(--gradient-surface)",
-                boxShadow: "0 6px 20px rgba(0,0,0,0.04)"
-              }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -4 }}
+              style={{ '--hover-border': metric.color } as React.CSSProperties}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)]"
             >
               <div 
                 className="absolute top-0 left-0 w-12 h-[2px] opacity-30 transition-all group-hover:w-full group-hover:opacity-100" 

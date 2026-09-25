@@ -6,11 +6,13 @@
     --bg: #0a1931;
     --surface: #1a3d63;
     --primary: #4a7fa7;
+    --primary-rgb: 74, 127, 167;
     --border: #b3cfe5;
     --text: #f6fafd;
     --muted: #d6e4ef;
     --glass: rgba(255, 255, 255, 0.05);
     --logo: #489c60;
+    --logo-rgb: 72, 156, 96;
     --network-opacity: .2;
     
     /* Semantic Colors */
@@ -90,6 +92,7 @@
     --bg: #f6fafd;
     --surface: #ffffff;
     --primary: #1a3d63;
+    --primary-rgb: 26, 61, 99;
     --border: #4a7fa7;
     --text: #0a1931;
     --muted: #45617e;
@@ -162,7 +165,7 @@
     font-family: "Inter", sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.35s;
+    transition: background-color 0.35s ease, color 0.35s ease;
     overflow-x: hidden;
   }
 
@@ -187,4 +190,59 @@
     right: -200px;
     z-index: -2;
   }
+}
+
+/* Unlayered on purpose: CSS cascade layers always lose to unlayered rules,
+   so this keeps a visible, on-brand focus ring even where a component sets
+   `focus:outline-none` for its own mouse-hover styling. */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Slim, themed scrollbar for a more modern, less "default browser" feel */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+  background-clip: padding-box;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-border) transparent;
+}
+
+/* Theme-toggle performance fix: dozens of cards/panels across the site use
+   `transition-colors` together with `backdrop-blur`. Left alone, every one of
+   them cross-fades and re-composites its blur simultaneously on every toggle,
+   which is what causes the visible lag/jank when switching light/dark.
+   Unlayered + !important so it wins over every Tailwind transition utility
+   for the brief instant the theme class is applied, making the color swap
+   instant instead of hundreds of elements animating at once. Normal hover/
+   focus transitions are restored a couple of frames later (see Navbar.tsx). */
+.theme-switching,
+.theme-switching * {
+  transition: none !important;
+  animation-duration: 0.001ms !important;
 }

@@ -35,7 +35,7 @@ export default function OurStory() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Ambient Background Glow */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full filter blur-[160px] opacity-15 pointer-events-none"
@@ -93,8 +93,8 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5, borderColor: "var(--info)", boxShadow: "0 4px 20px rgba(56, 189, 248, 0.1)" }}
-              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--info)] hover:shadow-[0_4px_20px_rgba(56,189,248,0.1)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--info)]" />
               <div className="flex items-center gap-4 mb-4">
@@ -121,8 +121,8 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5, borderColor: "var(--primary)", boxShadow: "var(--glow-primary)" }}
-              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--glow-primary)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--primary)]" />
               <div className="flex items-center gap-4 mb-4">
@@ -141,8 +141,8 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5, borderColor: "var(--logo)", boxShadow: "var(--glow-logo)" }}
-              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--logo)] hover:shadow-[var(--glow-logo)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--logo)]" />
               <div className="flex items-center gap-4 mb-4">

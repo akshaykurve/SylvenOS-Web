@@ -139,7 +139,7 @@ export default function ContributionAreas() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
       {/* Subtle Background Accent Lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:10rem] [mask-image:linear-gradient(to_bottom,transparent,#000_20%,#000_80%,transparent)] opacity-[0.05] pointer-events-none" />
 
@@ -168,12 +168,7 @@ export default function ContributionAreas() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ 
-              borderColor: "var(--primary)", 
-              backgroundColor: "var(--card-hover-bg)",
-              boxShadow: "var(--shadow-md)"
-            }}
-            className="group relative p-5 rounded-[var(--radius-md)] bg-[var(--card-bg)] border border-[var(--card-border)] backdrop-blur-sm transition-all duration-[var(--transition-fast)] flex flex-col justify-between"
+            className="group relative p-5 rounded-[var(--radius-md)] bg-[var(--card-bg)] border border-[var(--card-border)] backdrop-blur-sm transition-all duration-[var(--transition-fast)] flex flex-col justify-between hover:border-[var(--primary)] hover:bg-[var(--card-hover-bg)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Top Row: Title + Inline Visual Context Anchor */}
             <div>

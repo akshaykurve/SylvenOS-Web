@@ -132,7 +132,7 @@ export default function ProjectLifecycle() {
   const currentStage = LIFECYCLE_STAGES[activeStageIndex];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Visual Engineering Grid Mesh Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
@@ -173,7 +173,7 @@ export default function ProjectLifecycle() {
                 >
                   <div className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 font-mono text-xs font-bold relative z-10 ${
                     isSelected
-                      ? "text-white border-[var(--primary)] bg-[var(--bg)]"
+                      ? "text-white border-[var(--primary)] bg-[var(--primary)]"
                       : isPassed
                       ? "border-[var(--primary)] bg-[var(--bg)] text-[var(--primary)]"
                       : "bg-[var(--bg)] border-[var(--card-border)] text-[var(--disabled)] group-hover:border-[var(--border)] group-hover:text-[var(--text)]"
@@ -262,11 +262,11 @@ export default function ProjectLifecycle() {
               <motion.div
                 key={stage.id}
                 onClick={() => setActiveStageIndex(idx)}
-                whileHover={{ y: -4, borderColor: "var(--border)" }}
+                whileHover={{ y: -4 }}
                 className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] flex flex-col justify-between text-left transition-all duration-300 cursor-pointer group ${
-                  isCurrentlyActive 
-                    ? "border-[var(--primary)] shadow-[var(--shadow-sm)] ring-1 ring-[var(--primary)]/30" 
-                    : "border-[var(--card-border)] hover:bg-[var(--glass)]"
+                  isCurrentlyActive
+                    ? "border-[var(--primary)] shadow-[var(--shadow-sm)] ring-1 ring-[var(--primary)]/30"
+                    : "border-[var(--card-border)] hover:bg-[var(--glass)] hover:border-[var(--border)]"
                 }`}
               >
                 <div>

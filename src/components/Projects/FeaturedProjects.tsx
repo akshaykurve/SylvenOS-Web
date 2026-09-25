@@ -27,7 +27,7 @@ export default function FeaturedProjects({
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Architectural Accents */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:5rem] opacity-[0.02] pointer-events-none" />
       <div
@@ -90,12 +90,8 @@ export default function FeaturedProjects({
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                whileHover={{
-                  y: -6,
-                  borderColor: "var(--primary)",
-                  boxShadow: "var(--shadow-md)",
-                }}
-                className="p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+                whileHover={{ y: -6 }}
+                className="p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
               >
                 <div>
                   {/* Card Header (Logo & Core Meta Status) */}
@@ -195,9 +191,9 @@ export default function FeaturedProjects({
       {/* Global Bottom Section CTA Action Button */}
       <div className="relative mt-4 md:mt-8 text-center">
         <motion.button
-          whileHover={{ scale: 1.02, backgroundColor: "var(--btn-primary-hover)" }}
+          whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-colors duration-[var(--transition-fast)] text-[14px] md:text-base"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-colors duration-[var(--transition-fast)] text-[14px] md:text-base hover:bg-[var(--btn-primary-hover)]"
         >
           <Link href="/projects">View All Projects</Link>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

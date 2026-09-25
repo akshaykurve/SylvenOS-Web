@@ -52,7 +52,7 @@ export default function EcosystemRoadmap() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
       {/* Background Tech Wire Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.08] pointer-events-none" />
 
@@ -84,8 +84,9 @@ export default function EcosystemRoadmap() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ y: -4, borderColor: item.statusColor }}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-md)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md"
+            whileHover={{ y: -4 }}
+            style={{ '--phase-color': item.statusColor } as React.CSSProperties}
+            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-md)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md hover:border-[var(--phase-color)]"
           >
             {/* Top Container Block */}
             <div>
@@ -114,7 +115,7 @@ export default function EcosystemRoadmap() {
               </div>
 
               {/* Title Header */}
-              <h3 className="text-xl font-bold tracking-tight text-[var(--heading)] mb-6 group-hover:text-white transition-colors duration-[var(--transition-fast)]">
+              <h3 className="text-xl font-bold tracking-tight text-[var(--heading)] mb-6 group-hover:text-[var(--phase-color)] transition-colors duration-[var(--transition-fast)]">
                 {item.title}
               </h3>
 

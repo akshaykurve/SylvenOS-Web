@@ -31,11 +31,27 @@ export default function Navbar() {
     }
   }, []);
 
-  // Handle theme body class
+  // Handle theme body class. Transitions are briefly suppressed site-wide so
+  // the (many) backdrop-blurred, color-transitioning cards across the app
+  // don't all cross-fade and re-composite at once, which is what causes the
+  // toggle to visibly lag.
   useEffect(() => {
     if (!mounted) return;
     const root = document.body;
+    root.classList.add("theme-switching");
     root.classList.toggle("light", isLight);
+
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        root.classList.remove("theme-switching");
+      });
+    });
+
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
   }, [isLight, mounted]);
 
   // Handle click outside and Escape key
@@ -83,11 +99,11 @@ export default function Navbar() {
       ref={navRef}
       className="fixed left-0 right-0 h-[72px] flex justify-center top-2 md:top-4 z-50 px-4 md:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[#050f1f]/80 border border-white/5 shadow-lg flex items-center justify-between px-4 md:px-6">
+      <div className="mx-auto w-full max-w-7xl rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[var(--nav-bg)] border border-[var(--nav-border)] shadow-lg flex items-center justify-between px-4 md:px-6 transition-colors duration-[var(--transition-normal)]">
         {/* Logo Section */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg md:text-xl font-extrabold tracking-wide cursor-pointer no-underline text-white z-50"
+          className="flex items-center gap-2.5 text-lg md:text-xl font-extrabold tracking-wide cursor-pointer no-underline text-[var(--heading)] z-50"
         >
           <div className="relative w-8 h-8 md:w-10 md:h-10">
             <Image
@@ -114,8 +130,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                     isActive
-                      ? "bg-white text-[#0a1a33]"
-                      : "text-slate-300 hover:text-white hover:bg-white/25"
+                      ? "bg-[var(--primary)] text-white"
+                      : "text-[var(--subtitle)] hover:text-[var(--heading)] hover:bg-[var(--hover-bg)]"
                   }`}
                 >
                   {link.text}
@@ -131,14 +147,13 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle visual layout mode"
-            className="w-[56px] h-[30px] md:w-[60px] md:h-[32px] bg-slate-950 border border-white/20 hover:border-white/40 transition-colors rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1 md:ml-6"
+            className="w-[56px] h-[30px] md:w-[60px] md:h-[32px] bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--hover-border)] transition-colors rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1 md:ml-6"
           >
             <span className="text-[10px] pl-1 select-none">🌙</span>
             <span className="text-[10px] pr-1 select-none">☀️</span>
 
             <motion.div
               className="absolute w-[22px] h-[22px] md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center shadow-md"
-              layout
               animate={{
                 left: mounted && isLight ? "calc(100% - 26px)" : "4px",
               }}
@@ -156,7 +171,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[var(--card-bg)] hover:bg-[var(--card-hover-bg)] border border-[var(--card-border)] transition-colors text-[var(--heading)]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle mobile menu"
             aria-expanded={isMenuOpen}
@@ -174,7 +189,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -15, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[85px] left-4 right-4 rounded-[24px] backdrop-blur-xl bg-[#050f1f]/95 border border-white/10 p-4 flex flex-col gap-2 shadow-2xl md:hidden z-40"
+            className="absolute top-[85px] left-4 right-4 rounded-[24px] backdrop-blur-xl bg-[var(--nav-bg)] border border-[var(--nav-border)] p-4 flex flex-col gap-2 shadow-2xl md:hidden z-40"
           >
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
@@ -185,8 +200,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-5 py-3.5 rounded-xl transition-all duration-300 font-medium flex items-center ${
                     isActive
-                      ? "bg-white text-[#0a1a33]"
-                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                      ? "bg-[var(--primary)] text-white"
+                      : "text-[var(--subtitle)] hover:text-[var(--heading)] hover:bg-[var(--hover-bg)]"
                   }`}
                 >
                   {link.text}

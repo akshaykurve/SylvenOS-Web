@@ -57,7 +57,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-[100px] overflow-hidden text-[var(--text)] flex items-center">
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-[100px] overflow-hidden text-[var(--text)] flex items-center">
       {/* Background Microstructural System Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
       
@@ -103,13 +103,9 @@ export default function HeroSection() {
 
           <motion.div variants={textItemVariants}>
             <motion.button
-              whileHover={{ 
-                scale: 1.03, 
-                backgroundColor: "var(--primary-hover)",
-                boxShadow: "var(--glow-primary)"
-              }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)]"
+              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]"
             >
               <Link
                   href="https://github.com/SylvenOS/"

@@ -117,7 +117,7 @@ export default function WhatWeBuild() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Matrix Mesh Layer */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:12rem] opacity-[0.02] pointer-events-none" />
 
@@ -173,13 +173,9 @@ export default function WhatWeBuild() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -5, 
-                borderColor: cat.color, 
-                boxShadow: cat.glow,
-                backgroundColor: "var(--gradient-surface)"
-              }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -5 }}
+              style={{ '--hover-border': cat.color, '--hover-shadow': cat.glow } as React.CSSProperties}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--gradient-surface)]"
             >
               <div>
                 {/* Structural Card Header Icon Block */}

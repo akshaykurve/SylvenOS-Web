@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import {
   SITE_URL,
   SITE_NAME,
@@ -92,7 +93,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <Navbar/>
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Footer/>
       </body>
     </html>

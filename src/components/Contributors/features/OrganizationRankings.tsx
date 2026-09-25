@@ -22,7 +22,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px] transition-colors overflow-hidden duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[8%] py-14 md:py-[100px] transition-colors overflow-hidden duration-[var(--transition-normal)]">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Module Header Area using Typography Tokens */}
@@ -50,18 +50,13 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 target="_blank"
                 rel="noreferrer"
                 key={node.id}
-                whileHover={{ 
-                  y: -6, 
-                  backgroundColor: "var(--card-hover-bg)", 
-                  borderColor: isFirst ? "var(--logo)" : "var(--border)",
-                  boxShadow: isFirst ? "var(--glow-logo)" : "var(--glow-primary)"
-                }}
-                className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative flex flex-col items-center text-center transition-all duration-[var(--transition-fast)] block group ${
-                  isFirst 
-                    ? "md:order-2 border-[var(--logo)] md:py-10 shadow-[var(--shadow-lg)]" 
-                    : node.rank === 2 
-                      ? "md:order-1 border-[var(--card-border)] shadow-[var(--shadow-md)]" 
-                      : "md:order-3 border-[var(--card-border)] shadow-[var(--shadow-md)]"
+                whileHover={{ y: -6 }}
+                className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative flex flex-col items-center text-center transition-all duration-[var(--transition-fast)] block group hover:bg-[var(--card-hover-bg)] ${
+                  isFirst
+                    ? "md:order-2 border-[var(--logo)] md:py-10 shadow-[var(--shadow-lg)] hover:border-[var(--logo)] hover:shadow-[var(--glow-logo)]"
+                    : node.rank === 2
+                      ? "md:order-1 border-[var(--card-border)] shadow-[var(--shadow-md)] hover:border-[var(--border)] hover:shadow-[var(--glow-primary)]"
+                      : "md:order-3 border-[var(--card-border)] shadow-[var(--shadow-md)] hover:border-[var(--border)] hover:shadow-[var(--glow-primary)]"
                 }`}
               >
                 {/* Dynamic Token Floating Rank Badge */}

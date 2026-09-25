@@ -9,8 +9,8 @@ If you discover a security vulnerability, please do not create a public issue.
 
 Instead:
 
-- Open a private security advisory if available.
-- Contact repository maintainers privately.
+- Open a [private security advisory](https://github.com/sylvenos/sylvenos-web/security/advisories/new) on GitHub, or
+- Email [contact@sylvenos.com](mailto:contact@sylvenos.com) with details.
 
 ---
 

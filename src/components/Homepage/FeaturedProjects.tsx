@@ -71,7 +71,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
       {/* Background Structural Mesh Accent */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.1] pointer-events-none" />
 
@@ -102,8 +102,8 @@ export default function FeaturedProjects() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ y: -5, borderColor: "var(--primary)" }}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md"
+            whileHover={{ y: -5 }}
+            className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md hover:border-[var(--primary)]"
           >
             {/* Top Area: Logo & Name & Description */}
             <div>

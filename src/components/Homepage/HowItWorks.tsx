@@ -68,7 +68,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Visual Accent Ambient Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_50%_50%_at_0%_50%,#000_20%,transparent_100%)] opacity-[0.1] pointer-events-none" />
 
@@ -112,6 +112,7 @@ export default function HowItWorks() {
             <motion.div
               key={index}
               variants={stepVariants}
+              style={{ '--step-color': step.color } as React.CSSProperties}
               className="group relative flex gap-6 md:gap-12 items-start"
             >
               {/* Step Node Marker Indicator */}
@@ -141,7 +142,7 @@ export default function HowItWorks() {
                   className="text-lg md:text-2xl font-bold mb-1.5 transition-colors duration-[var(--transition-fast)]"
                   style={{ color: `var(--heading)` }}
                 >
-                  <span className="group-hover:text-white transition-colors duration-[var(--transition-fast)]">
+                  <span className="group-hover:text-[var(--step-color)] transition-colors duration-[var(--transition-fast)]">
                     {step.title}
                   </span>
                 </h3>

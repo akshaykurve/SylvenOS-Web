@@ -36,7 +36,7 @@ export default function DynamicCoreTeam({
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[100px] border-t border-[var(--card-border)] overflow-hidden transition-colors duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[8%] py-14 md:py-[100px] border-t border-[var(--card-border)] overflow-hidden transition-colors duration-[var(--transition-normal)]">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Module Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -64,13 +64,8 @@ export default function DynamicCoreTeam({
             <motion.div
               key={member.id}
               variants={cardVariants}
-              whileHover={{
-                y: -3,
-                borderColor: "var(--info)",
-                backgroundColor: "var(--card-hover-bg)",
-                boxShadow: "var(--shadow-md)",
-              }}
-              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex items-center gap-4 transition-all duration-[var(--transition-fast)] group relative overflow-hidden"
+              whileHover={{ y: -3 }}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex items-center gap-4 transition-all duration-[var(--transition-fast)] group relative overflow-hidden hover:border-[var(--info)] hover:bg-[var(--card-hover-bg)] hover:shadow-[var(--shadow-md)]"
             >
               {/* 1. Identity Image Asset on the Left */}
               <img

@@ -29,7 +29,7 @@ export default function JoinTheMovement() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px] text-[var(--text)] overflow-hidden flex items-center justify-center">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)] overflow-hidden flex items-center justify-center">
       {/* Structural Network Grid Lines Mapping to the Center */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
       
@@ -93,22 +93,18 @@ export default function JoinTheMovement() {
           >
             {/* Secondary Option: Explore Projects */}
             <motion.button
-              whileHover={{ scale: 1.03, backgroundColor: "var(--hover-bg)", borderColor: "var(--border)" }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] text-sm font-bold tracking-wide text-[var(--text)] transition-colors duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-sm)] backdrop-blur-md"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] text-sm font-bold tracking-wide text-[var(--text)] transition-colors duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-sm)] backdrop-blur-md hover:bg-[var(--hover-bg)] hover:border-[var(--border)]"
             >
              <Link href="/projects#projects"> Explore Projects</Link>
             </motion.button>
 
             {/* Primary High-Octane Action Option: Become a Contributor */}
             <motion.button
-              whileHover={{ 
-                scale: 1.03, 
-                backgroundColor: "var(--primary-hover)",
-                boxShadow: "var(--glow-primary)"
-              }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)]"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]"
             >
               <Link href="https://github.com/sylvenos" target="_blank">Become a Contributor</Link>
             </motion.button>

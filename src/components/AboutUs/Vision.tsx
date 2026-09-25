@@ -24,7 +24,7 @@ export default function OurVision() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Grid Accent with Perspective-like Horizon lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:8rem] opacity-[0.03] pointer-events-none" />
       
@@ -54,8 +54,8 @@ export default function OurVision() {
 
             {/* Central Future Horizon Node Framework */}
             <motion.div
-              whileHover={{ y: -6, borderColor: "var(--info)" }}
-              className="relative w-[220px] h-[220px] rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-lg)] backdrop-blur-md flex items-center justify-center group transition-all duration-[var(--transition-normal)]"
+              whileHover={{ y: -6 }}
+              className="relative w-[220px] h-[220px] rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-lg)] backdrop-blur-md flex items-center justify-center group transition-all duration-[var(--transition-normal)] hover:border-[var(--info)]"
             >
               {/* SVG Map pointing Up and Forward (Ecosystem Ascension) */}
               <svg viewBox="0 0 100 100" className="w-3/4 h-3/4 text-[var(--info)]">

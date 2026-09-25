@@ -93,7 +93,7 @@ export default function ContributorRoles() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Matrix Linework */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:16rem] opacity-[0.015] pointer-events-none" />
       
@@ -176,12 +176,9 @@ export default function ContributorRoles() {
                   {/* High-Fidelity Progression Info Card Component */}
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
                     <motion.div
-                      whileHover={{ 
-                        y: -3,
-                        borderColor: role.color,
-                        backgroundColor: "var(--gradient-surface)"
-                      }}
-                      className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)]"
+                      whileHover={{ y: -3 }}
+                      style={{ '--hover-border': role.color } as React.CSSProperties}
+                      className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)]"
                     >
                       {/* Top Corner Structural Meta Tracking Tag */}
                       <div className="flex items-center justify-between gap-4 mb-4">

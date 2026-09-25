@@ -97,7 +97,7 @@ export default function RecognitionRewards() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Geometry Mesh Matrix Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:12rem_12rem] opacity-[0.015] pointer-events-none" />
       
@@ -153,11 +153,8 @@ export default function RecognitionRewards() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -3,
-                borderColor: "var(--border)"
-              }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group select-none"
+              whileHover={{ y: -3 }}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group select-none hover:border-[var(--border)]"
             >
               {/* Shimmer Ambient Background Indicator on Hover */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

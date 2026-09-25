@@ -153,7 +153,7 @@ export default function WhoCanJoin() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Dynamic Geometric Matrix Grid Layer */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-[0.015] pointer-events-none" />
 
@@ -209,13 +209,9 @@ export default function WhoCanJoin() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -5, 
-                borderColor: domain.color, 
-                boxShadow: domain.glow || `0 6px 24px rgba(255,255,255,0.03)`,
-                backgroundColor: "var(--gradient-surface)"
-              }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -5 }}
+              style={{ '--hover-border': domain.color, '--hover-shadow': domain.glow || `0 6px 24px rgba(255,255,255,0.03)` } as React.CSSProperties}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--gradient-surface)]"
             >
               {/* Top Accent Bar */}
               <div 

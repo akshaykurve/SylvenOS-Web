@@ -112,7 +112,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Matrix Mesh Layer */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03] pointer-events-none" />
 
@@ -172,13 +172,9 @@ export default function CoreValues() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -6, 
-                borderColor: item.color, 
-                boxShadow: item.glow,
-                backgroundColor: "var(--card-hover-bg)"
-              }}
-              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -6 }}
+              style={{ '--hover-border': item.color, '--hover-shadow': item.glow } as React.CSSProperties}
+              className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--card-hover-bg)]"
             >
               {/* Corner Linear Accent Indicator */}
               <div 

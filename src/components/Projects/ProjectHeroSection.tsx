@@ -54,7 +54,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Background Micro-Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
       
@@ -157,8 +157,8 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: repo.delay, duration: 0.5, type: "spring" }}
-                    whileHover={{ y: -4, borderColor: "var(--primary)", boxShadow: "var(--shadow-md)" }}
-                    className={`absolute ${repo.position} w-[240px] p-4 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--bg)] shadow-[var(--shadow-sm)] flex flex-col gap-2 transition-colors duration-[var(--transition-fast)]`}
+                    whileHover={{ y: -4 }}
+                    className={`absolute ${repo.position} w-[240px] p-4 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--bg)] shadow-[var(--shadow-sm)] flex flex-col gap-2 transition-colors duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]`}
                   >
                     {/* Component Header Block */}
                     <div className="flex items-center justify-between">

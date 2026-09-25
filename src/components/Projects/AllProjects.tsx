@@ -66,7 +66,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
   }, [projects, searchQuery, selectedStatus, selectedTech, selectedDifficulty, sortBy]);
 
   return (
-    <section id="projects" className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section id="projects" className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Segment */}
@@ -192,8 +192,8 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
         transition={{ duration: 0.25 }}
-        whileHover={{ y: -5, borderColor: "var(--primary)", boxShadow: "var(--shadow-md)" }}
-        className="p-6 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between items-center text-center group transition-all duration-[var(--transition-fast)]"
+        whileHover={{ y: -5 }}
+        className="p-6 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between items-center text-center group transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
       >
         <div className="w-full flex flex-col items-center">
           <div className="flex flex-col items-center gap-3 mb-5 w-full">
@@ -263,13 +263,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2.5 px-2 text-center font-mono text-[10px] font-bold rounded border border-[var(--card-border)] hover:bg-[var(--glass)] hover:text-white transition-all uppercase"
+              className="py-2.5 px-2 text-center font-mono text-[10px] font-bold rounded border border-[var(--card-border)] text-[var(--subtitle)] hover:bg-[var(--glass)] hover:text-[var(--heading)] transition-all uppercase"
             >
               Repo ↗
             </a>
             <Link
               href={`/projects/${project.slug}`}
-              className="py-2.5 px-2 text-center font-mono text-[10px] font-black rounded bg-[var(--primary)] hover:bg-opacity-90 text-white transition-all uppercase tracking-wider"
+              className="py-2.5 px-2 text-center font-mono text-[10px] font-black rounded bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white transition-all uppercase tracking-wider"
             >
               Details ➔
             </Link>

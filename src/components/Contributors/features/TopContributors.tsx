@@ -26,7 +26,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
   if (topNodes.length === 0) return null;
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Structural Wireframe Backing */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:14rem] opacity-[0.015] pointer-events-none" />
 
@@ -60,13 +60,9 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
               <motion.div
                 key={node.id}
                 variants={cardVariants}
-                whileHover={{ 
-                  y: -5, 
-                  borderColor: isRankOne ? "var(--logo)" : "var(--success)",
-                  backgroundColor: "var(--gradient-surface)" 
-                }}
-                className={`p-6 md:p-8 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group ${
-                  isRankOne ? "border-[var(--logo)]/40 shadow-[0_0_30px_rgba(var(--logo-rgb),0.03)]" : "border-[var(--card-border)]"
+                whileHover={{ y: -5 }}
+                className={`p-6 md:p-8 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group hover:bg-[var(--gradient-surface)] ${
+                  isRankOne ? "border-[var(--logo)]/40 shadow-[0_0_30px_rgba(var(--logo-rgb),0.03)] hover:border-[var(--logo)]" : "border-[var(--card-border)] hover:border-[var(--success)]"
                 }`}
               >
                 {/* Visual Accent Flairs for Top Performer */}

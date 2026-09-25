@@ -90,7 +90,7 @@ export default function ContributionPhilosophy() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
       {/* Precision Structural System Matrix Lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:8rem_8rem] opacity-[0.015] pointer-events-none" />
       
@@ -146,23 +146,19 @@ export default function ContributionPhilosophy() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ 
-                y: -4, 
-                borderColor: card.color,
-                backgroundColor: "var(--gradient-surface)",
-                boxShadow: "0 6px 20px rgba(0,0,0,0.05)"
-              }}
-              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)]"
+              whileHover={{ y: -4 }}
+              style={{ '--hover-border': card.color } as React.CSSProperties}
+              className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.05)]"
             >
               {/* Card Header Section */}
               <div>
                 <div className="flex items-center justify-between mb-6">
                   {/* Icon Block Container with dynamic hover system lines */}
-                  <div 
-                    className="w-10 h-10 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] flex items-center justify-center transition-colors duration-[var(--transition-fast)] group-hover:border-transparent group-hover:text-white"
+                  <div
+                    className="w-10 h-10 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] flex items-center justify-center transition-colors duration-[var(--transition-fast)] group-hover:border-transparent group-hover:bg-[var(--hover-bg-target)]"
                     style={{ '--hover-bg-target': card.color } as React.CSSProperties}
                   >
-                    <div className="text-[var(--muted)] group-hover:text-[var(--heading)] transition-colors">
+                    <div className="text-[var(--muted)] group-hover:text-white transition-colors">
                       {card.svgIcon}
                     </div>
                   </div>
