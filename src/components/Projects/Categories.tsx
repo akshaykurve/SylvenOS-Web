@@ -141,7 +141,7 @@ export default function ProjectCategories() {
             transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
           >
-            Explore our curated technology classifications. Select a core taxonomy class or drop down directly into scoped micro-filters to target your contribution domain.
+            We welcome every technology and discipline — no stack is off-limits. Browse by category below, or explore all active projects regardless of what they&apos;re built with.
           </motion.p>
         </div>
 

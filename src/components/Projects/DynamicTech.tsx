@@ -24,7 +24,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
       Database: [],
       DevOps: [],
       Design: [],
-      "Ecosystem Extensions": [], // Automatic catch-all bucket
+      "More Technologies": [], // Catch-all for any stack not in TECH_TAXONOMY — every tech counts equally
     };
 
     projects.forEach((project) => {
@@ -32,7 +32,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
         counts[tech] = (counts[tech] || 0) + 1;
 
         // Dynamic lookup against the decoupled map
-        const category = TECH_TAXONOMY[tech] || "Ecosystem Extensions";
+        const category = TECH_TAXONOMY[tech] || "More Technologies";
         
         // Dynamic initialization for any custom category strings introduced later
         if (!categories[category]) {
@@ -77,7 +77,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
               System Architecture Matrix
             </h2>
             <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed">
-              Real-time core dependency distribution mapped via synchronized engine schemas.
+              Real-time core dependency distribution mapped via synchronized engine schemas. Every technology used across our projects is represented here — none are excluded.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                     : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
                 }`}
               >
-                {cat.split(" ")[0]}
+                {cat}
               </button>
             ))}
           </div>

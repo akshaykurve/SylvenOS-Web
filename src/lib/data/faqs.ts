@@ -32,7 +32,7 @@ export const faqData = [
   {
     "id": "tech-stack",
     "question": "What tech stack does Sylven OS use?",
-    "answer": "Projects across the organization commonly use TypeScript, Next.js, React, Node.js, and Tailwind CSS on the frontend, with a mix of backend and infrastructure tools depending on the project. Each project's page lists its exact tech stack, pulled live from its GitHub repository topics."
+    "answer": "There's no fixed or preferred stack — we welcome every language, framework, and tool. TypeScript, Next.js, React, Node.js, and Tailwind CSS show up often simply because they're popular with our contributors, but projects in Python, Go, Rust, Java, mobile frameworks, and anything else are equally welcome. Each project's page lists its exact tech stack, pulled live from its GitHub repository topics."
   },
   {
     "id": "code-review-process",
