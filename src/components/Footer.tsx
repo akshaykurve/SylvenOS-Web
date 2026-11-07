@@ -73,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={social.label}
-                className="w-9 h-9 rounded-lg bg-[var(--glass)] border border-gray-500/15 flex items-center justify-center text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--primary)] transition-colors duration-300"
+                className="w-11 h-11 rounded-lg bg-[var(--glass)] border border-gray-500/15 flex items-center justify-center text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--primary)] transition-colors duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -91,7 +91,7 @@ export default function Footer() {
           <h4 className="text-xs font-bold tracking-widest text-[var(--text)] uppercase opacity-70">
             Ecosystem
           </h4>
-          <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
+          <ul className="flex flex-col text-sm list-none p-0 m-0">
             {[
               { text: "Explore Projects", href: "/projects" },
               { text: "Showcase", href: "https://github.com/orgs/SylvenOS/repositories", external: true },
@@ -103,7 +103,7 @@ export default function Footer() {
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="no-underline text-[var(--muted)]"
+                  className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
                   <motion.span
                     variants={itemVariants}
@@ -123,10 +123,10 @@ export default function Footer() {
           <h4 className="text-xs font-bold tracking-widest text-[var(--text)] uppercase opacity-70">
             Resources
           </h4>
-          <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
+          <ul className="flex flex-col text-sm list-none p-0 m-0">
             {[
               { text: "Documentation", href: "https://github.com/SylvenOS/SylvenOS-Web#readme", external: true },
-              { text: "Contributing Guide", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CONTRIBUTING.md", external: true },
+              { text: "Contributing Guide", href: "/docs/contributing" },
               { text: "Security Policy", href: "https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/SECURITY.md", external: true },
               { text: "Help & Support", href: "https://discord.com/invite/HNrEcrSBs6", external: true },
             ].map((link, i) => (
@@ -135,7 +135,7 @@ export default function Footer() {
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="no-underline text-[var(--muted)]"
+                  className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
                   <motion.span
                     variants={itemVariants}
@@ -143,7 +143,7 @@ export default function Footer() {
                     className="inline-flex items-center gap-1 cursor-pointer"
                   >
                     {link.text}{" "}
-                    <ArrowUpRight size={12} className="opacity-40" />
+                    {link.external && <ArrowUpRight size={12} aria-hidden="true" className="opacity-40" />}
                   </motion.span>
                 </Link>
               </li>
@@ -156,7 +156,7 @@ export default function Footer() {
           <h4 className="text-xs font-bold tracking-widest text-[var(--text)] uppercase opacity-70">
             Organization
           </h4>
-          <ul className="flex flex-col gap-3 text-sm list-none p-0 m-0">
+          <ul className="flex flex-col text-sm list-none p-0 m-0">
             {[
               { text: "About Us", href: "/about" },
               { text: "Our Contributors", href: "/contributors" },
@@ -166,7 +166,7 @@ export default function Footer() {
               <li key={i}>
                 <Link
                   href={link.href}
-                  className="no-underline text-[var(--muted)]"
+                  className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
                   <motion.span
                     variants={itemVariants}
@@ -185,7 +185,7 @@ export default function Footer() {
       {/* Bottom Bar: Copyright & Compliance Legalities */}
       <div className="w-full border-t border-gray-500/10 bg-[rgba(0,0,0,0.05)]">
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-16 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-          <div className="flex items-center gap-1 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-0.5 text-center sm:justify-start sm:text-left">
             <span>© {currentYear} Sylven OS • Built with</span>
             <Heart
               size={12}
@@ -193,22 +193,22 @@ export default function Footer() {
             />
             <span>To Learn. To Build. To Educate.</span>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6">
             <Link
               href="/privacy"
-              className="hover:text-[var(--text)] transition-colors no-underline"
+              className="inline-flex min-h-11 items-center hover:text-[var(--text)] transition-colors no-underline"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="hover:text-[var(--text)] transition-colors no-underline"
+              className="inline-flex min-h-11 items-center hover:text-[var(--text)] transition-colors no-underline"
             >
               Terms of Service
             </Link>
             <Link
               href="/privacy#cookies"
-              className="hover:text-[var(--text)] transition-colors no-underline"
+              className="inline-flex min-h-11 items-center hover:text-[var(--text)] transition-colors no-underline"
             >
               Cookies
             </Link>

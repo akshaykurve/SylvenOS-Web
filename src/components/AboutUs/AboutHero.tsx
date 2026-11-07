@@ -37,7 +37,7 @@ export default function HeroSection() {
 });
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-24 overflow-hidden  text-[var(--text)] flex items-center">
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-14 md:py-24 overflow-hidden  text-[var(--text)] flex items-center">
 
       {/* Radial Gradient Backdrops for Depth */}
       <div 

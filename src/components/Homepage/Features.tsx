@@ -2,7 +2,7 @@ import FeaturesList from "./features/FeatureList";
 
 export default function Features() {
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28 bg-[var(--bg)] overflow-hidden text-[var(--text)] transition-colors duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28 bg-[var(--bg)] overflow-hidden text-[var(--text)] transition-colors duration-[var(--transition-normal)]">
 
 
 

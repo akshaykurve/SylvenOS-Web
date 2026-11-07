@@ -6,7 +6,50 @@ import Link from "next/link";
 
 
 const MotionLink = motion.create(Link);
-export default function HeroSection() {
+
+export interface HeroMember {
+  login: string;
+  name: string | null;
+  html_url: string;
+}
+
+// Fixed constellation slots (position + colour) and the lines between them.
+const SLOTS = [
+  { top: "15%", left: "20%", color: "var(--info)" },
+  { top: "10%", left: "65%", color: "var(--success)" },
+  { top: "42%", left: "10%", color: "var(--logo)" },
+  { top: "35%", left: "48%", color: "var(--warning)" },
+  { top: "30%", left: "85%", color: "var(--danger)" },
+  { top: "72%", left: "25%", color: "var(--subtitle)" },
+  { top: "78%", left: "68%", color: "var(--accent)" },
+  { top: "60%", left: "90%", color: "var(--success)" },
+  { top: "58%", left: "42%", color: "var(--info)" },
+];
+
+// [from, to, strokeWidth, dash] using SLOTS indices
+const EDGES: [number, number, number, string | undefined][] = [
+  [0, 3, 1, "4 4"],
+  [0, 2, 1, undefined],
+  [1, 3, 1, undefined],
+  [1, 4, 1, "2 2"],
+  [2, 5, 1, "4 4"],
+  [3, 8, 1.5, undefined],
+  [3, 6, 1, undefined],
+  [4, 7, 1, undefined],
+  [8, 5, 1, undefined],
+  [8, 6, 1.5, undefined],
+  [7, 6, 1, "4 4"],
+];
+
+/** "Akshay Kurve" -> "AK"; "gauravasync" -> "GA" */
+function getInitials(member: HeroMember) {
+  const words = (member.name ?? "").trim().split(/\s+/).filter(Boolean);
+  if (words.length >= 2) return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+  const base = words[0] ?? member.login;
+  return base.replace(/[^a-zA-Z0-9]/g, "").slice(0, 2).toUpperCase() || "?";
+}
+
+export default function HeroSection({ members = [] }: { members?: HeroMember[] }) {
   // Animation settings for structural impact on landing
   const textContainerVariants:Variants = {
     hidden: { opacity: 0, x: -30 },
@@ -45,21 +88,17 @@ export default function HeroSection() {
     },
   };
 
-  // Mock community node points mapping out coordinates, initials, and domain assignments
-  const contributorNodes = [
-    { id: 1, top: "15%", left: "20%", initial: "JD", role: "Dev // Core API", color: "var(--info)" },
-    { id: 2, top: "10%", left: "65%", initial: "AM", role: "ML // Vision Model", color: "var(--success)" },
-    { id: 3, top: "42%", left: "10%", initial: "SR", role: "UX // Design Tokens", color: "var(--logo)" },
-    { id: 4, top: "35%", left: "48%", initial: "KP", role: "DevOps // CI Optimization", color: "var(--warning)" },
-    { id: 5, top: "30%", left: "85%", initial: "TL", role: "Sec // Access Audit", color: "var(--danger)" },
-    { id: 6, top: "72%", left: "25%", initial: "HL", role: "Doc // Tech Architecture", color: "var(--subtitle)" },
-    { id: 7, top: "78%", left: "68%", initial: "OW", role: "QA // E2E Validations", color: "var(--accent)" },
-    { id: 8, top: "60%", left: "90%", initial: "MX", role: "Dev // Edge Compute", color: "var(--success)" },
-    { id: 9, top: "58%", left: "42%", initial: "SY", role: "Sys // Kernel Matrix", color: "var(--info)" },
-  ];
+  // Real community members placed on the constellation slots
+  const contributorNodes = members.slice(0, SLOTS.length).map((member, i) => ({
+    id: member.login,
+    ...SLOTS[i],
+    initial: getInitials(member),
+    label: member.name?.trim() || member.login,
+    href: member.html_url,
+  }));
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-24 overflow-hidden text-[var(--text)] flex items-center">
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-14 md:py-24 overflow-hidden text-[var(--text)] flex items-center">
       
       {/* Dynamic Deep Multi-layered Ambient Glow Vector */}
       <div 
@@ -132,23 +171,28 @@ export default function HeroSection() {
             style={{ opacity: "var(--network-opacity)" }}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line x1="20%" y1="15%" x2="48%" y2="35%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="20%" y1="15%" x2="10%" y2="42%" stroke="currentColor" strokeWidth="1" />
-            <line x1="65%" y1="10%" x2="48%" y2="35%" stroke="currentColor" strokeWidth="1" />
-            <line x1="65%" y1="10%" x2="85%" y2="30%" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-            <line x1="10%" y1="42%" x2="25%" y2="72%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="48%" y1="35%" x2="42%" y2="58%" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="48%" y1="35%" x2="68%" y2="78%" stroke="currentColor" strokeWidth="1" />
-            <line x1="85%" y1="30%" x2="90%" y2="60%" stroke="currentColor" strokeWidth="1" />
-            <line x1="42%" y1="58%" x2="25%" y2="72%" stroke="currentColor" strokeWidth="1" />
-            <line x1="42%" y1="58%" x2="68%" y2="78%" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="90%" y1="60%" x2="68%" y2="78%" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
+            {EDGES.filter(([a, b]) => a < contributorNodes.length && b < contributorNodes.length).map(([a, b, w, dash]) => (
+              <line
+                key={`${a}-${b}`}
+                x1={SLOTS[a].left}
+                y1={SLOTS[a].top}
+                x2={SLOTS[b].left}
+                y2={SLOTS[b].top}
+                stroke="currentColor"
+                strokeWidth={w}
+                strokeDasharray={dash}
+              />
+            ))}
           </svg>
 
           {/* Map Nodes Dynamically Over the Grid Coordinate Layout */}
           {contributorNodes.map((node) => (
-            <motion.div
+            <motion.a
               key={node.id}
+              href={node.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${node.label} on GitHub`}
               variants={nodeVariants}
               whileHover={{ scale: 1.12, zIndex: 50 }}
               style={{ top: node.top, left: node.left }}
@@ -169,10 +213,10 @@ export default function HeroSection() {
               </div>
 
               {/* Dynamic Micro-Tooltip Component */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2.5 py-1 rounded bg-[var(--heading)] border border-[var(--card-border)] text-xs font-mono font-bold uppercase tracking-wider text-[var(--bg)] opacity-0 scale-95 group-hover/node:opacity-100 group-hover/node:scale-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-[var(--shadow-md)]">
-                {node.role}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 max-sm:hidden px-2.5 py-1 rounded bg-[var(--heading)] border border-[var(--card-border)] text-xs font-mono font-bold uppercase tracking-wider text-[var(--bg)] opacity-0 scale-95 group-hover/node:opacity-100 group-hover/node:scale-100 group-focus-visible/node:opacity-100 group-focus-visible/node:scale-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-[var(--shadow-md)]">
+                {node.label}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
 
           {/* Central Structural Coordinate Scope Label overlay */}

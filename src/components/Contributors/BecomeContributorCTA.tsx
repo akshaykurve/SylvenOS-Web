@@ -3,6 +3,8 @@
 import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
+
+const MotionLink = motion.create(Link);
 export default function BecomeContributorCTA() {
   const elementVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,7 +21,7 @@ export default function BecomeContributorCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* High-Impact Dynamic Radial Light Burst */}
       <div 
@@ -84,34 +86,13 @@ export default function BecomeContributorCTA() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto"
           >
             {/* Action 1: Primary Target */}
-            <motion.div
-              // href="#projects"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--bg)] bg-[var(--heading)] hover:bg-[var(--text)] transition-all text-center shadow-[var(--shadow-md)] select-none"
-            >
-              <Link href="/projects#projects">Explore Projects</Link>
-            </motion.div>
+            <MotionLink href="/projects#projects" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} className="flex min-h-12 items-center justify-center w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--bg)] bg-[var(--heading)] hover:bg-[var(--text)] transition-all text-center shadow-[var(--shadow-md)] select-none">Explore Projects</MotionLink>
 
             {/* Action 2: Secondary Structural Path */}
-            <motion.div
-              // href="#guide"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--accent)] hover:border-[var(--border)] transition-all text-center select-none"
-            >
-              <Link href="#guide">Contribution Guide</Link>
-            </motion.div>
+            <MotionLink href="#guide" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} className="flex min-h-12 items-center justify-center w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--accent)] hover:border-[var(--border)] transition-all text-center select-none">Contribution Guide</MotionLink>
 
             {/* Action 3: Community Sub-Channel Link */}
-            <motion.div
-              // href="#community"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] hover:bg-[var(--glass)] transition-all text-center select-none"
-            >
-              <Link href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer">Join Community →</Link>
-            </motion.div>
+            <MotionLink href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} className="flex min-h-12 items-center justify-center w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] hover:bg-[var(--glass)] transition-all text-center select-none">Join Community →</MotionLink>
           </motion.div>
 
         </div>

@@ -125,14 +125,14 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
-            className="grid place-items-center w-10 h-10 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] hover:border-[var(--hover-border)] transition-colors"
+            className="grid place-items-center w-11 h-11 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] hover:border-[var(--hover-border)] transition-colors"
           >
             {isLight ? <Moon size={18} aria-hidden /> : <Sun size={18} aria-hidden />}
           </button>
 
           <button
             type="button"
-            className="md:hidden grid place-items-center w-10 h-10 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] transition-colors"
+            className="md:hidden grid place-items-center w-11 h-11 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] transition-colors"
             onClick={() => setMenuPath(isMenuOpen ? null : pathname)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}

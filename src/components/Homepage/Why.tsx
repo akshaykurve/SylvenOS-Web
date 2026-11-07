@@ -99,7 +99,7 @@ export default function WhySylvenOS() {
   ];
 
   return (
-    <section aria-labelledby="why-title" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section aria-labelledby="why-title" className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Title Layout */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">
@@ -126,7 +126,7 @@ export default function WhySylvenOS() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between min-h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
+            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between min-min-h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Top Row: Icon and Engineering Code Index */}
             <div className="flex items-center justify-between w-full mb-4">

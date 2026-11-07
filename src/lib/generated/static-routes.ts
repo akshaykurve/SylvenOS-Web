@@ -8,6 +8,7 @@ export const STATIC_ROUTES: string[] = [
   "/about",
   "/contact",
   "/contributors",
+  "/docs/contributing",
   "/privacy",
   "/projects",
   "/terms"

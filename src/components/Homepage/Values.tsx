@@ -82,7 +82,7 @@ export default function CommunityValues() {
   };
 
   return (
-    <section aria-labelledby="values-title" className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
+    <section aria-labelledby="values-title" className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28 text-[var(--text)]">
 
       {/* Header Frame */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">

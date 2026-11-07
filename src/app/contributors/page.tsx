@@ -64,7 +64,7 @@ const Contribute = async() => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <HeroSection/>
+        <HeroSection members={stats.membersData} />
         <CommunityOverview stats={stats} />
         <OrganizationRankings rankedContributors={dynamicRankings}/>
         <DynamicCoreTeam members={stats.membersData} orgDescription={stats.orgData?.description} />

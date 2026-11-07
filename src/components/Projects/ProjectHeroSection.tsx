@@ -54,7 +54,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Pristine Ambient Glow Fields */}
       <div 
@@ -124,7 +124,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="w-full max-w-[540px] aspect-[4/3] rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-lg)] backdrop-blur-md relative overflow-hidden p-6 group"
+              className="w-full max-w-[540px] aspect-[4/3] min-h-[320px] rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-lg)] backdrop-blur-md relative overflow-hidden p-6 group"
             >
 
               {/* Crisp SVG Geometric Connection Paths Overlay */}

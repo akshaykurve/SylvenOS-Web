@@ -66,7 +66,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
   }, [projects, searchQuery, selectedStatus, selectedTech, selectedDifficulty, sortBy]);
 
   return (
-    <section id="projects" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section id="projects" className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Segment */}
@@ -121,7 +121,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
                     key={status}
                     onClick={() => setSelectedStatus(status)}
               aria-pressed={selectedStatus === status}
-                    className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
+                    className={`px-3 py-2 min-h-10 rounded text-xs font-mono font-medium border transition-all ${
                       selectedStatus === status
                         ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
                         : "bg-[var(--bg)] text-[var(--subtitle)] border-[var(--card-border)] hover:border-[var(--border)]"
@@ -141,7 +141,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
                     key={tech}
                     onClick={() => setSelectedTech(tech)}
               aria-pressed={selectedTech === tech}
-                    className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
+                    className={`px-3 py-2 min-h-10 rounded text-xs font-mono font-medium border transition-all ${
                       selectedTech === tech
                         ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
                         : "bg-[var(--bg)] text-[var(--subtitle)] border-[var(--card-border)] hover:border-[var(--border)]"
@@ -161,7 +161,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
                     key={diff}
                     onClick={() => setSelectedDifficulty(diff)}
               aria-pressed={selectedDifficulty === diff}
-                    className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
+                    className={`px-3 py-2 min-h-10 rounded text-xs font-mono font-medium border transition-all ${
                       selectedDifficulty === diff
                         ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
                         : "bg-[var(--bg)] text-[var(--subtitle)] border-[var(--card-border)] hover:border-[var(--border)]"

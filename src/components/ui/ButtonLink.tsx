@@ -12,7 +12,7 @@ interface ButtonLinkProps {
 }
 
 const BASE =
-  "group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 text-[15px] font-semibold no-underline cursor-pointer transition-[background-color,border-color,box-shadow,color] duration-200";
+  "group inline-flex min-h-12 items-center whitespace-nowrap justify-center gap-2 rounded-xl px-6 text-[15px] font-semibold no-underline cursor-pointer transition-[background-color,border-color,box-shadow,color] duration-200";
 
 const VARIANTS = {
   primary:

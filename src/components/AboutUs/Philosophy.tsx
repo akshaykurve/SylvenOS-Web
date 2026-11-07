@@ -73,7 +73,7 @@ export default function SylvenPhilosophy() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Background Microstructure Grid Matrix */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:100%_5rem] opacity-[0.02] pointer-events-none" />
 

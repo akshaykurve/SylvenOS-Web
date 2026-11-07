@@ -62,7 +62,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
   }, [aggregatedStats]);
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -85,7 +85,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
             <button
               onClick={() => setSelectedCategory("ALL")}
               aria-pressed={selectedCategory === "ALL"}
-              className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
+              className={`px-3 py-2 min-h-10 rounded-sm uppercase tracking-wider transition-all border ${
                 selectedCategory === "ALL"
                   ? "bg-[var(--primary)] text-white border-transparent font-bold"
                   : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
@@ -98,7 +98,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
               aria-pressed={selectedCategory === cat}
-                className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
+                className={`px-3 py-2 min-h-10 rounded-sm uppercase tracking-wider transition-all border ${
                   selectedCategory === cat
                     ? "bg-[var(--primary)] text-white border-transparent font-bold"
                     : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"

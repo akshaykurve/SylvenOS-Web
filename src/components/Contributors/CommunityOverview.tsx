@@ -103,7 +103,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Structural Ambient Underglow Accent */}
       <div 
@@ -213,7 +213,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                     alt={`${member.login} contributor primitive`}
                     className="w-9 h-9 rounded-full border-2 border-[var(--bg)] bg-[var(--card-bg)] transition-transform duration-200 group-hover/avatar:scale-110 group-hover/avatar:z-30 relative"
                   />
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-0.5 rounded bg-[var(--heading)] text-xs font-mono text-[var(--bg)] font-bold opacity-0 group-hover/avatar:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-[var(--shadow-sm)]">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 max-sm:hidden px-2 py-0.5 rounded bg-[var(--heading)] text-xs font-mono text-[var(--bg)] font-bold opacity-0 group-hover/avatar:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-[var(--shadow-sm)]">
                     {member.login}
                   </div>
                 </a>

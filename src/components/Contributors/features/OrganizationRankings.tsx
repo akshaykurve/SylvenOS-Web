@@ -22,7 +22,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-14 md:py-24 transition-colors overflow-hidden duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-14 md:py-24 transition-colors overflow-hidden duration-[var(--transition-normal)]">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Module Header Area using Typography Tokens */}

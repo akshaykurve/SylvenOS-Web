@@ -101,7 +101,7 @@ export default function ProjectCategories() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Background Spatial Structure Layout */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:100%_6rem] opacity-[0.02] pointer-events-none" />
 
@@ -187,13 +187,12 @@ export default function ProjectCategories() {
                 
                 <div className="flex flex-wrap gap-2">
                   {category.subcategories.map((sub, sIdx) => (
-                    <button
+                    <span
                       key={sIdx}
-                      type="button"
                       className="font-mono text-xs font-semibold text-[var(--muted)] hover:text-[var(--heading)] px-2.5 py-1 rounded bg-[var(--glass)] hover:bg-[var(--surface)] border border-[var(--card-border)] hover:border-[var(--border)] transition-all duration-[var(--transition-fast)]"
                     >
                       {sub}
-                    </button>
+                    </span>
                   ))}
                 </div>
               </div>

@@ -9,7 +9,7 @@ export default async function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden px-6 pb-16 pt-32 md:px-[8%] lg:pb-20"
+      className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden px-6 pb-16 pt-32 md:px-[max(8%,calc((100%-80rem)/2))] lg:pb-20"
     >
       {/* Top Section: Split Content */}
       <div className="mb-20 flex w-full flex-col items-center justify-between gap-14 lg:flex-row lg:gap-[60px]">
@@ -40,7 +40,7 @@ export default async function Hero() {
             benefits everyone.
           </p>
 
-          <div className="flex w-full flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          <div className="flex w-full flex-col justify-center gap-4 sm:flex-row lg:flex-col lg:items-start lg:justify-start xl:flex-row">
             <ButtonLink href="/projects">Explore Projects</ButtonLink>
             <ButtonLink href="/contributors" variant="secondary" arrow={false}>
               Become a Contributor

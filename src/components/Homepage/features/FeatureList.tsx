@@ -46,14 +46,14 @@ export default function FeaturesList() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
+        className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {/* Card 1: Learn */}
         <motion.div
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
-          className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/8 hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
+          className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/8 hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
         >
           {/* Animated Hover Radial Glow */}
           <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -80,10 +80,10 @@ export default function FeaturesList() {
               </svg>
             </motion.div>
 
-            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
+            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Learn
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-white transition-colors duration-300">
               Learn modern technologies through practical guides, open-source
               codebases, and real-world engineering practices.
             </p>
@@ -95,7 +95,7 @@ export default function FeaturesList() {
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
-          className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) "        >
+          className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) "        >
           <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <div>
@@ -120,10 +120,10 @@ export default function FeaturesList() {
               </svg>
             </motion.div>
 
-            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
+            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Build
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-white transition-colors duration-300">
               Collaborate on production-ready open-source projects that solve
               real problems and strengthen your portfolio.
             </p>
@@ -135,7 +135,7 @@ export default function FeaturesList() {
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
-          className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
+          className="sm:col-span-2 lg:col-span-1 group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
         >
           <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -163,10 +163,10 @@ export default function FeaturesList() {
               </svg>
             </motion.div>
 
-            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
+            <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Educate
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-white transition-colors duration-300">
               Share knowledge through documentation, tutorials, mentorship, and
               technical content that helps the community grow.
             </p>

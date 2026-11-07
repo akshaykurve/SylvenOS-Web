@@ -38,7 +38,7 @@ export default function HowCommunityWorks() {
   const steps = CONTRIBUTION_STEPS;
 
   return (
-    <section id="guide" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section id="guide" className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Structural Ambient Background Flow Element */}
       <div 
         className="absolute bottom-0 right-10 w-[700px] h-[450px] rounded-full filter blur-[150px] opacity-[0.1] pointer-events-none"
