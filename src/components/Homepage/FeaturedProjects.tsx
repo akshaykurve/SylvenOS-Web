@@ -71,21 +71,19 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
-      {/* Background Structural Mesh Accent */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.1] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
 
       {/* Title Layout Frame */}
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
         <div>
           <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-wider mb-3">
-            // Ecosystem Repositories
+            Ecosystem Repositories
           </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
             Featured Projects
           </h2>
         </div>
-        <p className="text-base text-[var(--subtitle)] font-light max-w-md md:text-right">
+        <p className="text-base text-[var(--subtitle)] max-w-md md:text-right">
           Production applications engineered transparently alongside our global contributor community.
         </p>
       </div>
@@ -102,7 +100,6 @@ export default function FeaturedProjects() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ y: -5 }}
             className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md hover:border-[var(--primary)]"
           >
             {/* Top Area: Logo & Name & Description */}
@@ -116,7 +113,7 @@ export default function FeaturedProjects() {
                 </h3>
               </div>
 
-              <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed font-light mb-6">
+              <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed mb-6">
                 {project.description}
               </p>
 

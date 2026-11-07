@@ -139,19 +139,17 @@ export default function ContributionAreas() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
-      {/* Subtle Background Accent Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:10rem] [mask-image:linear-gradient(to_bottom,transparent,#000_20%,#000_80%,transparent)] opacity-[0.05] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
 
       {/* Main Title Block */}
       <div className="relative z-10 max-w-7xl mx-auto mb-20 text-center">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono bg-[var(--hover-bg)] border border-[var(--active-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
           Non-Code Friendly Welcome
         </span>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)] max-w-3xl mx-auto leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)] max-w-3xl mx-auto leading-tight">
           Find Your Fit in Our Ecosystem
         </h2>
-        <p className="text-base md:text-lg text-[var(--subtitle)] font-light mt-4 max-w-xl mx-auto">
+        <p className="text-base md:text-lg text-[var(--subtitle)] mt-4 max-w-xl mx-auto">
           Contributions extend far beyond the compiler. Choose an discipline that matches your core skills.
         </p>
       </div>

@@ -83,7 +83,7 @@ export default function FeaturesList() {
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
               Learn
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300 font-light">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
               Learn modern technologies through practical guides, open-source
               codebases, and real-world engineering practices.
             </p>
@@ -123,7 +123,7 @@ export default function FeaturesList() {
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
               Build
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300 font-light">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
               Collaborate on production-ready open-source projects that solve
               real problems and strengthen your portfolio.
             </p>
@@ -166,7 +166,7 @@ export default function FeaturesList() {
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-[var(--bg)] transition-colors duration-300">
               Educate
             </h3>
-            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300 font-light">
+            <p className="text-[14px] md:text-base leading-[1.6] text-(--muted) group-hover:text-(--bg) transition-colors duration-300">
               Share knowledge through documentation, tutorials, mentorship, and
               technical content that helps the community grow.
             </p>

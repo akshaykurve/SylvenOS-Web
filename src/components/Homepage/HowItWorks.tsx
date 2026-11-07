@@ -68,19 +68,17 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Visual Accent Ambient Grids */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_50%_50%_at_0%_50%,#000_20%,transparent_100%)] opacity-[0.1] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Title block */}
       <div className="relative z-10 max-w-4xl mx-auto mb-24">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
           Contribution Pipeline
         </span>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           How It Works
         </h2>
-        <p className="text-base md:text-lg text-[var(--subtitle)] font-light mt-3 max-w-xl">
+        <p className="text-base md:text-lg text-[var(--subtitle)] mt-3 max-w-xl">
           A clear, step-by-step track from checking out our repositories to landing your first production merge.
         </p>
       </div>
@@ -146,7 +144,7 @@ export default function HowItWorks() {
                     {step.title}
                   </span>
                 </h3>
-                <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+                <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed">
                   {step.description}
                 </p>
               </div>

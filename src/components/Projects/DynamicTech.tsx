@@ -62,8 +62,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
   }, [aggregatedStats]);
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -71,12 +70,12 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--card-border)] pb-8 mb-12 gap-6">
           <div className="max-w-xl text-left">
             <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase block mb-3">
-              // DYNAMIC_TAXONOMY_ROUTING
+              DYNAMIC_TAXONOMY_ROUTING
             </span>
-            <h2 className="text-3xl font-black tracking-tight text-[var(--heading)] mb-3">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--heading)] mb-3">
               System Architecture Matrix
             </h2>
-            <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed">
               Real-time core dependency distribution mapped via synchronized engine schemas. Every technology used across our projects is represented here — none are excluded.
             </p>
           </div>
@@ -87,7 +86,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
               onClick={() => setSelectedCategory("ALL")}
               className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
                 selectedCategory === "ALL"
-                  ? "bg-[var(--primary)] text-white border-transparent font-black"
+                  ? "bg-[var(--primary)] text-white border-transparent font-bold"
                   : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
               }`}
             >
@@ -99,7 +98,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
                   selectedCategory === cat
-                    ? "bg-[var(--primary)] text-white border-transparent font-black"
+                    ? "bg-[var(--primary)] text-white border-transparent font-bold"
                     : "bg-[var(--glass)] text-[var(--disabled)] border-[var(--card-border)] hover:text-[var(--text)]"
                 }`}
               >
@@ -121,7 +120,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-[var(--card-border)] pb-3 mb-4">
-                    <span className="font-mono text-[10px] font-black tracking-widest text-[var(--heading)] uppercase">
+                    <span className="font-mono text-[10px] font-bold tracking-widest text-[var(--heading)] uppercase">
                       {category}
                     </span>
                     <span className="font-mono text-[9px] text-[var(--disabled)] uppercase bg-[var(--glass)] px-2 py-0.5 rounded border border-[var(--card-border)]">
@@ -141,7 +140,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                             {tech}
                           </span>
                           <div className="flex items-center gap-2 font-mono text-[9px]">
-                            <span className="text-[var(--primary)] font-black bg-[var(--primary)]/10 px-1.5 py-0.5 rounded border border-[var(--primary)]/20">
+                            <span className="text-[var(--primary)] font-bold bg-[var(--primary)]/10 px-1.5 py-0.5 rounded border border-[var(--primary)]/20">
                               {frequency} {frequency === 1 ? "Repo" : "Repos"}
                             </span>
                           </div>

@@ -105,8 +105,8 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
         <div className="flex items-center gap-4 mb-10 pb-8 border-b border-[var(--card-border)]">
           <img src={project.avatarUrl} alt={project.name} className="w-16 h-16 rounded border" />
           <div>
-            <h1 className="text-3xl md:text-5xl font-black text-[var(--heading)] tracking-tight">{project.name}</h1>
-            <p className="text-sm text-[var(--subtitle)] mt-2 font-light">{project.description}</p>
+            <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] tracking-tight">{project.name}</h1>
+            <p className="text-sm text-[var(--subtitle)] mt-2">{project.description}</p>
           </div>
         </div>
 
@@ -116,15 +116,15 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
           {/* Main detailed spec panels */}
           <div className="md:col-span-2 space-y-10">
             <section>
-              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-3">// Detailed Overview</h2>
-              <p className="text-base font-light leading-relaxed text-[var(--subtitle)]">{project.overview}</p>
+              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-3">Detailed Overview</h2>
+              <p className="text-base leading-relaxed text-[var(--subtitle)]">{project.overview}</p>
             </section>
 
             <section>
-              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-4">// System Features</h2>
+              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-4">System Features</h2>
               <ul className="space-y-3">
                 {project.features.map((feat, i) => (
-                  <li key={i} className="text-sm font-light text-[var(--text)] flex gap-2">
+                  <li key={i} className="text-sm text-[var(--text)] flex gap-2">
                     <span className="text-[var(--info)]">➔</span> {feat}
                   </li>
                 ))}
@@ -132,12 +132,12 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
             </section>
 
             <section>
-              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-4">// Architecture Schema</h2>
+              <h2 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wider mb-4">Architecture Schema</h2>
               <div className="space-y-4">
                 {project.architecture.map((layer, i) => (
                   <div key={i} className="p-4 bg-[var(--card-bg)] border border-[var(--card-border)] rounded">
                     <div className="font-mono text-xs text-[var(--primary)] mb-1 font-bold">{layer.layer}</div>
-                    <p className="text-xs text-[var(--subtitle)] font-light">{layer.description}</p>
+                    <p className="text-xs text-[var(--subtitle)]">{layer.description}</p>
                   </div>
                 ))}
               </div>
@@ -147,7 +147,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
           {/* Right hand metadata sidebar panel */}
           <div className="space-y-8 bg-[var(--card-bg)] border border-[var(--card-border)] p-6 rounded-[var(--radius-md)] h-fit">
             <div>
-              <h3 className="text-[10px] font-mono text-[var(--disabled)] uppercase mb-3">// Status Metrics</h3>
+              <h3 className="text-[10px] font-mono text-[var(--disabled)] uppercase mb-3">Status Metrics</h3>
               <div className="space-y-2 text-xs font-mono">
                 <div className="flex justify-between">
                   <span className="text-[var(--disabled)]">STATUS:</span>
@@ -165,7 +165,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
             </div>
 
             <div className="pt-6 border-t border-[var(--card-border)]">
-              <h3 className="text-[10px] font-mono text-[var(--disabled)] uppercase mb-3">// Tech Stack</h3>
+              <h3 className="text-[10px] font-mono text-[var(--disabled)] uppercase mb-3">Tech Stack</h3>
               <div className="flex flex-wrap gap-1.5">
                 {project.techStack.map((tech) => (
                   <span key={tech} className="text-[9px] font-mono bg-[var(--bg)] border border-[var(--card-border)] px-2 py-0.5 rounded text-[var(--subtitle)]">

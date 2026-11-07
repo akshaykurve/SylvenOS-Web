@@ -22,18 +22,18 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-14 md:py-[100px] transition-colors overflow-hidden duration-[var(--transition-normal)]">
+    <section className="relative px-6 md:px-[8%] py-14 md:py-24 transition-colors overflow-hidden duration-[var(--transition-normal)]">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Module Header Area using Typography Tokens */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-[var(--radius-sm)] inline-block mb-4 shadow-[var(--shadow-sm)]">
-            // Global Ledger Matrix
+            Global Ledger Matrix
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
             Organization Rankings
           </h2>
-          <p className="text-sm md:text-base text-[var(--subtitle)] font-light">
+          <p className="text-sm md:text-base text-[var(--subtitle)]">
             Top Contributors
           </p>
         </div>
@@ -50,7 +50,6 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 target="_blank"
                 rel="noreferrer"
                 key={node.id}
-                whileHover={{ y: -6 }}
                 className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative flex flex-col items-center text-center transition-all duration-[var(--transition-fast)] block group hover:bg-[var(--card-hover-bg)] ${
                   isFirst
                     ? "md:order-2 border-[var(--logo)] md:py-10 shadow-[var(--shadow-lg)] hover:border-[var(--logo)] hover:shadow-[var(--glow-logo)]"
@@ -89,7 +88,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 {/* Total Counter Score Box */}
                 <div className="w-full py-2 px-4 rounded-[var(--radius-sm)] bg-[var(--input-bg)] border border-[var(--card-border)] font-mono text-center transition-colors">
                   <div className="text-[9px] text-[var(--disabled)] uppercase tracking-wider mb-0.5">Total Core Commits</div>
-                  <div className="text-lg font-black text-[var(--heading)]">{node.totalContributions}</div>
+                  <div className="text-lg font-bold text-[var(--heading)]">{node.totalContributions}</div>
                 </div>
               </motion.a>
             );
@@ -122,7 +121,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 {/* Score Counter Metric Right Deck */}
                 <div className="text-right font-mono flex-shrink-0">
                   <div className="text-[9px] text-[var(--disabled)] uppercase tracking-wider">Contributions</div>
-                  <div className="text-sm font-black text-[var(--heading)]">{node.totalContributions}</div>
+                  <div className="text-sm font-bold text-[var(--heading)]">{node.totalContributions}</div>
                 </div>
               </a>
             ))}

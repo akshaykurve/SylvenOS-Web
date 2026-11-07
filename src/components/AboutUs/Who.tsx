@@ -19,9 +19,7 @@ export default function WhoWeAre() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Decorative Tech Grid Highlight */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:10rem] opacity-[0.03] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Soft Ambient Light Glow behind content */}
       <div 
@@ -42,7 +40,7 @@ export default function WhoWeAre() {
               viewport={{ once: true }}
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
             >
-              // Identity
+              Identity
             </motion.span>
 
             <motion.h2
@@ -51,7 +49,7 @@ export default function WhoWeAre() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] leading-tight mb-6"
+              className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] leading-tight mb-6"
             >
               Who We Are
             </motion.h2>
@@ -73,7 +71,7 @@ export default function WhoWeAre() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-base text-[var(--subtitle)] font-light leading-relaxed max-w-2xl"
+              className="text-base text-[var(--subtitle)] leading-relaxed max-w-2xl"
             >
               We believe open source is not only about writing code—it is about sharing knowledge, mentoring others, documenting critical solutions, and engineering systems transparently to lift the next generation of builders.
             </motion.p>
@@ -115,7 +113,7 @@ export default function WhoWeAre() {
                 />
                 <div>
                   <h4 className="text-base font-bold text-[var(--heading)] mb-1 tracking-tight">{value.title}</h4>
-                  <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed font-light">{value.desc}</p>
+                  <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed">{value.desc}</p>
                 </div>
               </motion.div>
             ))}

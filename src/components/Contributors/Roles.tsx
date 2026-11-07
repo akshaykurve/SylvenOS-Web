@@ -93,9 +93,7 @@ export default function ContributorRoles() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Matrix Linework */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:16rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Structural Backdrop Radial Light Source */}
       <div 
@@ -113,7 +111,7 @@ export default function ContributorRoles() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--info)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // Organizational Pipeline
+            Organizational Pipeline
           </motion.span>
           
           <motion.h2
@@ -121,7 +119,7 @@ export default function ContributorRoles() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Ecosystem Progression Path
           </motion.h2>
@@ -131,7 +129,7 @@ export default function ContributorRoles() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Our community infrastructure features clear, direct advancement tracks. Understand operational tiers, map structural expectations, and visualize your integration trajectory.
           </motion.p>
@@ -176,7 +174,6 @@ export default function ContributorRoles() {
                   {/* High-Fidelity Progression Info Card Component */}
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
                     <motion.div
-                      whileHover={{ y: -3 }}
                       style={{ '--hover-border': role.color } as React.CSSProperties}
                       className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)]"
                     >
@@ -194,24 +191,24 @@ export default function ContributorRoles() {
                       </div>
 
                       {/* Main Node Functional Label */}
-                      <h3 className="text-xl md:text-2xl font-black tracking-tight text-[var(--heading)] mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[var(--heading)] mb-2">
                         {role.title}
                       </h3>
 
                       {/* Functional Core Scope Description */}
-                      <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed mb-6">
+                      <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed mb-6">
                         {role.description}
                       </p>
 
                       {/* Explicit Inline Structured Responsibilities Checklist Segment */}
                       <div className="space-y-2.5 border-t border-[var(--card-border)] pt-5">
                         <div className="text-[10px] font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-2">
-                          // Core Tasks & Responsibilities
+                          Core Tasks & Responsibilities
                         </div>
                         {role.responsibilities.map((resp, respIdx) => (
                           <div key={respIdx} className="flex items-start gap-2.5">
                             <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: role.color }} />
-                            <span className="text-xs text-[var(--text)] font-light leading-normal">{resp}</span>
+                            <span className="text-xs text-[var(--text)] leading-normal">{resp}</span>
                           </div>
                         ))}
                       </div>

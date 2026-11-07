@@ -52,19 +52,17 @@ export default function EcosystemRoadmap() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
-      {/* Background Tech Wire Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.08] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
 
       {/* Header Framework */}
       <div className="relative z-10 max-w-7xl mx-auto mb-24">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
-          // Long-term Strategy
+          Long-term Strategy
         </span>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           Ecosystem Roadmap
         </h2>
-        <p className="text-base md:text-lg text-[var(--subtitle)] font-light mt-3 max-w-xl">
+        <p className="text-base md:text-lg text-[var(--subtitle)] mt-3 max-w-xl">
           A transparent look at our development trajectory. We map our vision clearly so every contributor knows where we are headed.
         </p>
       </div>
@@ -84,7 +82,6 @@ export default function EcosystemRoadmap() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ y: -4 }}
             style={{ '--phase-color': item.statusColor } as React.CSSProperties}
             className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-md)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md hover:border-[var(--phase-color)]"
           >
@@ -93,7 +90,7 @@ export default function EcosystemRoadmap() {
               {/* Timeline Phase Indicator Pin Row */}
               <div className="flex items-center justify-between mb-8 relative">
                 <span 
-                  className="text-xs font-mono font-black tracking-wider uppercase px-2.5 py-1 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] transition-colors duration-[var(--transition-fast)]"
+                  className="text-xs font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] transition-colors duration-[var(--transition-fast)]"
                   style={{ color: item.statusColor }}
                 >
                   {item.phase}
@@ -124,7 +121,7 @@ export default function EcosystemRoadmap() {
                 {item.milestones.map((milestone, mIndex) => (
                   <li 
                     key={mIndex}
-                    className="flex items-start gap-3 text-[14px] md:text-base text-[var(--subtitle)] font-light leading-relaxed"
+                    className="flex items-start gap-3 text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed"
                   >
                     <span 
                       className="text-[11px] font-mono mt-1 select-none opacity-50"

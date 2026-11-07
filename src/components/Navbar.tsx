@@ -1,138 +1,117 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
+const NAV_LINKS = [
+  { text: "Home", href: "/" },
+  { text: "Projects", href: "/projects" },
+  { text: "Contributors", href: "/contributors" },
+  { text: "About", href: "/about" },
+];
+
+const THEME_EVENT = "sylven:themechange";
+
+// The theme lives on <html class="light"> (set by an inline script before first
+// paint), so the DOM is the source of truth and React just subscribes to it.
+function subscribeTheme(onChange: () => void) {
+  window.addEventListener(THEME_EVENT, onChange);
+  return () => window.removeEventListener(THEME_EVENT, onChange);
+}
+const getIsLight = () => document.documentElement.classList.contains("light");
+const getServerIsLight = () => false;
+
+function isActivePath(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export default function Navbar() {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
-  const [mounted, setMounted] = useState(false);
-  const [isLight, setIsLight] = useState(false);
-  const [prevPathname, setPrevPathname] = useState(pathname);
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  // The menu counts as open only for the route it was opened on, so navigating closes it.
+  const isMenuOpen = menuPath === pathname;
+  const isLight = useSyncExternalStore(subscribeTheme, getIsLight, getServerIsLight);
 
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname);
-    setIsMenuOpen(false);
-  }
-
-  // Read theme on mount to prevent SSR hydration mismatch
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setIsLight(savedTheme === "light");
-    } else {
-      setIsLight(window.matchMedia("(prefers-color-scheme: light)").matches);
-    }
-  }, []);
-
-  // Handle theme body class. Transitions are briefly suppressed site-wide so
-  // the (many) backdrop-blurred, color-transitioning cards across the app
-  // don't all cross-fade and re-composite at once, which is what causes the
-  // toggle to visibly lag.
-  useEffect(() => {
-    if (!mounted) return;
-    const root = document.body;
-    root.classList.add("theme-switching");
-    root.classList.toggle("light", isLight);
-
-    let raf2 = 0;
-    const raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(() => {
-        root.classList.remove("theme-switching");
-      });
-    });
-
+    if (!isMenuOpen) return;
+    const close = () => setMenuPath(null);
+    const onPointer = (e: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) close();
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("touchstart", onPointer);
+    document.addEventListener("keydown", onKey);
     return () => {
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-    };
-  }, [isLight, mounted]);
-
-  // Handle click outside and Escape key
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsMenuOpen(false);
-      }
-    };
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("touchstart", handleClickOutside);
-      document.addEventListener("keydown", handleEscKey);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-      document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("touchstart", onPointer);
+      document.removeEventListener("keydown", onKey);
     };
   }, [isMenuOpen]);
 
   const toggleTheme = () => {
-    const nextState = !isLight;
-    setIsLight(nextState);
-    localStorage.setItem("theme", nextState ? "light" : "dark");
+    const next = !getIsLight();
+    // Suppress transitions for a frame pair so dozens of blurred cards don't
+    // all cross-fade at once (see .theme-switching in globals.css).
+    document.body.classList.add("theme-switching");
+    document.documentElement.classList.toggle("light", next);
+    try {
+      localStorage.setItem("theme", next ? "light" : "dark");
+    } catch {}
+    window.dispatchEvent(new Event(THEME_EVENT));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => document.body.classList.remove("theme-switching"))
+    );
   };
 
-  const navLinks = [
-    { text: "Home", href: "/" },
-    { text: "Projects", href: "/projects" },
-    { text: "Contributors", href: "/contributors" },
-    { text: "About Us", href: "/about" },
-  ];
+  const linkClass = (active: boolean) =>
+    `rounded-full font-medium transition-colors duration-200 ${
+      active
+        ? "bg-[var(--active-bg)] text-[var(--heading)]"
+        : "text-[var(--subtitle)] hover:text-[var(--heading)] hover:bg-[var(--hover-bg)]"
+    }`;
 
   return (
     <nav
       ref={navRef}
-      className="fixed left-0 right-0 h-[72px] flex justify-center top-2 md:top-4 z-50 px-4 md:px-16"
+      aria-label="Primary"
+      className="fixed left-0 right-0 h-[64px] md:h-[72px] flex justify-center top-2 md:top-4 z-50 px-4 md:px-16"
     >
-      <div className="mx-auto w-full max-w-7xl rounded-[24px] md:rounded-[36px] h-full backdrop-blur-lg bg-[var(--nav-bg)] border border-[var(--nav-border)] shadow-lg flex items-center justify-between px-4 md:px-6 transition-colors duration-[var(--transition-normal)]">
-        {/* Logo Section */}
+      <div className="mx-auto w-full max-w-7xl h-full rounded-2xl md:rounded-full backdrop-blur-lg bg-[var(--nav-bg)] border border-[var(--nav-border)] shadow-[var(--shadow-sm)] flex items-center justify-between pl-4 pr-3 md:pl-6 md:pr-4">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg md:text-xl font-extrabold tracking-wide cursor-pointer no-underline text-[var(--heading)] z-50"
+          className="flex items-center gap-2.5 text-lg md:text-xl font-bold tracking-tight no-underline text-[var(--heading)]"
         >
-          <div className="relative w-8 h-8 md:w-10 md:h-10">
+          <span className="relative w-8 h-8 md:w-9 md:h-9 shrink-0">
             <Image
               src="/IMG_20260628_143818.png"
-              alt="Sylven OS Logo"
+              alt=""
               fill
-              sizes="(max-width: 768px) 32px, 40px"
+              sizes="36px"
               className="object-contain"
               priority
               unoptimized
             />
-          </div>
-          <span>Sylven OS</span>
+          </span>
+          Sylven OS
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-[35px] text-sm md:text-base list-none m-0 p-0 h-full">
-          {navLinks.map((link, i) => {
-            const isActive = pathname === link.href;
-
+        <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
+          {NAV_LINKS.map((link) => {
+            const active = isActivePath(pathname, link.href);
             return (
-              <li key={i} className="relative flex items-center h-full">
+              <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
-                    isActive
-                      ? "bg-[var(--primary)] text-white"
-                      : "text-[var(--subtitle)] hover:text-[var(--heading)] hover:bg-[var(--hover-bg)]"
-                  }`}
+                  aria-current={active ? "page" : undefined}
+                  className={`block px-4 py-2 text-[15px] ${linkClass(active)}`}
                 >
                   {link.text}
                 </Link>
@@ -141,68 +120,47 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Right Actions (Theme Toggle + Mobile Menu Toggle) */}
-        <div className="flex items-center gap-3 md:gap-0 z-50">
-          {/* Theme Toggle Controller */}
+        <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={toggleTheme}
-            aria-label="Toggle visual layout mode"
-            className="w-[56px] h-[30px] md:w-[60px] md:h-[32px] bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--hover-border)] transition-colors rounded-[50px] relative cursor-pointer overflow-hidden p-1 flex items-center justify-between gap-1 md:ml-6"
+            aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
+            className="grid place-items-center w-10 h-10 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] hover:border-[var(--hover-border)] transition-colors"
           >
-            <span className="text-[10px] pl-1 select-none">🌙</span>
-            <span className="text-[10px] pr-1 select-none">☀️</span>
-
-            <motion.div
-              className="absolute w-[22px] h-[22px] md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center shadow-md"
-              animate={{
-                left: mounted && isLight ? "calc(100% - 26px)" : "4px",
-              }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            >
-              {mounted ? (
-                isLight ? (
-                  <Sun size={12} className="text-amber-500 fill-amber-500" />
-                ) : (
-                  <Moon size={12} className="text-slate-950 fill-slate-950" />
-                )
-              ) : null}
-            </motion.div>
+            {isLight ? <Moon size={18} aria-hidden /> : <Sun size={18} aria-hidden />}
           </button>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[var(--card-bg)] hover:bg-[var(--card-hover-bg)] border border-[var(--card-border)] transition-colors text-[var(--heading)]"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle mobile menu"
+            type="button"
+            className="md:hidden grid place-items-center w-10 h-10 rounded-full border border-[var(--card-border)] text-[var(--heading)] hover:bg-[var(--hover-bg)] transition-colors"
+            onClick={() => setMenuPath(isMenuOpen ? null : pathname)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMenuOpen ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -15, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -15, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[85px] left-4 right-4 rounded-[24px] backdrop-blur-xl bg-[var(--nav-bg)] border border-[var(--nav-border)] p-4 flex flex-col gap-2 shadow-2xl md:hidden z-40"
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="absolute top-[72px] left-4 right-4 rounded-2xl backdrop-blur-xl bg-[var(--nav-bg)] border border-[var(--nav-border)] p-2 flex flex-col gap-1 shadow-[var(--shadow-lg)] md:hidden"
           >
-            {navLinks.map((link, i) => {
-              const isActive = pathname === link.href;
-
+            {NAV_LINKS.map((link) => {
+              const active = isActivePath(pathname, link.href);
               return (
                 <Link
-                  key={i}
+                  key={link.href}
                   href={link.href}
-                  className={`px-5 py-3.5 rounded-xl transition-all duration-300 font-medium flex items-center ${
-                    isActive
-                      ? "bg-[var(--primary)] text-white"
-                      : "text-[var(--subtitle)] hover:text-[var(--heading)] hover:bg-[var(--hover-bg)]"
-                  }`}
+                  aria-current={active ? "page" : undefined}
+                  className={`px-4 py-3.5 rounded-xl ${linkClass(active)}`}
                 >
                   {link.text}
                 </Link>

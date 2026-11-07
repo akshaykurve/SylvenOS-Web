@@ -97,9 +97,7 @@ export default function RecognitionRewards() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Structural Geometry Mesh Matrix Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:12rem_12rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Background Aura Accent Flare */}
       <div 
@@ -117,7 +115,7 @@ export default function RecognitionRewards() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--warning)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // Gamification Strategy
+            Gamification Strategy
           </motion.span>
           
           <motion.h2
@@ -125,7 +123,7 @@ export default function RecognitionRewards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Recognition & Rewards
           </motion.h2>
@@ -135,7 +133,7 @@ export default function RecognitionRewards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Exceptional work deserves permanent registry status. We are designing native multi-tier incentive layers to validate structural, instructional, and community impact.
           </motion.p>
@@ -153,7 +151,6 @@ export default function RecognitionRewards() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -3 }}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group select-none hover:border-[var(--border)]"
             >
               {/* Shimmer Ambient Background Indicator on Hover */}
@@ -170,7 +167,7 @@ export default function RecognitionRewards() {
                   </div>
                   
                   {/* Highly Structured v1 Phase Tracker Badge */}
-                  <span className="font-mono text-[9px] tracking-widest font-black text-[var(--warning)] px-2 py-0.5 bg-[var(--glass)] border border-[var(--card-border)] rounded shadow-inner animate-pulse">
+                  <span className="font-mono text-[9px] tracking-widest font-bold text-[var(--warning)] px-2 py-0.5 bg-[var(--glass)] border border-[var(--card-border)] rounded shadow-inner animate-pulse">
                     COMING SOON
                   </span>
                 </div>
@@ -181,16 +178,13 @@ export default function RecognitionRewards() {
                 </h3>
 
                 {/* Scope Description Text */}
-                <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed mb-6 opacity-75 group-hover:opacity-100 transition-opacity">
+                <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed mb-6 opacity-75 group-hover:opacity-100 transition-opacity">
                   {reward.description}
                 </p>
               </div>
 
               {/* Lower Functional Baseline Parameters */}
               <div className="flex items-center justify-between border-t border-[var(--card-border)] pt-4 mt-auto">
-                <span className="font-mono text-[9px] tracking-wider text-[var(--disabled)] font-bold">
-                  {reward.tag}
-                </span>
                 
                 {/* Static Locked Interface Telemetry Line */}
                 <div className="flex items-center gap-1 font-mono text-[9px] text-[var(--disabled)] uppercase tracking-wide">

@@ -5,6 +5,8 @@ import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
 
+
+const MotionLink = motion.create(Link);
 interface FeaturedProjectsProps {
   projects: featuredProjects[];
 }
@@ -27,9 +29,7 @@ export default function FeaturedProjects({
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Structural Architectural Accents */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:5rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       <div
         className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full filter blur-[140px] opacity-[0.05] pointer-events-none"
         style={{
@@ -47,14 +47,14 @@ export default function FeaturedProjects({
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Active Repositories
+            Active Repositories
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Featured Projects
           </motion.h2>
@@ -62,7 +62,7 @@ export default function FeaturedProjects({
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Explore core open-source components built by the community.
             Filtered, optimized, and mapped directly out of our active
@@ -90,7 +90,6 @@ export default function FeaturedProjects({
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                whileHover={{ y: -6 }}
                 className="p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
               >
                 <div>
@@ -120,10 +119,10 @@ export default function FeaturedProjects({
                   </div>
 
                   {/* Identification & Typography */}
-                  <h3 className="text-xl font-black text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--hover-text)] transition-colors">
+                  <h3 className="text-xl font-bold text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--hover-text)] transition-colors">
                     {project.name}
                   </h3>
-                  <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed mb-6 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -190,17 +189,15 @@ export default function FeaturedProjects({
       </div>
       {/* Global Bottom Section CTA Action Button */}
       <div className="relative mt-4 md:mt-8 text-center">
-        <motion.button
-          whileHover={{ scale: 1.02 }}
+        <MotionLink href="/projects" whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-colors duration-[var(--transition-fast)] text-[14px] md:text-base hover:bg-[var(--btn-primary-hover)]"
-        >
-          <Link href="/projects">View All Projects</Link>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-colors duration-[var(--transition-fast)] text-[14px] md:text-base hover:bg-[var(--btn-primary-hover)]">
+              View All Projects
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </motion.button>
+        </MotionLink>
       </div>
     </section>
   );

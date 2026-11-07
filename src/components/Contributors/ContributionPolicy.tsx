@@ -90,9 +90,7 @@ export default function ContributionPhilosophy() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Precision Structural System Matrix Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:8rem_8rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Hyper-Focused Peripheral Glow Array */}
       <div 
@@ -110,7 +108,7 @@ export default function ContributionPhilosophy() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // Contribution Philosophy
+            Contribution Philosophy
           </motion.span>
           
           <motion.h2
@@ -118,7 +116,7 @@ export default function ContributionPhilosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Every Contribution Matters
           </motion.h2>
@@ -128,7 +126,7 @@ export default function ContributionPhilosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed max-w-2xl mx-auto"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed max-w-2xl mx-auto"
           >
             Many people think contribution strictly equals coding lines. We diverge from that perspective entirely. Whether you write code, improve documentation, design interfaces, test features, report bugs, or help other contributors, you&apos;re helping Sylven OS grow.
           </motion.p>
@@ -146,7 +144,6 @@ export default function ContributionPhilosophy() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -4 }}
               style={{ '--hover-border': card.color } as React.CSSProperties}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.05)]"
             >
@@ -162,9 +159,6 @@ export default function ContributionPhilosophy() {
                       {card.svgIcon}
                     </div>
                   </div>
-                  <span className="text-[9px] font-mono tracking-wider text-[var(--disabled)] font-bold select-none">
-                    {card.tag}
-                  </span>
                 </div>
 
                 {/* Main Category Identity Text */}

@@ -24,9 +24,7 @@ export default function OurVision() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Grid Accent with Perspective-like Horizon lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:8rem] opacity-[0.03] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Deep North Star Glow Ring Layer */}
       <div 
@@ -54,7 +52,6 @@ export default function OurVision() {
 
             {/* Central Future Horizon Node Framework */}
             <motion.div
-              whileHover={{ y: -6 }}
               className="relative w-[220px] h-[220px] rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-lg)] backdrop-blur-md flex items-center justify-center group transition-all duration-[var(--transition-normal)] hover:border-[var(--info)]"
             >
               {/* SVG Map pointing Up and Forward (Ecosystem Ascension) */}
@@ -100,12 +97,12 @@ export default function OurVision() {
               variants={itemVariants}
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
-              // The Horizon
+              The Horizon
             </motion.span>
 
             <motion.h2
               variants={itemVariants}
-              className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+              className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
             >
               Our Vision
             </motion.h2>
@@ -130,7 +127,7 @@ export default function OurVision() {
                 </svg>
                 <div>
                   <h4 className="text-sm font-bold text-[var(--heading)] mb-1">Global Respected Footprint</h4>
-                  <p className="text-xs text-[var(--subtitle)] font-light leading-relaxed">Setting elite benchmarks for clear architectural standards and documentation in open source.</p>
+                  <p className="text-xs text-[var(--subtitle)] leading-relaxed">Setting elite benchmarks for clear architectural standards and documentation in open source.</p>
                 </div>
               </motion.div>
 
@@ -140,7 +137,7 @@ export default function OurVision() {
                 </svg>
                 <div>
                   <h4 className="text-sm font-bold text-[var(--heading)] mb-1">Inclusive Infrastructure</h4>
-                  <p className="text-xs text-[var(--subtitle)] font-light leading-relaxed">Ensuring any developer, anywhere, has a direct path from writing basic scripts to leading complex software releases.</p>
+                  <p className="text-xs text-[var(--subtitle)] leading-relaxed">Ensuring any developer, anywhere, has a direct path from writing basic scripts to leading complex software releases.</p>
                 </div>
               </motion.div>
             </div>

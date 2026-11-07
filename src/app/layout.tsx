@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,6 +15,21 @@ import {
   organizationJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+// Runs before first paint so light-theme visitors never see a dark flash.
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");var l=t?t==="light":window.matchMedia("(prefers-color-scheme: light)").matches;if(l)document.documentElement.classList.add("light")}catch(e){}})()`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -79,10 +95,13 @@ export default function RootLayout({
 
   return (
     // Added suppressHydrationWarning here to tell Next.js to suppress that warning
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <link rel="me" href={SOCIAL_LINKS.github} />
         {/* Structured data: helps Google, Bing, and AI/LLM crawlers reliably identify the
             organization and site entity independent of visual page content. */}
@@ -92,6 +111,9 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Navbar/>
         <PageTransition>{children}</PageTransition>
         <Footer/>

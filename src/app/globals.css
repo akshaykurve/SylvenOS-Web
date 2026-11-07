@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
 @layer base {
   :root {
     /* Core Colors */
@@ -87,7 +97,8 @@
     
   }
 
-  body.light {
+  /* Applied to <html> by an inline script in layout.tsx before first paint */
+  :root.light {
     /* Core */
     --bg: #f6fafd;
     --surface: #ffffff;
@@ -158,38 +169,34 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
     background: var(--bg);
     color: var(--text);
     transition: background-color 0.35s ease, color 0.35s ease;
     overflow-x: hidden;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, #4a7fa725, transparent 70%);
-    top: -250px;
-    left: -250px;
-    z-index: -2;
-  }
+}
 
-  body::after {
-    content: "";
-    position: fixed;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, #b3cfe530, transparent 70%);
-    bottom: -250px;
-    right: -200px;
-    z-index: -2;
-  }
+/* Tailwind v4 preflight resets buttons to the default cursor */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
 }
 
 /* Unlayered on purpose: CSS cascade layers always lose to unlayered rules,
@@ -245,4 +252,67 @@ html {
 .theme-switching * {
   transition: none !important;
   animation-duration: 0.001ms !important;
+}
+
+
+/* Keyboard users: first tab stop jumps past the fixed navbar */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Respect the OS "reduce motion" setting for CSS-driven animation.
+   Motion (framer) animation is handled by <MotionConfig reducedMotion="user">. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Keyboard users: first tab stop jumps past the fixed navbar */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Respect the OS "reduce motion" setting for CSS-driven animation.
+   Motion (framer) animation is handled by <MotionConfig reducedMotion="user">. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

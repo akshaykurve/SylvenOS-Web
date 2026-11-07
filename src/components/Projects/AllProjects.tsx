@@ -66,18 +66,18 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
   }, [projects, searchQuery, selectedStatus, selectedTech, selectedDifficulty, sortBy]);
 
   return (
-    <section id="projects" className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
+    <section id="projects" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Segment */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
-            // MESH_EXPLORER_V5
+            MESH_EXPLORER_V5
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
             Ecosystem Registry
           </h2>
-          <p className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed">
+          <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
             Query, scope, and route directly into individual project parameters via repo links or specification files.
           </p>
         </div>
@@ -192,7 +192,6 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
         transition={{ duration: 0.25 }}
-        whileHover={{ y: -5 }}
         className="p-6 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between items-center text-center group transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
       >
         <div className="w-full flex flex-col items-center">
@@ -217,10 +216,10 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             </div>
           </div>
 
-          <h3 className="text-lg font-black text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--primary)] transition-colors w-full truncate">
+          <h3 className="text-lg font-bold text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--primary)] transition-colors w-full truncate">
             {project.name}
           </h3>
-          <p className="text-xs text-[var(--subtitle)] font-light leading-relaxed mb-5 line-clamp-2 max-w-xs mx-auto">
+          <p className="text-xs text-[var(--subtitle)] leading-relaxed mb-5 line-clamp-2 max-w-xs mx-auto">
             {project.description}
           </p>
 
@@ -269,7 +268,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             </a>
             <Link
               href={`/projects/${project.slug}`}
-              className="py-2.5 px-2 text-center font-mono text-[10px] font-black rounded bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white transition-all uppercase tracking-wider"
+              className="py-2.5 px-2 text-center font-mono text-[10px] font-bold rounded bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white transition-all uppercase tracking-wider"
             >
               Details ➔
             </Link>

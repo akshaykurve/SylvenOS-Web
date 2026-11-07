@@ -26,21 +26,19 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
   if (topNodes.length === 0) return null;
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Structural Wireframe Backing */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:14rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Module Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
-            // High Velocity Cluster Nodes
+            High Velocity Cluster Nodes
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
             Top Contributors
           </h2>
-          <p className="text-sm md:text-base text-[var(--subtitle)] font-light">
+          <p className="text-sm md:text-base text-[var(--subtitle)]">
             Live infrastructure rankings evaluated by real-time code velocity and commit weight.
           </p>
         </div>
@@ -60,7 +58,6 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
               <motion.div
                 key={node.id}
                 variants={cardVariants}
-                whileHover={{ y: -5 }}
                 className={`p-6 md:p-8 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group hover:bg-[var(--gradient-surface)] ${
                   isRankOne ? "border-[var(--logo)]/40 shadow-[0_0_30px_rgba(var(--logo-rgb),0.03)] hover:border-[var(--logo)]" : "border-[var(--card-border)] hover:border-[var(--success)]"
                 }`}
@@ -108,9 +105,9 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
                     <div className="text-[9px] font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-1">
                       Verified System Contributions
                     </div>
-                    <div className="text-2xl font-black font-mono tracking-tight text-[var(--heading)] flex items-baseline gap-2">
+                    <div className="text-2xl font-bold font-mono tracking-tight text-[var(--heading)] flex items-baseline gap-2">
                       {node.contributions}
-                      <span className="text-xs font-light text-[var(--subtitle)] font-sans">commits / additions</span>
+                      <span className="text-xs text-[var(--subtitle)] font-sans">commits / additions</span>
                     </div>
                   </div>
                 </div>

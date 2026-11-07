@@ -19,9 +19,7 @@ export default function BecomeContributorCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Structural Geometry Mesh Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:12rem_12rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* High-Impact Dynamic Radial Light Burst */}
       <div 
@@ -49,7 +47,7 @@ export default function BecomeContributorCTA() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-6 shadow-[var(--shadow-sm)]"
           >
-            // Initialization Gateway
+            Initialization Gateway
           </motion.span>
 
           {/* Core Title */}
@@ -59,7 +57,7 @@ export default function BecomeContributorCTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-[var(--heading)] mb-6 max-w-2xl mx-auto leading-none"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] mb-6 max-w-2xl mx-auto leading-none"
           >
             Ready to Build with Us?
           </motion.h2>
@@ -71,7 +69,7 @@ export default function BecomeContributorCTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-base md:text-xl text-[var(--subtitle)] font-light leading-relaxed max-w-2xl mx-auto mb-12"
+            className="text-base md:text-xl text-[var(--subtitle)] leading-relaxed max-w-2xl mx-auto mb-12"
           >
             Whether you&apos;re writing your first line of code or maintaining distributed large-scale systems, there&apos;s a definitive place for your perspective in Sylven OS.
           </motion.p>
@@ -90,7 +88,7 @@ export default function BecomeContributorCTA() {
               // href="#projects"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-black tracking-wider uppercase text-[var(--bg)] bg-[var(--heading)] hover:bg-[var(--text)] transition-all text-center shadow-[var(--shadow-md)] select-none"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--bg)] bg-[var(--heading)] hover:bg-[var(--text)] transition-all text-center shadow-[var(--shadow-md)] select-none"
             >
               <Link href="/projects#projects">Explore Projects</Link>
             </motion.div>

@@ -117,9 +117,7 @@ export default function WhatWeBuild() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Matrix Mesh Layer */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:12rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Deep Central Structural Lighting Accent */}
       <div 
@@ -137,7 +135,7 @@ export default function WhatWeBuild() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Ecosystem Output
+            Ecosystem Output
           </motion.span>
           
           <motion.h2
@@ -145,7 +143,7 @@ export default function WhatWeBuild() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             What We Build
           </motion.h2>
@@ -155,7 +153,7 @@ export default function WhatWeBuild() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Instead of single isolated frameworks, we ship production software models across foundational verticals. Here is where our community allocates its architectural focus.
           </motion.p>
@@ -173,7 +171,6 @@ export default function WhatWeBuild() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -5 }}
               style={{ '--hover-border': cat.color, '--hover-shadow': cat.glow } as React.CSSProperties}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--gradient-surface)]"
             >
@@ -200,7 +197,7 @@ export default function WhatWeBuild() {
                 </div>
 
                 {/* Analytical Functional Scope Description */}
-                <p className="text-sm text-[var(--subtitle)] font-light leading-relaxed">
+                <p className="text-sm text-[var(--subtitle)] leading-relaxed">
                   {cat.description}
                 </p>
               </div>

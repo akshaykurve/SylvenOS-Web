@@ -73,7 +73,7 @@ export default function SylvenPhilosophy() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Background Microstructure Grid Matrix */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:100%_5rem] opacity-[0.02] pointer-events-none" />
 
@@ -93,7 +93,7 @@ export default function SylvenPhilosophy() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--info)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Execution Engine
+            Execution Engine
           </motion.span>
           
           <motion.h2
@@ -101,7 +101,7 @@ export default function SylvenPhilosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             The Sylven Philosophy
           </motion.h2>
@@ -111,7 +111,7 @@ export default function SylvenPhilosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Instead of collecting static rules, our community operates inside a continuous refinement loop. We think in cycles, ensuring knowledge never reaches an artificial dead end.
           </motion.p>
@@ -150,7 +150,7 @@ export default function SylvenPhilosophy() {
               {/* Step Identification Typography */}
               <div className="md:w-1/4 shrink-0">
                 <h3 
-                  className="text-2xl font-black tracking-tight transition-colors duration-[var(--transition-fast)] mb-1"
+                  className="text-2xl font-bold tracking-tight transition-colors duration-[var(--transition-fast)] mb-1"
                   style={{ color: step.title === "Grow" ? "var(--success)" : "var(--heading)" }}
                 >
                   {step.title}
@@ -162,7 +162,7 @@ export default function SylvenPhilosophy() {
 
               {/* Informative Explanatory Body block */}
               <div className="md:w-3/4">
-                <p className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed">
+                <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                   {step.desc}
                 </p>
               </div>
@@ -186,7 +186,7 @@ export default function SylvenPhilosophy() {
             </div>
             <div>
               <h4 className="text-base font-bold text-[var(--heading)] tracking-tight">The Self-Sustaining Loop</h4>
-              <p className="text-xs text-[var(--subtitle)] font-light">Once capability is achieved, the cycle resets at a higher plane of complexity.</p>
+              <p className="text-xs text-[var(--subtitle)]">Once capability is achieved, the cycle resets at a higher plane of complexity.</p>
             </div>
           </div>
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--success)] bg-[var(--hover-bg)] px-3 py-1 rounded border border-[var(--card-border)] whitespace-nowrap">

@@ -38,7 +38,7 @@ export default function HowCommunityWorks() {
   const steps = CONTRIBUTION_STEPS;
 
   return (
-    <section id="guide" className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
+    <section id="guide" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Structural Ambient Background Flow Element */}
       <div 
         className="absolute bottom-0 right-10 w-[700px] h-[450px] rounded-full filter blur-[150px] opacity-[0.1] pointer-events-none"
@@ -55,7 +55,7 @@ export default function HowCommunityWorks() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Onboarding Pipeline
+            Onboarding Pipeline
           </motion.span>
           
           <motion.h2
@@ -63,7 +63,7 @@ export default function HowCommunityWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             How the Community Works
           </motion.h2>
@@ -73,7 +73,7 @@ export default function HowCommunityWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Wondering how to make your first contribution? We removed the guesswork with a transparent, clear track designed to take you from initial setup to core deployment lead.
           </motion.p>
@@ -121,7 +121,7 @@ export default function HowCommunityWorks() {
 
               {/* Right Segment: Explanatory Context */}
               <div className="md:col-span-8">
-                <p className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed">
+                <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                   {step.description}
                 </p>
               </div>

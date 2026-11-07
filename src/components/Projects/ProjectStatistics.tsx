@@ -65,9 +65,7 @@ export default function ProjectStatistics({
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Matrix Intercept Blueprint */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:6rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Absolute Minimal Center Point Shadow Aura */}
       <div 
@@ -85,7 +83,7 @@ export default function ProjectStatistics({
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Real-Time Telemetry
+            Real-Time Telemetry
           </motion.span>
           
           <motion.h2
@@ -93,7 +91,7 @@ export default function ProjectStatistics({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl font-black tracking-tight text-[var(--heading)] mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--heading)] mb-4"
           >
             Project Statistics
           </motion.h2>
@@ -103,7 +101,7 @@ export default function ProjectStatistics({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed"
           >
             No padded marketing metrics. No faked engagement logs. Fueled directly by GitHub metadata—we transparently track our platform growth.
           </motion.p>
@@ -121,7 +119,6 @@ export default function ProjectStatistics({
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -4 }}
               style={{ '--hover-border': metric.color } as React.CSSProperties}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-sm)] backdrop-blur-sm relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)]"
             >
@@ -144,7 +141,7 @@ export default function ProjectStatistics({
                   )}
                 </div>
 
-                <div className="font-mono text-5xl md:text-6xl font-black tracking-tighter text-[var(--heading)] mb-2">
+                <div className="font-mono text-5xl md:text-6xl font-bold tracking-tighter text-[var(--heading)] mb-2">
                   {metric.value}
                 </div>
               </div>
@@ -153,7 +150,7 @@ export default function ProjectStatistics({
                 <h4 className="text-sm font-bold text-[var(--heading)] mb-1 tracking-tight">
                   {metric.label}
                 </h4>
-                <p className="text-xs text-[var(--subtitle)] font-light leading-normal">
+                <p className="text-xs text-[var(--subtitle)] leading-normal">
                   {metric.description}
                 </p>
               </div>
@@ -173,7 +170,7 @@ export default function ProjectStatistics({
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-[var(--heading)]">
             Growing Every Week
           </span>
-          <span className="text-xs text-[var(--subtitle)] font-light border-l border-[var(--card-border)] pl-3">
+          <span className="text-xs text-[var(--subtitle)] border-l border-[var(--card-border)] pl-3">
             Watch the infrastructure expand step-by-step.
           </span>
         </motion.div>

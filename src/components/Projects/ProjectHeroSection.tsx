@@ -54,9 +54,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Micro-Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Pristine Ambient Glow Fields */}
       <div 
@@ -78,12 +76,12 @@ export default function HeroSection() {
               variants={textItemVariants}
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
-              // Ecosystem Index
+              Ecosystem Index
             </motion.span>
             
             <motion.h1
               variants={textItemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[var(--heading)] leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-[1.1] mb-6"
             >
               Explore Our <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--heading)] via-[var(--primary)] to-[var(--logo)]">
@@ -93,7 +91,7 @@ export default function HeroSection() {
             
             <motion.p
               variants={textItemVariants}
-              className="text-base sm:text-lg text-[var(--subtitle)] font-light leading-relaxed max-w-xl mb-10"
+              className="text-base sm:text-lg text-[var(--subtitle)] leading-relaxed max-w-xl mb-10"
             >
               Discover open-source software built by the Sylven OS community. From developer tools to production-ready applications, every project is designed to solve real problems while helping contributors grow.
             </motion.p>
@@ -157,7 +155,6 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: repo.delay, duration: 0.5, type: "spring" }}
-                    whileHover={{ y: -4 }}
                     className={`absolute ${repo.position} w-[240px] p-4 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--bg)] shadow-[var(--shadow-sm)] flex flex-col gap-2 transition-colors duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]`}
                   >
                     {/* Component Header Block */}

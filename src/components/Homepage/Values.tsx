@@ -82,19 +82,17 @@ export default function CommunityValues() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
-      {/* Grid Pattern Mesh background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)] opacity-[0.08] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
 
       {/* Header Frame */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--info)] uppercase tracking-widest mb-4">
           Cultural Framework
         </span>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           Community Values
         </h2>
-        <p className="text-base text-[var(--subtitle)] font-light mt-3 max-w-lg mx-auto">
+        <p className="text-base text-[var(--subtitle)] mt-3 max-w-lg mx-auto">
           These aren&apos;t rigid rules forced upon contributors—they are the architectural principles that guide how we collaborate.
         </p>
       </div>
@@ -111,7 +109,6 @@ export default function CommunityValues() {
           <motion.div
             key={index}
             variants={cardVariants}
-            whileHover={{ y: -4 }}
             className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/20 border border-[var(--card-border)] backdrop-blur-md transition-all duration-[var(--transition-normal)] flex flex-col items-start hover:border-[var(--info)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Minimalist Micro Icon Anchor */}
@@ -125,7 +122,7 @@ export default function CommunityValues() {
             </h3>
 
             {/* Description Paragraph */}
-            <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+            <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed">
               {value.description}
             </p>
           </motion.div>

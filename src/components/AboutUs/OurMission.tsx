@@ -24,7 +24,7 @@ export default function OurMission() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Background Decorative Tech Coordinates */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:100%_4rem] opacity-[0.02] pointer-events-none" />
 
@@ -55,12 +55,12 @@ export default function OurMission() {
                 variants={textVariants}
                 className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
               >
-                // Core Directives
+                Core Directives
               </motion.span>
 
               <motion.h2
                 variants={textVariants}
-                className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+                className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
               >
                 Our Mission
               </motion.h2>

@@ -35,7 +35,7 @@ export default function OurStory() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       {/* Structural Ambient Background Glow */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full filter blur-[160px] opacity-15 pointer-events-none"
@@ -52,7 +52,7 @@ export default function OurStory() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // The Manifesto
+            The Manifesto
           </motion.span>
           
           <motion.h2
@@ -60,7 +60,7 @@ export default function OurStory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Why Sylven OS Exists
           </motion.h2>
@@ -93,7 +93,6 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5 }}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--info)] hover:shadow-[0_4px_20px_rgba(56,189,248,0.1)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--info)]" />
@@ -101,9 +100,9 @@ export default function OurStory() {
                 <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--info)] flex items-center justify-center text-[var(--info)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
                   01
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">Learn</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">Learn</h3>
               </div>
-              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Every developer starts somewhere. Courses, tutorials, books, and documentation provide the foundation, but knowledge alone doesn&apos;t create experienced engineers. Learning is only the first step of the journey.
               </p>
             </motion.div>
@@ -121,7 +120,6 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5 }}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--glow-primary)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--primary)]" />
@@ -129,9 +127,9 @@ export default function OurStory() {
                 <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--primary)] flex items-center justify-center text-[var(--primary)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
                   02
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">Build</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">Build</h3>
               </div>
-              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Real growth happens when developers solve actual problems, collaborate on production-ready projects, review code, and experience the challenges that no tutorial can simulate. Building transforms knowledge into experience.
               </p>
             </motion.div>
@@ -141,7 +139,6 @@ export default function OurStory() {
           <div className="md:col-span-5 flex flex-col justify-center">
             <motion.div 
               variants={cardVariants}
-              whileHover={{ y: -5 }}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--logo)] hover:shadow-[var(--glow-logo)]"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--logo)]" />
@@ -149,9 +146,9 @@ export default function OurStory() {
                 <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--logo)] flex items-center justify-center text-[var(--logo)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
                   03
                 </div>
-                <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">Educate</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">Educate</h3>
               </div>
-              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+              <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Every contributor has something valuable to share. By documenting solutions, mentoring others, writing technical content, and contributing back to open source, today&apos;s learners become tomorrow&apos;s teachers—creating a cycle that strengthens the entire ecosystem.
               </p>
             </motion.div>
@@ -175,9 +172,9 @@ export default function OurStory() {
           
           <p className="text-base md:text-xl font-bold text-[var(--heading)] tracking-wide leading-relaxed max-w-3xl mx-auto">
             Sylven OS exists to create a self-sustaining ecosystem where developers continuously{" "}
-            <span className="text-[var(--info)] font-black">Learn</span>,{" "}
-            <span className="text-[var(--primary)] font-black">Build</span>, and{" "}
-            <span className="text-[var(--logo)] font-black">Educate</span>
+            <span className="text-[var(--info)] font-bold">Learn</span>,{" "}
+            <span className="text-[var(--primary)] font-bold">Build</span>, and{" "}
+            <span className="text-[var(--logo)] font-bold">Educate</span>
             —turning individual growth into collective progress.
           </p>
         </motion.div>

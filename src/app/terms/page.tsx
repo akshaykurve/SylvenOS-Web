@@ -29,7 +29,7 @@ export default function TermsPage() {
           </Link>
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-black text-[var(--heading)] tracking-tight mb-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] tracking-tight mb-4">
           Terms of Service
         </h1>
         <p className="text-sm text-[var(--disabled)] font-mono mb-12">Last updated: September 2026</p>

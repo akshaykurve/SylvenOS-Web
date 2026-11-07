@@ -68,7 +68,7 @@ export default function ContactPage() {
           </Link>
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-black text-[var(--heading)] tracking-tight mb-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] tracking-tight mb-4">
           Contact Us
         </h1>
         <p className="text-base text-[var(--subtitle)] leading-relaxed mb-12 max-w-xl">

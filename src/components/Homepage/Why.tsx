@@ -99,16 +99,14 @@ export default function WhySylvenOS() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Structural Accent Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)] opacity-[0.08] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Title Layout */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
           Value Proposition
         </span>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           Why Sylven OS?
         </h2>
       </div>
@@ -125,7 +123,6 @@ export default function WhySylvenOS() {
           <motion.div
             key={index}
             variants={itemVariants}
-            whileHover={{ y: -4 }}
             className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Top Row: Icon and Engineering Code Index */}
@@ -133,9 +130,6 @@ export default function WhySylvenOS() {
               <div className="w-9 h-9 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--hover-bg)] transition-colors duration-[var(--transition-fast)]">
                 {item.icon}
               </div>
-              <span className="text-[10px] font-mono tracking-widest text-[var(--disabled)] select-none">
-                {item.tag}
-              </span>
             </div>
 
             {/* Core Text Elements */}
@@ -143,7 +137,7 @@ export default function WhySylvenOS() {
               <h3 className="text-lg md:text-xl font-bold mb-1.5 text-[var(--heading)] group-hover:text-[var(--primary)] transition-colors duration-[var(--transition-fast)]">
                 {item.title}
               </h3>
-              <p className="text-[14px] md:text-base text-[var(--subtitle)] font-light leading-relaxed">
+              <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed">
                 {item.description}
               </p>
             </div>

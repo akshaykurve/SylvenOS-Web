@@ -180,15 +180,13 @@ export default function ContributionGuide() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Premium Minimal Canvas Sub-Grid Gridlines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Grounded Header Blocks */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
             Contribute to Sylven OS
           </h2>
           <p className="text-sm md:text-base text-[var(--subtitle)] font-normal leading-relaxed max-w-2xl">

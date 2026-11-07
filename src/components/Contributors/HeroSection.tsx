@@ -4,6 +4,8 @@ import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
 
+
+const MotionLink = motion.create(Link);
 export default function HeroSection() {
   // Animation settings for structural impact on landing
   const textContainerVariants:Variants = {
@@ -57,9 +59,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-[100px] overflow-hidden text-[var(--text)] flex items-center">
-      {/* Background Microstructural System Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-24 overflow-hidden text-[var(--text)] flex items-center">
       
       {/* Dynamic Deep Multi-layered Ambient Glow Vector */}
       <div 
@@ -84,37 +84,29 @@ export default function HeroSection() {
             variants={textItemVariants}
             className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
-            // Identity Matrix Initialization
+            Identity Matrix Initialization
           </motion.span>
 
           <motion.h1
             variants={textItemVariants}
-            className="text-4xl md:text-6xl font-black tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
           >
             Meet the People Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--info)] via-[var(--primary)] to-[var(--logo)]">Sylven OS</span>
           </motion.h1>
 
           <motion.p
             variants={textItemVariants}
-            className="text-lg md:text-xl text-[var(--subtitle)] font-light leading-relaxed mb-10 max-w-xl"
+            className="text-lg md:text-xl text-[var(--subtitle)] leading-relaxed mb-10 max-w-xl"
           >
             Every project, document, design, and idea is made possible by contributors from around the community.
           </motion.p>
 
           <motion.div variants={textItemVariants}>
-            <motion.button
-              whileHover={{ scale: 1.03 }}
+            <MotionLink href="https://github.com/SylvenOS/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]"
-            >
-              <Link
-                  href="https://github.com/SylvenOS/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                Become a Contributor
-              </Link>
-            </motion.button>
+              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]">
+              Become a Contributor
+            </MotionLink>
           </motion.div>
 
           {/* Micro telemetry sync feedback line */}

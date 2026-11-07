@@ -112,9 +112,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Matrix Mesh Layer */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Soft Structural Radial Glows */}
       <div 
@@ -136,7 +134,7 @@ export default function CoreValues() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Operating Principles
+            Operating Principles
           </motion.span>
           
           <motion.h2
@@ -144,7 +142,7 @@ export default function CoreValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Core Values
           </motion.h2>
@@ -154,7 +152,7 @@ export default function CoreValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             The immutable foundation of our ecosystem. These pillars govern how we write code, handle collaboration, and sustain the community framework.
           </motion.p>
@@ -172,7 +170,6 @@ export default function CoreValues() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -6 }}
               style={{ '--hover-border': item.color, '--hover-shadow': item.glow } as React.CSSProperties}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--card-hover-bg)]"
             >
@@ -191,18 +188,15 @@ export default function CoreValues() {
                   >
                     {item.icon}
                   </div>
-                  <span className="text-[10px] font-mono tracking-wider text-[var(--disabled)] group-hover:text-[var(--text)] transition-colors">
-                    {item.tag}
-                  </span>
                 </div>
 
                 {/* Main Heading Text */}
-                <h3 className="text-xl font-black text-[var(--heading)] mb-3 tracking-tight group-hover:text-[var(--hover-text)] transition-colors">
+                <h3 className="text-xl font-bold text-[var(--heading)] mb-3 tracking-tight group-hover:text-[var(--hover-text)] transition-colors">
                   {item.title}
                 </h3>
 
                 {/* Value Objective Core Phrase */}
-                <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed font-light">
+                <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                   {item.description}
                 </p>
               </div>

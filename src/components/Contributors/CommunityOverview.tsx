@@ -103,9 +103,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Background Matrix Structural Geometry */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:14rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
       
       {/* Structural Ambient Underglow Accent */}
       <div 
@@ -123,7 +121,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // Telemetry Verification
+            Telemetry Verification
           </motion.span>
           
           <motion.h2
@@ -131,7 +129,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Community Overview
           </motion.h2>
@@ -141,7 +139,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Real open-source groups scale using absolute clarity. We extract verified runtime updates directly from the <span className="font-mono text-xs text-[var(--heading)] px-1.5 py-0.5 bg-[var(--glass)] rounded border border-[var(--card-border)]">SylvenOS</span> GitHub organization payload.
           </motion.p>
@@ -159,7 +157,6 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -4 }}
               style={{ '--hover-border': metric.color } as React.CSSProperties}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)]"
             >
@@ -173,18 +170,15 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                   <span className="text-xs font-mono font-bold tracking-wide text-[var(--muted)] group-hover:text-[var(--text)] transition-colors">
                     {metric.label}
                   </span>
-                  <span className="text-[9px] font-mono tracking-wider text-[var(--disabled)] font-bold">
-                    {metric.tag}
-                  </span>
                 </div>
 
-                <div className="text-2xl md:text-4xl font-black tracking-tight text-[var(--heading)] mb-2 select-all">
+                <div className="text-2xl md:text-4xl font-bold tracking-tight text-[var(--heading)] mb-2 select-all">
                   {metric.value}
                 </div>
               </div>
 
               <div className="mt-4">
-                <p className="text-xs md:text-sm text-[var(--subtitle)] font-light leading-relaxed">
+                <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed">
                   {metric.subtext}
                 </p>
               </div>
@@ -202,7 +196,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
           >
             <div className="text-center sm:text-left">
               <h4 className="text-sm font-bold text-[var(--heading)] mb-1">Active Mesh Matrix Members</h4>
-              <p className="text-xs text-[var(--subtitle)] font-light">Direct cryptographic avatar streams from the latest core organization commit logs.</p>
+              <p className="text-xs text-[var(--subtitle)]">Direct cryptographic avatar streams from the latest core organization commit logs.</p>
             </div>
             
             <div className="flex flex-wrap items-center justify-center -space-x-3 hover:space-x-1 transition-all duration-300">

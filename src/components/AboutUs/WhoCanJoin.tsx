@@ -153,9 +153,7 @@ export default function WhoCanJoin() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Dynamic Geometric Matrix Grid Layer */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-[0.015] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Structural Corner Ambient Lighting */}
       <div 
@@ -173,7 +171,7 @@ export default function WhoCanJoin() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
-            // Perimeter Permissions
+            Perimeter Permissions
           </motion.span>
           
           <motion.h2
@@ -181,7 +179,7 @@ export default function WhoCanJoin() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Who Can Join?
           </motion.h2>
@@ -191,7 +189,7 @@ export default function WhoCanJoin() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Many engineers hesitate because they think open source is a gated sanctuary exclusively for veterans. We reject that logic. Sylven OS is a multi-discipline perimeter open to all tech verticals.
           </motion.p>
@@ -209,7 +207,6 @@ export default function WhoCanJoin() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -5 }}
               style={{ '--hover-border': domain.color, '--hover-shadow': domain.glow || `0 6px 24px rgba(255,255,255,0.03)` } as React.CSSProperties}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:shadow-[var(--hover-shadow)] hover:bg-[var(--gradient-surface)]"
             >
@@ -228,13 +225,10 @@ export default function WhoCanJoin() {
                   >
                     {domain.icon}
                   </div>
-                  <span className="text-[9px] font-mono tracking-wider text-[var(--disabled)] font-bold">
-                    {domain.tag}
-                  </span>
                 </div>
 
                 {/* Main Heading Identification */}
-                <h3 className="text-lg md:text-xl font-black text-[var(--heading)] tracking-tight mb-1 group-hover:text-[var(--hover-text)] transition-colors">
+                <h3 className="text-lg md:text-xl font-bold text-[var(--heading)] tracking-tight mb-1 group-hover:text-[var(--hover-text)] transition-colors">
                   {domain.title}
                 </h3>
                 
@@ -247,7 +241,7 @@ export default function WhoCanJoin() {
                 </p>
 
                 {/* Practical Dynamic Structural Scope Description */}
-                <p className="text-sm text-[var(--subtitle)] font-light leading-relaxed">
+                <p className="text-sm text-[var(--subtitle)] leading-relaxed">
                   {domain.desc}
                 </p>
               </div>

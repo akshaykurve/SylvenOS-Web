@@ -33,13 +33,11 @@ export default function Pillars() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] bg-[var(--surface)]/10">
-      {/* High-End Tech Grid Mask */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_100%)] opacity-[0.12] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 bg-[var(--surface)]/10">
 
       {/* Global Section Header */}
       <div className="relative z-10 max-w-3xl mx-auto text-center mb-20">
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[var(--heading)]">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           The Pillars of Sylven OS
         </h2>
         <div className="w-12 h-[2px] bg-[var(--primary)] mx-auto mt-4 rounded-full opacity-60" />
@@ -57,7 +55,6 @@ export default function Pillars() {
         {/* Card 1: Mission */}
         <motion.div
           variants={cardVariants}
-          whileHover={{ y: -4 }}
           className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--primary)]"
         >
           <div>
@@ -79,7 +76,7 @@ export default function Pillars() {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--heading)] group-hover:text-[var(--primary)] transition-colors duration-[var(--transition-fast)]">
               Mission
             </h3>
-            <p className="text-base leading-relaxed text-[var(--subtitle)] font-light mb-8">
+            <p className="text-base leading-relaxed text-[var(--subtitle)] mb-8">
               We create an inclusive open-source ecosystem where developers break out of isolation to learn by building practical software together. By bridging the gap between theory and production, we empower engineers to accelerate their careers through raw collective execution.
             </p>
 
@@ -121,7 +118,6 @@ export default function Pillars() {
         {/* Card 2: Vision */}
         <motion.div
           variants={cardVariants}
-          whileHover={{ y: -4 }}
           className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--info)]"
         >
           <div>
@@ -142,7 +138,7 @@ export default function Pillars() {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--heading)] group-hover:text-[var(--info)] transition-colors duration-[var(--transition-fast)]">
               Vision
             </h3>
-            <p className="text-base leading-relaxed text-[var(--subtitle)] font-light mb-8">
+            <p className="text-base leading-relaxed text-[var(--subtitle)] mb-8">
               To become one of the world&apos;s most respected open-source communities focused on structural engineering education. We aim to reshape software mentorship, transforming decentralized code contributions into an accessible pipeline for global engineering talent.
             </p>
 

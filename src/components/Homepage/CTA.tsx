@@ -3,6 +3,8 @@
 import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
+
+const MotionLink = motion.create(Link);
 export default function FinalCTA() {
   // Cascading entry animation variants
   const elementVariants:Variants = {
@@ -20,9 +22,7 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)]">
-      {/* Background Tech Mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-[0.05] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)]">
 
       {/* Main Structural Banner Frame */}
       <motion.div
@@ -47,7 +47,7 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           className="relative z-10 text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
         >
-          // Build the Future
+          Build the Future
         </motion.span>
 
         {/* Dynamic Catchy Title Header */}
@@ -57,7 +57,7 @@ export default function FinalCTA() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative z-10 text-4xl md:text-6xl font-black tracking-tight text-[var(--heading)] max-w-3xl leading-[1.1] mb-6"
+          className="relative z-10 text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] max-w-3xl leading-[1.1] mb-6"
         >
           Ready to Build Something Meaningful?
         </motion.h2>
@@ -69,7 +69,7 @@ export default function FinalCTA() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative z-10 text-base md:text-xl text-[var(--subtitle)] font-light max-w-2xl leading-relaxed mb-10"
+          className="relative z-10 text-base md:text-xl text-[var(--subtitle)] max-w-2xl leading-relaxed mb-10"
         >
           Join developers creating open-source software, learning together, and helping others grow.
         </motion.p>
@@ -84,31 +84,27 @@ export default function FinalCTA() {
           className="relative z-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto"
         >
           {/* Primary Action Callout: Become a Contributor */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
+          <MotionLink href="/contributors" whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-md)] transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-primary-hover)]"
-          >
-            <Link href="/contributors">Become a Contributor</Link>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold shadow-[var(--shadow-md)] transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-primary-hover)]">
+              Become a Contributor
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <polyline points="16 11 18 13 22 9" />
             </svg>
-          </motion.button>
+          </MotionLink>
 
           {/* Secondary Action: Explore Projects */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
+          <MotionLink href="/projects" whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-[var(--heading)] font-semibold transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-secondary-hover)] hover:border-[var(--border)]"
-          >
-            <Link href="/projects">Explore Projects</Link>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-[var(--heading)] font-semibold transition-all duration-[var(--transition-fast)] text-[14px] md:text-base tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-secondary-hover)] hover:border-[var(--border)]">
+              Explore Projects
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </motion.button>
+          </MotionLink>
         </motion.div>
       </motion.div>
     </section>

@@ -3,6 +3,8 @@
 import { motion ,Variants } from "motion/react";
 import Link from "next/link";
 
+
+const MotionLink = motion.create(Link);
 export default function HeroSection() {
   // Cascading entry animation variants for text components
   const elementVariants = {
@@ -35,9 +37,7 @@ export default function HeroSection() {
 });
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-[100px] overflow-hidden  text-[var(--text)] flex items-center">
-      {/* Background Tech Grid Mesh */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.04] pointer-events-none" />
+    <section className="relative min-h-[90vh] lg:min-h-screen px-6 md:px-[8%] py-14 md:py-24 overflow-hidden  text-[var(--text)] flex items-center">
 
       {/* Radial Gradient Backdrops for Depth */}
       <div 
@@ -72,7 +72,7 @@ export default function HeroSection() {
             variants={elementVariants}
             initial="hidden"
             animate="visible"
-            className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
           >
             About <span className="text-(--primary)">Sylven OS</span>
           </motion.h1>
@@ -97,32 +97,28 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto"
           >
             {/* Primary CTA */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
+            <MotionLink href="/projects#projects" whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold transition-all duration-[var(--transition-fast)] tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]"
-            >
-              <Link href="/projects#projects">Explore Repositories</Link>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-md)] bg-[var(--btn-primary-bg)] text-white font-semibold transition-all duration-[var(--transition-fast)] tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]">
+              Explore Repositories
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m22 8-6 4 6 4V8Z" />
                 <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
               </svg>
-            </motion.button>
+            </MotionLink>
 
             {/* Secondary CTA */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
+            <MotionLink href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-[var(--hover-text)] font-semibold transition-all duration-[var(--transition-fast)] tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-secondary-hover)] hover:border-[var(--border)]"
-            >
-              <Link href="https://github.com/sylvenos" target="_blank">Join Community</Link>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-md)] bg-[var(--btn-secondary-bg)] border border-[var(--input-border)] text-[var(--muted)] hover:text-[var(--hover-text)] font-semibold transition-all duration-[var(--transition-fast)] tracking-wide flex items-center justify-center gap-2 hover:bg-[var(--btn-secondary-hover)] hover:border-[var(--border)]">
+              Join Community
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
-            </motion.button>
+            </MotionLink>
           </motion.div>
         </div>
 

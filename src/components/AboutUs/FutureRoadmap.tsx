@@ -72,9 +72,7 @@ export default function FutureRoadmap() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] overflow-hidden py-16 md:py-[140px] text-[var(--text)]">
-      {/* Background Horizon Vector Accents */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px)] bg-[size:16rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] overflow-hidden py-16 md:py-28 text-[var(--text)]">
       
       {/* Ambient Depth Glow Overlay */}
       <div 
@@ -92,7 +90,7 @@ export default function FutureRoadmap() {
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
-            // Strategic Track
+            Strategic Track
           </motion.span>
           
           <motion.h2
@@ -100,7 +98,7 @@ export default function FutureRoadmap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-6"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Future Roadmap
           </motion.h2>
@@ -110,7 +108,7 @@ export default function FutureRoadmap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-[var(--subtitle)] font-light leading-relaxed"
+            className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             We don’t believe in idle development. Sylven OS operates with a hyper-focused trajectory, moving systematically from foundational architecture to a globally distributed engineering ecosystem.
           </motion.p>
@@ -148,12 +146,9 @@ export default function FutureRoadmap() {
               {/* Phase Title Area (4 Columns) */}
               <div className="lg:col-span-4 flex flex-row lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4">
                 <div>
-                  <span className="text-[10px] font-mono tracking-widest text-[var(--disabled)] block mb-1">
-                    {phase.tag}
-                  </span>
                   <div className="flex items-center gap-3">
                     <span className="text-xs font-mono font-bold text-[var(--muted)]">{phase.phase}</span>
-                    <h3 className="text-xl md:text-2xl font-black text-[var(--heading)] tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">
                       {phase.title}
                     </h3>
                   </div>
@@ -164,7 +159,7 @@ export default function FutureRoadmap() {
                   className="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[var(--radius-sm)] border bg-[var(--glass)] whitespace-nowrap"
                   style={{ color: phase.statusColor, borderColor: `${phase.statusColor}30` }}
                 >
-                  // {phase.status}
+                  {phase.status}
                 </span>
               </div>
 
@@ -179,7 +174,7 @@ export default function FutureRoadmap() {
                       <h4 className="text-sm font-bold text-[var(--heading)] tracking-tight mb-1 group-hover:text-[var(--hover-text)]">
                         {item.name}
                       </h4>
-                      <p className="text-xs text-[var(--subtitle)] font-light leading-relaxed">
+                      <p className="text-xs text-[var(--subtitle)] leading-relaxed">
                         {item.desc}
                       </p>
                     </div>

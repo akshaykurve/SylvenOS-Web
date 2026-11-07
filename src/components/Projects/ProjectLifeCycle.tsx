@@ -132,21 +132,19 @@ export default function ProjectLifecycle() {
   const currentStage = LIFECYCLE_STAGES[activeStageIndex];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px]  overflow-hidden text-[var(--text)]">
-      {/* Visual Engineering Grid Mesh Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto mb-20">
           <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
-            // OPERATIONAL_MATURITY_MATRIX
+            OPERATIONAL_MATURITY_MATRIX
           </span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--heading)] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
             Ecosystem Pipelines
           </h2>
-          <p className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed">
+          <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
             Every library, module, and API in our registry follows strict lifecycle tracking metrics. Evaluate architectural risks contextually at a single glance.
           </p>
         </div>
@@ -190,7 +188,7 @@ export default function ProjectLifecycle() {
                   </div>
                   
                   <span className={`mt-3 font-mono text-[10px] tracking-wider transition-colors duration-200 uppercase ${
-                    isSelected ? "text-[var(--heading)] font-black" : "text-[var(--disabled)] group-hover:text-[var(--subtitle)]"
+                    isSelected ? "text-[var(--heading)] font-bold" : "text-[var(--disabled)] group-hover:text-[var(--subtitle)]"
                   }`}>
                     {stage.badgeText}
                   </span>
@@ -222,7 +220,7 @@ export default function ProjectLifecycle() {
                     <span className="font-mono text-[10px] text-[var(--disabled)] tracking-widest block mb-1">
                       {currentStage.phase}
                     </span>
-                    <h3 className="text-2xl font-black text-[var(--heading)] tracking-tight">
+                    <h3 className="text-2xl font-bold text-[var(--heading)] tracking-tight">
                       Protocol Matrix Scopes
                     </h3>
                   </div>
@@ -231,7 +229,7 @@ export default function ProjectLifecycle() {
                   </span>
                 </div>
                 
-                <p className="text-sm md:text-base text-[var(--subtitle)] font-light leading-relaxed mb-8 max-w-4xl">
+                <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed mb-8 max-w-4xl">
                   {currentStage.description}
                 </p>
                 
@@ -262,7 +260,6 @@ export default function ProjectLifecycle() {
               <motion.div
                 key={stage.id}
                 onClick={() => setActiveStageIndex(idx)}
-                whileHover={{ y: -4 }}
                 className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] flex flex-col justify-between text-left transition-all duration-300 cursor-pointer group ${
                   isCurrentlyActive
                     ? "border-[var(--primary)] shadow-[var(--shadow-sm)] ring-1 ring-[var(--primary)]/30"
@@ -279,7 +276,7 @@ export default function ProjectLifecycle() {
                     </span>
                   </div>
                   
-                  <p className="text-xs text-[var(--subtitle)] font-light leading-relaxed mb-6 group-hover:text-[var(--text)] transition-colors">
+                  <p className="text-xs text-[var(--subtitle)] leading-relaxed mb-6 group-hover:text-[var(--text)] transition-colors">
                     {stage.description}
                   </p>
                 </div>

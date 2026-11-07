@@ -3,6 +3,8 @@
 import { motion, Variants } from "motion/react";
 import Link from "next/link";
 
+
+const MotionLink = motion.create(Link);
 export default function JoinTheMovement() {
   // Kinetic presentation animations for high-impact closing state
   const containerVariants:Variants = {
@@ -29,9 +31,7 @@ export default function JoinTheMovement() {
   };
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-[140px] text-[var(--text)] overflow-hidden flex items-center justify-center">
-      {/* Structural Network Grid Lines Mapping to the Center */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
+    <section className="relative px-6 md:px-[8%] py-16 md:py-28 text-[var(--text)] overflow-hidden flex items-center justify-center">
       
       {/* Hyper-Concentrated Core Ignition Glow behind text stack */}
       <div 
@@ -60,13 +60,13 @@ export default function JoinTheMovement() {
             variants={elementVariants}
             className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
-            // Finalization Node
+            Finalization Node
           </motion.span>
 
           {/* Core Closing Catchphrase Statement */}
           <motion.h2
             variants={elementVariants}
-            className="text-4xl md:text-6xl font-black tracking-tight text-[var(--heading)] leading-none max-w-2xl mb-6"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-none max-w-2xl mb-6"
           >
             Join the Movement
           </motion.h2>
@@ -81,7 +81,7 @@ export default function JoinTheMovement() {
 
           <motion.p
             variants={elementVariants}
-            className="text-sm md:text-base text-[var(--subtitle)] font-light max-w-xl leading-relaxed mb-10"
+            className="text-sm md:text-base text-[var(--subtitle)] max-w-xl leading-relaxed mb-10"
           >
             Join us in creating software, sharing knowledge, and helping developers grow. Let&apos;s construct the open infrastructure of tomorrow, one branch at a time.
           </motion.p>
@@ -92,22 +92,18 @@ export default function JoinTheMovement() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
           >
             {/* Secondary Option: Explore Projects */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
+            <MotionLink href="/projects#projects" whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] text-sm font-bold tracking-wide text-[var(--text)] transition-colors duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-sm)] backdrop-blur-md hover:bg-[var(--hover-bg)] hover:border-[var(--border)]"
-            >
-             <Link href="/projects#projects"> Explore Projects</Link>
-            </motion.button>
+              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] text-sm font-bold tracking-wide text-[var(--text)] transition-colors duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-sm)] backdrop-blur-md hover:bg-[var(--hover-bg)] hover:border-[var(--border)]">
+              Explore Projects
+            </MotionLink>
 
             {/* Primary High-Octane Action Option: Become a Contributor */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
+            <MotionLink href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]"
-            >
-              <Link href="https://github.com/sylvenos" target="_blank">Become a Contributor</Link>
-            </motion.button>
+              className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]">
+              Become a Contributor
+            </MotionLink>
           </motion.div>
 
           {/* Micro Telemetry Inline Loop Indicator */}
