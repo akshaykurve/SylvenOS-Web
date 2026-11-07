@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Octokit } from "@octokit/rest";
+import { githubFetch } from "@/lib/githubFetch";
 
 // 1. Next.js Route Revalidation (1 hour default cache)
 export const revalidate = 3600;
@@ -7,6 +8,7 @@ export const revalidate = 3600;
 // Unify env variable check so auth works regardless of PAT naming
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN || process.env.GITHUB_ACCESS_TOKEN,
+  request: { fetch: githubFetch },
 });
 
 const ORG_NAME = "sylvenos";

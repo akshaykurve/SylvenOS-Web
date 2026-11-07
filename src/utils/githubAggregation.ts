@@ -6,8 +6,12 @@ import {
 } from "@/lib/type";
 import { Octokit } from "@octokit/rest";
 import { cachedOrFallback } from "@/lib/cache";
+import { githubFetch } from "@/lib/githubFetch";
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+  request: { fetch: githubFetch },
+});
 
 // ==========================================
 // RAW UNCACHED INTERNAL FETCH

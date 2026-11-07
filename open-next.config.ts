@@ -1,23 +1,23 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
-import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
-import { withRegionalCache } from "@opennextjs/cloudflare/overrides/incremental-cache/regional-cache";
-import memoryQueue from "@opennextjs/cloudflare/overrides/queue/memory-queue";
+// import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
+// import { withRegionalCache } from "@opennextjs/cloudflare/overrides/incremental-cache/regional-cache";
+// import memoryQueue from "@opennextjs/cloudflare/overrides/queue/memory-queue";
 
-// Why this exists (SEO): without a persistent incremental cache, a Cloudflare
-// Worker starts every cold isolate with an empty cache. Revalidated pages and
-// `unstable_cache` GitHub data could not be saved, so a crawler could hit a
-// cold Worker and trigger live GitHub calls (or get empty data if they fail).
+// OPTIONAL: persistent cache (R2). Currently OFF because R2 is not enabled on
+// the Cloudflare account, which makes `opennextjs-cloudflare deploy` fail with
+// "Please enable R2 through the Cloudflare Dashboard" (error 10042).
 //
-// With R2 behind it, the last good HTML and data survive across isolates and
-// deploys. Visitors and Googlebot get the stored copy immediately; Next
-// refreshes it in the background once it is older than `revalidate`, and if the
-// refresh fails the stored copy keeps being served.
+// While it is off, the app is still protected from empty data by the bundled
+// last-known-good snapshot (src/data/github-seed.json, see src/lib/cache.ts).
+// What R2 adds on top: refreshed pages and GitHub data survive across Worker
+// isolates and deploys instead of being re-fetched on every cold start.
 //
-// One-time setup: create the bucket named in wrangler.toml
-//   npx wrangler r2 bucket create sylvenosweb-cache
+// To turn it on:
+//   1. Cloudflare Dashboard -> Storage & databases -> R2 -> enable R2.
+//   2. Uncomment the three imports above and the two options below.
+//   3. Uncomment the [[r2_buckets]] block in wrangler.toml.
+//      (The deploy creates the bucket automatically once R2 is enabled.)
 export default defineCloudflareConfig({
-  // Regional Cache API in front of R2: far fewer R2 reads per request.
-  incrementalCache: withRegionalCache(r2IncrementalCache, { mode: "long-lived" }),
-  // Runs the background (time-based) revalidation after a stale response.
-  queue: memoryQueue,
+  // incrementalCache: withRegionalCache(r2IncrementalCache, { mode: "long-lived" }),
+  // queue: memoryQueue,
 });

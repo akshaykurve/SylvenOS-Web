@@ -1,12 +1,14 @@
 import { localProjectRegistry } from "@/config/projectMetadata";
 import { Octokit } from "@octokit/rest";
 import { cachedOrFallback } from "@/lib/cache";
+import { githubFetch } from "@/lib/githubFetch";
 
 // 1. Unified Octokit Initialization
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GITHUB_ACCESS_TOKEN;
 
 const octokit = new Octokit({
   auth: GITHUB_TOKEN || undefined,
+  request: { fetch: githubFetch },
 });
 
 const DEFAULT_ORG_NAME = "SylvenOS";
