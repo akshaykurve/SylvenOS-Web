@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function HowItWorks() {
   const steps = [
@@ -90,7 +90,7 @@ export default function HowItWorks() {
         <div className="absolute left-4 md:left-8 top-2 bottom-2 w-[2px] bg-gradient-to-b from-[var(--primary)] via-[var(--info)] to-[var(--success)] opacity-20 pointer-events-none" />
 
         {/* Dynamic Highlight Progress Bar Overlay */}
-        <motion.div 
+        <m.div 
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
           viewport={{ once: true, margin: "-140px" }}
@@ -99,7 +99,7 @@ export default function HowItWorks() {
         />
 
         {/* Timeline Stack */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -107,7 +107,7 @@ export default function HowItWorks() {
           className="space-y-12"
         >
           {steps.map((step, index) => (
-            <motion.div
+            <m.div
               key={index}
               variants={stepVariants}
               style={{ '--step-color': step.color } as React.CSSProperties}
@@ -115,7 +115,7 @@ export default function HowItWorks() {
             >
               {/* Step Node Marker Indicator */}
               <div className="relative z-10 flex items-center justify-center flex-shrink-0">
-                <motion.div 
+                <m.div 
                   whileInView={{ 
                     borderColor: step.color,
                     boxShadow: step.isFinal ? "var(--glow-logo)" : "0 0 12px rgba(74, 127, 167, 0.2)"
@@ -131,7 +131,7 @@ export default function HowItWorks() {
                   >
                     {step.tag}
                   </span>
-                </motion.div>
+                </m.div>
               </div>
 
               {/* Step Context Details */}
@@ -148,9 +148,9 @@ export default function HowItWorks() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

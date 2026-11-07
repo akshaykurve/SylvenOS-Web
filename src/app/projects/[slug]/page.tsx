@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { absoluteUrl, SITE_NAME } from "@/lib/seo";
 
+import { avatarSrc } from "@/lib/avatar";
 interface ProjectDetailsPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -103,7 +104,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
 
         {/* Hero Meta */}
         <div className="flex items-center gap-4 mb-10 pb-8 border-b border-[var(--card-border)]">
-          <img src={project.avatarUrl} alt={project.name} className="w-16 h-16 rounded border" />
+          <img src={avatarSrc(project.avatarUrl, 64)} alt={`${project.name} logo`} width={64} height={64} decoding="async" className="w-16 h-16 rounded border" />
           <div>
             <h1 className="text-3xl md:text-5xl font-bold text-[var(--heading)] tracking-tight">{project.name}</h1>
             <p className="text-sm text-[var(--subtitle)] mt-2">{project.description}</p>

@@ -35,7 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
   } catch {
-    // Fall back to static routes only if the GitHub API is unavailable at build time.
+    // getAllProjects already falls back to the last-known-good snapshot; this is
+    // only a last resort so the sitemap itself can never fail.
   }
 
   return [...staticRoutes, ...projectRoutes];

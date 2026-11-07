@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { faqData } from "@/lib/data/faqs";
 
 
@@ -71,7 +71,7 @@ export default function FAQAccordion() {
                   </span>
                   
                   {/* Premium Minimal Chevron Indicator */}
-                  <motion.div
+                  <m.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2, ease: "easeInOut" }}
                     className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[var(--subtitle)] group-hover:text-[var(--text)]"
@@ -85,13 +85,13 @@ export default function FAQAccordion() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
-                  </motion.div>
+                  </m.div>
                 </button>
 
                 {/* Animated Collapsible Panel */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ 
                         height: "auto", 
@@ -114,7 +114,7 @@ export default function FAQAccordion() {
                       <div className="pb-6 text-xs md:text-sm text-[var(--subtitle)] font-normal leading-relaxed pr-6 max-w-2xl">
                         {item.answer}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>

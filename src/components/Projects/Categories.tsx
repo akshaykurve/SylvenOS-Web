@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function ProjectCategories() {
   // Stagger configurations for standard layout reveal
@@ -115,16 +115,16 @@ export default function ProjectCategories() {
         
         {/* Section Heading Panel */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Architecture Index
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -132,9 +132,9 @@ export default function ProjectCategories() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Project Categories
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -142,11 +142,11 @@ export default function ProjectCategories() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             We welcome every technology and discipline — no stack is off-limits. Browse by category below, or explore all active projects regardless of what they&apos;re built with.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Categories Layout Grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -154,7 +154,7 @@ export default function ProjectCategories() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch"
         >
           {categories.map((category, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': category.color, '--hover-shadow': category.glow } as React.CSSProperties}
@@ -197,9 +197,9 @@ export default function ProjectCategories() {
                 </div>
               </div>
 
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

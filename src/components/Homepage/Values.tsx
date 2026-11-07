@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function CommunityValues() {
   const values = [
@@ -98,7 +98,7 @@ export default function CommunityValues() {
       </div>
 
       {/* Symmetric 3x2 Matrix Layout */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -106,7 +106,7 @@ export default function CommunityValues() {
         className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
       >
         {values.map((value, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={cardVariants}
             className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/20 border border-[var(--card-border)] backdrop-blur-md transition-all duration-[var(--transition-normal)] flex flex-col items-start hover:border-[var(--info)] hover:shadow-[var(--shadow-md)]"
@@ -125,9 +125,9 @@ export default function CommunityValues() {
             <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed">
               {value.description}
             </p>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

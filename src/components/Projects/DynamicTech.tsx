@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { TECH_TAXONOMY } from "@/config/taxonomy"; // Import your local map
 import { ProjectData } from "@/lib/type";
 
@@ -115,7 +115,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
           {activeCategories
             .filter((cat) => selectedCategory === "ALL" || selectedCategory === cat)
             .map((category) => (
-              <motion.div
+              <m.div
                 layout
                 key={category}
                 className="p-6 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] flex flex-col justify-between group transition-all duration-300 hover:border-[var(--border)]"
@@ -156,7 +156,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                   <span>LAYER_STATUS</span>
                   <span className="text-green-400 uppercase font-bold tracking-wider">● SCHEMA_SYNCED</span>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
         </div>
 

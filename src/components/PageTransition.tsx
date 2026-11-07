@@ -1,15 +1,14 @@
 "use client";
 
-import { AnimatePresence, MotionConfig, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { usePathname } from "next/navigation";
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <MotionConfig reducedMotion="user">
     <AnimatePresence mode="sync" initial={false}>
-      <motion.div
+      <m.div
         id="main-content"
         tabIndex={-1}
         className="outline-none"
@@ -19,8 +18,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
         transition={{ duration: 0.25, ease: "easeInOut" }}
       >
         {children}
-      </motion.div>
+      </m.div>
     </AnimatePresence>
-    </MotionConfig>
   );
 }

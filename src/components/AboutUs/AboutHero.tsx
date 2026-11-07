@@ -1,10 +1,10 @@
 "use client";
 
-import { motion ,Variants } from "motion/react";
+import { m ,Variants } from "motion/react";
 import Link from "next/link";
 
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 export default function HeroSection() {
   // Cascading entry animation variants for text components
   const elementVariants = {
@@ -55,7 +55,7 @@ export default function HeroSection() {
         <div className="lg:col-span-7 flex flex-col justify-center text-left">
           
           {/* Tagline Badge */}
-          <motion.span
+          <m.span
             custom={0}
             variants={elementVariants}
             initial="hidden"
@@ -64,10 +64,10 @@ export default function HeroSection() {
           >
             <span className="w-2 h-2 rounded-full bg-[var(--logo)] animate-pulse" />
             Initialize Sylven Ecosystem
-          </motion.span>
+          </m.span>
 
           {/* Core Branding Heading */}
-          <motion.h1
+          <m.h1
             custom={1}
             variants={elementVariants}
             initial="hidden"
@@ -75,10 +75,10 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
           >
             About <span className="text-(--primary)">Sylven OS</span>
-          </motion.h1>
+          </m.h1>
 
           {/* Mission Subtitle */}
-          <motion.p
+          <m.p
             custom={2}
             variants={elementVariants}
             initial="hidden"
@@ -86,10 +86,10 @@ export default function HeroSection() {
             className="text-base md:text-xl text-[var(--subtitle)] font-normal max-w-2xl leading-relaxed mb-10"
           >
             A community-driven open-source organization where developers learn, build real-world software, and educate others through collaboration.
-          </motion.p>
+          </m.p>
 
           {/* Action Callouts */}
-          <motion.div
+          <m.div
             custom={3}
             variants={elementVariants}
             initial="hidden"
@@ -119,24 +119,24 @@ export default function HeroSection() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </MotionLink>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Right Column: Abstract Ecosystem Conceptual Artwork */}
         <div className="lg:col-span-5 w-full flex items-center justify-center relative min-h-[380px] md:min-h-[500px]">
           
           {/* Outer Rotating Sacred/Tech Geometric Boundary (Seal of Creation vibe) */}
-          <motion.div 
+          <m.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="absolute w-[320px] h-[320px] md:w-[450px] md:h-[450px] border border-dashed border-[var(--card-border)] rounded-full opacity-40 pointer-events-none flex items-center justify-center"
           >
             <div className="w-[85%] h-[85%] border border-dotted border-[var(--primary)] rounded-full opacity-60" />
             <div className="w-[60%] h-[60%] border border-[var(--border)] opacity-20 rounded-full" />
-          </motion.div>
+          </m.div>
 
           {/* Central Interactive Network Graphic Container */}
-          <motion.div 
+          <m.div 
             variants={floatAnimation(0, 7)}
             initial="animate"
             animate="animate"
@@ -146,7 +146,7 @@ export default function HeroSection() {
             {/* Embedded Interactive SVG representing interconnected repository nodes & organic growth */}
             <svg aria-hidden="true" focusable="false" viewBox="0 0 200 200" className="w-full h-full p-6 text-[var(--accent)]">
               {/* Background connections / Forest branches */}
-              <motion.path 
+              <m.path 
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 0.3 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
@@ -159,7 +159,7 @@ export default function HeroSection() {
 
               {/* Glowing Interconnected Project Nodes */}
               {/* Root Node */}
-              <motion.circle 
+              <m.circle 
                 cx="100" cy="160" r="6" 
                 className="fill-[var(--surface)] stroke-[var(--logo)] stroke-[3]"
                 style={{ filter: "drop-shadow(var(--glow-logo))" }}
@@ -167,7 +167,7 @@ export default function HeroSection() {
               />
 
               {/* Core Convergence Node */}
-              <motion.circle 
+              <m.circle 
                 cx="100" cy="100" r="8" 
                 className="fill-[var(--bg)] stroke-[var(--accent)] stroke-[3]"
                 style={{ filter: "drop-shadow(var(--glow-primary))" }}
@@ -175,9 +175,9 @@ export default function HeroSection() {
               />
 
               {/* Branch Node Left */}
-              <motion.circle cx="60" cy="70" r="5" className="fill-[var(--surface)] stroke-[var(--border)] stroke-[2]" whileHover={{ scale: 1.3 }} />
+              <m.circle cx="60" cy="70" r="5" className="fill-[var(--surface)] stroke-[var(--border)] stroke-[2]" whileHover={{ scale: 1.3 }} />
               {/* Branch Node Right */}
-              <motion.circle cx="140" cy="70" r="5" className="fill-[var(--surface)] stroke-[var(--border)] stroke-[2]" whileHover={{ scale: 1.3 }} />
+              <m.circle cx="140" cy="70" r="5" className="fill-[var(--surface)] stroke-[var(--border)] stroke-[2]" whileHover={{ scale: 1.3 }} />
 
               {/* Terminal Contributor Leaves (Leaf/Repository Nodes) */}
               {[
@@ -186,10 +186,10 @@ export default function HeroSection() {
                 { cx: 120, cy: 40, color: "var(--success)" },
                 { cx: 160, cy: 40, color: "var(--accent)" }
               ].map((node, index) => (
-                <motion.g key={index} whileHover={{ scale: 1.2 }}>
+                <m.g key={index} whileHover={{ scale: 1.2 }}>
                   <circle cx={node.cx} cy={node.cy} r="4" fill={node.color} />
                   <circle cx={node.cx} cy={node.cy} r="8" stroke={node.color} strokeWidth="1" fill="none" className="animate-ping opacity-40" style={{ animationDuration: `${2 + index}s` }} />
-                </motion.g>
+                </m.g>
               ))}
             </svg>
 
@@ -205,14 +205,14 @@ export default function HeroSection() {
                 <div className="w-5 h-5 rounded-full bg-[var(--info)] border border-[var(--surface)]" />
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Extra Ambient Floating Ecosystem Node Orbs */}
-          <motion.div 
+          <m.div 
             variants={floatAnimation(0.5, 5)} initial="animate" animate="animate"
             className="absolute top-[12%] right-[15%] w-4 h-4 rounded-full bg-[var(--logo)] shadow-[var(--glow-logo)] hidden md:block"
           />
-          <motion.div 
+          <m.div 
             variants={floatAnimation(1.8, 8)} initial="animate" animate="animate"
             className="absolute bottom-[15%] left-[10%] w-3 h-3 rounded-full bg-[var(--info)] shadow-[0_0_12px_rgba(56,189,248,0.4)] hidden md:block"
           />

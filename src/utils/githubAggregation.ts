@@ -5,7 +5,7 @@ import {
   RepoContribution,
 } from "@/lib/type";
 import { Octokit } from "@octokit/rest";
-import { unstable_cache } from "next/cache";
+import { cachedOrFallback } from "@/lib/cache";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
@@ -124,23 +124,21 @@ async function getOrganizationRankingsRaw(
       "Critical failure during organization data compilation pipeline:",
       error
     );
-    return [];
+    throw error;
   }
 }
 
 // ==========================================
-// EXPORTED CACHED WRAPPER (`unstable_cache`)
+// EXPORTED CACHED WRAPPER
 // ==========================================
 
 export async function getOrganizationRankings(
   orgName: string
 ): Promise<AggregatedContributor[]> {
-  return unstable_cache(
-    async () => getOrganizationRankingsRaw(orgName),
+  return cachedOrFallback<AggregatedContributor[]>(
+    () => getOrganizationRankingsRaw(orgName),
     ["org-rankings-v1", orgName],
-    {
-      revalidate: 3600, // Revalidates every 1 hour (3600 seconds)
-      tags: ["github-telemetry", "org-rankings", `org-${orgName}`],
-    }
-  )();
+    { revalidate: 3600, tags: ["github-telemetry", "org-rankings", `org-${orgName}`] },
+    []
+  );
 }

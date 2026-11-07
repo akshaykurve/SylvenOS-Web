@@ -1,9 +1,10 @@
 // components/OrganizationRankings.tsx
 "use client";
 
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { AggregatedContributor } from "@/lib/type";
 
+import { avatarSrc } from "@/lib/avatar";
 interface OrganizationRankingsProps {
   rankedContributors: AggregatedContributor[];
 }
@@ -45,7 +46,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
             const accentColor = getRankColor(node.rank);
 
             return (
-              <motion.a
+              <m.a
                 href={node.html_url}
                 target="_blank"
                 rel="noreferrer"
@@ -69,8 +70,9 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 {/* Profile Portrait Wrapper */}
                 <div className="relative mb-4 mt-2">
                   <img 
-                    src={node.avatar_url} 
-                    alt={`${node.login} avatar token`} 
+                    src={avatarSrc(node.avatar_url, 64)} 
+                    alt={`${node.login}'s GitHub avatar`} 
+                    width={64} height={64} decoding="async" loading="lazy"
                     className="w-16 h-16 rounded-full border-2 bg-[var(--bg)] object-cover transition-colors" 
                     style={{ borderColor: accentColor }} 
                   />
@@ -90,7 +92,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                   <div className="text-xs text-[var(--disabled)] uppercase tracking-wider mb-0.5">Total Core Commits</div>
                   <div className="text-lg font-bold text-[var(--heading)]">{node.totalContributions}</div>
                 </div>
-              </motion.a>
+              </m.a>
             );
           })}
         </div>
@@ -109,7 +111,7 @@ export default function OrganizationRankings({ rankedContributors = [] }: Organi
                 {/* Contributor Matrix Left Deck */}
                 <div className="flex items-center gap-4 min-w-0">
                   <span className="w-8 font-mono text-xs font-bold text-[var(--disabled)] text-center">#{node.rank}</span>
-                  <img src={node.avatar_url} alt={node.login} className="w-9 h-9 rounded-full border border-[var(--card-border)] bg-[var(--bg)] object-cover" />
+                  <img src={avatarSrc(node.avatar_url, 36)} alt={`${node.login}'s GitHub avatar`} width={36} height={36} decoding="async" loading="lazy" className="w-9 h-9 rounded-full border border-[var(--card-border)] bg-[var(--bg)] object-cover" />
                   <span className="text-sm font-bold text-[var(--body)] group-hover:text-[var(--accent)] transition-colors truncate flex items-center gap-2">
                     {node.login}
                     <svg aria-hidden="true" focusable="false" className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-[var(--transition-fast)] text-[var(--disabled)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

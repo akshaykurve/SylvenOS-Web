@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 interface RewardCard {
   title: string;
@@ -109,16 +109,16 @@ export default function RecognitionRewards() {
         
         {/* Module Context Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--warning)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Gamification Strategy
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -126,9 +126,9 @@ export default function RecognitionRewards() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Recognition & Rewards
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -136,11 +136,11 @@ export default function RecognitionRewards() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Exceptional work deserves permanent registry status. We are designing native multi-tier incentive layers to validate structural, instructional, and community impact.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* 6-Card Architecture Grid Array */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -148,7 +148,7 @@ export default function RecognitionRewards() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch"
         >
           {rewards.map((reward, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group select-none hover:border-[var(--border)]"
@@ -195,12 +195,12 @@ export default function RecognitionRewards() {
                 </div>
               </div>
 
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Core Engine Status Verification Layer */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -211,7 +211,7 @@ export default function RecognitionRewards() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--warning)]" />
             V1 Framework Interface Loaded // Incentive Initialization Matrices Pending
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

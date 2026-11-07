@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function WhoWeAre() {
   // Graceful fade-in-up variants for staggered text and blocks
@@ -32,7 +32,7 @@ export default function WhoWeAre() {
           
           {/* Left Column: Core Identity & Statement */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <motion.span
+            <m.span
               custom={0}
               variants={elementVariants}
               initial="hidden"
@@ -41,9 +41,9 @@ export default function WhoWeAre() {
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
             >
               Identity
-            </motion.span>
+            </m.span>
 
-            <motion.h2
+            <m.h2
               custom={1}
               variants={elementVariants}
               initial="hidden"
@@ -52,9 +52,9 @@ export default function WhoWeAre() {
               className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] leading-tight mb-6"
             >
               Who We Are
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               custom={2}
               variants={elementVariants}
               initial="hidden"
@@ -63,9 +63,9 @@ export default function WhoWeAre() {
               className="text-lg md:text-xl text-[var(--body)] font-medium leading-relaxed mb-6 border-l-2 border-[var(--primary)] pl-6"
             >
               Sylven OS is an open-source organization dedicated to creating practical software while helping developers gain real engineering experience through collaboration.
-            </motion.p>
+            </m.p>
 
-            <motion.p
+            <m.p
               custom={3}
               variants={elementVariants}
               initial="hidden"
@@ -74,7 +74,7 @@ export default function WhoWeAre() {
               className="text-base text-[var(--subtitle)] leading-relaxed max-w-2xl"
             >
               We believe open source is not only about writing code—it is about sharing knowledge, mentoring others, documenting critical solutions, and engineering systems transparently to lift the next generation of builders.
-            </motion.p>
+            </m.p>
           </div>
 
           {/* Right Column: Key Cultural Metrics / Values */}
@@ -96,7 +96,7 @@ export default function WhoWeAre() {
                 color: "var(--accent)"
               }
             ].map((value, idx) => (
-              <motion.div
+              <m.div
                 key={idx}
                 custom={idx + 3}
                 variants={elementVariants}
@@ -115,7 +115,7 @@ export default function WhoWeAre() {
                   <h4 className="text-base font-bold text-[var(--heading)] mb-1 tracking-tight">{value.title}</h4>
                   <p className="text-xs md:text-sm text-[var(--subtitle)] leading-relaxed">{value.desc}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 

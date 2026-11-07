@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function FeaturedProjects() {
   const projects = [
@@ -89,7 +89,7 @@ export default function FeaturedProjects() {
       </div>
 
       {/* Grid Layout Frame */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -97,7 +97,7 @@ export default function FeaturedProjects() {
         className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch mb-16"
       >
         {projects.map((project, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={cardVariants}
             className="group relative p-6 md:p-8 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between backdrop-blur-md hover:border-[var(--primary)]"
@@ -144,9 +144,9 @@ export default function FeaturedProjects() {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
 
       
     </section>

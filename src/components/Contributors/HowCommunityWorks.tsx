@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import { CONTRIBUTION_STEPS } from "@/lib/data/contributionSteps";
 
 export default function HowCommunityWorks() {
@@ -49,16 +49,16 @@ export default function HowCommunityWorks() {
         
         {/* Section Heading */}
         <div className="max-w-3xl mx-auto text-center mb-24">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Onboarding Pipeline
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,9 +66,9 @@ export default function HowCommunityWorks() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             How the Community Works
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,11 +76,11 @@ export default function HowCommunityWorks() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Wondering how to make your first contribution? We removed the guesswork with a transparent, clear track designed to take you from initial setup to core deployment lead.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Vertical Structured Journey Timeline */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -89,11 +89,11 @@ export default function HowCommunityWorks() {
         >
           {/* Central Structural Connecting Timeline Backbone */}
           <div className="absolute left-[3px] sm:left-[7px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-[var(--info)] via-[var(--primary)] via-[var(--logo)] to-[var(--success)] opacity-20 origin-top">
-            <motion.div variants={dynamicLineVariants} className="w-full h-full bg-inherit" />
+            <m.div variants={dynamicLineVariants} className="w-full h-full bg-inherit" />
           </div>
 
           {steps.map((step, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={itemVariants}
               className="relative group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 p-5 sm:p-6 rounded-[var(--radius-md)] border border-transparent hover:border-[var(--card-border)] hover:bg-[var(--gradient-surface)] hover:shadow-[var(--shadow-sm)] transition-all duration-[var(--transition-fast)]"
@@ -125,12 +125,12 @@ export default function HowCommunityWorks() {
                   {step.description}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Micro Summary Footer Action */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -141,7 +141,7 @@ export default function HowCommunityWorks() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)] animate-pulse" />
             Ecosystem open for public initialization branches.
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

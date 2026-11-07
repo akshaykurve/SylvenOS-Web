@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { m, useScroll, useTransform } from "motion/react";
 
 export default function FutureRoadmap() {
   // Master container tracking loop for scroll-linked line physics
@@ -84,16 +84,16 @@ export default function FutureRoadmap() {
         
         {/* Header Block */}
         <div className="max-w-3xl mb-28 text-left">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Strategic Track
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -101,9 +101,9 @@ export default function FutureRoadmap() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Future Roadmap
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -111,7 +111,7 @@ export default function FutureRoadmap() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             We don’t believe in idle development. Sylven OS operates with a hyper-focused trajectory, moving systematically from foundational architecture to a globally distributed engineering ecosystem.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Scroll Activated Timeline Wrapper */}
@@ -121,13 +121,13 @@ export default function FutureRoadmap() {
           <div className="absolute left-[3px] sm:left-[7px] top-4 bottom-4 w-[2px] bg-[var(--card-border)] opacity-30" />
 
           {/* Dynamic Scroll-Linked Active Fill Line */}
-          <motion.div 
+          <m.div 
             style={{ height: lineHeight }}
             className="absolute left-[3px] sm:left-[7px] top-4 w-[2px] bg-gradient-to-b from-[var(--success)] via-[var(--info)] via-[var(--primary)] to-[var(--logo)] origin-top z-10"
           />
 
           {roadmapPhases.map((phase, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -137,7 +137,7 @@ export default function FutureRoadmap() {
             >
               {/* Timeline Dynamic Node Pin */}
               <div className="absolute -left-[27px] sm:-left-[49px] top-2 z-20 flex items-center justify-center">
-                <motion.div 
+                <m.div 
                   className="w-[10px] h-[10px] sm:w-4 sm:h-4 rounded-full bg-[var(--bg)] border-2 transition-all duration-[var(--transition-fast)] group-hover:scale-125"
                   style={{ borderColor: phase.statusColor, boxShadow: `0 0 10px ${phase.statusColor}40` }}
                 />
@@ -185,7 +185,7 @@ export default function FutureRoadmap() {
                 ))}
               </div>
 
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

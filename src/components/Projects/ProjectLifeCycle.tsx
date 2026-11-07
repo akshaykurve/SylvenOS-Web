@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 
 interface LifecycleStage {
   id: string;
@@ -179,7 +179,7 @@ export default function ProjectLifecycle() {
                   }`}>
                     {/* Sliding Selection Pill */}
                     {isSelected && (
-                      <motion.div
+                      <m.div
                         layoutId="activeTimelineBubble"
                         className="absolute inset-0.5 bg-[var(--primary)] rounded-full -z-10"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -209,7 +209,7 @@ export default function ProjectLifecycle() {
 
           <div className="relative p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] shadow-[var(--shadow-md)] overflow-hidden">
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={currentStage.id}
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -248,7 +248,7 @@ export default function ProjectLifecycle() {
                     <span className={`font-bold ${currentStage.colorTheme.text}`}>{currentStage.apiSurface}</span>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
         </div>
@@ -258,7 +258,7 @@ export default function ProjectLifecycle() {
           {LIFECYCLE_STAGES.map((stage, idx) => {
             const isCurrentlyActive = idx === activeStageIndex;
             return (
-              <motion.div
+              <m.div
                 key={stage.id}
                 onClick={() => setActiveStageIndex(idx)}
                 className={`p-6 rounded-[var(--radius-md)] border bg-[var(--card-bg)] flex flex-col justify-between text-left transition-all duration-300 cursor-pointer group ${
@@ -288,7 +288,7 @@ export default function ProjectLifecycle() {
                     {stage.telemetry.split(" // ")[1]}
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

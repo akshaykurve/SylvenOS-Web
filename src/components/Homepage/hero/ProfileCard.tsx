@@ -16,10 +16,11 @@ export function ProfileCard() {
       <div className="mx-auto mb-8 h-[132px] w-[132px] rounded-full bg-[var(--gradient-primary)] p-1 shadow-[var(--shadow-lg)] ring-1 ring-[var(--card-border)]">
         <div className="relative h-full w-full">
           <Image
-            src="/IMG_20260628_143818.png"
+            src="/logo-288.webp"
             alt="Sylven OS logo mark"
             fill
             sizes="132px"
+            unoptimized
             className="object-contain p-3"
             priority
           />

@@ -12,3 +12,9 @@ binding = "ASSETS"
 [[services]]
 binding = "WORKER_SELF_REFERENCE"
 service = "sylvenosweb"
+
+# Persistent store for ISR pages and unstable_cache data (see open-next.config.ts).
+# Create once with: npx wrangler r2 bucket create sylvenosweb-cache
+[[r2_buckets]]
+binding = "NEXT_INC_CACHE_R2_BUCKET"
+bucket_name = "sylvenosweb-cache"

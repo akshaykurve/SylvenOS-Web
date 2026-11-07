@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 interface RoleNode {
   title: string;
@@ -105,16 +105,16 @@ export default function ContributorRoles() {
         
         {/* Component Title and Context Frame */}
         <div className="text-center max-w-2xl mx-auto mb-24">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--info)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Organizational Pipeline
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -122,9 +122,9 @@ export default function ContributorRoles() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Ecosystem Progression Path
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -132,7 +132,7 @@ export default function ContributorRoles() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Our community infrastructure features clear, direct advancement tracks. Understand operational tiers, map structural expectations, and visualize your integration trajectory.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Tree Layout Structural Context Wrapper */}
@@ -142,7 +142,7 @@ export default function ContributorRoles() {
           <div className="absolute left-[17px] md:left-1/2 top-2 bottom-2 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[var(--logo)] via-[var(--primary)] to-[var(--disabled)] opacity-20 pointer-events-none" />
 
           {/* Sequential Role Array Interlocking Matrix */}
-          <motion.div
+          <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -153,7 +153,7 @@ export default function ContributorRoles() {
               const isEven = idx % 2 === 0;
               
               return (
-                <motion.div
+                <m.div
                   key={idx}
                   variants={itemVariants}
                   className={`flex flex-col md:flex-row items-start md:items-center relative ${
@@ -173,7 +173,7 @@ export default function ContributorRoles() {
 
                   {/* High-Fidelity Progression Info Card Component */}
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
-                    <motion.div
+                    <m.div
                       style={{ '--hover-border': role.color } as React.CSSProperties}
                       className="p-6 md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--hover-border)] hover:bg-[var(--gradient-surface)]"
                     >
@@ -213,16 +213,16 @@ export default function ContributorRoles() {
                         ))}
                       </div>
 
-                    </motion.div>
+                    </m.div>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Closing Dynamic Hierarchy Verification Tagline */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -233,7 +233,7 @@ export default function ContributorRoles() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />
             Ecosystem Matrix Hierarchy Operational // All Routes Open For Onboarding
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

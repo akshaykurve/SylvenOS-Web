@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { ProjectData } from "@/lib/type";
 
 
+import { avatarSrc } from "@/lib/avatar";
 interface ProjectExplorerProps {
   projects: ProjectData[];
 }
@@ -176,7 +177,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         </div>
 
         {/* Project Card Grid */}
-<motion.div 
+<m.div 
   layout 
   className={`grid gap-6 md:gap-8 items-stretch w-full ${
     filteredAndSortedProjects.length === 1
@@ -188,7 +189,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
 >
   <AnimatePresence mode="popLayout">
     {filteredAndSortedProjects.map((project) => (
-      <motion.div
+      <m.div
         layout
         key={project.name}
         initial={{ opacity: 0, scale: 0.96 }}
@@ -200,8 +201,9 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         <div className="w-full flex flex-col items-center">
           <div className="flex flex-col items-center gap-3 mb-5 w-full">
             <img
-              src={project.avatarUrl}
+              src={avatarSrc(project.avatarUrl, 48)}
               alt={`${project.name} logo`}
+              width={48} height={48} decoding="async" loading="lazy"
               className="w-12 h-12 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--card-border)] object-cover shadow-[var(--shadow-sm)]"
             />
             <div className="flex items-center justify-center gap-1.5 flex-wrap">
@@ -277,13 +279,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             </Link>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     ))}
   </AnimatePresence>
-</motion.div>
+</m.div>
         {filteredAndSortedProjects.length === 0 && (
           <div className="p-16 text-center rounded-[var(--radius-md)] border border-dashed border-[var(--border)] bg-[var(--glass)] font-mono text-xs text-[var(--disabled)] max-w-xl mx-auto mt-6">
-            No active repository records found matching the current configuration matrices.
+            No projects match these filters. Try clearing one or two to see more.
           </div>
         )}
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function OurMission() {
   // Graceful block entry variants
@@ -37,7 +37,7 @@ export default function OurMission() {
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Simple Premium Card Frame */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -51,26 +51,26 @@ export default function OurMission() {
             
             {/* Left Column: Content (7 cols) */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <motion.span
+              <m.span
                 variants={textVariants}
                 className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
               >
                 Core Directives
-              </motion.span>
+              </m.span>
 
-              <motion.h2
+              <m.h2
                 variants={textVariants}
                 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
               >
                 Our Mission
-              </motion.h2>
+              </m.h2>
 
-              <motion.p
+              <m.p
                 variants={textVariants}
                 className="text-lg md:text-2xl text-[var(--body)] font-medium leading-relaxed tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[var(--heading)] via-[var(--body)] to-[var(--subtitle)]"
               >
                 To create an open-source ecosystem where developers from every background can learn through building meaningful software, collaborate with others, and freely share knowledge with the community.
-              </motion.p>
+              </m.p>
             </div>
 
             {/* Right Column: Strong Abstract Ecosystem Visual (5 cols) */}
@@ -82,7 +82,7 @@ export default function OurMission() {
               </div>
 
               {/* Central Core Visual Container */}
-              <motion.div 
+              <m.div 
                 whileHover={{ scale: 1.05 }}
                 className="relative w-[200px] h-[200px] rounded-[var(--radius-md)] bg-[var(--glass)] border border-[var(--card-border)] shadow-[var(--shadow-md)] flex items-center justify-center group transition-all duration-[var(--transition-fast)]"
               >
@@ -93,7 +93,7 @@ export default function OurMission() {
                   <circle cx="50" cy="50" r="12" stroke="var(--logo)" strokeWidth="1" fill="none" className="animate-ping opacity-20" style={{ animationDuration: '3s' }} />
 
                   {/* Interconnected Growth Paths */}
-                  <motion.path
+                  <m.path
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 0.4 }}
                     transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -119,12 +119,12 @@ export default function OurMission() {
                 <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-xs font-mono tracking-widest text-[var(--success)] font-bold shadow-[var(--shadow-sm)] uppercase">
                   Global Mesh
                 </div>
-              </motion.div>
+              </m.div>
 
             </div>
 
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

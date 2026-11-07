@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 
 export interface HeroMember {
   login: string;
@@ -113,53 +113,53 @@ export default function HeroSection({ members = [] }: { members?: HeroMember[] }
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
         
         {/* Left Column: Mission Narrative Context Block (5 Columns) */}
-        <motion.div
+        <m.div
           variants={textContainerVariants}
           initial="hidden"
           animate="visible"
           className="lg:col-span-6 flex flex-col justify-center text-left"
         >
-          <motion.span
+          <m.span
             variants={textItemVariants}
             className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
             Identity Matrix Initialization
-          </motion.span>
+          </m.span>
 
-          <motion.h1
+          <m.h1
             variants={textItemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-[1.05] mb-6"
           >
             Meet the People Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--info)] via-[var(--primary)] to-[var(--logo)]">Sylven OS</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={textItemVariants}
             className="text-lg md:text-xl text-[var(--subtitle)] leading-relaxed mb-10 max-w-xl"
           >
             Every project, document, design, and idea is made possible by contributors from around the community.
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={textItemVariants}>
+          <m.div variants={textItemVariants}>
             <MotionLink href="https://github.com/SylvenOS/" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-8 py-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]">
               Become a Contributor
             </MotionLink>
-          </motion.div>
+          </m.div>
 
           {/* Micro telemetry sync feedback line */}
-          <motion.div 
+          <m.div 
             variants={textItemVariants}
             className="mt-12 flex items-center gap-3 font-mono text-xs text-[var(--disabled)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)] animate-pulse" />
             Ecosystem Core: 100% decentralized human-driven engineering
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         {/* Right Column: Dynamic Constellation Contributor Mesh (6 Columns) */}
-        <motion.div
+        <m.div
           variants={networkContainerVariants}
           initial="hidden"
           animate="visible"
@@ -187,7 +187,7 @@ export default function HeroSection({ members = [] }: { members?: HeroMember[] }
 
           {/* Map Nodes Dynamically Over the Grid Coordinate Layout */}
           {contributorNodes.map((node) => (
-            <motion.a
+            <m.a
               key={node.id}
               href={node.href}
               target="_blank"
@@ -216,14 +216,14 @@ export default function HeroSection({ members = [] }: { members?: HeroMember[] }
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 max-sm:hidden px-2.5 py-1 rounded bg-[var(--heading)] border border-[var(--card-border)] text-xs font-mono font-bold uppercase tracking-wider text-[var(--bg)] opacity-0 scale-95 group-hover/node:opacity-100 group-hover/node:scale-100 group-focus-visible/node:opacity-100 group-focus-visible/node:scale-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-[var(--shadow-md)]">
                 {node.label}
               </div>
-            </motion.a>
+            </m.a>
           ))}
 
           {/* Central Structural Coordinate Scope Label overlay */}
           <div className="absolute bottom-3 right-4 font-mono text-xs text-[var(--disabled)] tracking-widest uppercase select-none">
             Ecosystem_Map // Cluster_09_Active
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

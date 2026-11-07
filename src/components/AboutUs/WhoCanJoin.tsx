@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function WhoCanJoin() {
   // Staggered sequence configuration for the 9-card system matrix
@@ -165,16 +165,16 @@ export default function WhoCanJoin() {
         
         {/* Component Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Perimeter Permissions
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -182,9 +182,9 @@ export default function WhoCanJoin() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Who Can Join?
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -192,11 +192,11 @@ export default function WhoCanJoin() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Many engineers hesitate because they think open source is a gated sanctuary exclusively for veterans. We reject that logic. Sylven OS is a multi-discipline perimeter open to all tech verticals.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Dense Responsive Domain Grid Layout */}
-        <motion.div
+        <m.div
           variants={gridVariants}
           initial="hidden"
           whileInView="visible"
@@ -204,7 +204,7 @@ export default function WhoCanJoin() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch"
         >
           {domains.map((domain, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': domain.color, '--hover-shadow': domain.glow || `0 6px 24px rgba(255,255,255,0.03)` } as React.CSSProperties}
@@ -248,9 +248,9 @@ export default function WhoCanJoin() {
 
               {/* Minimal Bottom Separation Rule */}
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-border)] to-transparent mt-6 group-hover:via-[var(--border)] transition-colors" />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

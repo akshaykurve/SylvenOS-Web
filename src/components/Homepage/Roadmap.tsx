@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function EcosystemRoadmap() {
   const phases = [
@@ -68,7 +68,7 @@ export default function EcosystemRoadmap() {
       </div>
 
       {/* 4-Column Linear Horizon Layout Grid */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -79,7 +79,7 @@ export default function EcosystemRoadmap() {
         <div className="absolute top-[45px] left-4 right-4 h-[1px] bg-gradient-to-r from-[var(--success)] via-[var(--info)] to-[var(--card-border)] opacity-20 hidden lg:block pointer-events-none" />
 
         {phases.map((item, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={cardVariants}
             style={{ '--phase-color': item.statusColor } as React.CSSProperties}
@@ -142,9 +142,9 @@ export default function EcosystemRoadmap() {
                 {item.status}
               </span>
             </div>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

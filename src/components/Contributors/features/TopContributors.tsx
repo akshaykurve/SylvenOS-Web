@@ -1,8 +1,9 @@
 "use client";
 
 import { GitHubContributor } from "@/lib/type";
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
+import { avatarSrc } from "@/lib/avatar";
 export default function TopContributors({ contributors = [], limit = 3 }: { contributors: GitHubContributor[]; limit?: number }) {
   // 1. Sort dynamically by contribution count descending & slice to isolate top nodes
   const topNodes = [...contributors]
@@ -44,7 +45,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
         </div>
 
         {/* Dynamic Sorted Grid Mapping */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -55,7 +56,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
             const isRankOne = idx === 0;
 
             return (
-              <motion.div
+              <m.div
                 key={node.id}
                 variants={cardVariants}
                 className={`p-6 md:p-8 rounded-[var(--radius-md)] border bg-[var(--card-bg)] backdrop-blur-md relative overflow-hidden flex flex-col justify-between transition-all duration-[var(--transition-fast)] group hover:bg-[var(--gradient-surface)] ${
@@ -84,8 +85,9 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
                   {/* Profile Layout */}
                   <div className="flex items-center gap-4 mb-6">
                     <img 
-                      src={node.avatar_url} 
-                      alt={`${node.login} profile avatar telemetry`} 
+                      src={avatarSrc(node.avatar_url, 56)} 
+                      alt={`${node.login}'s GitHub avatar`} 
+                      width={56} height={56} decoding="async" loading="lazy"
                       className={`w-14 h-14 rounded-full border bg-[var(--bg)] object-cover transition-transform duration-300 group-hover:scale-105 ${
                         isRankOne ? "border-[var(--logo)]" : "border-[var(--card-border)]"
                       }`}
@@ -130,10 +132,10 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
                   </a>
                 </div>
 
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 export default function FinalCTA() {
   // Cascading entry animation variants
   const elementVariants:Variants = {
@@ -25,7 +25,7 @@ export default function FinalCTA() {
     <section className="relative px-6 md:px-[max(8%,calc((100%-80rem)/2))] py-16 md:py-28 text-[var(--text)]">
 
       {/* Main Structural Banner Frame */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -39,7 +39,7 @@ export default function FinalCTA() {
         />
 
         {/* Small Section Tag */}
-        <motion.span
+        <m.span
           custom={0}
           variants={elementVariants}
           initial="hidden"
@@ -48,10 +48,10 @@ export default function FinalCTA() {
           className="relative z-10 text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
         >
           Build the Future
-        </motion.span>
+        </m.span>
 
         {/* Dynamic Catchy Title Header */}
-        <motion.h2
+        <m.h2
           custom={1}
           variants={elementVariants}
           initial="hidden"
@@ -60,10 +60,10 @@ export default function FinalCTA() {
           className="relative z-10 text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] max-w-3xl leading-[1.1] mb-6"
         >
           Ready to Build Something Meaningful?
-        </motion.h2>
+        </m.h2>
 
         {/* Supporting Narrative Paragraph */}
-        <motion.p
+        <m.p
           custom={2}
           variants={elementVariants}
           initial="hidden"
@@ -72,10 +72,10 @@ export default function FinalCTA() {
           className="relative z-10 text-base md:text-xl text-[var(--subtitle)] max-w-2xl leading-relaxed mb-10"
         >
           Join developers creating open-source software, learning together, and helping others grow.
-        </motion.p>
+        </m.p>
 
         {/* Symmetrical Twin Action Button Stack */}
-        <motion.div
+        <m.div
           custom={3}
           variants={elementVariants}
           initial="hidden"
@@ -105,8 +105,8 @@ export default function FinalCTA() {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </MotionLink>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

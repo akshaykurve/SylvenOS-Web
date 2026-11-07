@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 
 interface WorkflowStep {
   id: string;
@@ -231,7 +231,7 @@ export default function ContributionGuide() {
           {/* Detailed Workspace Panel Block */}
           <div className="lg:col-span-7 relative min-h-[380px] flex flex-col justify-between p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] shadow-md overflow-hidden">
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={activeStep}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -281,7 +281,7 @@ export default function ContributionGuide() {
                     </pre>
                   </div>
                 )}
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
         </div>

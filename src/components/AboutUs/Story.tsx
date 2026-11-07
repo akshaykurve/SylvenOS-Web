@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function OurStory() {
   // Animation configurations for elements gracefully rising on scroll
@@ -46,16 +46,16 @@ export default function OurStory() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             The Manifesto
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,9 +63,9 @@ export default function OurStory() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Why Sylven OS Exists
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -73,11 +73,11 @@ export default function OurStory() {
             className="text-base md:text-lg text-[var(--subtitle)] font-normal leading-relaxed"
           >
             Sylven OS was never created to become another GitHub organization or coding community. It was created to build an ecosystem where developers don&apos;t just consume knowledge—they create it, share it, and help others grow through real-world collaboration.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* The Evolutionary Philosophy Journey */}
-        <motion.div 
+        <m.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -86,12 +86,12 @@ export default function OurStory() {
         >
           {/* Central Chronological Connecting Backbone (Visible on Desktop) */}
           <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-[var(--info)] via-[var(--primary)] to-[var(--logo)] opacity-25 origin-top -translate-x-1/2">
-            <motion.div variants={lineVariants} className="w-full h-full bg-inherit" />
+            <m.div variants={lineVariants} className="w-full h-full bg-inherit" />
           </div>
 
           {/* PHASE 01: Learn */}
           <div className="md:col-span-5 flex flex-col justify-center">
-            <motion.div 
+            <m.div 
               variants={cardVariants}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--info)] hover:shadow-[0_4px_20px_rgba(56,189,248,0.1)]"
             >
@@ -105,7 +105,7 @@ export default function OurStory() {
               <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Every developer starts somewhere. Courses, tutorials, books, and documentation provide the foundation, but knowledge alone doesn&apos;t create experienced engineers. Learning is only the first step of the journey.
               </p>
-            </motion.div>
+            </m.div>
           </div>
           
           {/* Spatial structural offsets for asymmetrical split layout */}
@@ -118,7 +118,7 @@ export default function OurStory() {
 
           {/* PHASE 02: Build */}
           <div className="md:col-span-5 flex flex-col justify-center">
-            <motion.div 
+            <m.div 
               variants={cardVariants}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--glow-primary)]"
             >
@@ -132,12 +132,12 @@ export default function OurStory() {
               <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Real growth happens when developers solve actual problems, collaborate on production-ready projects, review code, and experience the challenges that no tutorial can simulate. Building transforms knowledge into experience.
               </p>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* PHASE 03: Educate */}
           <div className="md:col-span-5 flex flex-col justify-center">
-            <motion.div 
+            <m.div 
               variants={cardVariants}
               className="p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-md)] backdrop-blur-md relative overflow-hidden transition-all duration-[var(--transition-fast)] hover:border-[var(--logo)] hover:shadow-[var(--glow-logo)]"
             >
@@ -151,16 +151,16 @@ export default function OurStory() {
               <p className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed">
                 Every contributor has something valuable to share. By documenting solutions, mentoring others, writing technical content, and contributing back to open source, today&apos;s learners become tomorrow&apos;s teachers—creating a cycle that strengthens the entire ecosystem.
               </p>
-            </motion.div>
+            </m.div>
           </div>
           
           {/* Final padding layout offsets */}
           <div className="hidden md:block md:col-span-2" />
           <div className="hidden md:block md:col-span-5" />
-        </motion.div>
+        </m.div>
 
         {/* Premium Self-Sustaining Mission Statement Box */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function OurStory() {
             <span className="text-[var(--success)] font-bold">Educate</span>
             —turning individual growth into collective progress.
           </p>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

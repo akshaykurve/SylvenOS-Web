@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import MotionProvider from "@/components/MotionProvider";
 import {
   SITE_URL,
   SITE_NAME,
@@ -60,7 +61,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon0.svg", type: "image/svg+xml" },
       { url: "/icon1.png", sizes: "96x96", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
@@ -111,12 +111,14 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <Navbar/>
-        <PageTransition>{children}</PageTransition>
-        <Footer/>
+        <MotionProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
+          <Navbar/>
+          <PageTransition>{children}</PageTransition>
+          <Footer/>
+        </MotionProvider>
       </body>
     </html>
   );

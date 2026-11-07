@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function SylvenPhilosophy() {
   // Line drawing and item sequential cascade configurations
@@ -87,16 +87,16 @@ export default function SylvenPhilosophy() {
         
         {/* Core Philosophical Framing Header */}
         <div className="mb-24 text-left max-w-2xl">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--info)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Execution Engine
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,9 +104,9 @@ export default function SylvenPhilosophy() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             The Sylven Philosophy
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -114,11 +114,11 @@ export default function SylvenPhilosophy() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Instead of collecting static rules, our community operates inside a continuous refinement loop. We think in cycles, ensuring knowledge never reaches an artificial dead end.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* The Continuous Closed Loop Pipeline */}
-        <motion.div
+        <m.div
           variants={pipelineVariants}
           initial="hidden"
           whileInView="visible"
@@ -127,12 +127,12 @@ export default function SylvenPhilosophy() {
         >
           {/* Vertical Connecting Structural Flowline */}
           <div className="absolute left-[15px] md:left-[31px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-[var(--info)] via-[var(--logo)] to-[var(--success)] opacity-20 origin-top">
-            <motion.div variants={trackVariants} className="w-full h-full bg-inherit" />
+            <m.div variants={trackVariants} className="w-full h-full bg-inherit" />
           </div>
 
           {/* Sequential Pipeline Steps */}
           {loopSteps.map((step, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={stepVariants}
               className="relative group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 p-6 rounded-[var(--radius-md)] border border-transparent hover:border-[var(--card-border)] hover:bg-[var(--card-bg)] backdrop-blur-sm transition-all duration-[var(--transition-fast)]"
@@ -166,12 +166,12 @@ export default function SylvenPhilosophy() {
                   {step.desc}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Continuous Loop Return Action Indicator (Repeat Callout) */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -192,7 +192,7 @@ export default function SylvenPhilosophy() {
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--success)] bg-[var(--hover-bg)] px-3 py-1 rounded border border-[var(--card-border)] whitespace-nowrap">
             GOTO // Phase_01
           </span>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

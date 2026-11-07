@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 export default function BecomeContributorCTA() {
   const elementVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -41,7 +41,7 @@ export default function BecomeContributorCTA() {
           <div className="absolute bottom-0 right-0 w-[1px] h-8 bg-[var(--card-border)]" />
 
           {/* Subheading Telemetry Flag */}
-          <motion.span
+          <m.span
             custom={0}
             variants={elementVariants}
             initial="hidden"
@@ -50,10 +50,10 @@ export default function BecomeContributorCTA() {
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-6 shadow-[var(--shadow-sm)]"
           >
             Initialization Gateway
-          </motion.span>
+          </m.span>
 
           {/* Core Title */}
-          <motion.h2
+          <m.h2
             custom={1}
             variants={elementVariants}
             initial="hidden"
@@ -62,10 +62,10 @@ export default function BecomeContributorCTA() {
             className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] mb-6 max-w-2xl mx-auto leading-none"
           >
             Ready to Build with Us?
-          </motion.h2>
+          </m.h2>
 
           {/* Context Explainer Paragraph */}
-          <motion.p
+          <m.p
             custom={2}
             variants={elementVariants}
             initial="hidden"
@@ -74,10 +74,10 @@ export default function BecomeContributorCTA() {
             className="text-base md:text-xl text-[var(--subtitle)] leading-relaxed max-w-2xl mx-auto mb-12"
           >
             Whether you&apos;re writing your first line of code or maintaining distributed large-scale systems, there&apos;s a definitive place for your perspective in Sylven OS.
-          </motion.p>
+          </m.p>
 
           {/* Symmetrical High-Fidelity Call To Action Interface Array */}
-          <motion.div
+          <m.div
             custom={3}
             variants={elementVariants}
             initial="hidden"
@@ -93,12 +93,12 @@ export default function BecomeContributorCTA() {
 
             {/* Action 3: Community Sub-Channel Link */}
             <MotionLink href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} className="flex min-h-12 items-center justify-center w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] hover:bg-[var(--glass)] transition-all text-center select-none">Join Community →</MotionLink>
-          </motion.div>
+          </m.div>
 
         </div>
 
         {/* Closing Dynamic Status String */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -106,7 +106,7 @@ export default function BecomeContributorCTA() {
           className="mt-12 text-center"
         >
           
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

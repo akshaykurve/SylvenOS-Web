@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function WhySylvenOS() {
   // Stagger sequence for grid arrival
@@ -115,7 +115,7 @@ export default function WhySylvenOS() {
       </div>
 
       {/* Balanced 3-Column Bento Grid */}
-      <motion.div
+      <m.div
         variants={gridContainerVariants}
         initial="hidden"
         whileInView="visible"
@@ -123,7 +123,7 @@ export default function WhySylvenOS() {
         className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
       >
         {features.map((item, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={itemVariants}
             className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between min-min-h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
@@ -147,9 +147,9 @@ export default function WhySylvenOS() {
 
             {/* Subtle bottom decorative light trail */}
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--primary)]/0 to-transparent group-hover:via-[var(--primary)]/30 transition-all duration-[var(--transition-slow)]" />
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

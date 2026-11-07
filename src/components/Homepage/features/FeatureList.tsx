@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function FeaturesList() {
   // Staggered sequence for card entrance
@@ -41,7 +41,7 @@ export default function FeaturesList() {
   return (
     <section className="relative    text-(--text) ">
       {/* 3-Column Layout Grid */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -49,18 +49,18 @@ export default function FeaturesList() {
         className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {/* Card 1: Learn */}
-        <motion.div
+        <m.div
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
           className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/8 hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
         >
           {/* Animated Hover Radial Glow */}
-          <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <m.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <div>
             {/* Animated Icon Container */}
-            <motion.div
+            <m.div
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10  border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
@@ -78,7 +78,7 @@ export default function FeaturesList() {
                 <polyline points="4 17 10 11 4 5"></polyline>
                 <line x1="12" y1="19" x2="20" y2="19"></line>
               </svg>
-            </motion.div>
+            </m.div>
 
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Learn
@@ -88,18 +88,18 @@ export default function FeaturesList() {
               codebases, and real-world engineering practices.
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Card 2: Build */}
-        <motion.div
+        <m.div
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
           className="group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) "        >
-          <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <m.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <div>
-            <motion.div
+            <m.div
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
@@ -118,7 +118,7 @@ export default function FeaturesList() {
                 <polyline points="2 17 12 22 22 17"></polyline>
                 <polyline points="2 12 12 17 22 12"></polyline>
               </svg>
-            </motion.div>
+            </m.div>
 
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Build
@@ -128,19 +128,19 @@ export default function FeaturesList() {
               real problems and strengthen your portfolio.
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Card 3: Educate */}
-        <motion.div
+        <m.div
           variants={cardVariants}
           initial="rest"
           whileHover="hover"
           className="sm:col-span-2 lg:col-span-1 group relative p-8 rounded-2xl bg-(--card-bg) hover:bg-(--primary) border border-(--border)/[0.08] hover:border-[var(--primary)]/40 transition-colors duration-500 backdrop-blur-md overflow-hidden flex flex-col justify-between min-h-[250px] shadow-(--shadow-lg) hover:shadow-(--text) hover:shadow-2xl"
         >
-          <motion.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <m.div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <div>
-            <motion.div
+            <m.div
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
@@ -161,7 +161,7 @@ export default function FeaturesList() {
                 <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
               </svg>
-            </motion.div>
+            </m.div>
 
             <h3 className="text-xl font-bold mb-2 text-(--text) group-hover:text-white transition-colors duration-300">
               Educate
@@ -171,8 +171,8 @@ export default function FeaturesList() {
               technical content that helps the community grow.
             </p>
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

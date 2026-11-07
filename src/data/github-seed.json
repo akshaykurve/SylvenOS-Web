@@ -1,0 +1,916 @@
+{
+  "all-projects-v1:sylvenos": [
+    {
+      "name": "SylvenOS-Web",
+      "slug": "sylvenos-web",
+      "description": "The official web platform for Sylven OS, connecting developers through open-source collaboration, education, and real-world software projects.",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/289425715?v=4",
+      "status": "Active",
+      "difficulty": "Intermediate",
+      "techStack": [
+        "Next.js",
+        "Tailwindcss",
+        "TypeScript"
+      ],
+      "language": "TypeScript",
+      "stars": 4,
+      "contributorsCount": 2,
+      "openIssuesCount": 0,
+      "license": "MIT",
+      "createdAt": "2026-07-01T03:06:17Z",
+      "updatedAt": "2026-11-07T15:27:48Z",
+      "repoUrl": "https://github.com/SylvenOS/SylvenOS-Web",
+      "docsUrl": "https://sylvenos.com",
+      "overview": "SylvenOS-Web is the central interactive web platform and portal for the Sylven OS ecosystem. It delivers real-time project metrics, contributor insights, documentation, and system telemetry through a hyper-responsive Next.js interface.",
+      "goals": [
+        "Provide an ultra-fast, server-rendered entry point for the Sylven OS developer ecosystem",
+        "Deliver dynamic metric tracking for ecosystem projects and real-time performance visualizers",
+        "Maintain strict sub-100ms client-side page transitions with zero hydration mismatches"
+      ],
+      "features": [
+        "Adaptive dark/light theme engine with SSR-safe state hydration",
+        "Interactive return & financial/metric display components with period labels",
+        "Motion-driven responsive navigation bar with intuitive mobile drawer state"
+      ],
+      "architecture": [
+        {
+          "layer": "Frontend / Framework",
+          "description": "Next.js App Router architecture leveraging React Server Components."
+        },
+        {
+          "layer": "UI & Styling",
+          "description": "Tailwind CSS with design tokens coupled with Framer Motion layout pipelines."
+        },
+        {
+          "layer": "Type Safety & State",
+          "description": "Strict TypeScript definitions with client-side local storage persistence."
+        }
+      ],
+      "contributionGuide": "Want to contribute to Sylven OS Web? Check out our GitHub issue board for tags labeled 'good first issue'. Ensure all lint checks and build tasks pass (`npm run build`) before submitting a Pull Request.",
+      "currentProgress": {
+        "percentage": 70,
+        "phase": "Phase 2: Active Beta"
+      }
+    }
+  ],
+  "featured-projects-v1:sylvenos": [
+    {
+      "name": "SylvenOS-Web",
+      "description": "The official web platform for Sylven OS, connecting developers through open-source collaboration, education, and real-world software projects.",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/289425715?v=4",
+      "status": "Active",
+      "difficulty": "Intermediate",
+      "techStack": [
+        "Next.js",
+        "Tailwindcss",
+        "TypeScript"
+      ],
+      "lastUpdated": "Nov 7, 2026",
+      "openIssues": 0,
+      "repoUrl": "https://github.com/SylvenOS/SylvenOS-Web",
+      "docsUrl": "https://sylvenos.com"
+    }
+  ],
+  "github-stats-v1": {
+    "repos": 6,
+    "contributors": 16,
+    "orgData": {
+      "login": "SylvenOS",
+      "id": 289425715,
+      "node_id": "O_kgDOEUBJMw",
+      "url": "https://api.github.com/orgs/SylvenOS",
+      "repos_url": "https://api.github.com/orgs/SylvenOS/repos",
+      "events_url": "https://api.github.com/orgs/SylvenOS/events",
+      "hooks_url": "https://api.github.com/orgs/SylvenOS/hooks",
+      "issues_url": "https://api.github.com/orgs/SylvenOS/issues",
+      "members_url": "https://api.github.com/orgs/SylvenOS/members{/member}",
+      "public_members_url": "https://api.github.com/orgs/SylvenOS/public_members{/member}",
+      "avatar_url": "https://avatars.githubusercontent.com/u/289425715?v=4",
+      "description": "Nexus Point of Tech Community",
+      "name": "SylvenOS",
+      "company": null,
+      "blog": null,
+      "location": "India",
+      "email": null,
+      "twitter_username": "sylvenos_",
+      "is_verified": false,
+      "has_organization_projects": true,
+      "has_repository_projects": true,
+      "public_repos": 6,
+      "public_gists": 0,
+      "followers": 19,
+      "following": 0,
+      "html_url": "https://github.com/SylvenOS",
+      "created_at": "2026-05-31T14:15:29Z",
+      "updated_at": "2026-07-31T03:35:59Z",
+      "archived_at": null,
+      "type": "Organization",
+      "total_private_repos": 1,
+      "owned_private_repos": 1,
+      "private_gists": null,
+      "disk_usage": null,
+      "collaborators": null,
+      "billing_email": null,
+      "default_repository_permission": null,
+      "members_can_create_repositories": true,
+      "two_factor_requirement_enabled": null,
+      "members_allowed_repository_creation_type": "all",
+      "members_can_create_public_repositories": true,
+      "members_can_create_private_repositories": true,
+      "members_can_create_internal_repositories": false,
+      "members_can_create_pages": true,
+      "members_can_fork_private_repositories": false,
+      "web_commit_signoff_required": false,
+      "deploy_keys_enabled_for_repositories": false,
+      "members_can_delete_repositories": false,
+      "members_can_change_repo_visibility": true,
+      "members_can_invite_outside_collaborators": true,
+      "members_can_delete_issues": false,
+      "display_commenter_full_name_setting_enabled": false,
+      "readers_can_create_discussions": true,
+      "members_can_create_teams": true,
+      "members_can_view_dependency_insights": true,
+      "default_repository_branch": "main",
+      "members_can_create_public_pages": true,
+      "members_can_create_private_pages": true,
+      "plan": {
+        "name": "free",
+        "space": 976562499,
+        "private_repos": 10000,
+        "filled_seats": 16,
+        "seats": 2
+      }
+    },
+    "membersData": [
+      {
+        "id": 168811316,
+        "login": "Abhishek3285",
+        "avatar_url": "https://avatars.githubusercontent.com/u/168811316?v=4",
+        "html_url": "https://github.com/Abhishek3285",
+        "name": "Abhishek Koshta"
+      },
+      {
+        "id": 162017601,
+        "login": "akashsv0066",
+        "avatar_url": "https://avatars.githubusercontent.com/u/162017601?v=4",
+        "html_url": "https://github.com/akashsv0066",
+        "name": "Akash Burnwal"
+      },
+      {
+        "id": 146006585,
+        "login": "akshaykurve",
+        "avatar_url": "https://avatars.githubusercontent.com/u/146006585?v=4",
+        "html_url": "https://github.com/akshaykurve",
+        "name": "Akshay Kurve"
+      },
+      {
+        "id": 196175619,
+        "login": "anuradhanoc",
+        "avatar_url": "https://avatars.githubusercontent.com/u/196175619?v=4",
+        "html_url": "https://github.com/anuradhanoc",
+        "name": "Anuradha Singh"
+      },
+      {
+        "id": 54301617,
+        "login": "gauravasync",
+        "avatar_url": "https://avatars.githubusercontent.com/u/54301617?v=4",
+        "html_url": "https://github.com/gauravasync",
+        "name": "Gaurav Singh"
+      },
+      {
+        "id": 240943273,
+        "login": "Ishika-pathak2317",
+        "avatar_url": "https://avatars.githubusercontent.com/u/240943273?v=4",
+        "html_url": "https://github.com/Ishika-pathak2317",
+        "name": "Ishika Pathak"
+      },
+      {
+        "id": 248176787,
+        "login": "kinachouhan",
+        "avatar_url": "https://avatars.githubusercontent.com/u/248176787?v=4",
+        "html_url": "https://github.com/kinachouhan",
+        "name": "Rajkumari Chouhan"
+      },
+      {
+        "id": 157514020,
+        "login": "madhaviporte",
+        "avatar_url": "https://avatars.githubusercontent.com/u/157514020?v=4",
+        "html_url": "https://github.com/madhaviporte",
+        "name": "Madhavi Porte"
+      },
+      {
+        "id": 233323228,
+        "login": "nupursharma0412-beep",
+        "avatar_url": "https://avatars.githubusercontent.com/u/233323228?v=4",
+        "html_url": "https://github.com/nupursharma0412-beep",
+        "name": "NUPUR SHARMA "
+      },
+      {
+        "id": 203847467,
+        "login": "riyan12ishad",
+        "avatar_url": "https://avatars.githubusercontent.com/u/203847467?v=4",
+        "html_url": "https://github.com/riyan12ishad",
+        "name": "Riya Nishad"
+      },
+      {
+        "id": 334401128,
+        "login": "sakshamsinghio",
+        "avatar_url": "https://avatars.githubusercontent.com/u/334401128?v=4",
+        "html_url": "https://github.com/sakshamsinghio",
+        "name": "Saksham Singh"
+      },
+      {
+        "id": 278699937,
+        "login": "subrat-vs",
+        "avatar_url": "https://avatars.githubusercontent.com/u/278699937?v=4",
+        "html_url": "https://github.com/subrat-vs",
+        "name": "subrat"
+      },
+      {
+        "id": 167157846,
+        "login": "Sumitmalvi1234",
+        "avatar_url": "https://avatars.githubusercontent.com/u/167157846?v=4",
+        "html_url": "https://github.com/Sumitmalvi1234",
+        "name": null
+      },
+      {
+        "id": 175150344,
+        "login": "Utkarsh1260",
+        "avatar_url": "https://avatars.githubusercontent.com/u/175150344?v=4",
+        "html_url": "https://github.com/Utkarsh1260",
+        "name": "Utkarsh Kushwaha"
+      },
+      {
+        "id": 284349417,
+        "login": "UtkarshX-11",
+        "avatar_url": "https://avatars.githubusercontent.com/u/284349417?v=4",
+        "html_url": "https://github.com/UtkarshX-11",
+        "name": "Utkarsh Chourasia"
+      },
+      {
+        "id": 280399287,
+        "login": "vinayakattri",
+        "avatar_url": "https://avatars.githubusercontent.com/u/280399287?v=4",
+        "html_url": "https://github.com/vinayakattri",
+        "name": "Vinayak Attri"
+      }
+    ]
+  },
+  "org-rankings-v1:sylvenos": [
+    {
+      "login": "akshaykurve",
+      "id": 146006585,
+      "avatar_url": "https://avatars.githubusercontent.com/u/146006585?v=4",
+      "html_url": "https://github.com/akshaykurve",
+      "totalContributions": 67,
+      "rank": 1,
+      "repoBreakdown": [
+        {
+          "repoName": "SylvenOS-Web",
+          "contributions": 53
+        },
+        {
+          "repoName": ".github",
+          "contributions": 8
+        },
+        {
+          "repoName": "Ideas-To-code",
+          "contributions": 3
+        },
+        {
+          "repoName": "Sylven-Resources",
+          "contributions": 2
+        },
+        {
+          "repoName": "github-mastery",
+          "contributions": 1
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "4ce3d11271c080c8d38c0d8f4267f7c30ad46df1",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "refactor: update section padding and responsiveness across multiple components",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/4ce3d11271c080c8d38c0d8f4267f7c30ad46df1"
+        },
+        {
+          "id": "657179bd1065c93afe03faca92ad1335f0311a66",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "refactor: update styles and accessibility attributes across project components",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/657179bd1065c93afe03faca92ad1335f0311a66"
+        },
+        {
+          "id": "4db514d334c428d22dfa13fc97f52483cae15995",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat(search): add BM25 search engine for UI/UX style guides with design system generation and persistence options",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/4db514d334c428d22dfa13fc97f52483cae15995"
+        },
+        {
+          "id": "a4d9b2b2c3fd676a7361fbd96d124ddda2a9fb11",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Merge branch 'main' of https://github.com/SylvenOS/SylvenOS-Web",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/a4d9b2b2c3fd676a7361fbd96d124ddda2a9fb11"
+        },
+        {
+          "id": "e62230924960370848c4ce1c527f08089e0bac07",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update technology descriptions and categories for clarity and inclusivity",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/e62230924960370848c4ce1c527f08089e0bac07"
+        },
+        {
+          "id": "6746da7514e3aac5684049dcd9dba6800f8c88f6",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update technology descriptions and categories for clarity and inclusivity",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/6746da7514e3aac5684049dcd9dba6800f8c88f6"
+        },
+        {
+          "id": "3f127da5428cd1e7e1f9568e565ef50c8fafe6b7",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: enhance SEO and site structure with new pages and JSON-LD support",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/3f127da5428cd1e7e1f9568e565ef50c8fafe6b7"
+        },
+        {
+          "id": "350a94a987c0b422cc9eebf030865ebabf861a60",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: enhance SEO and site structure with new pages and JSON-LD support",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/350a94a987c0b422cc9eebf030865ebabf861a60"
+        },
+        {
+          "id": "c01d8541c9051e1e468f9b5ed4c49b784c39a836",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update section padding and hover effects across multiple components",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/c01d8541c9051e1e468f9b5ed4c49b784c39a836"
+        },
+        {
+          "id": "161bcab5430b912860405b054843470bc18e4e08",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update section padding and hover effects across multiple components",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/161bcab5430b912860405b054843470bc18e4e08"
+        },
+        {
+          "id": "84797721e0f24d6477b8d5a88bbe2c5c382e8dc8",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Refactor and enhance SEO, metadata, and error handling across the application",
+          "timestamp": "Sep 25, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/84797721e0f24d6477b8d5a88bbe2c5c382e8dc8"
+        },
+        {
+          "id": "46612df023f42d2a5474bbe50d28508c71948326",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Refactor and enhance SEO, metadata, and error handling across the application",
+          "timestamp": "Sep 25, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/46612df023f42d2a5474bbe50d28508c71948326"
+        },
+        {
+          "id": "54af6471ee909916a3f13477eb26a32b9c123222",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update project details and metadata for SylvenOS-Web, enhancing descriptions and goals",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/54af6471ee909916a3f13477eb26a32b9c123222"
+        },
+        {
+          "id": "f335535dd4613e7f0e74c95e3f31fb96b82ba960",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update project details and metadata for SylvenOS-Web, enhancing descriptions and goals",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/f335535dd4613e7f0e74c95e3f31fb96b82ba960"
+        },
+        {
+          "id": "156caf77fd44f5fcbb894c6efad99cc029ae8c7a",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update section padding and overflow properties across multiple components for improved layout",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/156caf77fd44f5fcbb894c6efad99cc029ae8c7a"
+        }
+      ]
+    },
+    {
+      "login": "gauravasync",
+      "id": 54301617,
+      "avatar_url": "https://avatars.githubusercontent.com/u/54301617?v=4",
+      "html_url": "https://github.com/gauravasync",
+      "totalContributions": 61,
+      "rank": 2,
+      "repoBreakdown": [
+        {
+          "repoName": "SylvenOS-Web",
+          "contributions": 29
+        },
+        {
+          "repoName": "sylven-secure-app",
+          "contributions": 22
+        },
+        {
+          "repoName": ".github",
+          "contributions": 8
+        },
+        {
+          "repoName": "github-mastery",
+          "contributions": 2
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "5f09acbd271c5a6ddbb7db5648835317a6b0a0c0",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "refactor: remove Hide App feature and Shizuku integration",
+          "timestamp": "Oct 27, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/5f09acbd271c5a6ddbb7db5648835317a6b0a0c0"
+        },
+        {
+          "id": "353225be3bf49d36608bc6b4e21193cfc367d83f",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: implement App Lock functionality",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/353225be3bf49d36608bc6b4e21193cfc367d83f"
+        },
+        {
+          "id": "c11d76b945799f707746c61fb11c9379eef58a31",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: enforce active lock type and improve LockVerificationScreen",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/c11d76b945799f707746c61fb11c9379eef58a31"
+        },
+        {
+          "id": "a5c80c00e2e9bdd933fdb6a99e25f1a653157adc",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: resolve UI errors and AppLock corner radius issues",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/a5c80c00e2e9bdd933fdb6a99e25f1a653157adc"
+        },
+        {
+          "id": "81324206ab271c50b3ffb3fb64cd1409afc860d2",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: Refine PIN, password, and pattern locks",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/81324206ab271c50b3ffb3fb64cd1409afc860d2"
+        },
+        {
+          "id": "25b60139c6c52b36a8c0a58105a2179c1794ca6c",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: add password lock setup screen",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/25b60139c6c52b36a8c0a58105a2179c1794ca6c"
+        },
+        {
+          "id": "ce11551e40457edfec3d780c1f91b342618d10c5",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: add pattern lock setup",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/ce11551e40457edfec3d780c1f91b342618d10c5"
+        },
+        {
+          "id": "b96bb67bd6bba445b6acfad6de2fa921c024ad6f",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: improve back navigation and add PIN setup",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/b96bb67bd6bba445b6acfad6de2fa921c024ad6f"
+        },
+        {
+          "id": "b340fb1ca396574d11005c3b3b888b8555586a7b",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: handle Android back navigation across the app",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/b340fb1ca396574d11005c3b3b888b8555586a7b"
+        },
+        {
+          "id": "4ea1a62fa689fea176d947958cff01a16e58deaf",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Hide App Screen with installed apps list",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/4ea1a62fa689fea176d947958cff01a16e58deaf"
+        },
+        {
+          "id": "4585e806304c0b6fe0133eb536b196a20f3c8928",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: App Lock screen with installed apps list",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/4585e806304c0b6fe0133eb536b196a20f3c8928"
+        },
+        {
+          "id": "03775683142a4647b7fda877d248e281b1737838",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Lock Types Screen",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/03775683142a4647b7fda877d248e281b1737838"
+        },
+        {
+          "id": "26a2bbe2ad924c41300d5a0e11aacbec961db3f2",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: Warm theme in light mode,  App Lock Home Screen",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/26a2bbe2ad924c41300d5a0e11aacbec961db3f2"
+        },
+        {
+          "id": "3f87e3926e6ceb89e079b8cb6f9e601cba376f2b",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: AppLockHome - LockTypeUI, AppLockUI, HideAppUI, AppModel",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/3f87e3926e6ceb89e079b8cb6f9e601cba376f2b"
+        },
+        {
+          "id": "720bf45e67a8db63e1f2c5de4b27ee067c800dae",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Sylven Tools Home - App Lock and Hide, WiFi Security",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/720bf45e67a8db63e1f2c5de4b27ee067c800dae"
+        }
+      ]
+    },
+    {
+      "login": "Utkarsh1260",
+      "id": 175150344,
+      "avatar_url": "https://avatars.githubusercontent.com/u/175150344?v=4",
+      "html_url": "https://github.com/Utkarsh1260",
+      "totalContributions": 1,
+      "rank": 3,
+      "repoBreakdown": [
+        {
+          "repoName": "github-mastery",
+          "contributions": 1
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "24a0bed93d230c091cd39d32a9d11c0508bb5388",
+          "repoName": "github-mastery",
+          "type": "Commit",
+          "title": "Create beginner's guide for writing Git commits",
+          "timestamp": "Jun 4, 2026",
+          "url": "https://github.com/SylvenOS/github-mastery/commit/24a0bed93d230c091cd39d32a9d11c0508bb5388"
+        }
+      ]
+    }
+  ],
+  "org-rankings-v1:SylvenOS": [
+    {
+      "login": "akshaykurve",
+      "id": 146006585,
+      "avatar_url": "https://avatars.githubusercontent.com/u/146006585?v=4",
+      "html_url": "https://github.com/akshaykurve",
+      "totalContributions": 67,
+      "rank": 1,
+      "repoBreakdown": [
+        {
+          "repoName": "SylvenOS-Web",
+          "contributions": 53
+        },
+        {
+          "repoName": ".github",
+          "contributions": 8
+        },
+        {
+          "repoName": "Ideas-To-code",
+          "contributions": 3
+        },
+        {
+          "repoName": "Sylven-Resources",
+          "contributions": 2
+        },
+        {
+          "repoName": "github-mastery",
+          "contributions": 1
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "4ce3d11271c080c8d38c0d8f4267f7c30ad46df1",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "refactor: update section padding and responsiveness across multiple components",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/4ce3d11271c080c8d38c0d8f4267f7c30ad46df1"
+        },
+        {
+          "id": "657179bd1065c93afe03faca92ad1335f0311a66",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "refactor: update styles and accessibility attributes across project components",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/657179bd1065c93afe03faca92ad1335f0311a66"
+        },
+        {
+          "id": "4db514d334c428d22dfa13fc97f52483cae15995",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat(search): add BM25 search engine for UI/UX style guides with design system generation and persistence options",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/4db514d334c428d22dfa13fc97f52483cae15995"
+        },
+        {
+          "id": "a4d9b2b2c3fd676a7361fbd96d124ddda2a9fb11",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Merge branch 'main' of https://github.com/SylvenOS/SylvenOS-Web",
+          "timestamp": "Nov 7, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/a4d9b2b2c3fd676a7361fbd96d124ddda2a9fb11"
+        },
+        {
+          "id": "e62230924960370848c4ce1c527f08089e0bac07",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update technology descriptions and categories for clarity and inclusivity",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/e62230924960370848c4ce1c527f08089e0bac07"
+        },
+        {
+          "id": "6746da7514e3aac5684049dcd9dba6800f8c88f6",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update technology descriptions and categories for clarity and inclusivity",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/6746da7514e3aac5684049dcd9dba6800f8c88f6"
+        },
+        {
+          "id": "3f127da5428cd1e7e1f9568e565ef50c8fafe6b7",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: enhance SEO and site structure with new pages and JSON-LD support",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/3f127da5428cd1e7e1f9568e565ef50c8fafe6b7"
+        },
+        {
+          "id": "350a94a987c0b422cc9eebf030865ebabf861a60",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: enhance SEO and site structure with new pages and JSON-LD support",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/350a94a987c0b422cc9eebf030865ebabf861a60"
+        },
+        {
+          "id": "c01d8541c9051e1e468f9b5ed4c49b784c39a836",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update section padding and hover effects across multiple components",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/c01d8541c9051e1e468f9b5ed4c49b784c39a836"
+        },
+        {
+          "id": "161bcab5430b912860405b054843470bc18e4e08",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: update section padding and hover effects across multiple components",
+          "timestamp": "Sep 26, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/161bcab5430b912860405b054843470bc18e4e08"
+        },
+        {
+          "id": "84797721e0f24d6477b8d5a88bbe2c5c382e8dc8",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Refactor and enhance SEO, metadata, and error handling across the application",
+          "timestamp": "Sep 25, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/84797721e0f24d6477b8d5a88bbe2c5c382e8dc8"
+        },
+        {
+          "id": "46612df023f42d2a5474bbe50d28508c71948326",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "Refactor and enhance SEO, metadata, and error handling across the application",
+          "timestamp": "Sep 25, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/46612df023f42d2a5474bbe50d28508c71948326"
+        },
+        {
+          "id": "54af6471ee909916a3f13477eb26a32b9c123222",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update project details and metadata for SylvenOS-Web, enhancing descriptions and goals",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/54af6471ee909916a3f13477eb26a32b9c123222"
+        },
+        {
+          "id": "f335535dd4613e7f0e74c95e3f31fb96b82ba960",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update project details and metadata for SylvenOS-Web, enhancing descriptions and goals",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/f335535dd4613e7f0e74c95e3f31fb96b82ba960"
+        },
+        {
+          "id": "156caf77fd44f5fcbb894c6efad99cc029ae8c7a",
+          "repoName": "SylvenOS-Web",
+          "type": "Commit",
+          "title": "feat: Update section padding and overflow properties across multiple components for improved layout",
+          "timestamp": "Aug 1, 2026",
+          "url": "https://github.com/SylvenOS/SylvenOS-Web/commit/156caf77fd44f5fcbb894c6efad99cc029ae8c7a"
+        }
+      ]
+    },
+    {
+      "login": "gauravasync",
+      "id": 54301617,
+      "avatar_url": "https://avatars.githubusercontent.com/u/54301617?v=4",
+      "html_url": "https://github.com/gauravasync",
+      "totalContributions": 61,
+      "rank": 2,
+      "repoBreakdown": [
+        {
+          "repoName": "SylvenOS-Web",
+          "contributions": 29
+        },
+        {
+          "repoName": "sylven-secure-app",
+          "contributions": 22
+        },
+        {
+          "repoName": ".github",
+          "contributions": 8
+        },
+        {
+          "repoName": "github-mastery",
+          "contributions": 2
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "5f09acbd271c5a6ddbb7db5648835317a6b0a0c0",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "refactor: remove Hide App feature and Shizuku integration",
+          "timestamp": "Oct 27, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/5f09acbd271c5a6ddbb7db5648835317a6b0a0c0"
+        },
+        {
+          "id": "353225be3bf49d36608bc6b4e21193cfc367d83f",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: implement App Lock functionality",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/353225be3bf49d36608bc6b4e21193cfc367d83f"
+        },
+        {
+          "id": "c11d76b945799f707746c61fb11c9379eef58a31",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: enforce active lock type and improve LockVerificationScreen",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/c11d76b945799f707746c61fb11c9379eef58a31"
+        },
+        {
+          "id": "a5c80c00e2e9bdd933fdb6a99e25f1a653157adc",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: resolve UI errors and AppLock corner radius issues",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/a5c80c00e2e9bdd933fdb6a99e25f1a653157adc"
+        },
+        {
+          "id": "81324206ab271c50b3ffb3fb64cd1409afc860d2",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: Refine PIN, password, and pattern locks",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/81324206ab271c50b3ffb3fb64cd1409afc860d2"
+        },
+        {
+          "id": "25b60139c6c52b36a8c0a58105a2179c1794ca6c",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: add password lock setup screen",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/25b60139c6c52b36a8c0a58105a2179c1794ca6c"
+        },
+        {
+          "id": "ce11551e40457edfec3d780c1f91b342618d10c5",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "feat: add pattern lock setup",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/ce11551e40457edfec3d780c1f91b342618d10c5"
+        },
+        {
+          "id": "b96bb67bd6bba445b6acfad6de2fa921c024ad6f",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: improve back navigation and add PIN setup",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/b96bb67bd6bba445b6acfad6de2fa921c024ad6f"
+        },
+        {
+          "id": "b340fb1ca396574d11005c3b3b888b8555586a7b",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: handle Android back navigation across the app",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/b340fb1ca396574d11005c3b3b888b8555586a7b"
+        },
+        {
+          "id": "4ea1a62fa689fea176d947958cff01a16e58deaf",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Hide App Screen with installed apps list",
+          "timestamp": "Oct 26, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/4ea1a62fa689fea176d947958cff01a16e58deaf"
+        },
+        {
+          "id": "4585e806304c0b6fe0133eb536b196a20f3c8928",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: App Lock screen with installed apps list",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/4585e806304c0b6fe0133eb536b196a20f3c8928"
+        },
+        {
+          "id": "03775683142a4647b7fda877d248e281b1737838",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Lock Types Screen",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/03775683142a4647b7fda877d248e281b1737838"
+        },
+        {
+          "id": "26a2bbe2ad924c41300d5a0e11aacbec961db3f2",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "fix: Warm theme in light mode,  App Lock Home Screen",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/26a2bbe2ad924c41300d5a0e11aacbec961db3f2"
+        },
+        {
+          "id": "3f87e3926e6ceb89e079b8cb6f9e601cba376f2b",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: AppLockHome - LockTypeUI, AppLockUI, HideAppUI, AppModel",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/3f87e3926e6ceb89e079b8cb6f9e601cba376f2b"
+        },
+        {
+          "id": "720bf45e67a8db63e1f2c5de4b27ee067c800dae",
+          "repoName": "sylven-secure-app",
+          "type": "Commit",
+          "title": "add: Sylven Tools Home - App Lock and Hide, WiFi Security",
+          "timestamp": "Oct 25, 2026",
+          "url": "https://github.com/SylvenOS/sylven-secure-app/commit/720bf45e67a8db63e1f2c5de4b27ee067c800dae"
+        }
+      ]
+    },
+    {
+      "login": "Utkarsh1260",
+      "id": 175150344,
+      "avatar_url": "https://avatars.githubusercontent.com/u/175150344?v=4",
+      "html_url": "https://github.com/Utkarsh1260",
+      "totalContributions": 1,
+      "rank": 3,
+      "repoBreakdown": [
+        {
+          "repoName": "github-mastery",
+          "contributions": 1
+        }
+      ],
+      "recentActivity": [
+        {
+          "id": "24a0bed93d230c091cd39d32a9d11c0508bb5388",
+          "repoName": "github-mastery",
+          "type": "Commit",
+          "title": "Create beginner's guide for writing Git commits",
+          "timestamp": "Jun 4, 2026",
+          "url": "https://github.com/SylvenOS/github-mastery/commit/24a0bed93d230c091cd39d32a9d11c0508bb5388"
+        }
+      ]
+    }
+  ],
+  "ecosystem-stats-v1:sylvenos": {
+    "repositories": 6,
+    "contributors": 3,
+    "projects": 1
+  }
+}

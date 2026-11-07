@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function Pillars() {
   // Container cascading entry
@@ -44,7 +44,7 @@ export default function Pillars() {
       </div>
 
       {/* Split Layout Container */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -53,7 +53,7 @@ export default function Pillars() {
       >
         
         {/* Card 1: Mission */}
-        <motion.div
+        <m.div
           variants={cardVariants}
           className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--primary)]"
         >
@@ -95,7 +95,7 @@ export default function Pillars() {
                 "Help contributors gain real-world experience",
                 "Encourage collaboration across all skill levels",
               ].map((text, index) => (
-                <motion.li
+                <m.li
                   custom={index}
                   variants={listVariants}
                   key={index}
@@ -103,7 +103,7 @@ export default function Pillars() {
                 >
                   <span className="text-[var(--success)] font-medium mt-0.5 select-none">✓</span>
                   <span>{text}</span>
-                </motion.li>
+                </m.li>
               ))}
             </ul>
           </div>
@@ -112,11 +112,11 @@ export default function Pillars() {
           <div className="text-xs font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
             Learn • Build • Educate
           </div>
-        </motion.div>
+        </m.div>
 
 
         {/* Card 2: Vision */}
-        <motion.div
+        <m.div
           variants={cardVariants}
           className="group relative p-8 md:p-10 rounded-[var(--radius-lg)] bg-[var(--surface)]/30 border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] backdrop-blur-md hover:border-[var(--info)]"
         >
@@ -157,7 +157,7 @@ export default function Pillars() {
                 "Open engineering knowledge accessible to everyone",
                 "Sustainable tools that create real operational impact",
               ].map((text, index) => (
-                <motion.li
+                <m.li
                   custom={index}
                   variants={listVariants}
                   key={index}
@@ -165,7 +165,7 @@ export default function Pillars() {
                 >
                   <span className="text-[var(--info)] font-medium mt-0.5 select-none">✓</span>
                   <span>{text}</span>
-                </motion.li>
+                </m.li>
               ))}
             </ul>
           </div>
@@ -174,9 +174,9 @@ export default function Pillars() {
           <div className="text-xs font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
             Since 2026
           </div>
-        </motion.div>
+        </m.div>
 
-      </motion.div>
+      </m.div>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 interface ProjectStatisticsProps {
   projectCount: number;
@@ -77,16 +77,16 @@ export default function ProjectStatistics({
         
         {/* Header Block emphasizing Truth & Integrity */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Real-Time Telemetry
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,9 +94,9 @@ export default function ProjectStatistics({
             className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--heading)] mb-4"
           >
             Project Statistics
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -104,11 +104,11 @@ export default function ProjectStatistics({
             className="text-sm md:text-base text-[var(--subtitle)] leading-relaxed"
           >
             No padded marketing metrics. No faked engagement logs. Fueled directly by GitHub metadata—we transparently track our platform growth.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Clean Metrics Row */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -116,7 +116,7 @@ export default function ProjectStatistics({
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch mb-12"
         >
           {metrics.map((metric, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': metric.color } as React.CSSProperties}
@@ -154,12 +154,12 @@ export default function ProjectStatistics({
                   {metric.description}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Steady Momentum Progress Subtext Banner */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -173,7 +173,7 @@ export default function ProjectStatistics({
           <span className="text-xs text-[var(--subtitle)] border-l border-[var(--card-border)] pl-3">
             Watch the infrastructure expand step-by-step.
           </span>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

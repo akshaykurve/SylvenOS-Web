@@ -1,0 +1,22 @@
+# Cloudflare static-asset headers (read from the assets directory).
+# /_next/static/* is fingerprinted and already served as immutable by OpenNext.
+# These files are NOT fingerprinted, so they get a week with background
+# revalidation instead of "forever".
+
+/*.webp
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/*.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/*.svg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/favicon.ico
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/manifest.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/llms.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

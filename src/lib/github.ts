@@ -1,6 +1,6 @@
 import { localProjectRegistry } from "@/config/projectMetadata";
 import { Octokit } from "@octokit/rest";
-import { unstable_cache } from "next/cache";
+import { cachedOrFallback } from "@/lib/cache";
 
 // 1. Unified Octokit Initialization
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GITHUB_ACCESS_TOKEN;
@@ -145,12 +145,7 @@ async function fetchGithubStatsRaw() {
     };
   } catch (error) {
     console.error("Critical failure during Octokit collection handling:", error);
-    return {
-      contributors: 0,
-      membersData: [],
-      orgData: { id: 1, login: orgName, public_repos: 0, followers: 0, location: "Global" },
-      repos: 0,
-    };
+    throw error;
   }
 }
 
@@ -189,7 +184,7 @@ async function fetchEcosystemStatsRaw(orgName: string) {
     };
   } catch (error) {
     console.error("Failed to aggregate GitHub telemetry:", error);
-    return { repositories: 1, contributors: 0, projects: 1 };
+    throw error;
   }
 }
 
@@ -230,7 +225,7 @@ async function fetchFeaturedProjectsRaw(orgName: string) {
     });
   } catch (error) {
     console.error("Failed to query GitHub repository structures:", error);
-    return [];
+    throw error;
   }
 }
 
@@ -310,52 +305,63 @@ async function fetchAllProjectsRaw(orgName: string) {
     );
   } catch (error) {
     console.error("Critical Failure: Unable to fetch repository arrays from GitHub:", error);
-    return [];
+    throw error;
   }
 }
 
 // ==========================================
-// EXPORTED CACHED WRAPPERS (`unstable_cache`)
+// EXPORTED CACHED WRAPPERS
+// Failures are never cached for the full hour; see cachedOrFallback.
 // ==========================================
 
-export const getGithubStats = unstable_cache(
-  async () => fetchGithubStatsRaw(),
-  ["github-stats-v1"],
-  {
-    revalidate: 3600, // Revalidates every 1 hour (3600 seconds)
-    tags: ["github-telemetry", "org-stats"],
-  }
-);
+const ONE_HOUR = 3600;
+
+const STATS_FALLBACK: Awaited<ReturnType<typeof fetchGithubStatsRaw>> = {
+  contributors: 0,
+  membersData: [],
+  orgData: {
+    id: 1,
+    login: DEFAULT_ORG_NAME,
+    public_repos: 0,
+    followers: 0,
+    location: "Global",
+    description: "",
+  },
+  repos: 0,
+};
+
+export function getGithubStats() {
+  return cachedOrFallback(
+    fetchGithubStatsRaw,
+    ["github-stats-v1"],
+    { revalidate: ONE_HOUR, tags: ["github-telemetry", "org-stats"] },
+    STATS_FALLBACK
+  );
+}
 
 export async function getEcosystemStats(orgName: string = DEFAULT_ORG_NAME) {
-  return unstable_cache(
-    async () => fetchEcosystemStatsRaw(orgName),
+  return cachedOrFallback(
+    () => fetchEcosystemStatsRaw(orgName),
     ["ecosystem-stats-v1", orgName],
-    {
-      revalidate: 3600,
-      tags: ["github-telemetry", `org-${orgName}`],
-    }
-  )();
+    { revalidate: ONE_HOUR, tags: ["github-telemetry", `org-${orgName}`] },
+    { repositories: 1, contributors: 0, projects: 1 }
+  );
 }
 
 export async function getFeaturedProjects(orgName: string = DEFAULT_ORG_NAME) {
-  return unstable_cache(
-    async () => fetchFeaturedProjectsRaw(orgName),
+  return cachedOrFallback(
+    () => fetchFeaturedProjectsRaw(orgName),
     ["featured-projects-v1", orgName],
-    {
-      revalidate: 3600,
-      tags: ["github-telemetry", "projects", `org-${orgName}`],
-    }
-  )();
+    { revalidate: ONE_HOUR, tags: ["github-telemetry", "projects", `org-${orgName}`] },
+    [] as Awaited<ReturnType<typeof fetchFeaturedProjectsRaw>>
+  );
 }
 
 export async function getAllProjects(orgName: string = DEFAULT_ORG_NAME) {
-  return unstable_cache(
-    async () => fetchAllProjectsRaw(orgName),
+  return cachedOrFallback(
+    () => fetchAllProjectsRaw(orgName),
     ["all-projects-v1", orgName],
-    {
-      revalidate: 3600,
-      tags: ["github-telemetry", "projects", `org-${orgName}`],
-    }
-  )();
+    { revalidate: ONE_HOUR, tags: ["github-telemetry", "projects", `org-${orgName}`] },
+    [] as Awaited<ReturnType<typeof fetchAllProjectsRaw>>
+  );
 }

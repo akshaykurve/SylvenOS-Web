@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { ArrowUpRight, Mail, Heart } from "lucide-react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
@@ -26,7 +26,7 @@ export default function Footer() {
           >
             <div className="relative w-8 h-8">
               <Image
-                src="/IMG_20260628_143818.png"
+                src="/logo-96.webp"
                 alt="Sylven OS Logo"
                 fill
                 sizes="32px"
@@ -67,7 +67,7 @@ export default function Footer() {
                 label: "Email",
               },
             ].map((social, index) => (
-              <motion.a
+              <m.a
                 key={index}
                 href={social.href}
                 target="_blank"
@@ -78,7 +78,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 {social.icon}
-              </motion.a>
+              </m.a>
             ))}
           </div>
         </div>
@@ -105,13 +105,13 @@ export default function Footer() {
                   rel={link.external ? "noopener noreferrer" : undefined}
                   className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
-                  <motion.span
+                  <m.span
                     variants={itemVariants}
                     whileHover="hover"
                     className="inline-flex items-center gap-1 cursor-pointer"
                   >
                     {link.text}
-                  </motion.span>
+                  </m.span>
                 </Link>
               </li>
             ))}
@@ -137,14 +137,14 @@ export default function Footer() {
                   rel={link.external ? "noopener noreferrer" : undefined}
                   className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
-                  <motion.span
+                  <m.span
                     variants={itemVariants}
                     whileHover="hover"
                     className="inline-flex items-center gap-1 cursor-pointer"
                   >
                     {link.text}{" "}
                     {link.external && <ArrowUpRight size={12} aria-hidden="true" className="opacity-40" />}
-                  </motion.span>
+                  </m.span>
                 </Link>
               </li>
             ))}
@@ -168,13 +168,13 @@ export default function Footer() {
                   href={link.href}
                   className="inline-flex min-h-11 items-center no-underline text-[var(--muted)] transition-colors hover:text-[var(--text)]"
                 >
-                  <motion.span
+                  <m.span
                     variants={itemVariants}
                     whileHover="hover"
                     className="inline-flex items-center gap-1 cursor-pointer"
                   >
                     {link.text}
-                  </motion.span>
+                  </m.span>
                 </Link>
               </li>
             ))}

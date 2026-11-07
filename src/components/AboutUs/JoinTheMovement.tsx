@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 export default function JoinTheMovement() {
   // Kinetic presentation animations for high-impact closing state
   const containerVariants:Variants = {
@@ -40,7 +40,7 @@ export default function JoinTheMovement() {
       />
 
       <div className="max-w-4xl w-full mx-auto relative z-10 text-center">
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -56,38 +56,38 @@ export default function JoinTheMovement() {
           </div>
 
           {/* Section Indicator Badge */}
-          <motion.span
+          <m.span
             variants={elementVariants}
             className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
             Finalization Node
-          </motion.span>
+          </m.span>
 
           {/* Core Closing Catchphrase Statement */}
-          <motion.h2
+          <m.h2
             variants={elementVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-none max-w-2xl mb-6"
           >
             Join the Movement
-          </motion.h2>
+          </m.h2>
 
           {/* Explanatory Structural Context Prose */}
-          <motion.p
+          <m.p
             variants={elementVariants}
             className="text-lg md:text-xl text-[var(--body)] font-medium max-w-2xl leading-relaxed mb-4"
           >
             Every great open-source community started with a small group of people willing to build something meaningful.
-          </motion.p>
+          </m.p>
 
-          <motion.p
+          <m.p
             variants={elementVariants}
             className="text-sm md:text-base text-[var(--subtitle)] max-w-xl leading-relaxed mb-10"
           >
             Join us in creating software, sharing knowledge, and helping developers grow. Let&apos;s construct the open infrastructure of tomorrow, one branch at a time.
-          </motion.p>
+          </m.p>
 
           {/* Highly Interactive CTA Actions Block */}
-          <motion.div 
+          <m.div 
             variants={elementVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
           >
@@ -104,7 +104,7 @@ export default function JoinTheMovement() {
               className="w-full sm:w-auto px-8 py-3.5 rounded-[var(--radius-sm)] bg-[var(--primary)] text-sm font-bold tracking-wide text-white transition-all duration-[var(--transition-fast)] focus:outline-none shadow-[var(--shadow-md)] hover:bg-[var(--btn-primary-hover)] hover:shadow-[var(--glow-primary)]">
               Become a Contributor
             </MotionLink>
-          </motion.div>
+          </m.div>
 
           {/* Micro Telemetry Inline Loop Indicator */}
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-border)] to-transparent mt-12" />
@@ -113,7 +113,7 @@ export default function JoinTheMovement() {
             Active clusters synchronized. Sync code bases on connection initialization.
           </div>
 
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

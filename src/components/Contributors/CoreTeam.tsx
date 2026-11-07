@@ -1,8 +1,9 @@
 // components/DynamicCoreTeam.tsx
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
+import { avatarSrc } from "@/lib/avatar";
 // Extend the contract to accommodate the real display name
 export interface EnrichedGitHubMember {
   id: number;
@@ -53,7 +54,7 @@ export default function DynamicCoreTeam({
         </div>
 
         {/* Minimal Grid Layout */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -61,15 +62,16 @@ export default function DynamicCoreTeam({
           className="flex flex-wrap gap-4 md:gap-6 justify-center items-stretch max-w-5xl mx-auto"
         >
           {members.map((member) => (
-            <motion.div
+            <m.div
               key={member.id}
               variants={cardVariants}
               className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex items-center gap-4 transition-all duration-[var(--transition-fast)] group relative overflow-hidden hover:border-[var(--info)] hover:bg-[var(--card-hover-bg)] hover:shadow-[var(--shadow-md)]"
             >
               {/* 1. Identity Image Asset on the Left */}
               <img
-                src={member.avatar_url}
-                alt={`${member.name || member.login} profile portrait`}
+                src={avatarSrc(member.avatar_url, 56)}
+                alt={`${member.name || member.login}'s GitHub avatar`}
+                width={56} height={56} decoding="async" loading="lazy"
                 className="w-14 h-14 rounded-full border border-[var(--card-border)] bg-[var(--bg)]  group-hover:border-[var(--info)] transition-all duration-[var(--transition-normal)] object-cover shadow-[var(--shadow-sm)] flex-shrink-0"
               />
 
@@ -102,9 +104,9 @@ export default function DynamicCoreTeam({
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

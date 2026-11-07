@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function ContributionPhilosophy() {
   const containerVariants:Variants = {
@@ -102,16 +102,16 @@ export default function ContributionPhilosophy() {
         
         {/* Core Philosophy Header Panel */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Contribution Philosophy
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -119,9 +119,9 @@ export default function ContributionPhilosophy() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Every Contribution Matters
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -129,11 +129,11 @@ export default function ContributionPhilosophy() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed max-w-2xl mx-auto"
           >
             Many people think contribution strictly equals coding lines. We diverge from that perspective entirely. Whether you write code, improve documentation, design interfaces, test features, report bugs, or help other contributors, you&apos;re helping Sylven OS grow.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* 6-Card Philosophy Architecture Grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -141,7 +141,7 @@ export default function ContributionPhilosophy() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch"
         >
           {philosophyCards.map((card, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': card.color } as React.CSSProperties}
@@ -181,12 +181,12 @@ export default function ContributionPhilosophy() {
 
               {/* Minimalist lower telemetry line indicator inside card */}
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-border)] to-transparent mt-8 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Closing Synchronized Status Verification Text */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -197,7 +197,7 @@ export default function ContributionPhilosophy() {
             <span className="w-1 h-1 rounded-full bg-[var(--logo)] animate-ping" />
             Ecosystem Strategy Layer: Multi-channel integration functional
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

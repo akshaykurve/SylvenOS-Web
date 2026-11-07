@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function ContributionAreas() {
   const areas = [
@@ -155,7 +155,7 @@ export default function ContributionAreas() {
       </div>
 
       {/* 10-Item High-Density Responsive Grid */}
-      <motion.div
+      <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -163,7 +163,7 @@ export default function ContributionAreas() {
         className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-stretch"
       >
         {areas.map((item, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={cardVariants}
             className="group relative p-5 rounded-[var(--radius-md)] bg-[var(--card-bg)] border border-[var(--card-border)] backdrop-blur-sm transition-all duration-[var(--transition-fast)] flex flex-col justify-between hover:border-[var(--primary)] hover:bg-[var(--card-hover-bg)] hover:shadow-[var(--shadow-md)]"
@@ -200,9 +200,9 @@ export default function ContributionAreas() {
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </div>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

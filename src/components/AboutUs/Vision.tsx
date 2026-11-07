@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function OurVision() {
   // Animation configuration for smooth forward-looking entry effects
@@ -33,7 +33,7 @@ export default function OurVision() {
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -51,13 +51,13 @@ export default function OurVision() {
             </div>
 
             {/* Central Future Horizon Node Framework */}
-            <motion.div
+            <m.div
               className="relative w-[220px] h-[220px] rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-lg)] backdrop-blur-md flex items-center justify-center group transition-all duration-[var(--transition-normal)] hover:border-[var(--info)]"
             >
               {/* SVG Map pointing Up and Forward (Ecosystem Ascension) */}
               <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100" className="w-3/4 h-3/4 text-[var(--info)]">
                 {/* Constellation Paths / Horizon Matrix */}
-                <motion.path
+                <m.path
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 0.5 }}
                   transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
@@ -87,27 +87,27 @@ export default function OurVision() {
               <div className="absolute top-3 left-3 font-mono text-xs text-[var(--disabled)] tracking-widest">
                 SYS_SCALE // 0.26
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Right Column: Narrative Content (7 cols) */}
           <div className="order-1 lg:order-2 lg:col-span-7 flex flex-col justify-center">
             
-            <motion.span
+            <m.span
               variants={itemVariants}
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
               The Horizon
-            </motion.span>
+            </m.span>
 
-            <motion.h2
+            <m.h2
               variants={itemVariants}
               className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
             >
               Our Vision
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               variants={itemVariants}
               className="text-xl md:text-3xl font-bold tracking-tight text-[var(--heading)] leading-tight mb-8"
             >
@@ -115,13 +115,13 @@ export default function OurVision() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--info)] to-[var(--primary)]">collaborative learning</span>,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--logo)]">practical engineering</span>, and{" "}
               <span className="text-[var(--success)]">accessible education</span>.
-            </motion.p>
+            </m.p>
 
             <div className="h-[1px] w-full bg-gradient-to-r from-[var(--card-border)] to-transparent mb-8" />
 
             {/* Strategic Pillars Supporting the Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <motion.div variants={itemVariants} className="flex gap-3 items-start">
+              <m.div variants={itemVariants} className="flex gap-3 items-start">
                 <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-[var(--info)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -129,9 +129,9 @@ export default function OurVision() {
                   <h4 className="text-sm font-bold text-[var(--heading)] mb-1">Global Respected Footprint</h4>
                   <p className="text-xs text-[var(--subtitle)] leading-relaxed">Setting elite benchmarks for clear architectural standards and documentation in open source.</p>
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div variants={itemVariants} className="flex gap-3 items-start">
+              <m.div variants={itemVariants} className="flex gap-3 items-start">
                 <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-[var(--success)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
@@ -139,12 +139,12 @@ export default function OurVision() {
                   <h4 className="text-sm font-bold text-[var(--heading)] mb-1">Inclusive Infrastructure</h4>
                   <p className="text-xs text-[var(--subtitle)] leading-relaxed">Ensuring any developer, anywhere, has a direct path from writing basic scripts to leading complex software releases.</p>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
 
           </div>
 
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

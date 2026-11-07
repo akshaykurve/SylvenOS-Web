@@ -1,12 +1,13 @@
 "use client";
 
 import { featuredProjects } from "@/lib/type";
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 
 
-const MotionLink = motion.create(Link);
+import { avatarSrc } from "@/lib/avatar";
+const MotionLink = m.create(Link);
 interface FeaturedProjectsProps {
   projects: featuredProjects[];
 }
@@ -41,25 +42,25 @@ export default function FeaturedProjects({
       <div className="max-w-6xl mx-auto  relative z-10">
         {/* Header Block - Refactored for Centered Text Alignments */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Active Repositories
-          </motion.span>
+          </m.span>
 
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Featured Projects
-          </motion.h2>
+          </m.h2>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
@@ -67,18 +68,27 @@ export default function FeaturedProjects({
             Explore core open-source components built by the community.
             Filtered, optimized, and mapped directly out of our active
             repository logs.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Dynamic Fallback if Empty */}
         {projects.length === 0 ? (
           <div className="p-12 text-center rounded-[var(--radius-md)] border border-dashed border-[var(--border)] bg-[var(--glass)] font-mono text-xs text-[var(--muted)]">
-            No repositories found with the theme topic &quot;featured&quot;. Tag your
-            GitHub repositories to display them here.
+            Featured projects are being refreshed.{" "}
+            <a
+              href="https://github.com/orgs/SylvenOS/repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--accent)] underline underline-offset-4"
+            >
+              Browse every repository on GitHub
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            .
           </div>
         ) : (
           /* Structured Project Layout Grid */
-          <motion.div
+          <m.div
             variants={gridVariants}
             initial="hidden"
             whileInView="visible"
@@ -87,7 +97,7 @@ export default function FeaturedProjects({
             className="flex flex-wrap items-stretch justify-center gap-6 md:gap-8"
           >
             {projects.map((project, idx) => (
-              <motion.div
+              <m.div
                 key={idx}
                 variants={cardVariants}
                 className="p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] md:p-8 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md flex flex-col justify-between group transition-all duration-[var(--transition-fast)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
@@ -96,8 +106,9 @@ export default function FeaturedProjects({
                   {/* Card Header (Logo & Core Meta Status) */}
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <img
-                      src={project.avatarUrl}
-                      alt={`${project.name} identifier`}
+                      src={avatarSrc(project.avatarUrl, 40)}
+                      alt={`${project.name} logo`}
+                      width={40} height={40} decoding="async" loading="lazy"
                       className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--card-border)] object-cover"
                     />
                     <div className="flex flex-col items-end gap-1 text-right">
@@ -182,9 +193,9 @@ export default function FeaturedProjects({
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         )}
       </div>
       {/* Global Bottom Section CTA Action Button */}

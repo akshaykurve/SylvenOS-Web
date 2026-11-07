@@ -1,23 +1,15 @@
-"use client";
-
-import { useRef } from "react";
-import { motion } from "motion/react";
-import { useCountUp } from "@/hooks/UseCountUp";
-
-interface MetricProps {
-  value: number;
+interface StatProps {
+  value: number | string;
   label: string;
-  isAnimated?: boolean;
 }
 
-function MetricItem({ value, label, isAnimated = true }: MetricProps) {
-  const ref = useRef(null);
-  const count = useCountUp(value, ref);
-
+// Rendered on the server with the real values. No count-up from zero: a visitor
+// (or crawler) must never see a placeholder number, even for a moment.
+function Stat({ value, label }: StatProps) {
   return (
     <div className="flex flex-col items-center justify-center">
       <dd className="order-1 mb-2 text-4xl font-bold tabular-nums tracking-tight text-[var(--heading)]">
-        <motion.span ref={ref}>{isAnimated ? count : value}</motion.span>
+        {value}
       </dd>
       <dt className="order-2 text-sm font-medium uppercase tracking-wider text-[var(--subtitle)]">
         {label}
@@ -39,10 +31,10 @@ export function HeroMetrics({
         aria-label="Sylven OS at a glance"
         className="grid grid-cols-2 gap-x-8 gap-y-10 text-center md:grid-cols-5"
       >
-        <MetricItem value={1} label="Projects" isAnimated={false} />
-        <MetricItem value={contributors} label="Contributors" />
-        <MetricItem value={repos} label="Repositories" />
-        <MetricItem value={10} label="Technologies" />
+        <Stat value={1} label="Projects" />
+        <Stat value={contributors} label="Contributors" />
+        <Stat value={repos} label="Repositories" />
+        <Stat value={10} label="Technologies" />
 
         <div className="col-span-2 flex flex-col items-center justify-center md:col-span-1">
           <dd className="order-1 mb-2 text-4xl font-bold tracking-tight text-[var(--accent)]">

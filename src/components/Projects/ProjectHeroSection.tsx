@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -66,20 +66,20 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Core Messaging */}
-          <motion.div 
+          <m.div 
             variants={textContainerVariants}
             initial="hidden"
             animate="visible"
             className="lg:col-span-6 flex flex-col justify-center text-left"
           >
-            <motion.span
+            <m.span
               variants={textItemVariants}
               className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
               Ecosystem Index
-            </motion.span>
+            </m.span>
             
-            <motion.h1
+            <m.h1
               variants={textItemVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[var(--heading)] leading-[1.1] mb-6"
             >
@@ -87,16 +87,16 @@ export default function HeroSection() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--heading)] via-[var(--primary)] to-[var(--logo)]">
                 Projects
               </span>
-            </motion.h1>
+            </m.h1>
             
-            <motion.p
+            <m.p
               variants={textItemVariants}
               className="text-base sm:text-lg text-[var(--subtitle)] leading-relaxed max-w-xl mb-10"
             >
               Discover open-source software built by the Sylven OS community. From developer tools to production-ready applications, every project is designed to solve real problems while helping contributors grow.
-            </motion.p>
+            </m.p>
             
-            <motion.div 
+            <m.div 
               variants={textItemVariants}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
             >
@@ -113,14 +113,14 @@ export default function HeroSection() {
   >
     Start Contributing
   </Link>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right Column: Clean, Structured High-Fidelity Repository Canvas */}
           <div className="lg:col-span-6 w-full flex items-center justify-center relative min-h-[420px] md:min-h-[480px]">
             
             {/* The Outer Graphical Canvas Window */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -137,11 +137,11 @@ export default function HeroSection() {
                 <path d="M 330 350 L 380 350 L 380 270" fill="none" stroke="var(--logo)" strokeWidth="1.5" strokeDasharray="4 4" />
                 
                 {/* Pulsing Data Signal Wave Packets traveling smoothly across paths */}
-                <motion.circle r="3" fill="var(--logo)"
+                <m.circle r="3" fill="var(--logo)"
                   animate={{ pathLength: [0, 1], cx: [230, 380, 380], cy: [100, 100, 210] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                 />
-                <motion.circle r="2.5" fill="var(--info)"
+                <m.circle r="2.5" fill="var(--info)"
                   animate={{ pathLength: [0, 1], cx: [180, 180, 220], cy: [145, 320, 320] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1.5 }}
                 />
@@ -150,7 +150,7 @@ export default function HeroSection() {
               {/* Perfectly Rendered Floating Component Cards Layer */}
               <div className="absolute inset-0 z-10 w-full h-full font-sans">
                 {repositories.map((repo) => (
-                  <motion.div
+                  <m.div
                     key={repo.id}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -185,11 +185,11 @@ export default function HeroSection() {
                         <span className="w-1.5 h-1.5 rounded-sm bg-[var(--card-border)]" />
                       </div>
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
 
                 {/* Simulated Clean Figma-Style Live Collaborator Cursor */}
-                <motion.div 
+                <m.div 
                   initial={{ x: 320, y: 280 }}
                   animate={{ 
                     x: [320, 240, 150, 320], 
@@ -206,9 +206,9 @@ export default function HeroSection() {
                   <div className="bg-[var(--primary)] text-white text-[8px] font-mono font-bold px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap">
                     open_source
                   </div>
-                </motion.div>
+                </m.div>
               </div>
-            </motion.div>
+            </m.div>
             
           </div>
 

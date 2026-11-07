@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -91,7 +91,7 @@ export default function Navbar() {
         >
           <span className="relative w-8 h-8 md:w-9 md:h-9 shrink-0">
             <Image
-              src="/IMG_20260628_143818.png"
+              src="/logo-96.webp"
               alt=""
               fill
               sizes="36px"
@@ -145,7 +145,7 @@ export default function Navbar() {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
+          <m.div
             id="mobile-menu"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -166,7 +166,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

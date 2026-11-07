@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
 export default function CoreValues() {
   // Cascading grid container animation configuration
@@ -128,16 +128,16 @@ export default function CoreValues() {
         
         {/* Section Heading Group */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Operating Principles
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -145,9 +145,9 @@ export default function CoreValues() {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Core Values
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -155,11 +155,11 @@ export default function CoreValues() {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             The immutable foundation of our ecosystem. These pillars govern how we write code, handle collaboration, and sustain the community framework.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Six-Card Layout Grid */}
-        <motion.div
+        <m.div
           variants={gridVariants}
           initial="hidden"
           whileInView="visible"
@@ -167,7 +167,7 @@ export default function CoreValues() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch"
         >
           {values.map((item, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': item.color, '--hover-shadow': item.glow } as React.CSSProperties}
@@ -203,9 +203,9 @@ export default function CoreValues() {
 
               {/* Minimal Bottom Interactive Connector Bar */}
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-border)] to-transparent mt-8 group-hover:via-[var(--border)] transition-colors duration-[var(--transition-fast)]" />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

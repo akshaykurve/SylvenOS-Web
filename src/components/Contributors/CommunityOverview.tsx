@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, Variants } from "motion/react";
+import { m, Variants } from "motion/react";
 
+import { avatarSrc } from "@/lib/avatar";
 // Absolute structural typing mapping exactly to your API payload configuration
 interface GitHubOrgData {
   id: number;
@@ -115,16 +116,16 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
         
         {/* Module Header Group */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Telemetry Verification
-          </motion.span>
+          </m.span>
           
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -132,9 +133,9 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-6"
           >
             Community Overview
-          </motion.h2>
+          </m.h2>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -142,11 +143,11 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             className="text-base md:text-lg text-[var(--subtitle)] leading-relaxed"
           >
             Real open-source groups scale using absolute clarity. We extract verified runtime updates directly from the <span className="font-mono text-xs text-[var(--heading)] px-1.5 py-0.5 bg-[var(--glass)] rounded border border-[var(--card-border)]">SylvenOS</span> GitHub organization payload.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* 6-Card High-Fidelity Metrics Grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -154,7 +155,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch mb-16"
         >
           {metrics.map((metric, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               variants={cardVariants}
               style={{ '--hover-border': metric.color } as React.CSSProperties}
@@ -182,13 +183,13 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                   {metric.subtext}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Dynamic Contributor Facepile Tray */}
         {membersList.length > 0 && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -209,8 +210,9 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                   className="relative group/avatar block"
                 >
                   <img
-                    src={member.avatar_url}
-                    alt={`${member.login} contributor primitive`}
+                    src={avatarSrc(member.avatar_url, 36)}
+                    alt={`${member.login}'s GitHub avatar`}
+                    width={36} height={36} decoding="async" loading="lazy"
                     className="w-9 h-9 rounded-full border-2 border-[var(--bg)] bg-[var(--card-bg)] transition-transform duration-200 group-hover/avatar:scale-110 group-hover/avatar:z-30 relative"
                   />
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 max-sm:hidden px-2 py-0.5 rounded bg-[var(--heading)] text-xs font-mono text-[var(--bg)] font-bold opacity-0 group-hover/avatar:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-[var(--shadow-sm)]">
@@ -224,7 +226,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                 </div>
               )}
             </div>
-          </motion.div>
+          </m.div>
         )}
 
       </div>
