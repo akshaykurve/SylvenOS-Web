@@ -48,7 +48,7 @@ export default function ContributorRoles() {
         "Triages complicated system issues",
         "Mentors incoming community engineers"
       ],
-      color: "var(--primary)",
+      color: "var(--accent)",
     },
     {
       title: "Contributors",
@@ -180,7 +180,7 @@ export default function ContributorRoles() {
                       {/* Top Corner Structural Meta Tracking Tag */}
                       <div className="flex items-center justify-between gap-4 mb-4">
                         <span 
-                          className="font-mono text-[9px] font-bold tracking-widest px-2 py-0.5 rounded border opacity-80"
+                          className="font-mono text-xs font-bold tracking-widest px-2 py-0.5 rounded border opacity-80"
                           style={{ color: role.color, borderColor: `${role.color}40`, backgroundColor: `${role.color}08` }}
                         >
                           {role.badge}
@@ -202,7 +202,7 @@ export default function ContributorRoles() {
 
                       {/* Explicit Inline Structured Responsibilities Checklist Segment */}
                       <div className="space-y-2.5 border-t border-[var(--card-border)] pt-5">
-                        <div className="text-[10px] font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-2">
+                        <div className="text-xs font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-2">
                           Core Tasks & Responsibilities
                         </div>
                         {role.responsibilities.map((resp, respIdx) => (
@@ -229,7 +229,7 @@ export default function ContributorRoles() {
           transition={{ delay: 0.4 }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-2 font-mono text-[10px] text-[var(--disabled)] uppercase tracking-widest select-none">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[var(--disabled)] uppercase tracking-widest select-none">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />
             Ecosystem Matrix Hierarchy Operational // All Routes Open For Onboarding
           </div>

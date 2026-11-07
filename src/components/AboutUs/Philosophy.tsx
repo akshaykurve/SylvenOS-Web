@@ -47,7 +47,7 @@ export default function SylvenPhilosophy() {
       title: "Build",
       action: "Apply them to real software.",
       desc: "Ship production-ready code directly into shared repositories to transform theoretical knowledge into skill.",
-      color: "var(--primary)",
+      color: "var(--accent)",
     },
     {
       phase: "03",
@@ -140,7 +140,7 @@ export default function SylvenPhilosophy() {
               {/* Chronological State Indicator Ring */}
               <div className="absolute -left-[31px] md:-left-[47px] top-8 z-20 flex items-center justify-center">
                 <div 
-                  className="w-8 h-8 rounded-full bg-[var(--bg)] border-2 transition-transform duration-[var(--transition-fast)] group-hover:scale-110 flex items-center justify-center font-mono text-[11px] font-bold"
+                  className="w-8 h-8 rounded-full bg-[var(--bg)] border-2 transition-transform duration-[var(--transition-fast)] group-hover:scale-110 flex items-center justify-center font-mono text-xs font-bold"
                   style={{ borderColor: step.color, color: step.color, boxShadow: `0 0 10px ${step.color}20` }}
                 >
                   {step.phase}
@@ -180,7 +180,7 @@ export default function SylvenPhilosophy() {
         >
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--card-border)] flex items-center justify-center text-[var(--success)] animate-[spin_12s_linear_infinite]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
               </svg>
             </div>

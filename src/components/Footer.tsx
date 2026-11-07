@@ -73,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={social.label}
-                className="w-9 h-9 rounded-lg bg-[var(--glass)] border border-gray-500/15 flex items-center justify-center text-[var(--muted)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-colors duration-300"
+                className="w-9 h-9 rounded-lg bg-[var(--glass)] border border-gray-500/15 flex items-center justify-center text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--primary)] transition-colors duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

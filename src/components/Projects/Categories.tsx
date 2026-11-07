@@ -35,7 +35,7 @@ export default function ProjectCategories() {
       glow: "0 4px 24px rgba(56, 189, 248, 0.12)",
       subcategories: ["CLI", "Utilities", "Libraries", "SDKs"],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <polyline points="16 18 22 12 16 6" />
           <polyline points="8 6 2 12 8 18" />
         </svg>
@@ -45,11 +45,11 @@ export default function ProjectCategories() {
       title: "Web Applications",
       tag: "WEB PLATFORM",
       description: "High-performance modern frontends built for speed, clean UX, and extreme scalability.",
-      color: "var(--primary)",
+      color: "var(--accent)",
       glow: "var(--glow-primary)",
       subcategories: ["Dashboards", "Platforms", "Portals", "SaaS"],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
           <line x1="3" y1="9" x2="21" y2="9" />
           <line x1="9" y1="21" x2="9" y2="9" />
@@ -64,7 +64,7 @@ export default function ProjectCategories() {
       glow: "var(--glow-logo)",
       subcategories: ["REST APIs", "GraphQL", "Microservices"],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
         </svg>
       ),
@@ -77,7 +77,7 @@ export default function ProjectCategories() {
       glow: "0 4px 24px rgba(251, 191, 36, 0.12)",
       subcategories: ["Learning Resources", "Tutorials", "Examples"],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
           <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
         </svg>
@@ -91,7 +91,7 @@ export default function ProjectCategories() {
       glow: "0 4px 24px rgba(52, 211, 153, 0.12)",
       subcategories: ["Reusable npm packages", "React components", "Utilities"],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
           <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
           <line x1="12" y1="22.08" x2="12" y2="12" />
@@ -119,7 +119,7 @@ export default function ProjectCategories() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Architecture Index
           </motion.span>
@@ -190,7 +190,7 @@ export default function ProjectCategories() {
                     <button
                       key={sIdx}
                       type="button"
-                      className="font-mono text-[10px] font-semibold text-[var(--muted)] hover:text-[var(--heading)] px-2.5 py-1 rounded bg-[var(--glass)] hover:bg-[var(--surface)] border border-[var(--card-border)] hover:border-[var(--border)] transition-all duration-[var(--transition-fast)]"
+                      className="font-mono text-xs font-semibold text-[var(--muted)] hover:text-[var(--heading)] px-2.5 py-1 rounded bg-[var(--glass)] hover:bg-[var(--surface)] border border-[var(--card-border)] hover:border-[var(--border)] transition-all duration-[var(--transition-fast)]"
                     >
                       {sub}
                     </button>

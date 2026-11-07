@@ -76,7 +76,7 @@ export default function FAQAccordion() {
                     transition={{ duration: 0.2, ease: "easeInOut" }}
                     className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[var(--subtitle)] group-hover:text-[var(--text)]"
                   >
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       className="w-4 h-4"
                       fill="none"
                       viewBox="0 0 24 24"

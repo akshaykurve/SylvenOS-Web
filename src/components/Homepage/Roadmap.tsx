@@ -56,7 +56,7 @@ export default function EcosystemRoadmap() {
 
       {/* Header Framework */}
       <div className="relative z-10 max-w-7xl mx-auto mb-24">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--accent)] uppercase tracking-widest mb-4">
           Long-term Strategy
         </span>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
@@ -104,7 +104,7 @@ export default function EcosystemRoadmap() {
 
                 {/* Adaptive Status tag for mobile lists */}
                 <span 
-                  className="text-[10px] font-mono tracking-wider opacity-60 lg:hidden uppercase font-semibold"
+                  className="text-xs font-mono tracking-wider opacity-60 lg:hidden uppercase font-semibold"
                   style={{ color: item.statusColor }}
                 >
                   {item.status}
@@ -124,7 +124,7 @@ export default function EcosystemRoadmap() {
                     className="flex items-start gap-3 text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed"
                   >
                     <span 
-                      className="text-[11px] font-mono mt-1 select-none opacity-50"
+                      className="text-xs font-mono mt-1 select-none opacity-50"
                       style={{ color: item.statusColor }}
                     >
                       ↳
@@ -136,7 +136,7 @@ export default function EcosystemRoadmap() {
             </div>
 
             {/* Bottom Status Panel for Desktop Matrix Alignment */}
-            <div className="mt-8 pt-4 border-t border-[var(--card-border)]/30 hidden lg:flex items-center justify-between text-[11px] font-mono">
+            <div className="mt-8 pt-4 border-t border-[var(--card-border)]/30 hidden lg:flex items-center justify-between text-xs font-mono">
               <span className="text-[var(--disabled)] uppercase tracking-wider">Status Layer</span>
               <span className="font-semibold uppercase tracking-wider" style={{ color: item.statusColor }}>
                 {item.status}

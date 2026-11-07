@@ -1,41 +1,46 @@
-// src/components/NodeNetwork.tsx
 import Image from "next/image";
+
+const FACTS = [
+  { term: "Members", detail: "Worldwide" },
+  { term: "Projects", detail: "Open Source" },
+  { term: "Learning", detail: "Hands-on" },
+  { term: "Mission", detail: "Learn • Build • Educate" },
+];
 
 export function ProfileCard() {
   return (
-    <div className="w-full max-w-[430px] p-10 bg-[var(--glass)] border border-white/10 backdrop-blur-[20px] rounded-[24px] shadow-[var(--shadow-lg)]">
-       
-         <div className="w-[140px] h-[140px] rounded-full mx-auto mb-[30px] bg-[var(--gradient-primary)] flex items-center justify-center text-[60px] shadow-[var(--shadow-lg)]">
-           <div className="relative w-full h-full">
-            <Image
-              src="/IMG_20260628_143818.png"
-              alt="Sylven OS Logo Mark"
-              fill
-              sizes="90px"
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
-
-        <div className="divide-y divide-gray-500/15">
-          <div className="flex justify-between items-center py-[18px]">
-            <span className="text-sm md:text-base">Members</span>
-            <strong className="font-bold">Worldwide</strong>
-          </div>
-          <div className="flex justify-between items-center py-[18px]">
-            <span className="text-sm md:text-base">Projects</span>
-            <strong className="font-bold">Open Source</strong>
-          </div>
-          <div className="flex justify-between items-center py-[18px]">
-            <span className="text-sm md:text-base">Learning</span>
-            <strong className="font-bold">Hands-on</strong>
-          </div>
-          <div className="flex justify-between items-center py-[18px]">
-            <span className="text-sm md:text-base">Mission</span>
-            <strong className="font-bold">Learn • Build • Educate</strong>
-          </div>
+    <aside
+      aria-label="About Sylven OS"
+      className="w-full max-w-[430px] rounded-3xl border border-[var(--card-border)] bg-[var(--surface)]/40 p-8 shadow-[var(--shadow-lg)] backdrop-blur-xl md:p-10"
+    >
+      <div className="mx-auto mb-8 h-[132px] w-[132px] rounded-full bg-[var(--gradient-primary)] p-1 shadow-[var(--shadow-lg)] ring-1 ring-[var(--card-border)]">
+        <div className="relative h-full w-full">
+          <Image
+            src="/IMG_20260628_143818.png"
+            alt="Sylven OS logo mark"
+            fill
+            sizes="132px"
+            className="object-contain p-3"
+            priority
+          />
         </div>
       </div>
+
+      <dl className="divide-y divide-[var(--card-border)]">
+        {FACTS.map((fact) => (
+          <div
+            key={fact.term}
+            className="flex items-center justify-between gap-4 py-[18px]"
+          >
+            <dt className="text-sm text-[var(--subtitle)] md:text-base">
+              {fact.term}
+            </dt>
+            <dd className="text-right font-semibold text-[var(--heading)]">
+              {fact.detail}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </aside>
   );
 }

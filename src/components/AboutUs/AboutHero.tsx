@@ -60,7 +60,7 @@ export default function HeroSection() {
             variants={elementVariants}
             initial="hidden"
             animate="visible"
-            className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 flex items-center gap-2 shadow-[var(--shadow-sm)]"
+            className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 flex items-center gap-2 shadow-[var(--shadow-sm)]"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--logo)] animate-pulse" />
             Initialize Sylven Ecosystem
@@ -144,7 +144,7 @@ export default function HeroSection() {
           >
             
             {/* Embedded Interactive SVG representing interconnected repository nodes & organic growth */}
-            <svg viewBox="0 0 200 200" className="w-full h-full p-6 text-[var(--primary)]">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 200 200" className="w-full h-full p-6 text-[var(--accent)]">
               {/* Background connections / Forest branches */}
               <motion.path 
                 initial={{ pathLength: 0, opacity: 0 }}
@@ -169,7 +169,7 @@ export default function HeroSection() {
               {/* Core Convergence Node */}
               <motion.circle 
                 cx="100" cy="100" r="8" 
-                className="fill-[var(--bg)] stroke-[var(--primary)] stroke-[3]"
+                className="fill-[var(--bg)] stroke-[var(--accent)] stroke-[3]"
                 style={{ filter: "drop-shadow(var(--glow-primary))" }}
                 whileHover={{ scale: 1.3 }}
               />
@@ -184,7 +184,7 @@ export default function HeroSection() {
                 { cx: 40, cy: 40, color: "var(--logo)" },
                 { cx: 80, cy: 40, color: "var(--info)" },
                 { cx: 120, cy: 40, color: "var(--success)" },
-                { cx: 160, cy: 40, color: "var(--primary)" }
+                { cx: 160, cy: 40, color: "var(--accent)" }
               ].map((node, index) => (
                 <motion.g key={index} whileHover={{ scale: 1.2 }}>
                   <circle cx={node.cx} cy={node.cy} r="4" fill={node.color} />
@@ -196,7 +196,7 @@ export default function HeroSection() {
             {/* Inner Floating Hologram Label Overlay */}
             <div className="absolute bottom-4 left-4 right-4 bg-[var(--glass)] border border-[var(--card-border)] rounded-[var(--radius-sm)] p-3 backdrop-blur-md flex items-center justify-between">
               <div className="flex flex-col">
-                <span className="text-[10px] font-mono text-[var(--muted)] uppercase tracking-wider">Active Workspace</span>
+                <span className="text-xs font-mono text-[var(--muted)] uppercase tracking-wider">Active Workspace</span>
                 <span className="text-xs font-bold text-[var(--heading)]">sylven-core-mesh</span>
               </div>
               <div className="flex -space-x-2">

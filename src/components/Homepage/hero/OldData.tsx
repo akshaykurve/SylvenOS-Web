@@ -11,7 +11,7 @@ export function OldData  ()  {
         <h1 className="text-4xl md:text-[4rem] font-bold leading-[1.08] mb-7">
           From One Seed.
           <br />
-          To A <span className="text-[var(--primary)]">Forest</span> of
+          To A <span className="text-[var(--accent)]">Forest</span> of
           Builders.
         </h1>
 

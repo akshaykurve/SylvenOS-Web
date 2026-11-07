@@ -64,18 +64,18 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
               >
                 {/* Visual Accent Flairs for Top Performer */}
                 {isRankOne && (
-                  <div className="absolute top-0 right-0 bg-[var(--logo)] text-[var(--bg)] text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1 rounded-bl">
+                  <div className="absolute top-0 right-0 bg-[var(--logo)] text-[var(--bg)] text-xs font-mono font-bold tracking-widest uppercase px-3 py-1 rounded-bl">
                     SYSTEM_LEAD // 01
                   </div>
                 )}
 
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <span className="font-mono text-[9px] text-[var(--disabled)] font-bold select-none">
+                    <span className="font-mono text-xs text-[var(--disabled)] font-bold select-none">
                       NODE_RANK // 0{idx + 1}
                     </span>
                     {!isRankOne && (
-                      <span className="font-mono text-[9px] text-[var(--success)] font-bold tracking-widest bg-[var(--glass)] border border-[var(--card-border)] px-2 py-0.5 rounded">
+                      <span className="font-mono text-xs text-[var(--success)] font-bold tracking-widest bg-[var(--glass)] border border-[var(--card-border)] px-2 py-0.5 rounded">
                         ACTIVE_NODE
                       </span>
                     )}
@@ -91,7 +91,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
                       }`}
                     />
                     <div>
-                      <h3 className="text-lg font-bold tracking-tight text-[var(--heading)] group-hover:text-[var(--primary)] transition-colors">
+                      <h3 className="text-lg font-bold tracking-tight text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
                         {node.login}
                       </h3>
                       <p className="text-xs font-mono text-[var(--subtitle)] mt-0.5">
@@ -102,7 +102,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
 
                   {/* Contributions Telemetry Display */}
                   <div className="mt-4 p-4 rounded bg-[var(--glass)] border border-[var(--card-border)] group-hover:border-[var(--border)] transition-colors">
-                    <div className="text-[9px] font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-1">
+                    <div className="text-xs font-mono font-bold tracking-wider text-[var(--muted)] uppercase mb-1">
                       Verified System Contributions
                     </div>
                     <div className="text-2xl font-bold font-mono tracking-tight text-[var(--heading)] flex items-baseline gap-2">
@@ -114,7 +114,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
 
                 {/* External Routing Actions */}
                 <div className="flex items-center justify-between border-t border-[var(--card-border)] pt-4 mt-8">
-                  <span className="text-[9px] font-mono text-[var(--disabled)] uppercase tracking-wider">
+                  <span className="text-xs font-mono text-[var(--disabled)] uppercase tracking-wider">
                     ID // {node.id}
                   </span>
                   <a 
@@ -124,7 +124,7 @@ export default function TopContributors({ contributors = [], limit = 3 }: { cont
                     className="text-[var(--muted)] hover:text-[var(--heading)] transition-colors flex items-center gap-1.5 text-xs font-mono"
                   >
                     inspect_profile
-                    <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <svg aria-hidden="true" focusable="false" className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>

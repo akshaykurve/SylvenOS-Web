@@ -21,7 +21,7 @@ export default function Features() {
           Sylven OS is an open-source community built around one simple idea:
         </p>
 
-        <div className="text-xl md:text-2xl font-semibold px-6 py-3 rounded-xl bg-[var(--glass)] border border-[var(--card-border)] inline-block text-[var(--primary)] tracking-wide shadow-2xl backdrop-blur-md">
+        <div className="text-xl md:text-2xl font-semibold px-6 py-3 rounded-xl bg-[var(--glass)] border border-[var(--card-border)] inline-block text-[var(--accent)] tracking-wide shadow-2xl backdrop-blur-md">
           People learn faster when they build together.
         </div>
 

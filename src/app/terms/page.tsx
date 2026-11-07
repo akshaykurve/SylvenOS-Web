@@ -24,7 +24,7 @@ export default function TermsPage() {
       />
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 font-mono text-xs">
-          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--primary)] transition-colors">
+          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--accent)] transition-colors">
             ← BACK TO HOME
           </Link>
         </div>
@@ -49,7 +49,7 @@ export default function TermsPage() {
             <p>
               Project details, tech stacks, contributor rankings, and organization statistics shown here are
               fetched live from the public{" "}
-              <a href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">
+              <a href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
                 Sylven OS GitHub organization
               </a>. We aim for this data to be accurate and current, but it may occasionally lag behind
               GitHub itself due to caching, or be temporarily unavailable if GitHub&apos;s API is unreachable.
@@ -60,7 +60,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[var(--heading)] mb-3">Open-source licensing</h2>
             <p>
               This website&apos;s own source code is open source, licensed under the{" "}
-              <a href="https://github.com/SylvenOS/SylvenOS-Web/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">
+              <a href="https://github.com/SylvenOS/SylvenOS-Web/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
                 MIT License
               </a>. Individual projects maintained by the Sylven OS organization carry their own licenses,
               listed on each project&apos;s GitHub repository — review a project&apos;s specific license
@@ -73,7 +73,7 @@ export default function TermsPage() {
             <p>
               Participation in the Sylven OS community — on GitHub, Discord, or elsewhere — is governed by
               our{" "}
-              <a href="https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">
+              <a href="https://github.com/SylvenOS/SylvenOS-Web/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
                 Code of Conduct
               </a>. We expect all contributors and visitors to treat one another with respect.
             </p>
@@ -99,7 +99,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[var(--heading)] mb-3">Contact</h2>
             <p>
               Questions about these terms can be sent to{" "}
-              <a href="mailto:contact@sylvenos.com" className="text-[var(--primary)] hover:underline">
+              <a href="mailto:contact@sylvenos.com" className="text-[var(--accent)] hover:underline">
                 contact@sylvenos.com
               </a>.
             </p>

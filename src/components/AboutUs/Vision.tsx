@@ -55,7 +55,7 @@ export default function OurVision() {
               className="relative w-[220px] h-[220px] rounded-[var(--radius-lg)] bg-[var(--gradient-surface)] border border-[var(--card-border)] shadow-[var(--shadow-lg)] backdrop-blur-md flex items-center justify-center group transition-all duration-[var(--transition-normal)] hover:border-[var(--info)]"
             >
               {/* SVG Map pointing Up and Forward (Ecosystem Ascension) */}
-              <svg viewBox="0 0 100 100" className="w-3/4 h-3/4 text-[var(--info)]">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100" className="w-3/4 h-3/4 text-[var(--info)]">
                 {/* Constellation Paths / Horizon Matrix */}
                 <motion.path
                   initial={{ pathLength: 0, opacity: 0 }}
@@ -84,7 +84,7 @@ export default function OurVision() {
               </svg>
 
               {/* Realtime Floating Coordinates Anchor */}
-              <div className="absolute top-3 left-3 font-mono text-[9px] text-[var(--disabled)] tracking-widest">
+              <div className="absolute top-3 left-3 font-mono text-xs text-[var(--disabled)] tracking-widest">
                 SYS_SCALE // 0.26
               </div>
             </motion.div>
@@ -95,7 +95,7 @@ export default function OurVision() {
             
             <motion.span
               variants={itemVariants}
-              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
+              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
               The Horizon
             </motion.span>
@@ -114,7 +114,7 @@ export default function OurVision() {
               To become one of the world&apos;s most respected open-source communities focused on{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--info)] to-[var(--primary)]">collaborative learning</span>,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--logo)]">practical engineering</span>, and{" "}
-              <span className="text-[var(--logo)]">accessible education</span>.
+              <span className="text-[var(--success)]">accessible education</span>.
             </motion.p>
 
             <div className="h-[1px] w-full bg-gradient-to-r from-[var(--card-border)] to-transparent mb-8" />
@@ -122,7 +122,7 @@ export default function OurVision() {
             {/* Strategic Pillars Supporting the Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <motion.div variants={itemVariants} className="flex gap-3 items-start">
-                <svg className="w-5 h-5 text-[var(--info)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-[var(--info)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
                 <div>
@@ -132,7 +132,7 @@ export default function OurVision() {
               </motion.div>
 
               <motion.div variants={itemVariants} className="flex gap-3 items-start">
-                <svg className="w-5 h-5 text-[var(--logo)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg aria-hidden="true" focusable="false" className="w-5 h-5 text-[var(--success)] mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
                 <div>

@@ -53,7 +53,7 @@ export default function HowCommunityWorks() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Onboarding Pipeline
           </motion.span>
@@ -109,7 +109,7 @@ export default function HowCommunityWorks() {
               {/* Left Segment: Badge & Title */}
               <div className="md:col-span-4 flex flex-row md:flex-col items-baseline md:items-start gap-3 md:gap-1">
                 <span 
-                  className="font-mono text-[10px] font-bold tracking-wider uppercase opacity-60 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+                  className="font-mono text-xs font-bold tracking-wider uppercase opacity-60 group-hover:opacity-100 transition-opacity whitespace-nowrap"
                   style={{ color: step.color }}
                 >
                   {step.badge}

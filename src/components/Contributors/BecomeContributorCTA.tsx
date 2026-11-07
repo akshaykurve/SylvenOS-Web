@@ -45,7 +45,7 @@ export default function BecomeContributorCTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-6 shadow-[var(--shadow-sm)]"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-6 shadow-[var(--shadow-sm)]"
           >
             Initialization Gateway
           </motion.span>
@@ -98,7 +98,7 @@ export default function BecomeContributorCTA() {
               // href="#guide"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--primary)] hover:border-[var(--border)] transition-all text-center select-none"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] border border-[var(--card-border)] bg-[var(--glass)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--heading)] hover:text-[var(--accent)] hover:border-[var(--border)] transition-all text-center select-none"
             >
               <Link href="#guide">Contribution Guide</Link>
             </motion.div>
@@ -110,7 +110,7 @@ export default function BecomeContributorCTA() {
               whileTap={{ scale: 0.98 }}
               className="w-full sm:w-auto px-6 py-3.5 rounded-[var(--radius-sm)] font-mono text-xs font-bold tracking-wider uppercase text-[var(--muted)] hover:text-[var(--heading)] hover:bg-[var(--glass)] transition-all text-center select-none"
             >
-              <Link href="https://github.com/sylvenos" target="_blank">Join Community →</Link>
+              <Link href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer">Join Community →</Link>
             </motion.div>
           </motion.div>
 

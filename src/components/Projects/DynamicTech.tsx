@@ -69,7 +69,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
         {/* Component Header Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--card-border)] pb-8 mb-12 gap-6">
           <div className="max-w-xl text-left">
-            <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase block mb-3">
+            <span className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase block mb-3">
               DYNAMIC_TAXONOMY_ROUTING
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-[var(--heading)] mb-3">
@@ -81,9 +81,10 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
           </div>
 
           {/* Filtering Tabs */}
-          <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
+          <div className="flex flex-wrap gap-1.5 font-mono text-xs">
             <button
               onClick={() => setSelectedCategory("ALL")}
+              aria-pressed={selectedCategory === "ALL"}
               className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
                 selectedCategory === "ALL"
                   ? "bg-[var(--primary)] text-white border-transparent font-bold"
@@ -96,6 +97,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
+              aria-pressed={selectedCategory === cat}
                 className={`px-3 py-1.5 rounded-sm uppercase tracking-wider transition-all border ${
                   selectedCategory === cat
                     ? "bg-[var(--primary)] text-white border-transparent font-bold"
@@ -120,10 +122,10 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-[var(--card-border)] pb-3 mb-4">
-                    <span className="font-mono text-[10px] font-bold tracking-widest text-[var(--heading)] uppercase">
+                    <span className="font-mono text-xs font-bold tracking-widest text-[var(--heading)] uppercase">
                       {category}
                     </span>
-                    <span className="font-mono text-[9px] text-[var(--disabled)] uppercase bg-[var(--glass)] px-2 py-0.5 rounded border border-[var(--card-border)]">
+                    <span className="font-mono text-xs text-[var(--disabled)] uppercase bg-[var(--glass)] px-2 py-0.5 rounded border border-[var(--card-border)]">
                       {aggregatedStats.categories[category].length} Nodes
                     </span>
                   </div>
@@ -139,8 +141,8 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                           <span className="text-xs text-[var(--subtitle)] group-hover/item:text-[var(--text)] font-medium transition-colors">
                             {tech}
                           </span>
-                          <div className="flex items-center gap-2 font-mono text-[9px]">
-                            <span className="text-[var(--primary)] font-bold bg-[var(--primary)]/10 px-1.5 py-0.5 rounded border border-[var(--primary)]/20">
+                          <div className="flex items-center gap-2 font-mono text-xs">
+                            <span className="text-[var(--accent)] font-bold bg-[var(--primary)]/10 px-1.5 py-0.5 rounded border border-[var(--primary)]/20">
                               {frequency} {frequency === 1 ? "Repo" : "Repos"}
                             </span>
                           </div>
@@ -150,7 +152,7 @@ export default function DynamicTechStack({ projects }: DynamicTechStackProps) {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-[var(--card-border)] font-mono text-[9px] text-[var(--disabled)] flex justify-between items-center">
+                <div className="mt-6 pt-3 border-t border-[var(--card-border)] font-mono text-xs text-[var(--disabled)] flex justify-between items-center">
                   <span>LAYER_STATUS</span>
                   <span className="text-green-400 uppercase font-bold tracking-wider">● SCHEMA_SYNCED</span>
                 </div>

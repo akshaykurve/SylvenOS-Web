@@ -69,7 +69,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
       label: "Active Repositories",
       value: totalRepos > 0 ? totalRepos.toString() : "Launching Soon",
       subtext: totalRepos > 0 ? "Public production codebases actively maintained on our open index." : "Core source components preparing for initial commit.",
-      color: "var(--primary)",
+      color: "var(--accent)",
       tag: "CORE_METRIC // 02",
     },
     {
@@ -119,7 +119,7 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             Telemetry Verification
           </motion.span>
@@ -213,13 +213,13 @@ export default function CommunityOverview({ stats }: CommunityOverviewProps) {
                     alt={`${member.login} contributor primitive`}
                     className="w-9 h-9 rounded-full border-2 border-[var(--bg)] bg-[var(--card-bg)] transition-transform duration-200 group-hover/avatar:scale-110 group-hover/avatar:z-30 relative"
                   />
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-0.5 rounded bg-[var(--heading)] text-[9px] font-mono text-[var(--bg)] font-bold opacity-0 group-hover/avatar:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-[var(--shadow-sm)]">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-0.5 rounded bg-[var(--heading)] text-xs font-mono text-[var(--bg)] font-bold opacity-0 group-hover/avatar:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-[var(--shadow-sm)]">
                     {member.login}
                   </div>
                 </a>
               ))}
               {membersList.length > 10 && (
-                <div className="w-9 h-9 rounded-full bg-[var(--card-border)] border-2 border-[var(--bg)] flex items-center justify-center font-mono text-[10px] font-bold text-[var(--muted)] select-none">
+                <div className="w-9 h-9 rounded-full bg-[var(--card-border)] border-2 border-[var(--bg)] flex items-center justify-center font-mono text-xs font-bold text-[var(--muted)] select-none">
                   +{membersList.length - 10}
                 </div>
               )}

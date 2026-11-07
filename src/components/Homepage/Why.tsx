@@ -25,10 +25,10 @@ export default function WhySylvenOS() {
   const features = [
     {
       title: "Open Source",
-      description: "Everything is transparent.",
+      description: "Code, plans and decisions are public.",
       tag: "CORE.01",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           <path d="M2 12h20" />
@@ -37,10 +37,10 @@ export default function WhySylvenOS() {
     },
     {
       title: "Real Projects",
-      description: "No toy applications.",
+      description: "Production-grade work, not demos.",
       tag: "CORE.02",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="16 18 22 12 16 6" />
           <polyline points="8 6 2 12 8 18" />
           <line x1="14" y1="4" x2="10" y2="20" />
@@ -49,20 +49,20 @@ export default function WhySylvenOS() {
     },
     {
       title: "Learn by Building",
-      description: "Experience over tutorials.",
+      description: "Shipping teaches more than watching.",
       tag: "CORE.03",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
       ),
     },
     {
       title: "Community Driven",
-      description: "Anyone can contribute.",
+      description: "Everyone is welcome to contribute.",
       tag: "CORE.04",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
           <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -72,10 +72,10 @@ export default function WhySylvenOS() {
     },
     {
       title: "Documentation First",
-      description: "Every project teaches.",
+      description: "Every repo is written to teach.",
       tag: "CORE.05",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
           <polyline points="14 2 14 8 20 8" />
           <line x1="16" y1="13" x2="8" y2="13" />
@@ -86,10 +86,10 @@ export default function WhySylvenOS() {
     },
     {
       title: "Long-term Growth",
-      description: "Build software that lasts.",
+      description: "Software built to be maintained.",
       tag: "CORE.06",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="12 2 2 7 12 12 22 7 12 2" />
           <polyline points="2 17 12 22 22 17" />
           <polyline points="2 12 12 17 22 12" />
@@ -99,16 +99,19 @@ export default function WhySylvenOS() {
   ];
 
   return (
-    <section className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
+    <section aria-labelledby="why-title" className="relative px-6 md:px-[8%] py-16 md:py-28  overflow-hidden text-[var(--text)]">
 
       {/* Title Layout */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-20">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
-          Value Proposition
-        </span>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
+        <p className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--accent)] uppercase tracking-widest mb-4">
+          Why we exist
+        </p>
+        <h2 id="why-title" className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">
           Why Sylven OS?
         </h2>
+        <p className="mt-4 text-base md:text-lg text-[var(--subtitle)] max-w-xl mx-auto leading-relaxed">
+          Six principles shape every project we run and every contribution we accept.
+        </p>
       </div>
 
       {/* Balanced 3-Column Bento Grid */}
@@ -123,18 +126,18 @@ export default function WhySylvenOS() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
+            className="group relative p-6 md:p-8 rounded-[var(--radius-md)] bg-[var(--gradient-surface)] border border-[var(--card-border)] transition-all duration-[var(--transition-normal)] flex flex-col justify-between min-h-[210px] overflow-hidden hover:border-[var(--primary)] hover:shadow-[var(--shadow-md)]"
           >
             {/* Top Row: Icon and Engineering Code Index */}
             <div className="flex items-center justify-between w-full mb-4">
-              <div className="w-9 h-9 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--hover-bg)] transition-colors duration-[var(--transition-fast)]">
+              <div className="w-9 h-9 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--accent)] group-hover:bg-[var(--hover-bg)] transition-colors duration-[var(--transition-fast)]">
                 {item.icon}
               </div>
             </div>
 
             {/* Core Text Elements */}
             <div className="mt-auto">
-              <h3 className="text-lg md:text-xl font-bold mb-1.5 text-[var(--heading)] group-hover:text-[var(--primary)] transition-colors duration-[var(--transition-fast)]">
+              <h3 className="text-lg md:text-xl font-bold mb-1.5 text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors duration-[var(--transition-fast)]">
                 {item.title}
               </h3>
               <p className="text-[14px] md:text-base text-[var(--subtitle)] leading-relaxed">

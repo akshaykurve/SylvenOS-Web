@@ -1,10 +1,8 @@
-// src/components/HeroMetrics.tsx
 "use client";
 
 import { useRef } from "react";
 import { motion } from "motion/react";
 import { useCountUp } from "@/hooks/UseCountUp";
-
 
 interface MetricProps {
   value: number;
@@ -12,41 +10,49 @@ interface MetricProps {
   isAnimated?: boolean;
 }
 
-// Reusable Metric Item
 function MetricItem({ value, label, isAnimated = true }: MetricProps) {
   const ref = useRef(null);
   const count = useCountUp(value, ref);
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <motion.span ref={ref} className="text-4xl font-bold text-[var(--text)] mb-2">
-        {isAnimated ? count : value}
-      </motion.span>
-      <span className="text-sm font-medium text-[var(--muted)] uppercase tracking-wider">
+      <dd className="order-1 mb-2 text-4xl font-bold tabular-nums tracking-tight text-[var(--heading)]">
+        <motion.span ref={ref}>{isAnimated ? count : value}</motion.span>
+      </dd>
+      <dt className="order-2 text-sm font-medium uppercase tracking-wider text-[var(--subtitle)]">
         {label}
-      </span>
+      </dt>
     </div>
   );
 }
 
-export function HeroMetrics({ repos, contributors }: { repos: number; contributors: number }) {
+export function HeroMetrics({
+  repos,
+  contributors,
+}: {
+  repos: number;
+  contributors: number;
+}) {
   return (
-    <div className="w-full pt-10 border-t border-[var(--border)]/50 z-10">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-        
+    <div className="z-10 w-full border-t border-[var(--card-border)] pt-10">
+      <dl
+        aria-label="Sylven OS at a glance"
+        className="grid grid-cols-2 gap-x-8 gap-y-10 text-center md:grid-cols-5"
+      >
         <MetricItem value={1} label="Projects" isAnimated={false} />
         <MetricItem value={contributors} label="Contributors" />
         <MetricItem value={repos} label="Repositories" />
         <MetricItem value={10} label="Technologies" />
 
-        <div className="flex flex-col items-center justify-center col-span-2 md:col-span-1">
-          <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 mb-2">
+        <div className="col-span-2 flex flex-col items-center justify-center md:col-span-1">
+          <dd className="order-1 mb-2 text-4xl font-bold tracking-tight text-[var(--accent)]">
             Future
-          </span>
-          <span className="text-sm font-medium text-[var(--muted)] uppercase tracking-wider">Countries</span>
+          </dd>
+          <dt className="order-2 text-sm font-medium uppercase tracking-wider text-[var(--subtitle)]">
+            Countries
+          </dt>
         </div>
-        
-      </div>
+      </dl>
     </div>
   );
 }

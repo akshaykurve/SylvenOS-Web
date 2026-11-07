@@ -64,7 +64,7 @@ export default function FeaturesList() {
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10  border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
                 height="22"
@@ -103,7 +103,7 @@ export default function FeaturesList() {
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
                 height="22"
@@ -144,7 +144,7 @@ export default function FeaturesList() {
               variants={iconVariants}
               className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center text-[var(--text)] mb-6 group-hover:bg-(--bg) transition-colors duration-300"
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
                 height="22"

@@ -53,7 +53,7 @@ export default function OurMission() {
             <div className="lg:col-span-7 flex flex-col justify-center">
               <motion.span
                 variants={textVariants}
-                className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
+                className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
               >
                 Core Directives
               </motion.span>
@@ -87,7 +87,7 @@ export default function OurMission() {
                 className="relative w-[200px] h-[200px] rounded-[var(--radius-md)] bg-[var(--glass)] border border-[var(--card-border)] shadow-[var(--shadow-md)] flex items-center justify-center group transition-all duration-[var(--transition-fast)]"
               >
                 {/* SVG Visual Representation: Concentric Expansion of Shared Knowledge Nodes */}
-                <svg viewBox="0 0 100 100" className="w-4/5 h-4/5 text-[var(--primary)]">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100" className="w-4/5 h-4/5 text-[var(--accent)]">
                   {/* Central Source Node */}
                   <circle cx="50" cy="50" r="5" fill="var(--logo)" className="shadow-[var(--glow-logo)]" />
                   <circle cx="50" cy="50" r="12" stroke="var(--logo)" strokeWidth="1" fill="none" className="animate-ping opacity-20" style={{ animationDuration: '3s' }} />
@@ -116,7 +116,7 @@ export default function OurMission() {
                 </svg>
 
                 {/* Floating Metrics Badge Layer */}
-                <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-[10px] font-mono tracking-widest text-[var(--logo)] font-bold shadow-[var(--shadow-sm)] uppercase">
+                <div className="absolute -bottom-2 -right-2 px-3 py-1 bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-xs font-mono tracking-widest text-[var(--success)] font-bold shadow-[var(--shadow-sm)] uppercase">
                   Global Mesh
                 </div>
               </motion.div>

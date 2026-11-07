@@ -48,17 +48,17 @@ export default function JoinTheMovement() {
           className="p-8 md:p-16 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--gradient-surface)] shadow-[var(--shadow-lg)] backdrop-blur-xl relative overflow-hidden flex flex-col items-center justify-center"
         >
           {/* Top-Right and Bottom-Left Framing Coordinate Elements */}
-          <div className="absolute top-4 right-4 font-mono text-[9px] text-[var(--disabled)] tracking-widest hidden sm:block">
+          <div className="absolute top-4 right-4 font-mono text-xs text-[var(--disabled)] tracking-widest hidden sm:block">
             INIT_SEQUENCE // GO_LIVE
           </div>
-          <div className="absolute bottom-4 left-4 font-mono text-[9px] text-[var(--disabled)] tracking-widest hidden sm:block">
+          <div className="absolute bottom-4 left-4 font-mono text-xs text-[var(--disabled)] tracking-widest hidden sm:block">
             MESH_STATUS // OPERATIONAL
           </div>
 
           {/* Section Indicator Badge */}
           <motion.span
             variants={elementVariants}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
             Finalization Node
           </motion.span>
@@ -108,7 +108,7 @@ export default function JoinTheMovement() {
 
           {/* Micro Telemetry Inline Loop Indicator */}
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--card-border)] to-transparent mt-12" />
-          <div className="mt-4 flex items-center gap-2 font-mono text-[10px] text-[var(--disabled)]">
+          <div className="mt-4 flex items-center gap-2 font-mono text-xs text-[var(--disabled)]">
             <span className="w-1 h-1 rounded-full bg-[var(--logo)] animate-ping" />
             Active clusters synchronized. Sync code bases on connection initialization.
           </div>

@@ -63,7 +63,7 @@ export default function ContactPage() {
       />
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 font-mono text-xs">
-          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--primary)] transition-colors">
+          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--accent)] transition-colors">
             ← BACK TO HOME
           </Link>
         </div>
@@ -84,12 +84,12 @@ export default function ContactPage() {
               rel={channel.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               className="p-5 rounded-[var(--radius-md)] border border-[var(--card-border)] bg-[var(--card-bg)] flex items-start gap-4 transition-colors hover:border-[var(--primary)] hover:bg-[var(--card-hover-bg)]"
             >
-              <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--primary)] shrink-0">
+              <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--accent)] shrink-0">
                 <channel.icon size={18} />
               </div>
               <div>
                 <div className="text-sm font-bold text-[var(--heading)]">{channel.label}</div>
-                <div className="text-sm text-[var(--primary)] font-mono mb-1">{channel.value}</div>
+                <div className="text-sm text-[var(--accent)] font-mono mb-1">{channel.value}</div>
                 <p className="text-xs text-[var(--subtitle)] leading-relaxed">{channel.description}</p>
               </div>
             </a>

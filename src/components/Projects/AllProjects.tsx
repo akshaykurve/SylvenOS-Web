@@ -71,7 +71,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         
         {/* Header Segment */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
+          <span className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
             MESH_EXPLORER_V5
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
@@ -93,7 +93,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-[var(--radius-sm)] bg-[var(--bg)] border border-[var(--card-border)] text-sm font-sans focus:outline-none focus:border-[var(--primary)] text-[var(--text)] placeholder-[var(--disabled)] transition-all"
               />
-              <svg className="absolute left-3.5 top-3.5 w-4 h-4 text-[var(--disabled)]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <svg aria-hidden="true" focusable="false" className="absolute left-3.5 top-3.5 w-4 h-4 text-[var(--disabled)]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -114,12 +114,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4 border-t border-[var(--card-border)] text-left">
             <div>
-              <label className="block font-mono text-[10px] text-[var(--disabled)] uppercase mb-2 tracking-wider">Status Framework</label>
+              <span className="block font-mono text-xs text-[var(--disabled)] uppercase mb-2 tracking-wider">Status Framework</span>
               <div className="flex flex-wrap gap-1.5">
                 {statuses.map((status) => (
                   <button
                     key={status}
                     onClick={() => setSelectedStatus(status)}
+              aria-pressed={selectedStatus === status}
                     className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
                       selectedStatus === status
                         ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
@@ -133,15 +134,16 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             </div>
 
             <div>
-              <label className="block font-mono text-[10px] text-[var(--disabled)] uppercase mb-2 tracking-wider">Stack Scope</label>
+              <span className="block font-mono text-xs text-[var(--disabled)] uppercase mb-2 tracking-wider">Stack Scope</span>
               <div className="flex flex-wrap gap-1.5">
                 {technologies.map((tech) => (
                   <button
                     key={tech}
                     onClick={() => setSelectedTech(tech)}
+              aria-pressed={selectedTech === tech}
                     className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
                       selectedTech === tech
-                        ? "bg-[var(--info)] text-white border-transparent shadow-[var(--shadow-sm)]"
+                        ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
                         : "bg-[var(--bg)] text-[var(--subtitle)] border-[var(--card-border)] hover:border-[var(--border)]"
                     }`}
                   >
@@ -152,15 +154,16 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             </div>
 
             <div>
-              <label className="block font-mono text-[10px] text-[var(--disabled)] uppercase mb-2 tracking-wider">Run-Level Difficulty</label>
+              <span className="block font-mono text-xs text-[var(--disabled)] uppercase mb-2 tracking-wider">Run-Level Difficulty</span>
               <div className="flex flex-wrap gap-1.5">
                 {difficulties.map((diff) => (
                   <button
                     key={diff}
                     onClick={() => setSelectedDifficulty(diff)}
+              aria-pressed={selectedDifficulty === diff}
                     className={`px-3 py-1.5 rounded text-xs font-mono font-medium border transition-all ${
                       selectedDifficulty === diff
-                        ? "bg-[var(--logo)] text-white border-transparent shadow-[var(--shadow-sm)]"
+                        ? "bg-[var(--primary)] text-white border-transparent shadow-[var(--shadow-sm)]"
                         : "bg-[var(--bg)] text-[var(--subtitle)] border-[var(--card-border)] hover:border-[var(--border)]"
                     }`}
                   >
@@ -202,7 +205,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
               className="w-12 h-12 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--card-border)] object-cover shadow-[var(--shadow-sm)]"
             />
             <div className="flex items-center justify-center gap-1.5 flex-wrap">
-              <span className={`text-[9px] font-mono uppercase px-2 py-0.5 rounded-sm border ${
+              <span className={`text-xs font-mono uppercase px-2 py-0.5 rounded-sm border ${
                 project.status === "Active" ? "bg-green-500/10 text-green-400 border-green-500/20" :
                 project.status === "Planning" ? "bg-blue-500/10 text-blue-400 border-blue-500/20" :
                 project.status === "Completed" ? "bg-purple-500/10 text-purple-400 border-purple-500/20" :
@@ -210,13 +213,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
               }`}>
                 {project.status}
               </span>
-              <span className="text-[9px] font-mono text-[var(--disabled)] uppercase bg-[var(--glass)] border border-[var(--card-border)] px-2 py-0.5 rounded-sm">
+              <span className="text-xs font-mono text-[var(--disabled)] uppercase bg-[var(--glass)] border border-[var(--card-border)] px-2 py-0.5 rounded-sm">
                 {project.difficulty}
               </span>
             </div>
           </div>
 
-          <h3 className="text-lg font-bold text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--primary)] transition-colors w-full truncate">
+          <h3 className="text-lg font-bold text-[var(--heading)] mb-2 tracking-tight group-hover:text-[var(--accent)] transition-colors w-full truncate">
             {project.name}
           </h3>
           <p className="text-xs text-[var(--subtitle)] leading-relaxed mb-5 line-clamp-2 max-w-xs mx-auto">
@@ -227,13 +230,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
             {project.techStack.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="text-[9px] font-mono text-[var(--muted)] px-2 py-0.5 rounded bg-[var(--glass)] border border-[var(--card-border)]"
+                className="text-xs font-mono text-[var(--muted)] px-2 py-0.5 rounded bg-[var(--glass)] border border-[var(--card-border)]"
               >
                 {tech}
               </span>
             ))}
             {project.techStack.length > 3 && (
-              <span className="text-[9px] font-mono text-[var(--disabled)] px-2 py-0.5 rounded bg-[var(--glass)]">
+              <span className="text-xs font-mono text-[var(--disabled)] px-2 py-0.5 rounded bg-[var(--glass)]">
                 +{project.techStack.length - 3}
               </span>
             )}
@@ -241,7 +244,7 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
         </div>
 
         <div className="w-full">
-          <div className="grid grid-cols-3 gap-2 border-t border-[var(--card-border)] pt-4 mb-4 font-mono text-[10px] text-center">
+          <div className="grid grid-cols-3 gap-2 border-t border-[var(--card-border)] pt-4 mb-4 font-mono text-xs text-center">
             <div>
               <span className="text-[var(--disabled)] block">LANG</span>
               <span className="text-[var(--subtitle)] font-bold truncate block">{project.language}</span>
@@ -262,13 +265,13 @@ export default function ProjectExplorer({ projects = [] }: ProjectExplorerProps)
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2.5 px-2 text-center font-mono text-[10px] font-bold rounded border border-[var(--card-border)] text-[var(--subtitle)] hover:bg-[var(--glass)] hover:text-[var(--heading)] transition-all uppercase"
+              className="py-2.5 px-2 text-center font-mono text-xs font-bold rounded border border-[var(--card-border)] text-[var(--subtitle)] hover:bg-[var(--glass)] hover:text-[var(--heading)] transition-all uppercase"
             >
               Repo ↗
             </a>
             <Link
               href={`/projects/${project.slug}`}
-              className="py-2.5 px-2 text-center font-mono text-[10px] font-bold rounded bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white transition-all uppercase tracking-wider"
+              className="py-2.5 px-2 text-center font-mono text-xs font-bold rounded bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-white transition-all uppercase tracking-wider"
             >
               Details ➔
             </Link>

@@ -18,13 +18,13 @@ export const CONTRIBUTION_STEPS = [
     title: "Read Documentation",
     description: "Review system architecture specs and local setup files. Getting clear layout context prevents code collision early on.",
     badge: "Step 03",
-    color: "var(--primary)",
+    color: "var(--accent)",
   },
   {
     title: "Pick an Issue",
     description: "Claim an unassigned issue or pitch an entirely new feature branch. We map distinct milestones for all experience levels.",
     badge: "Step 04",
-    color: "var(--primary)",
+    color: "var(--accent)",
   },
   {
     title: "Contribute",

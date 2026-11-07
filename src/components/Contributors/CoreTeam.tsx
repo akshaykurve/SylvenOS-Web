@@ -93,7 +93,7 @@ export default function DynamicCoreTeam({
                   className="p-2 rounded-full border border-[var(--card-border)] bg-[var(--glass)] text-[var(--muted)] hover:text-[var(--heading)] hover:border-[var(--info)] transition-all duration-[var(--transition-fast)] shadow-[var(--shadow-sm)] hover:scale-105 flex-shrink-0"
                   aria-label={`Open ${member.login}'s GitHub profile`}
                 >
-                  <svg
+                  <svg aria-hidden="true" focusable="false"
                     className="w-4 h-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"

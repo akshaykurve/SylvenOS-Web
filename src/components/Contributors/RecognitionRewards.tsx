@@ -34,7 +34,7 @@ export default function RecognitionRewards() {
       tag: "REWARD // TIER_01",
       color: "var(--logo)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
         </svg>
       ),
@@ -45,7 +45,7 @@ export default function RecognitionRewards() {
       tag: "REWARD // TIER_02",
       color: "var(--info)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
@@ -54,9 +54,9 @@ export default function RecognitionRewards() {
       title: "Project Completion Awards",
       description: "Issued upon the successful deployment or baseline resolution of core versioned epic roadmaps and architecture subsystems.",
       tag: "REWARD // TIER_03",
-      color: "var(--primary)",
+      color: "var(--accent)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7.463 1.422A3.001 3.001 0 003 12v6a3 3 0 003 3h12a3 3 0 003-3v-6a3 3 0 00-1.537-2.578M5.51 5.14a9 9 0 0112.98 0M9 11h6" />
         </svg>
       ),
@@ -67,7 +67,7 @@ export default function RecognitionRewards() {
       tag: "REWARD // TIER_04",
       color: "var(--success)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
@@ -78,7 +78,7 @@ export default function RecognitionRewards() {
       tag: "REWARD // TIER_05",
       color: "var(--danger)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
         </svg>
       ),
@@ -89,7 +89,7 @@ export default function RecognitionRewards() {
       tag: "REWARD // TIER_06",
       color: "var(--warning)",
       svgIcon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" focusable="false" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
@@ -167,13 +167,13 @@ export default function RecognitionRewards() {
                   </div>
                   
                   {/* Highly Structured v1 Phase Tracker Badge */}
-                  <span className="font-mono text-[9px] tracking-widest font-bold text-[var(--warning)] px-2 py-0.5 bg-[var(--glass)] border border-[var(--card-border)] rounded shadow-inner animate-pulse">
+                  <span className="font-mono text-xs tracking-widest font-bold text-[var(--warning)] px-2 py-0.5 bg-[var(--glass)] border border-[var(--card-border)] rounded shadow-inner animate-pulse">
                     COMING SOON
                   </span>
                 </div>
 
                 {/* Primary Card Title */}
-                <h3 className="text-lg font-bold tracking-tight text-[var(--heading)] mb-3 group-hover:text-[var(--primary)] transition-colors">
+                <h3 className="text-lg font-bold tracking-tight text-[var(--heading)] mb-3 group-hover:text-[var(--accent)] transition-colors">
                   {reward.title}
                 </h3>
 
@@ -187,8 +187,8 @@ export default function RecognitionRewards() {
               <div className="flex items-center justify-between border-t border-[var(--card-border)] pt-4 mt-auto">
                 
                 {/* Static Locked Interface Telemetry Line */}
-                <div className="flex items-center gap-1 font-mono text-[9px] text-[var(--disabled)] uppercase tracking-wide">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <div className="flex items-center gap-1 font-mono text-xs text-[var(--disabled)] uppercase tracking-wide">
+                  <svg aria-hidden="true" focusable="false" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   Pipeline Stacked
@@ -207,7 +207,7 @@ export default function RecognitionRewards() {
           transition={{ delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-2 font-mono text-[10px] text-[var(--disabled)] uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[var(--disabled)] uppercase tracking-widest">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--warning)]" />
             V1 Framework Interface Loaded // Incentive Initialization Matrices Pending
           </div>

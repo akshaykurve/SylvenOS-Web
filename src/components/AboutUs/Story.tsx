@@ -50,7 +50,7 @@ export default function OurStory() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4 shadow-[var(--shadow-sm)]"
           >
             The Manifesto
           </motion.span>
@@ -124,7 +124,7 @@ export default function OurStory() {
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--primary)]" />
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--primary)] flex items-center justify-center text-[var(--primary)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
+                <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--primary)] flex items-center justify-center text-[var(--accent)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
                   02
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">Build</h3>
@@ -143,7 +143,7 @@ export default function OurStory() {
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-[var(--logo)]" />
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--logo)] flex items-center justify-center text-[var(--logo)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
+                <div className="w-9 h-9 rounded-full bg-[var(--bg)] border-2 border-[var(--logo)] flex items-center justify-center text-[var(--success)] font-mono text-sm font-bold shadow-[var(--shadow-sm)]">
                   03
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-[var(--heading)] tracking-tight">Educate</h3>
@@ -173,8 +173,8 @@ export default function OurStory() {
           <p className="text-base md:text-xl font-bold text-[var(--heading)] tracking-wide leading-relaxed max-w-3xl mx-auto">
             Sylven OS exists to create a self-sustaining ecosystem where developers continuously{" "}
             <span className="text-[var(--info)] font-bold">Learn</span>,{" "}
-            <span className="text-[var(--primary)] font-bold">Build</span>, and{" "}
-            <span className="text-[var(--logo)] font-bold">Educate</span>
+            <span className="text-[var(--accent)] font-bold">Build</span>, and{" "}
+            <span className="text-[var(--success)] font-bold">Educate</span>
             —turning individual growth into collective progress.
           </p>
         </motion.div>

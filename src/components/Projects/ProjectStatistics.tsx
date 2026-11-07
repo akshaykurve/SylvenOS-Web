@@ -42,7 +42,7 @@ export default function ProjectStatistics({
       label: "Projects",
       value: projectCount,
       description: "Active high-level initiatives initialized.",
-      color: "var(--primary)",
+      color: "var(--accent)",
       meta: "INITIALIZED",
     },
     {
@@ -81,7 +81,7 @@ export default function ProjectStatistics({
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--logo)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--success)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Real-Time Telemetry
           </motion.span>
@@ -130,7 +130,7 @@ export default function ProjectStatistics({
 
               <div>
                 <div className="flex justify-between items-center mb-6">
-                  <span className="font-mono text-[9px] tracking-wider text-[var(--disabled)] uppercase">
+                  <span className="font-mono text-xs tracking-wider text-[var(--disabled)] uppercase">
                     {metric.meta}
                   </span>
                   {metric.highlight && (

@@ -204,6 +204,7 @@ export default function ContributionGuide() {
               return (
                 <button
                   key={step.id}
+                  aria-pressed={isSelected}
                   onClick={() => {
                     setActiveStep(idx);
                     setCopied(false);
@@ -215,7 +216,7 @@ export default function ContributionGuide() {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-mono text-xs ${isSelected ? "text-[var(--primary)] font-bold" : "text-[var(--muted)]"}`}>
+                    <span className={`font-mono text-xs ${isSelected ? "text-[var(--accent)] font-bold" : "text-[var(--muted)]"}`}>
                       {step.stepNumber}
                     </span>
                     <span className="text-xs tracking-tight">
@@ -240,10 +241,10 @@ export default function ContributionGuide() {
               >
                 <div>
                   <div className="flex justify-between items-center border-b border-[var(--card-border)] pb-4 mb-6">
-                    <span className="font-mono text-[10px] text-[var(--muted)] uppercase tracking-wider">
+                    <span className="font-mono text-xs text-[var(--muted)] uppercase tracking-wider">
                       Workflow Step / {WORKFLOW_STEPS[activeStep].stepNumber}
                     </span>
-                    <span className="text-[10px] font-mono text-[var(--primary)] font-bold uppercase tracking-wider">
+                    <span className="text-xs font-mono text-[var(--accent)] font-bold uppercase tracking-wider">
                       Guide
                     </span>
                   </div>
@@ -272,7 +273,7 @@ export default function ContributionGuide() {
                     onClick={() => handleCopy(WORKFLOW_STEPS[activeStep].command!)}
                     className="mt-auto rounded bg-zinc-900 dark:bg-black border border-zinc-800 p-4 font-mono text-xs text-zinc-100 relative group cursor-pointer hover:border-zinc-700 transition-colors overflow-x-auto select-none"
                   >
-                    <span className={`absolute right-4 top-3.5 text-[9px] uppercase tracking-wider font-bold transition-colors ${copied ? "text-green-400" : "text-zinc-500 group-hover:text-[var(--primary)]"}`}>
+                    <span className={`absolute right-4 top-3.5 text-xs uppercase tracking-wider font-bold transition-colors ${copied ? "text-green-400" : "text-zinc-500 group-hover:text-[var(--accent)]"}`}>
                       {copied ? "Copied" : "Click to Copy"}
                     </span>
                     <pre className="whitespace-pre font-mono text-zinc-300 leading-5">
@@ -303,7 +304,7 @@ export default function ContributionGuide() {
               const cardContent = (
                 <>
                   <div className="mb-6">
-                    <h4 className="text-sm font-bold text-[var(--heading)] mb-2 group-hover:text-[var(--primary)] transition-colors">
+                    <h4 className="text-sm font-bold text-[var(--heading)] mb-2 group-hover:text-[var(--accent)] transition-colors">
                       {resource.title}
                     </h4>
                     <p className="text-xs text-[var(--subtitle)] font-normal leading-relaxed">
@@ -311,7 +312,7 @@ export default function ContributionGuide() {
                     </p>
                   </div>
 
-                  <span className="font-mono text-[11px] font-bold text-[var(--primary)] group-hover:text-[var(--text)] transition-colors flex items-center gap-1 mt-auto">
+                  <span className="font-mono text-xs font-bold text-[var(--accent)] group-hover:text-[var(--text)] transition-colors flex items-center gap-1 mt-auto">
                     {resource.ctaText} {resource.isExternal ? "↗" : "→"}
                   </span>
                 </>

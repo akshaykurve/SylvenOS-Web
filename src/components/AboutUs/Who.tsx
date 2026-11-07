@@ -38,7 +38,7 @@ export default function WhoWeAre() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
+              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6"
             >
               Identity
             </motion.span>
@@ -93,7 +93,7 @@ export default function WhoWeAre() {
               {
                 title: "Ecosystem Mentorship",
                 desc: "Senior and junior engineers collaborate directly, breaking down technical isolation through structured support.",
-                color: "var(--primary)"
+                color: "var(--accent)"
               }
             ].map((value, idx) => (
               <motion.div

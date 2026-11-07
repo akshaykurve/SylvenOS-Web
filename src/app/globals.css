@@ -15,8 +15,10 @@
     /* Core Colors */
     --bg: #0a1931;
     --surface: #1a3d63;
-    --primary: #4a7fa7;
-    --primary-rgb: 74, 127, 167;
+    /* --primary is a FILL (white text on it = 5.5:1). --accent is for TEXT/icons on the dark bg (8:1). */
+    --primary: #3a6b94;
+    --primary-rgb: 58, 107, 148;
+    --accent: #8dbbe0;
     --border: #b3cfe5;
     --text: #f6fafd;
     --muted: #d6e4ef;
@@ -39,7 +41,7 @@
 
     /* Active */
     --active-bg: rgba(74, 127, 167, 0.18);
-    --active-border: #4a7fa7;
+    --active-border: #8dbbe0;
 
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.18);
@@ -63,7 +65,7 @@
     --heading: #ffffff;
     --body: #f6fafd;
     --subtitle: #d6e4ef;
-    --disabled: rgba(246, 250, 253, 0.45);
+    --disabled: rgba(246, 250, 253, 0.62);
 
     /* Card */
     --card-bg: rgba(255, 255, 255, 0.03);
@@ -71,8 +73,8 @@
     --card-hover-bg: rgba(255, 255, 255, 0.06);
 
     /* Buttons */
-    --btn-primary-bg: #4a7fa7;
-    --btn-primary-hover: #5b8fb7;
+    --btn-primary-bg: #3a6b94;
+    --btn-primary-hover: #2f5e85;
     --btn-secondary-bg: transparent;
     --btn-secondary-hover: rgba(74, 127, 167, 0.12);
 
@@ -104,6 +106,8 @@
     --surface: #ffffff;
     --primary: #1a3d63;
     --primary-rgb: 26, 61, 99;
+    --accent: #1a3d63;
+    --accent: #1a3d63;
     --border: #4a7fa7;
     --text: #0a1931;
     --muted: #45617e;
@@ -112,10 +116,10 @@
     --network-opacity: .5;
 
     /* Semantic */
-    --success: #059669;
-    --warning: #d97706;
+    --success: #047857;
+    --warning: #b45309;
     --danger: #dc2626;
-    --info: #0284c7;
+    --info: #0369a1;
 
     /* Hover */
     --hover-bg: rgba(26, 61, 99, 0.06);
@@ -144,12 +148,12 @@
     /* Text */
     --heading: #0a1931;
     --body: #233b56;
-    --subtitle: #5a718c;
-    --disabled: rgba(10, 26, 51, 0.45);
+    --subtitle: #4a617c;
+    --disabled: rgba(10, 26, 51, 0.68);
 
     /* Cards */
     --card-bg: #ffffff;
-    --card-border: rgba(26, 61, 99, 0.08);
+    --card-border: rgba(26, 61, 99, 0.14);
     --card-hover-bg: #f8fbfd;
 
     /* Buttons */

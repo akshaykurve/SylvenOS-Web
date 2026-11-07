@@ -10,7 +10,7 @@ export default function StartContributingCTA() {
       <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
         
         {/* Upper Label Tag */}
-        <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6">
+        <span className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6">
           Start Contributing
         </span>
 

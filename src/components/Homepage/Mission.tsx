@@ -60,11 +60,11 @@ export default function Pillars() {
           <div>
             {/* Top Row: Icon & Label */}
             <div className="flex items-center justify-between mb-6">
-              <span className="text-[11px] font-mono tracking-widest text-[var(--primary)] uppercase font-semibold bg-[var(--glass)] px-2.5 py-1 rounded-[var(--radius-sm)] border border-[var(--card-border)]">
+              <span className="text-xs font-mono tracking-widest text-[var(--accent)] uppercase font-semibold bg-[var(--glass)] px-2.5 py-1 rounded-[var(--radius-sm)] border border-[var(--card-border)]">
                 Our Core Purpose
               </span>
-              <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--primary)] group-hover:bg-[var(--hover-bg)] transition-colors duration-[var(--transition-fast)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--accent)] group-hover:bg-[var(--hover-bg)] transition-colors duration-[var(--transition-fast)]">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="12 2 2 7 12 12 22 7 12 2" />
                   <polyline points="2 17 12 22 22 17" />
                   <polyline points="2 12 12 17 22 12" />
@@ -73,7 +73,7 @@ export default function Pillars() {
             </div>
 
             {/* Heading & 2-3 Sentence Description */}
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--heading)] group-hover:text-[var(--primary)] transition-colors duration-[var(--transition-fast)]">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors duration-[var(--transition-fast)]">
               Mission
             </h3>
             <p className="text-base leading-relaxed text-[var(--subtitle)] mb-8">
@@ -109,7 +109,7 @@ export default function Pillars() {
           </div>
 
           {/* Small Footer Label */}
-          <div className="text-[11px] font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
+          <div className="text-xs font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
             Learn • Build • Educate
           </div>
         </motion.div>
@@ -123,11 +123,11 @@ export default function Pillars() {
           <div>
             {/* Top Row: Icon & Label */}
             <div className="flex items-center justify-between mb-6">
-              <span className="text-[11px] font-mono tracking-widest text-[var(--info)] uppercase font-semibold bg-[var(--glass)] px-2.5 py-1 rounded-[var(--radius-sm)] border border-[var(--card-border)]">
+              <span className="text-xs font-mono tracking-widest text-[var(--info)] uppercase font-semibold bg-[var(--glass)] px-2.5 py-1 rounded-[var(--radius-sm)] border border-[var(--card-border)]">
                 Our North Star
               </span>
               <div className="w-10 h-10 rounded-[var(--radius-sm)] bg-[var(--glass)] border border-[var(--card-border)] flex items-center justify-center text-[var(--info)] group-hover:bg-[var(--glass)] transition-colors duration-[var(--transition-fast)]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <polygon points="16.2 7.8 13.4 13.4 7.8 16.2 10.6 10.6 16.2 7.8" />
                 </svg>
@@ -171,7 +171,7 @@ export default function Pillars() {
           </div>
 
           {/* Small Footer Label */}
-          <div className="text-[11px] font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
+          <div className="text-xs font-mono text-[var(--disabled)] tracking-wider mt-auto pt-4 border-t border-[var(--card-border)]/30">
             Since 2026
           </div>
         </motion.div>

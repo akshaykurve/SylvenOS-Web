@@ -47,7 +47,7 @@ export default function FutureRoadmap() {
       phase: "Phase 3",
       title: "Expansion",
       status: "UPCOMING",
-      statusColor: "var(--primary)",
+      statusColor: "var(--accent)",
       tag: "DIST_NODE // 03",
       items: [
         { name: "Large-scale Projects", desc: "Architect decentralized applications, intensive backend services, and modular cross-framework dependencies." },
@@ -88,7 +88,7 @@ export default function FutureRoadmap() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Strategic Track
           </motion.span>
@@ -156,7 +156,7 @@ export default function FutureRoadmap() {
 
                 {/* Status Indicator Badge */}
                 <span 
-                  className="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[var(--radius-sm)] border bg-[var(--glass)] whitespace-nowrap"
+                  className="text-xs font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[var(--radius-sm)] border bg-[var(--glass)] whitespace-nowrap"
                   style={{ color: phase.statusColor, borderColor: `${phase.statusColor}30` }}
                 >
                   {phase.status}

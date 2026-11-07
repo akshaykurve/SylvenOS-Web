@@ -53,7 +53,7 @@ export default function HeroSection() {
     { id: 4, top: "35%", left: "48%", initial: "KP", role: "DevOps // CI Optimization", color: "var(--warning)" },
     { id: 5, top: "30%", left: "85%", initial: "TL", role: "Sec // Access Audit", color: "var(--danger)" },
     { id: 6, top: "72%", left: "25%", initial: "HL", role: "Doc // Tech Architecture", color: "var(--subtitle)" },
-    { id: 7, top: "78%", left: "68%", initial: "OW", role: "QA // E2E Validations", color: "var(--primary)" },
+    { id: 7, top: "78%", left: "68%", initial: "OW", role: "QA // E2E Validations", color: "var(--accent)" },
     { id: 8, top: "60%", left: "90%", initial: "MX", role: "Dev // Edge Compute", color: "var(--success)" },
     { id: 9, top: "58%", left: "42%", initial: "SY", role: "Sys // Kernel Matrix", color: "var(--info)" },
   ];
@@ -82,7 +82,7 @@ export default function HeroSection() {
         >
           <motion.span
             variants={textItemVariants}
-            className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
+            className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
           >
             Identity Matrix Initialization
           </motion.span>
@@ -112,7 +112,7 @@ export default function HeroSection() {
           {/* Micro telemetry sync feedback line */}
           <motion.div 
             variants={textItemVariants}
-            className="mt-12 flex items-center gap-3 font-mono text-[10px] text-[var(--disabled)]"
+            className="mt-12 flex items-center gap-3 font-mono text-xs text-[var(--disabled)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)] animate-pulse" />
             Ecosystem Core: 100% decentralized human-driven engineering
@@ -127,7 +127,7 @@ export default function HeroSection() {
           className="lg:col-span-6 relative w-full h-[450px] md:h-[550px] rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md overflow-hidden shadow-[var(--shadow-lg)] group"
         >
           {/* Constellation Structural Vector Paths Grid */}
-          <svg
+          <svg aria-hidden="true" focusable="false"
             className="absolute inset-0 w-full h-full text-[var(--border)] pointer-events-none"
             style={{ opacity: "var(--network-opacity)" }}
             xmlns="http://www.w3.org/2000/svg"
@@ -169,14 +169,14 @@ export default function HeroSection() {
               </div>
 
               {/* Dynamic Micro-Tooltip Component */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2.5 py-1 rounded bg-[var(--heading)] border border-[var(--card-border)] text-[9px] font-mono font-bold uppercase tracking-wider text-[var(--bg)] opacity-0 scale-95 group-hover/node:opacity-100 group-hover/node:scale-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-[var(--shadow-md)]">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2.5 py-1 rounded bg-[var(--heading)] border border-[var(--card-border)] text-xs font-mono font-bold uppercase tracking-wider text-[var(--bg)] opacity-0 scale-95 group-hover/node:opacity-100 group-hover/node:scale-100 transition-all pointer-events-none whitespace-nowrap z-50 shadow-[var(--shadow-md)]">
                 {node.role}
               </div>
             </motion.div>
           ))}
 
           {/* Central Structural Coordinate Scope Label overlay */}
-          <div className="absolute bottom-3 right-4 font-mono text-[9px] text-[var(--disabled)] tracking-widest uppercase select-none">
+          <div className="absolute bottom-3 right-4 font-mono text-xs text-[var(--disabled)] tracking-widest uppercase select-none">
             Ecosystem_Map // Cluster_09_Active
           </div>
         </motion.div>

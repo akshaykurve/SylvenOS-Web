@@ -74,7 +74,7 @@ export default function HeroSection() {
           >
             <motion.span
               variants={textItemVariants}
-              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
+              className="self-start text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full mb-6 shadow-[var(--shadow-sm)]"
             >
               Ecosystem Index
             </motion.span>
@@ -128,7 +128,7 @@ export default function HeroSection() {
             >
 
               {/* Crisp SVG Geometric Connection Paths Overlay */}
-              <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" focusable="false" className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
                 {/* Connection Path 1: Core to UI (Clean Segmented Orthogonal Line) */}
                 <path d="M 230 100 L 380 100 L 380 210" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeDasharray="4 4" />
                 {/* Connection Path 2: Core to CLI */}
@@ -160,11 +160,11 @@ export default function HeroSection() {
                     {/* Component Header Block */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5 text-[var(--disabled)]">
-                        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <svg aria-hidden="true" focusable="false" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
                         </svg>
-                        <span className="font-mono text-[9px] font-bold uppercase tracking-wider">{repo.status}</span>
+                        <span className="font-mono text-xs font-bold uppercase tracking-wider">{repo.status}</span>
                       </div>
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />
                     </div>
@@ -178,7 +178,7 @@ export default function HeroSection() {
                     <div className="flex items-center justify-between mt-1 pt-2 border-t border-[var(--card-border)] opacity-80">
                       <div className="flex items-center gap-1.5">
                         <span className={`w-2 h-2 rounded-full ${repo.langColor}`} />
-                        <span className="text-[10px] font-mono text-[var(--subtitle)]">{repo.lang}</span>
+                        <span className="text-xs font-mono text-[var(--subtitle)]">{repo.lang}</span>
                       </div>
                       <div className="flex gap-1">
                         <span className="w-3 h-1.5 rounded-sm bg-[var(--card-border)]" />
@@ -199,7 +199,7 @@ export default function HeroSection() {
                   className="absolute pointer-events-none flex flex-col gap-1 items-start"
                 >
                   {/* Modern Precision Arrow Cursor Vector */}
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0V13L4 9.5L8.5 14L10.5 12L6 7.5L11 6.5L0 0Z" fill="var(--primary)" />
                   </svg>
                   {/* Clean Operator Pill Name */}

@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
       />
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 font-mono text-xs">
-          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--primary)] transition-colors">
+          <Link href="/" className="text-[var(--disabled)] hover:text-[var(--accent)] transition-colors">
             ← BACK TO HOME
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-bold text-[var(--heading)] mb-3">Local storage, not cookies</h2>
             <p>
               The only piece of state this site keeps on your device is your light/dark theme preference,
-              stored using your browser&apos;s <code className="text-[var(--primary)]">localStorage</code>.
+              stored using your browser&apos;s <code className="text-[var(--accent)]">localStorage</code>.
               It never leaves your browser, is never sent to our servers, and is not a tracking cookie. You
               can clear it at any time through your browser&apos;s site data settings.
             </p>
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Project listings, contributor rankings, avatars, and organization statistics shown on this site
               are fetched live from the public{" "}
-              <a href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">
+              <a href="https://github.com/sylvenos" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
                 Sylven OS GitHub organization
               </a>{" "}
               via GitHub&apos;s public REST API. This is all information that is already public on GitHub;
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-bold text-[var(--heading)] mb-3">Contact</h2>
             <p>
               Questions about this policy can be sent to{" "}
-              <a href="mailto:contact@sylvenos.com" className="text-[var(--primary)] hover:underline">
+              <a href="mailto:contact@sylvenos.com" className="text-[var(--accent)] hover:underline">
                 contact@sylvenos.com
               </a>.
             </p>

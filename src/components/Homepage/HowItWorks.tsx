@@ -8,19 +8,19 @@ export default function HowItWorks() {
       title: "Join Community",
       description: "Step into our communication channels, introduce yourself, and meet other builders.",
       tag: "01",
-      color: "var(--primary)",
+      color: "var(--accent)",
     },
     {
       title: "Choose Project",
       description: "Explore the Sylven OS ecosystem to find an active repository matching your technical stack.",
       tag: "02",
-      color: "var(--primary)",
+      color: "var(--accent)",
     },
     {
       title: "Read Documentation",
       description: "Review system architecture specs, local environment configurations, and styling guidelines.",
       tag: "03",
-      color: "var(--primary)",
+      color: "var(--accent)",
     },
     {
       title: "Pick Issue",
@@ -72,7 +72,7 @@ export default function HowItWorks() {
 
       {/* Title block */}
       <div className="relative z-10 max-w-4xl mx-auto mb-24">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--primary)] uppercase tracking-widest mb-4">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[var(--glass)] border border-[var(--card-border)] text-[var(--accent)] uppercase tracking-widest mb-4">
           Contribution Pipeline
         </span>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--heading)]">

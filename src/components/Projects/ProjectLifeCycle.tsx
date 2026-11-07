@@ -138,7 +138,7 @@ export default function ProjectLifecycle() {
         
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
+          <span className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4">
             OPERATIONAL_MATURITY_MATRIX
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--heading)] mb-4">
@@ -167,13 +167,14 @@ export default function ProjectLifecycle() {
                 <button
                   key={stage.id}
                   onClick={() => setActiveStageIndex(index)}
+                  aria-current={isSelected ? "step" : undefined}
                   className="flex flex-col items-center group relative focus:outline-none cursor-pointer"
                 >
                   <div className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 font-mono text-xs font-bold relative z-10 ${
                     isSelected
                       ? "text-white border-[var(--primary)] bg-[var(--primary)]"
                       : isPassed
-                      ? "border-[var(--primary)] bg-[var(--bg)] text-[var(--primary)]"
+                      ? "border-[var(--primary)] bg-[var(--bg)] text-[var(--accent)]"
                       : "bg-[var(--bg)] border-[var(--card-border)] text-[var(--disabled)] group-hover:border-[var(--border)] group-hover:text-[var(--text)]"
                   }`}>
                     {/* Sliding Selection Pill */}
@@ -187,7 +188,7 @@ export default function ProjectLifecycle() {
                     {String(index + 1).padStart(2, '0')}
                   </div>
                   
-                  <span className={`mt-3 font-mono text-[10px] tracking-wider transition-colors duration-200 uppercase ${
+                  <span className={`mt-3 font-mono text-xs tracking-wider transition-colors duration-200 uppercase ${
                     isSelected ? "text-[var(--heading)] font-bold" : "text-[var(--disabled)] group-hover:text-[var(--subtitle)]"
                   }`}>
                     {stage.badgeText}
@@ -217,14 +218,14 @@ export default function ProjectLifecycle() {
               >
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <span className="font-mono text-[10px] text-[var(--disabled)] tracking-widest block mb-1">
+                    <span className="font-mono text-xs text-[var(--disabled)] tracking-widest block mb-1">
                       {currentStage.phase}
                     </span>
                     <h3 className="text-2xl font-bold text-[var(--heading)] tracking-tight">
                       Protocol Matrix Scopes
                     </h3>
                   </div>
-                  <span className={`text-[10px] font-mono uppercase px-3 py-1 rounded border font-bold ${currentStage.colorTheme.text} ${currentStage.colorTheme.bg} ${currentStage.colorTheme.border}`}>
+                  <span className={`text-xs font-mono uppercase px-3 py-1 rounded border font-bold ${currentStage.colorTheme.text} ${currentStage.colorTheme.bg} ${currentStage.colorTheme.border}`}>
                     {currentStage.badgeText}
                   </span>
                 </div>
@@ -233,7 +234,7 @@ export default function ProjectLifecycle() {
                   {currentStage.description}
                 </p>
                 
-                <div className="grid grid-cols-3 gap-6 border-t border-[var(--card-border)] pt-5 font-mono text-[10px]">
+                <div className="grid grid-cols-3 gap-6 border-t border-[var(--card-border)] pt-5 font-mono text-xs">
                   <div>
                     <span className="text-[var(--disabled)] block mb-1">STABILITY LOGICS</span>
                     <span className="text-[var(--heading)] font-bold">{currentStage.telemetry.split(" // ")[1]}</span>
@@ -268,10 +269,10 @@ export default function ProjectLifecycle() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-4">
-                    <span className="font-mono text-[10px] text-[var(--disabled)] tracking-wider group-hover:text-[var(--muted)] transition-colors">
+                    <span className="font-mono text-xs text-[var(--disabled)] tracking-wider group-hover:text-[var(--muted)] transition-colors">
                       {stage.phase}
                     </span>
-                    <span className={`text-[9px] font-mono uppercase px-2 py-0.5 rounded-sm border ${stage.colorTheme.text} ${stage.colorTheme.bg} ${stage.colorTheme.border}`}>
+                    <span className={`text-xs font-mono uppercase px-2 py-0.5 rounded-sm border ${stage.colorTheme.text} ${stage.colorTheme.bg} ${stage.colorTheme.border}`}>
                       {stage.badgeText}
                     </span>
                   </div>
@@ -281,7 +282,7 @@ export default function ProjectLifecycle() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 border-t border-[var(--card-border)] pt-4 font-mono text-[9px]">
+                <div className="grid grid-cols-2 gap-2 border-t border-[var(--card-border)] pt-4 font-mono text-xs">
                   <span className="text-[var(--disabled)]">METRICS</span>
                   <span className={`text-right font-bold ${isCurrentlyActive ? stage.colorTheme.text : "text-[var(--muted)]"}`}>
                     {stage.telemetry.split(" // ")[1]}

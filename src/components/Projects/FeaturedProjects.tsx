@@ -45,7 +45,7 @@ export default function FeaturedProjects({
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-mono font-bold tracking-widest text-[var(--primary)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
+            className="text-xs font-mono font-bold tracking-widest text-[var(--accent)] uppercase px-3 py-1 bg-[var(--glass)] border border-[var(--card-border)] rounded-full inline-block mb-4"
           >
             Active Repositories
           </motion.span>
@@ -102,7 +102,7 @@ export default function FeaturedProjects({
                     />
                     <div className="flex flex-col items-end gap-1 text-right">
                       <span
-                        className={`text-[9px] font-mono uppercase px-2 py-0.5 rounded-sm border ${
+                        className={`text-xs font-mono uppercase px-2 py-0.5 rounded-sm border ${
                           project.status === "Active"
                             ? "bg-green-500/10 text-green-400 border-green-500/20"
                             : project.status === "Beta"
@@ -112,7 +112,7 @@ export default function FeaturedProjects({
                       >
                         {project.status}
                       </span>
-                      <span className="text-[9px] font-mono text-[var(--disabled)] uppercase">
+                      <span className="text-xs font-mono text-[var(--disabled)] uppercase">
                         Diff: {project.difficulty}
                       </span>
                     </div>
@@ -131,7 +131,7 @@ export default function FeaturedProjects({
                     {project.techStack.map((tech, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[10px] font-mono text-[var(--muted)] px-2 py-0.5 rounded bg-[var(--glass)] border border-[var(--card-border)]"
+                        className="text-xs font-mono text-[var(--muted)] px-2 py-0.5 rounded bg-[var(--glass)] border border-[var(--card-border)]"
                       >
                         {tech}
                       </span>
@@ -141,7 +141,7 @@ export default function FeaturedProjects({
 
                 {/* Sub-Layer Telemetry Specs */}
                 <div>
-                  <div className="grid grid-cols-2 gap-4 border-t border-[var(--card-border)] pt-4 mb-6 font-mono text-[10px]">
+                  <div className="grid grid-cols-2 gap-4 border-t border-[var(--card-border)] pt-4 mb-6 font-mono text-xs">
                     <div>
                       <span className="text-[var(--disabled)] block">
                         UPDATED
